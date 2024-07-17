@@ -4,17 +4,18 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit290810dae2967f03b30f6b34f2b2efaa
+class ComposerStaticInitf206d18354cb59d859fa2054f4f21faf
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Newspack_Block_Theme\\Core' => __DIR__ . '/../..' . '/includes/class-core.php',
+        'Newspack_Block_Theme\\Jetpack' => __DIR__ . '/../..' . '/includes/class-jetpack.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit290810dae2967f03b30f6b34f2b2efaa::$classMap;
+            $loader->classMap = ComposerStaticInitf206d18354cb59d859fa2054f4f21faf::$classMap;
 
         }, null, ClassLoader::class);
     }
