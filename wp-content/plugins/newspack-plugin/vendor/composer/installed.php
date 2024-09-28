@@ -3,7 +3,7 @@
         'name' => 'automattic/newspack-plugin',
         'pretty_version' => 'dev-trunk',
         'version' => 'dev-trunk',
-        'reference' => '155fd65e7a4fb59e8da4292a489e09bf2756e420',
+        'reference' => 'd115641a03a3bed4197b5d6281536cfc40725da2',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'automattic/newspack-plugin' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => '155fd65e7a4fb59e8da4292a489e09bf2756e420',
+            'reference' => 'd115641a03a3bed4197b5d6281536cfc40725da2',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
