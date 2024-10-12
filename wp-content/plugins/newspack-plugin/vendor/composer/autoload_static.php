@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2
+class ComposerStaticInitec33250385e1b8fdfe6b09cb08fc955a
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -100,6 +100,7 @@ class ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2
         'Newspack\\CLI\\Co_Authors_Plus' => __DIR__ . '/../..' . '/includes/cli/class-co-authors-plus.php',
         'Newspack\\CLI\\Initializer' => __DIR__ . '/../..' . '/includes/cli/class-initializer.php',
         'Newspack\\CLI\\RAS' => __DIR__ . '/../..' . '/includes/cli/class-ras.php',
+        'Newspack\\CLI\\RAS_ESP_Sync' => __DIR__ . '/../..' . '/includes/cli/class-ras-esp-sync.php',
         'Newspack\\CLI\\Setup' => __DIR__ . '/../..' . '/includes/cli/class-setup.php',
         'Newspack\\Category_Pager' => __DIR__ . '/../..' . '/includes/class-category-pager.php',
         'Newspack\\Components_Demo' => __DIR__ . '/../..' . '/includes/wizards/class-components-demo.php',
@@ -109,11 +110,9 @@ class ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2
         'Newspack\\Dashboard' => __DIR__ . '/../..' . '/includes/wizards/class-dashboard.php',
         'Newspack\\Data_Events' => __DIR__ . '/../..' . '/includes/data-events/class-data-events.php',
         'Newspack\\Data_Events\\Api' => __DIR__ . '/../..' . '/includes/data-events/class-api.php',
-        'Newspack\\Data_Events\\Connectors\\ActiveCampaign' => __DIR__ . '/../..' . '/includes/data-events/connectors/class-activecampaign.php',
-        'Newspack\\Data_Events\\Connectors\\Connector' => __DIR__ . '/../..' . '/includes/data-events/connectors/class-connector.php',
+        'Newspack\\Data_Events\\Connectors\\ESP_Connector' => __DIR__ . '/../..' . '/includes/data-events/connectors/class-esp-connector.php',
         'Newspack\\Data_Events\\Connectors\\GA4' => __DIR__ . '/../..' . '/includes/data-events/connectors/ga4/class-ga4.php',
         'Newspack\\Data_Events\\Connectors\\GA4\\Event' => __DIR__ . '/../..' . '/includes/data-events/connectors/ga4/class-event.php',
-        'Newspack\\Data_Events\\Connectors\\Mailchimp' => __DIR__ . '/../..' . '/includes/data-events/connectors/class-mailchimp.php',
         'Newspack\\Data_Events\\Memberships' => __DIR__ . '/../..' . '/includes/data-events/class-memberships.php',
         'Newspack\\Data_Events\\Popups' => __DIR__ . '/../..' . '/includes/data-events/class-popups.php',
         'Newspack\\Data_Events\\Utils' => __DIR__ . '/../..' . '/includes/data-events/class-utils.php',
@@ -151,7 +150,6 @@ class ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2
         'Newspack\\Newspack_Ads_Configuration_Manager' => __DIR__ . '/../..' . '/includes/configuration_managers/class-newspack-ads-configuration-manager.php',
         'Newspack\\Newspack_Elections' => __DIR__ . '/../..' . '/includes/plugins/class-newspack-elections.php',
         'Newspack\\Newspack_Image_Credits' => __DIR__ . '/../..' . '/includes/class-newspack-image-credits.php',
-        'Newspack\\Newspack_Newsletters' => __DIR__ . '/../..' . '/includes/plugins/class-newspack-newsletters.php',
         'Newspack\\Newspack_Newsletters_Configuration_Manager' => __DIR__ . '/../..' . '/includes/configuration_managers/class-newspack-newsletters-configuration-manager.php',
         'Newspack\\Newspack_Popups_Configuration_Manager' => __DIR__ . '/../..' . '/includes/configuration_managers/class-newspack-popups-configuration-manager.php',
         'Newspack\\Newspack_Theme_Configuration_Manager' => __DIR__ . '/../..' . '/includes/configuration_managers/class-newspack-theme-configuration-manager.php',
@@ -172,6 +170,11 @@ class ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2
         'Newspack\\RSS' => __DIR__ . '/../..' . '/includes/optional-modules/class-rss.php',
         'Newspack\\RSS_Add_Image' => __DIR__ . '/../..' . '/includes/class-rss-add-image.php',
         'Newspack\\Reader_Activation' => __DIR__ . '/../..' . '/includes/reader-activation/class-reader-activation.php',
+        'Newspack\\Reader_Activation\\ESP_Sync' => __DIR__ . '/../..' . '/includes/reader-activation/sync/class-esp-sync.php',
+        'Newspack\\Reader_Activation\\ESP_Sync_Admin' => __DIR__ . '/../..' . '/includes/reader-activation/sync/class-esp-sync-admin.php',
+        'Newspack\\Reader_Activation\\Sync' => __DIR__ . '/../..' . '/includes/reader-activation/sync/class-sync.php',
+        'Newspack\\Reader_Activation\\Sync\\Metadata' => __DIR__ . '/../..' . '/includes/reader-activation/sync/class-metadata.php',
+        'Newspack\\Reader_Activation\\Sync\\WooCommerce' => __DIR__ . '/../..' . '/includes/reader-activation/sync/class-woocommerce.php',
         'Newspack\\Reader_Activation_Emails' => __DIR__ . '/../..' . '/includes/reader-activation/class-reader-activation-emails.php',
         'Newspack\\Reader_Data' => __DIR__ . '/../..' . '/includes/reader-activation/class-reader-data.php',
         'Newspack\\Reader_Revenue_Emails' => __DIR__ . '/../..' . '/includes/reader-revenue/class-reader-revenue-emails.php',
@@ -210,9 +213,9 @@ class ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitcc8a76b2e491c31e9b5743211269afc2::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitec33250385e1b8fdfe6b09cb08fc955a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitec33250385e1b8fdfe6b09cb08fc955a::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitec33250385e1b8fdfe6b09cb08fc955a::$classMap;
 
         }, null, ClassLoader::class);
     }
