@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'automattic/newspack-sponsors',
+        'name' => 'automattic/newspack-new-plugin-boilerplate',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '28e5e2f5de56368f62c951b8dc3ee51aaa841716',
+        'reference' => '6277f6b4edd8a000ef0a362205c76386894c162c',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => false,
     ),
     'versions' => array(
-        'automattic/newspack-sponsors' => array(
+        'automattic/newspack-new-plugin-boilerplate' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '28e5e2f5de56368f62c951b8dc3ee51aaa841716',
+            'reference' => '6277f6b4edd8a000ef0a362205c76386894c162c',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
