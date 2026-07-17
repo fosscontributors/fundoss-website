@@ -97,10 +97,12 @@ var wp;
   // packages/upload-media/build-module/index.mjs
   var index_exports = {};
   __export(index_exports, {
+    ErrorCode: () => ErrorCode,
     MediaUploadProvider: () => provider_default,
     UploadError: () => UploadError,
     clearFeatureDetectionCache: () => clearFeatureDetectionCache,
     detectClientSideMediaSupport: () => detectClientSideMediaSupport,
+    getErrorMessage: () => getErrorMessage,
     isClientSideMediaSupported: () => isClientSideMediaSupported,
     isHeicCanvasSupported: () => isHeicCanvasSupported,
     store: () => store
@@ -117,6 +119,7 @@ var wp;
     Type2["Cancel"] = "CANCEL_ITEM";
     Type2["Remove"] = "REMOVE_ITEM";
     Type2["RetryItem"] = "RETRY_ITEM";
+    Type2["ScheduleRetry"] = "SCHEDULE_RETRY";
     Type2["PauseItem"] = "PAUSE_ITEM";
     Type2["ResumeItem"] = "RESUME_ITEM";
     Type2["PauseQueue"] = "PAUSE_QUEUE";
@@ -135,6 +138,7 @@ var wp;
     ItemStatus2["Queued"] = "QUEUED";
     ItemStatus2["Processing"] = "PROCESSING";
     ItemStatus2["Paused"] = "PAUSED";
+    ItemStatus2["PendingRetry"] = "PENDING_RETRY";
     ItemStatus2["Uploaded"] = "UPLOADED";
     ItemStatus2["Error"] = "ERROR";
     return ItemStatus2;
@@ -147,6 +151,7 @@ var wp;
     OperationType2["TranscodeImage"] = "TRANSCODE_IMAGE";
     OperationType2["ThumbnailGeneration"] = "THUMBNAIL_GENERATION";
     OperationType2["Finalize"] = "FINALIZE";
+    OperationType2["DetectUltraHdr"] = "DETECT_ULTRAHDR";
     return OperationType2;
   })(OperationType || {});
 
@@ -154,6 +159,13 @@ var wp;
   var STORE_NAME = "core/upload-media";
   var DEFAULT_MAX_CONCURRENT_UPLOADS = 5;
   var DEFAULT_MAX_CONCURRENT_IMAGE_PROCESSING = 2;
+  var DEFAULT_RETRY_SETTINGS = {
+    maxRetryAttempts: 3,
+    initialRetryDelayMs: 1e3,
+    maxRetryDelayMs: 3e4,
+    backoffMultiplier: 2,
+    retryJitter: 0.1
+  };
   var CLIENT_SIDE_SUPPORTED_MIME_TYPES = [
     "image/jpeg",
     "image/png",
@@ -176,7 +188,8 @@ var wp;
     settings: {
       mediaUpload: noop,
       maxConcurrentUploads: DEFAULT_MAX_CONCURRENT_UPLOADS,
-      maxConcurrentImageProcessing: DEFAULT_MAX_CONCURRENT_IMAGE_PROCESSING
+      maxConcurrentImageProcessing: DEFAULT_MAX_CONCURRENT_IMAGE_PROCESSING,
+      retry: { ...DEFAULT_RETRY_SETTINGS }
     }
   };
   function reducer(state = DEFAULT_STATE, action = { type: Type.Unknown }) {
@@ -236,7 +249,21 @@ var wp;
               ...item,
               status: ItemStatus.Processing,
               error: void 0,
-              retryCount: (item.retryCount ?? 0) + 1
+              retryCount: (item.retryCount ?? 0) + 1,
+              abortController: new AbortController()
+            } : item
+          )
+        };
+      case Type.ScheduleRetry:
+        return {
+          ...state,
+          queue: state.queue.map(
+            (item) => item.id === action.id ? {
+              ...item,
+              status: ItemStatus.PendingRetry,
+              error: action.error,
+              retryCount: action.retryCount,
+              nextRetryTimestamp: action.nextRetryTimestamp
             } : item
           )
         };
@@ -453,7 +480,9 @@ var wp;
   __export(actions_exports, {
     addItems: () => addItems,
     cancelItem: () => cancelItem,
-    retryItem: () => retryItem
+    executeRetry: () => executeRetry,
+    retryItem: () => retryItem,
+    scheduleRetry: () => scheduleRetry
   });
 
   // node_modules/uuid/dist/stringify.js
@@ -502,6 +531,45 @@ var wp;
 
   // packages/upload-media/build-module/store/actions.mjs
   var import_i18n5 = __toESM(require_i18n(), 1);
+
+  // packages/upload-media/build-module/store/utils/retry.mjs
+  function calculateRetryDelay(options) {
+    const { attempt, initialDelay, maxDelay, multiplier, jitter } = options;
+    const exponentialDelay = initialDelay * Math.pow(multiplier, attempt - 1);
+    const cappedDelay = Math.min(exponentialDelay, maxDelay);
+    const jitterFactor = 1 + (Math.random() * 2 - 1) * jitter;
+    return Math.floor(cappedDelay * jitterFactor);
+  }
+  var RETRYABLE_MESSAGE_PATTERNS = [
+    /network/i,
+    /timeout/i,
+    /ECONNRESET/i,
+    /fetch failed/i,
+    /connection/i,
+    /socket/i,
+    /ETIMEDOUT/i,
+    /ENOTFOUND/i,
+    /Could not get a valid response/i,
+    /Failed to fetch/i,
+    /Load failed/i
+  ];
+  function shouldRetryError(error, retryCount, maxRetries) {
+    if (retryCount >= maxRetries) {
+      return false;
+    }
+    const message = typeof error === "string" ? error : error?.message || "";
+    return RETRYABLE_MESSAGE_PATTERNS.some(
+      (pattern) => pattern.test(message)
+    );
+  }
+  var retryTimers = /* @__PURE__ */ new Map();
+  function clearRetryTimer(id) {
+    const pendingTimer = retryTimers.get(id);
+    if (pendingTimer !== void 0) {
+      clearTimeout(pendingTimer);
+      retryTimers.delete(id);
+    }
+  }
 
   // packages/upload-media/build-module/image-file.mjs
   var ImageFile = class extends File {
@@ -594,6 +662,10 @@ var wp;
     }
     return hasTransparency(await response.arrayBuffer());
   }
+  async function vipsGetUltraHdrInfo(buffer) {
+    const { vipsGetUltraHdrInfo: getUltraHdrInfo } = await loadVipsModule();
+    return getUltraHdrInfo(buffer);
+  }
   async function vipsResizeImage(id, file, resize, smartCrop, addSuffix, signal, scaledSuffix, quality) {
     if (signal?.aborted) {
       throw new Error("Operation aborted");
@@ -685,7 +757,61 @@ var wp;
     }
   }
 
+  // packages/upload-media/build-module/store/utils/debug-logger.mjs
+  function isDebugEnabled() {
+    return true;
+  }
+  function debug(message, ...args) {
+    if (!isDebugEnabled()) {
+      return;
+    }
+    console.debug(`[upload-media] ${message}`, ...args);
+  }
+  function measure(options) {
+    if (!isDebugEnabled()) {
+      return;
+    }
+    const {
+      measureName,
+      startTime,
+      endTime = performance.now(),
+      tooltipText,
+      properties
+    } = options;
+    const detail = {
+      devtools: {
+        dataType: "track-entry",
+        track: "Upload Media",
+        tooltipText,
+        properties: properties?.map(([key, value]) => ({
+          key,
+          value
+        }))
+      }
+    };
+    try {
+      performance.measure(measureName, {
+        start: startTime,
+        end: endTime,
+        detail
+      });
+    } catch {
+    }
+  }
+
   // packages/upload-media/build-module/upload-error.mjs
+  var ErrorCode = /* @__PURE__ */ ((ErrorCode2) => {
+    ErrorCode2["EMPTY_FILE"] = "EMPTY_FILE";
+    ErrorCode2["SIZE_ABOVE_LIMIT"] = "SIZE_ABOVE_LIMIT";
+    ErrorCode2["MIME_TYPE_NOT_SUPPORTED"] = "MIME_TYPE_NOT_SUPPORTED";
+    ErrorCode2["MIME_TYPE_NOT_ALLOWED_FOR_USER"] = "MIME_TYPE_NOT_ALLOWED_FOR_USER";
+    ErrorCode2["HEIC_DECODE_ERROR"] = "HEIC_DECODE_ERROR";
+    ErrorCode2["IMAGE_TRANSCODING_ERROR"] = "IMAGE_TRANSCODING_ERROR";
+    ErrorCode2["IMAGE_ROTATION_ERROR"] = "IMAGE_ROTATION_ERROR";
+    ErrorCode2["MEDIA_TRANSCODING_ERROR"] = "MEDIA_TRANSCODING_ERROR";
+    ErrorCode2["GENERAL"] = "GENERAL";
+    return ErrorCode2;
+  })(ErrorCode || {});
   var UploadError = class extends Error {
     code;
     file;
@@ -711,7 +837,7 @@ var wp;
     });
     if (file.type && !isAllowedType) {
       throw new UploadError({
-        code: "MIME_TYPE_NOT_SUPPORTED",
+        code: ErrorCode.MIME_TYPE_NOT_SUPPORTED,
         message: (0, import_i18n2.sprintf)(
           // translators: %s: file name.
           (0, import_i18n2.__)("%s: Sorry, this file type is not supported here."),
@@ -755,7 +881,7 @@ var wp;
     );
     if (file.type && !isAllowedMimeTypeForUser) {
       throw new UploadError({
-        code: "MIME_TYPE_NOT_ALLOWED_FOR_USER",
+        code: ErrorCode.MIME_TYPE_NOT_ALLOWED_FOR_USER,
         message: (0, import_i18n3.sprintf)(
           // translators: %s: file name.
           (0, import_i18n3.__)(
@@ -773,7 +899,7 @@ var wp;
   function validateFileSize(file, maxUploadFileSize) {
     if (file.size <= 0) {
       throw new UploadError({
-        code: "EMPTY_FILE",
+        code: ErrorCode.EMPTY_FILE,
         message: (0, import_i18n4.sprintf)(
           // translators: %s: file name.
           (0, import_i18n4.__)("%s: This file is empty."),
@@ -784,7 +910,7 @@ var wp;
     }
     if (maxUploadFileSize && file.size > maxUploadFileSize) {
       throw new UploadError({
-        code: "SIZE_ABOVE_LIMIT",
+        code: ErrorCode.SIZE_ABOVE_LIMIT,
         message: (0, import_i18n4.sprintf)(
           // translators: %s: file name.
           (0, import_i18n4.__)(
@@ -847,6 +973,19 @@ var wp;
       if (!item) {
         return;
       }
+      clearRetryTimer(id);
+      if (!silent && error && !item.parentId && !item.attachment?.id) {
+        const settings = select2.getSettings();
+        const retrySettings = settings.retry;
+        if (retrySettings) {
+          const retryCount = item.retryCount ?? 0;
+          const maxRetries = retrySettings.maxRetryAttempts;
+          if (shouldRetryError(error, retryCount, maxRetries)) {
+            dispatch.scheduleRetry(id, error);
+            return;
+          }
+        }
+      }
       item.abortController?.abort();
       await vipsCancelOperations(id);
       if (!silent) {
@@ -855,6 +994,10 @@ var wp;
         if (!onError && error && !item.parentId) {
           console.error("Upload cancelled", error);
         }
+      } else {
+        debug(
+          `Item cancelled: ${item.file.name} (item ${id}): ${error instanceof Error ? error.message : error}`
+        );
       }
       const { currentOperation, parentId, batchId } = item;
       dispatch({
@@ -898,7 +1041,7 @@ var wp;
             dispatch.cancelItem(
               parentId,
               new UploadError({
-                code: error instanceof UploadError && error.code || "UPLOAD_ERROR",
+                code: error instanceof UploadError && error.code || ErrorCode.GENERAL,
                 message: error?.message || (0, import_i18n5.__)("The image could not be uploaded."),
                 file: parentItem.file,
                 cause: error instanceof Error ? error : void 0
@@ -908,6 +1051,7 @@ var wp;
         }
       }
       if (batchId && select2.isBatchUploaded(batchId)) {
+        debug(`Batch completed: ${batchId}`);
         item.onBatchSuccess?.();
       }
     };
@@ -928,12 +1072,62 @@ var wp;
       dispatch.processItem(id);
     };
   }
+  function scheduleRetry(id, error) {
+    return async ({ select: select2, dispatch }) => {
+      const item = select2.getItem(id);
+      if (!item) {
+        return;
+      }
+      const settings = select2.getSettings();
+      const retrySettings = settings.retry;
+      if (!retrySettings) {
+        return;
+      }
+      const currentRetryCount = item.retryCount ?? 0;
+      const delay = calculateRetryDelay({
+        attempt: currentRetryCount + 1,
+        initialDelay: retrySettings.initialRetryDelayMs,
+        maxDelay: retrySettings.maxRetryDelayMs,
+        multiplier: retrySettings.backoffMultiplier,
+        jitter: retrySettings.retryJitter
+      });
+      const timerId = setTimeout(() => {
+        retryTimers.delete(id);
+        dispatch.executeRetry(id);
+      }, delay);
+      retryTimers.set(id, timerId);
+      dispatch({
+        type: Type.ScheduleRetry,
+        id,
+        error,
+        retryCount: currentRetryCount,
+        nextRetryTimestamp: Date.now() + delay
+      });
+    };
+  }
+  function executeRetry(id) {
+    return async ({ select: select2, dispatch }) => {
+      const item = select2.getItem(id);
+      if (!item || item.status !== ItemStatus.PendingRetry) {
+        return;
+      }
+      if (select2.isPaused()) {
+        return;
+      }
+      dispatch({
+        type: Type.RetryItem,
+        id
+      });
+      dispatch.processItem(id);
+    };
+  }
 
   // packages/upload-media/build-module/store/private-actions.mjs
   var private_actions_exports = {};
   __export(private_actions_exports, {
     addItem: () => addItem,
     addSideloadItem: () => addSideloadItem,
+    detectUltraHdr: () => detectUltraHdr,
     finalizeItem: () => finalizeItem,
     finishOperation: () => finishOperation,
     generateThumbnails: () => generateThumbnails,
@@ -1708,6 +1902,91 @@ var wp;
   function clearFeatureDetectionCache() {
     cachedResult = null;
   }
+  var BYTES_PER_PIXEL = 4;
+  var INTERLACED_MEMORY_BUDGET = 0.5 * 1024 * 1024 * 1024;
+  var BASELINE_MEMORY_BUDGET = 0.9 * 1024 * 1024 * 1024;
+  function exceedsClientProcessingMemory(dimensions) {
+    const { width, height, interlaced } = dimensions;
+    const estimatedBytes = width * height * BYTES_PER_PIXEL;
+    const budget = interlaced ? INTERLACED_MEMORY_BUDGET : BASELINE_MEMORY_BUDGET;
+    return estimatedBytes > budget;
+  }
+
+  // packages/upload-media/build-module/get-image-dimensions.mjs
+  var MAX_HEADER_BYTES = 512 * 1024;
+  function parseJpeg(view) {
+    let offset = 2;
+    while (offset < view.byteLength) {
+      if (view.getUint8(offset) !== 255) {
+        return null;
+      }
+      while (offset < view.byteLength && view.getUint8(offset) === 255) {
+        offset++;
+      }
+      if (offset >= view.byteLength) {
+        return null;
+      }
+      const marker = view.getUint8(offset);
+      offset++;
+      if (marker === 1 || marker >= 208 && marker <= 217) {
+        continue;
+      }
+      if (marker === 218) {
+        return null;
+      }
+      if (offset + 2 > view.byteLength) {
+        return null;
+      }
+      const segmentLength = view.getUint16(offset);
+      if (segmentLength < 2) {
+        return null;
+      }
+      const isStartOfFrame = marker >= 192 && marker <= 207 && marker !== 196 && marker !== 200 && marker !== 204;
+      if (isStartOfFrame) {
+        if (offset + 7 > view.byteLength) {
+          return null;
+        }
+        const height = view.getUint16(offset + 3);
+        const width = view.getUint16(offset + 5);
+        const interlaced = marker === 194 || marker === 198 || marker === 202 || marker === 206;
+        return { width, height, interlaced };
+      }
+      offset += segmentLength;
+    }
+    return null;
+  }
+  function parsePng(view) {
+    if (view.byteLength < 29) {
+      return null;
+    }
+    const isIhdr = view.getUint8(12) === 73 && // I
+    view.getUint8(13) === 72 && // H
+    view.getUint8(14) === 68 && // D
+    view.getUint8(15) === 82;
+    if (!isIhdr) {
+      return null;
+    }
+    const width = view.getUint32(16);
+    const height = view.getUint32(20);
+    const interlaceMethod = view.getUint8(28);
+    return { width, height, interlaced: interlaceMethod !== 0 };
+  }
+  async function getImageDimensions(file) {
+    try {
+      const headerBytes = Math.min(file.size, MAX_HEADER_BYTES);
+      const buffer = await file.slice(0, headerBytes).arrayBuffer();
+      const view = new DataView(buffer);
+      if (view.byteLength >= 3 && view.getUint16(0) === 65496) {
+        return parseJpeg(view);
+      }
+      if (view.byteLength >= 8 && view.getUint32(0) === 2303741511 && view.getUint32(4) === 218765834) {
+        return parsePng(view);
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  }
 
   // packages/upload-media/build-module/stub-file.mjs
   var StubFile = class extends File {
@@ -1718,6 +1997,7 @@ var wp;
 
   // packages/upload-media/build-module/store/private-actions.mjs
   var DEFAULT_OUTPUT_QUALITY = 0.82;
+  var ultraHdrItems = /* @__PURE__ */ new Set();
   function addItem({
     file: fileOrBlob,
     batchId,
@@ -1914,6 +2194,9 @@ var wp;
         case OperationType.Finalize:
           dispatch.finalizeItem(id);
           break;
+        case OperationType.DetectUltraHdr:
+          dispatch.detectUltraHdr(id);
+          break;
       }
     };
   }
@@ -1928,7 +2211,11 @@ var wp;
         type: Type.ResumeQueue
       });
       for (const item of select2.getAllItems()) {
-        dispatch.processItem(item.id);
+        if (item.status === ItemStatus.PendingRetry) {
+          dispatch.executeRetry(item.id);
+        } else {
+          dispatch.processItem(item.id);
+        }
       }
     };
   }
@@ -1946,6 +2233,8 @@ var wp;
       if (!item) {
         return;
       }
+      ultraHdrItems.delete(id);
+      clearRetryTimer(id);
       dispatch({
         type: Type.Remove,
         id
@@ -2028,7 +2317,17 @@ var wp;
         file.type
       );
       const isHeic = HEIC_MIME_TYPES.includes(file.type);
+      let tooLargeForClient = false;
       if (isImage && isVipsSupported) {
+        const dimensions = await getImageDimensions(file);
+        if (dimensions && exceedsClientProcessingMemory(dimensions)) {
+          tooLargeForClient = true;
+        }
+      }
+      if (file.type === "image/jpeg" && !tooLargeForClient) {
+        operations.push(OperationType.DetectUltraHdr);
+      }
+      if (isImage && isVipsSupported && !tooLargeForClient) {
         operations.push(
           OperationType.Upload,
           OperationType.ThumbnailGeneration,
@@ -2044,7 +2343,7 @@ var wp;
           dispatch.cancelItem(
             id,
             new UploadError({
-              code: "HEIC_DECODE_ERROR",
+              code: ErrorCode.HEIC_DECODE_ERROR,
               message: "This browser cannot decode HEIC images and the server does not support them either. Please convert to JPEG before uploading.",
               file
             })
@@ -2077,7 +2376,7 @@ var wp;
             convert_format: true
           }
         };
-      } else if (!isVipsSupported || !isImage) {
+      } else if (!isVipsSupported || !isImage || tooLargeForClient) {
         updates = {
           additionalData: {
             ...item.additionalData,
@@ -2096,27 +2395,59 @@ var wp;
       dispatch.finishOperation(id, updates);
     };
   }
+  function detectUltraHdr(id) {
+    return async ({ select: select2, dispatch }) => {
+      const item = select2.getItem(id);
+      if (!item) {
+        return;
+      }
+      let info;
+      try {
+        const buffer = await item.file.arrayBuffer();
+        info = await vipsGetUltraHdrInfo(buffer);
+      } catch {
+      }
+      if (info) {
+        ultraHdrItems.add(id);
+      }
+      dispatch.finishOperation(id, {});
+    };
+  }
   function uploadItem(id) {
     return async ({ select: select2, dispatch }) => {
       const item = select2.getItem(id);
       if (!item) {
         return;
       }
+      const startTime = performance.now();
+      let finished = false;
+      const finishUpload = (attachment) => {
+        if (finished) {
+          return;
+        }
+        finished = true;
+        measure({
+          measureName: `Upload ${item.file.name}`,
+          startTime,
+          tooltipText: item.file.name,
+          properties: [
+            ["Item ID", item.id],
+            ["File name", item.file.name]
+          ]
+        });
+        dispatch.finishOperation(id, { attachment });
+      };
       select2.getSettings().mediaUpload({
         filesList: [item.file],
         additionalData: item.additionalData,
         signal: item.abortController?.signal,
         onFileChange: ([attachment]) => {
           if (attachment && !(0, import_blob.isBlobURL)(attachment.url)) {
-            dispatch.finishOperation(id, {
-              attachment
-            });
+            finishUpload(attachment);
           }
         },
         onSuccess: ([attachment]) => {
-          dispatch.finishOperation(id, {
-            attachment
-          });
+          finishUpload(attachment);
         },
         onError: (error) => {
           dispatch.cancelItem(id, error);
@@ -2136,12 +2467,22 @@ var wp;
         dispatch.finishOperation(id, {});
         return;
       }
+      const startTime = performance.now();
       mediaSideload({
         file: item.file,
         attachmentId: post,
         additionalData,
         signal: item.abortController?.signal,
         onSuccess: (subSize) => {
+          measure({
+            measureName: `Sideload ${item.file.name}`,
+            startTime,
+            tooltipText: item.file.name,
+            properties: [
+              ["Item ID", item.id],
+              ["File name", item.file.name]
+            ]
+          });
           if (item.parentId) {
             dispatch({
               type: Type.AccumulateSubSize,
@@ -2169,6 +2510,7 @@ var wp;
         });
         return;
       }
+      const startTime = performance.now();
       const addSuffix = Boolean(item.parentId);
       const scaledSuffix = Boolean(args.isThresholdResize);
       try {
@@ -2182,6 +2524,15 @@ var wp;
           item.abortController?.signal,
           scaledSuffix
         );
+        measure({
+          measureName: `ResizeCrop ${item.file.name}`,
+          startTime,
+          tooltipText: item.file.name,
+          properties: [
+            ["Item ID", item.id],
+            ["File name", item.file.name]
+          ]
+        });
         const blobUrl = (0, import_blob.createBlobURL)(file);
         dispatch({
           type: Type.CacheBlobUrl,
@@ -2198,7 +2549,7 @@ var wp;
         dispatch.cancelItem(
           id,
           new UploadError({
-            code: "IMAGE_TRANSCODING_ERROR",
+            code: ErrorCode.IMAGE_TRANSCODING_ERROR,
             message: (0, import_i18n6.__)(
               "The web server cannot generate responsive image sizes for this image. Convert it to JPEG or PNG before uploading."
             ),
@@ -2221,6 +2572,7 @@ var wp;
         });
         return;
       }
+      const startTime = performance.now();
       try {
         const file = await vipsRotateImage(
           item.id,
@@ -2228,6 +2580,15 @@ var wp;
           args.orientation,
           item.abortController?.signal
         );
+        measure({
+          measureName: `Rotate ${item.file.name}`,
+          startTime,
+          tooltipText: item.file.name,
+          properties: [
+            ["Item ID", item.id],
+            ["File name", item.file.name]
+          ]
+        });
         const blobUrl = (0, import_blob.createBlobURL)(file);
         dispatch({
           type: Type.CacheBlobUrl,
@@ -2244,7 +2605,7 @@ var wp;
         dispatch.cancelItem(
           id,
           new UploadError({
-            code: "IMAGE_ROTATION_ERROR",
+            code: ErrorCode.IMAGE_ROTATION_ERROR,
             message: (0, import_i18n6.__)(
               "The web server cannot generate responsive image sizes for this image. Convert it to JPEG or PNG before uploading."
             ),
@@ -2267,6 +2628,7 @@ var wp;
         });
         return;
       }
+      const startTime = performance.now();
       const outputMimeType = `image/${args.outputFormat}`;
       const quality = args.outputQuality ?? DEFAULT_OUTPUT_QUALITY;
       const interlaced = args.interlaced ?? false;
@@ -2278,6 +2640,15 @@ var wp;
           quality,
           interlaced
         );
+        measure({
+          measureName: `Transcode ${item.file.name}`,
+          startTime,
+          tooltipText: item.file.name,
+          properties: [
+            ["Item ID", item.id],
+            ["File name", item.file.name]
+          ]
+        });
         const blobUrl = (0, import_blob.createBlobURL)(file);
         dispatch({
           type: Type.CacheBlobUrl,
@@ -2294,7 +2665,7 @@ var wp;
         dispatch.cancelItem(
           id,
           new UploadError({
-            code: "MEDIA_TRANSCODING_ERROR",
+            code: ErrorCode.MEDIA_TRANSCODING_ERROR,
             message: "Image could not be transcoded to the target format",
             file: item.file,
             cause: error instanceof Error ? error : void 0
@@ -2362,10 +2733,11 @@ var wp;
         const thumbnailSource = item.sourceFile;
         const file = attachment.filename ? renameFile(thumbnailSource, attachment.filename) : thumbnailSource;
         const batchId = v4_default();
+        const isUltraHdr = ultraHdrItems.has(item.id);
         const outputMimeType = attachment.image_output_format;
         const interlaced = attachment.image_save_progressive ?? false;
         let thumbnailTranscodeOperation = null;
-        if (outputMimeType) {
+        if (!isUltraHdr && outputMimeType) {
           thumbnailTranscodeOperation = await getTranscodeImageOperation(
             thumbnailSource,
             outputMimeType,
@@ -2394,7 +2766,7 @@ var wp;
           const thumbnailOperations = [
             [OperationType.ResizeCrop, { resize: imageSize }]
           ];
-          if (thumbnailTranscodeOperation) {
+          if (!isUltraHdr && thumbnailTranscodeOperation) {
             thumbnailOperations.push(thumbnailTranscodeOperation);
           }
           thumbnailOperations.push(OperationType.Upload);
@@ -2433,7 +2805,7 @@ var wp;
                   }
                 ]
               ];
-              if (thumbnailTranscodeOperation) {
+              if (!isUltraHdr && thumbnailTranscodeOperation) {
                 scaledOperations.push(
                   thumbnailTranscodeOperation
                 );
@@ -2584,6 +2956,103 @@ var wp;
     return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children });
   });
   var provider_default = MediaUploadProvider;
+
+  // packages/upload-media/build-module/error-messages.mjs
+  var import_i18n7 = __toESM(require_i18n(), 1);
+  function getErrorMessage(code, fileName) {
+    const messages = {
+      [ErrorCode.EMPTY_FILE]: {
+        title: (0, import_i18n7.__)("Empty file"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('"%s" is empty.'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("Please choose a different file.")
+      },
+      [ErrorCode.SIZE_ABOVE_LIMIT]: {
+        title: (0, import_i18n7.__)("File too large"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('"%s" exceeds the maximum upload size.'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("Please reduce the file size and try again.")
+      },
+      [ErrorCode.MIME_TYPE_NOT_SUPPORTED]: {
+        title: (0, import_i18n7.__)("Unsupported file type"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('"%s" is not a supported file type.'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("Please upload a different file format.")
+      },
+      [ErrorCode.MIME_TYPE_NOT_ALLOWED_FOR_USER]: {
+        title: (0, import_i18n7.__)("File type not allowed"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('You are not allowed to upload "%s".'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("Please contact your site administrator.")
+      },
+      [ErrorCode.HEIC_DECODE_ERROR]: {
+        title: (0, import_i18n7.__)("HEIC decode failed"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('Failed to decode HEIC file "%s".'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("Try converting the image to JPEG or PNG first.")
+      },
+      [ErrorCode.IMAGE_TRANSCODING_ERROR]: {
+        title: (0, import_i18n7.__)("Image processing failed"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('Failed to process "%s".'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("The image may be corrupted. Try a different file.")
+      },
+      [ErrorCode.IMAGE_ROTATION_ERROR]: {
+        title: (0, import_i18n7.__)("Image rotation failed"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('Failed to rotate "%s".'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("The image may be corrupted. Try a different file.")
+      },
+      [ErrorCode.MEDIA_TRANSCODING_ERROR]: {
+        title: (0, import_i18n7.__)("Media processing failed"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('Failed to convert "%s" to the target format.'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("The file may be corrupted. Try a different file.")
+      },
+      [ErrorCode.GENERAL]: {
+        title: (0, import_i18n7.__)("Upload failed"),
+        description: (0, import_i18n7.sprintf)(
+          /* translators: %s: file name */
+          (0, import_i18n7.__)('Failed to upload "%s".'),
+          fileName
+        ),
+        action: (0, import_i18n7.__)("Please try again.")
+      }
+    };
+    return messages[code] || {
+      title: (0, import_i18n7.__)("Upload failed"),
+      description: (0, import_i18n7.sprintf)(
+        /* translators: %s: file name */
+        (0, import_i18n7.__)('Failed to upload "%s".'),
+        fileName
+      ),
+      action: (0, import_i18n7.__)("Please try again.")
+    };
+  }
   return __toCommonJS(index_exports);
 })();
 //# sourceMappingURL=index.js.map

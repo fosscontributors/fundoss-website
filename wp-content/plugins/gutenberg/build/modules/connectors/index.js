@@ -267,7 +267,6 @@ function DefaultConnectorSettings({
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_components.TextControl,
           {
-            __next40pxDefaultSize: true,
             label: (0, import_i18n.__)("API Key"),
             value: apiKey,
             onChange: (value) => {
@@ -278,6 +277,7 @@ function DefaultConnectorSettings({
             },
             placeholder: (0, import_i18n.__)("Enter your API key"),
             disabled: readOnly || isSaving,
+            autoComplete: "off",
             help: getHelp()
           }
         ),

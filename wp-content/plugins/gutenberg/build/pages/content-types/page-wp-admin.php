@@ -134,7 +134,9 @@ function gutenberg_content_types_wp_admin_enqueue_scripts( $hook_suffix ) {
 	// Load build constants
 	$build_constants = require __DIR__ . '/../../constants.php';
 
-	// Fire init action for extensions to register routes and menu items
+	/**
+	 * Fires when the content-types admin page is initialized so extensions can register routes and menu items.
+	 */
 	do_action( 'content-types-wp-admin_init' );
 
 	// Preload REST API data
@@ -153,6 +155,8 @@ function gutenberg_content_types_wp_admin_enqueue_scripts( $hook_suffix ) {
 		// 2. It initializes the boot module as an inline script.
 		wp_register_script( 'content-types-wp-admin-prerequisites', '', $asset['dependencies'], $asset['version'], true );
 
+		$init_modules = [];
+
 		/*
 		 * Add inline script to initialize the app using initSinglePage (no menuItems).
 		 * The dynamic import is deferred until DOMContentLoaded so that all classic
@@ -164,10 +168,10 @@ function gutenberg_content_types_wp_admin_enqueue_scripts( $hook_suffix ) {
 		 * "Cannot unlock an undefined object". See <https://core.trac.wordpress.org/ticket/65103>.
 		 */
 		$init_js_function = <<<'JS'
-		( mountId, routes ) => {
+		( mountId, routes, initModules ) => {
 			const run = async () => {
 				const mod = await import( "@wordpress/boot" );
-				mod.initSinglePage( { mountId, routes } );
+				mod.initSinglePage( { mountId, routes, initModules } );
 			};
 			if ( document.readyState === "loading" ) {
 				document.addEventListener( "DOMContentLoaded", run );
@@ -179,10 +183,11 @@ function gutenberg_content_types_wp_admin_enqueue_scripts( $hook_suffix ) {
 		wp_add_inline_script(
 			'content-types-wp-admin-prerequisites',
 			sprintf(
-				'( %s )( %s, %s );',
+				'( %s )( %s, %s, %s );',
 				$init_js_function,
 				wp_json_encode( 'content-types-wp-admin-app', JSON_HEX_TAG | JSON_UNESCAPED_SLASHES ),
-				wp_json_encode( $routes, JSON_HEX_TAG | JSON_UNESCAPED_SLASHES )
+				wp_json_encode( $routes, JSON_HEX_TAG | JSON_UNESCAPED_SLASHES ),
+				wp_json_encode( $init_modules, JSON_HEX_TAG | JSON_UNESCAPED_SLASHES )
 			)
 		);
 
@@ -202,6 +207,9 @@ function gutenberg_content_types_wp_admin_enqueue_scripts( $hook_suffix ) {
 				'id'     => '@wordpress/boot',
 			),
 		);
+
+		// Add init modules as static dependencies
+			// No init modules configured
 
 		// Add all registered routes as dependencies
 		foreach ( $routes as $route ) {
@@ -258,9 +266,7 @@ function gutenberg_content_types_wp_admin_render_page() {
 	<style>
 		/* Critical styles to prevent layout shifts - inlined for immediate application */
 
-		/* Background colors */
 		#wpwrap {
-			background: var(--wpds-color-fg-content-neutral, #1e1e1e);
 			overflow-y: auto;
 		}
 		body {

@@ -125,7 +125,7 @@ var wp;
           return x2 === y2 && (0 !== x2 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
         }
         function useSyncExternalStore$2(subscribe2, getSnapshot) {
-          didWarnOld18Alpha || void 0 === React51.startTransition || (didWarnOld18Alpha = true, console.error(
+          didWarnOld18Alpha || void 0 === React49.startTransition || (didWarnOld18Alpha = true, console.error(
             "You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release."
           ));
           var value = getSnapshot();
@@ -139,7 +139,7 @@ var wp;
             inst: { value, getSnapshot }
           });
           var inst = cachedValue[0].inst, forceUpdate = cachedValue[1];
-          useLayoutEffect7(
+          useLayoutEffect6(
             function() {
               inst.value = value;
               inst.getSnapshot = getSnapshot;
@@ -173,8 +173,8 @@ var wp;
           return getSnapshot();
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React51 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is, useState42 = React51.useState, useEffect35 = React51.useEffect, useLayoutEffect7 = React51.useLayoutEffect, useDebugValue2 = React51.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
-        exports.useSyncExternalStore = void 0 !== React51.useSyncExternalStore ? React51.useSyncExternalStore : shim;
+        var React49 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is, useState42 = React49.useState, useEffect35 = React49.useEffect, useLayoutEffect6 = React49.useLayoutEffect, useDebugValue2 = React49.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
+        exports.useSyncExternalStore = void 0 !== React49.useSyncExternalStore ? React49.useSyncExternalStore : shim;
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
       })();
     }
@@ -201,9 +201,9 @@ var wp;
           return x2 === y2 && (0 !== x2 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React51 = require_react(), shim = require_shim(), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore3 = shim.useSyncExternalStore, useRef47 = React51.useRef, useEffect35 = React51.useEffect, useMemo42 = React51.useMemo, useDebugValue2 = React51.useDebugValue;
+        var React49 = require_react(), shim = require_shim(), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore3 = shim.useSyncExternalStore, useRef49 = React49.useRef, useEffect35 = React49.useEffect, useMemo42 = React49.useMemo, useDebugValue2 = React49.useDebugValue;
         exports.useSyncExternalStoreWithSelector = function(subscribe2, getSnapshot, getServerSnapshot, selector2, isEqual) {
-          var instRef = useRef47(null);
+          var instRef = useRef49(null);
           if (null === instRef.current) {
             var inst = { hasValue: false, value: null };
             instRef.current = inst;
@@ -1628,8 +1628,8 @@ var wp;
   var clsx_default = clsx;
 
   // packages/media-utils/build-module/components/media-upload-modal/index.mjs
-  var import_element80 = __toESM(require_element(), 1);
-  var import_i18n66 = __toESM(require_i18n(), 1);
+  var import_element83 = __toESM(require_element(), 1);
+  var import_i18n67 = __toESM(require_i18n(), 1);
   var import_core_data6 = __toESM(require_core_data(), 1);
   var import_data13 = __toESM(require_data(), 1);
   var import_components53 = __toESM(require_components(), 1);
@@ -1637,161 +1637,164 @@ var wp;
   // packages/icons/build-module/library/arrow-down.mjs
   var import_primitives = __toESM(require_primitives(), 1);
   var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-  var arrow_down_default = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_primitives.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_primitives.Path, { d: "m16.5 13.5-3.7 3.7V4h-1.5v13.2l-3.8-3.7-1 1 5.5 5.6 5.5-5.6z" }) });
+  var arrow_down_default = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_primitives.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_primitives.Path, { d: "m16.5 13.5-3.7 3.7V4h-1.5v13.2l-3.8-3.7-1 1 5.5 5.6 5.5-5.6z" }) });
 
   // packages/icons/build-module/library/arrow-left.mjs
   var import_primitives2 = __toESM(require_primitives(), 1);
   var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
-  var arrow_left_default = /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives2.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives2.Path, { d: "M20 11.2H6.8l3.7-3.7-1-1L3.9 12l5.6 5.5 1-1-3.7-3.7H20z" }) });
+  var arrow_left_default = /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives2.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives2.Path, { d: "M20 11.2H6.8l3.7-3.7-1-1L3.9 12l5.6 5.5 1-1-3.7-3.7H20z" }) });
 
   // packages/icons/build-module/library/arrow-right.mjs
   var import_primitives3 = __toESM(require_primitives(), 1);
   var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
-  var arrow_right_default = /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives3.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives3.Path, { d: "m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z" }) });
+  var arrow_right_default = /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives3.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives3.Path, { d: "m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z" }) });
 
   // packages/icons/build-module/library/arrow-up.mjs
   var import_primitives4 = __toESM(require_primitives(), 1);
   var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
-  var arrow_up_default = /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives4.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives4.Path, { d: "M12 3.9 6.5 9.5l1 1 3.8-3.7V20h1.5V6.8l3.7 3.7 1-1z" }) });
+  var arrow_up_default = /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives4.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives4.Path, { d: "M12 3.9 6.5 9.5l1 1 3.8-3.7V20h1.5V6.8l3.7 3.7 1-1z" }) });
 
   // packages/icons/build-module/library/audio.mjs
   var import_primitives5 = __toESM(require_primitives(), 1);
   var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
-  var audio_default = /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives5.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives5.Path, { d: "M17.7 4.3c-1.2 0-2.8 0-3.8 1-.6.6-.9 1.5-.9 2.6V14c-.6-.6-1.5-1-2.5-1C8.6 13 7 14.6 7 16.5S8.6 20 10.5 20c1.5 0 2.8-1 3.3-2.3.5-.8.7-1.8.7-2.5V7.9c0-.7.2-1.2.5-1.6.6-.6 1.8-.6 2.8-.6h.3V4.3h-.4z" }) });
+  var audio_default = /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives5.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives5.Path, { d: "M17.7 4.3c-1.2 0-2.8 0-3.8 1-.6.6-.9 1.5-.9 2.6V14c-.6-.6-1.5-1-2.5-1C8.6 13 7 14.6 7 16.5S8.6 20 10.5 20c1.5 0 2.8-1 3.3-2.3.5-.8.7-1.8.7-2.5V7.9c0-.7.2-1.2.5-1.6.6-.6 1.8-.6 2.8-.6h.3V4.3h-.4z" }) });
 
   // packages/icons/build-module/library/block-table.mjs
   var import_primitives6 = __toESM(require_primitives(), 1);
   var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
-  var block_table_default = /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives6.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives6.Path, { d: "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 4.5h14c.3 0 .5.2.5.5v3.5h-15V5c0-.3.2-.5.5-.5zm8 5.5h6.5v3.5H13V10zm-1.5 3.5h-7V10h7v3.5zm-7 5.5v-4h7v4.5H5c-.3 0-.5-.2-.5-.5zm14.5.5h-6V15h6.5v4c0 .3-.2.5-.5.5z" }) });
+  var block_table_default = /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives6.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives6.Path, { d: "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 4.5h14c.3 0 .5.2.5.5v3.5h-15V5c0-.3.2-.5.5-.5zm8 5.5h6.5v3.5H13V10zm-1.5 3.5h-7V10h7v3.5zm-7 5.5v-4h7v4.5H5c-.3 0-.5-.2-.5-.5zm14.5.5h-6V15h6.5v4c0 .3-.2.5-.5.5z" }) });
 
   // packages/icons/build-module/library/category.mjs
   var import_primitives7 = __toESM(require_primitives(), 1);
   var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1);
-  var category_default = /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives7.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives7.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M6 5.5h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5H6a.5.5 0 01-.5-.5V6a.5.5 0 01.5-.5zM4 6a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm11-.5h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5V6a.5.5 0 01.5-.5zM13 6a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2h-3a2 2 0 01-2-2V6zm5 8.5h-3a.5.5 0 00-.5.5v3a.5.5 0 00.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5zM15 13a2 2 0 00-2 2v3a2 2 0 002 2h3a2 2 0 002-2v-3a2 2 0 00-2-2h-3zm-9 1.5h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5H6a.5.5 0 01-.5-.5v-3a.5.5 0 01.5-.5zM4 15a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" }) });
+  var category_default = /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives7.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives7.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M6 5.5h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5H6a.5.5 0 01-.5-.5V6a.5.5 0 01.5-.5zM4 6a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm11-.5h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5V6a.5.5 0 01.5-.5zM13 6a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2h-3a2 2 0 01-2-2V6zm5 8.5h-3a.5.5 0 00-.5.5v3a.5.5 0 00.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5zM15 13a2 2 0 00-2 2v3a2 2 0 002 2h3a2 2 0 002-2v-3a2 2 0 00-2-2h-3zm-9 1.5h3a.5.5 0 01.5.5v3a.5.5 0 01-.5.5H6a.5.5 0 01-.5-.5v-3a.5.5 0 01.5-.5zM4 15a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" }) });
 
   // packages/icons/build-module/library/check.mjs
   var import_primitives8 = __toESM(require_primitives(), 1);
   var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
-  var check_default = /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_primitives8.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_primitives8.Path, { d: "M16.5 7.5 10 13.9l-2.5-2.4-1 1 3.5 3.6 7.5-7.6z" }) });
+  var check_default = /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_primitives8.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_primitives8.Path, { d: "M16.5 7.5 10 13.9l-2.5-2.4-1 1 3.5 3.6 7.5-7.6z" }) });
 
   // packages/icons/build-module/library/chevron-down.mjs
   var import_primitives9 = __toESM(require_primitives(), 1);
   var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
-  var chevron_down_default = /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_primitives9.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_primitives9.Path, { d: "M17.5 11.6L12 16l-5.5-4.4.9-1.2L12 14l4.5-3.6 1 1.2z" }) });
+  var chevron_down_default = /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_primitives9.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_primitives9.Path, { d: "M17.5 11.6L12 16l-5.5-4.4.9-1.2L12 14l4.5-3.6 1 1.2z" }) });
 
   // packages/icons/build-module/library/close-small.mjs
   var import_primitives10 = __toESM(require_primitives(), 1);
   var import_jsx_runtime10 = __toESM(require_jsx_runtime(), 1);
-  var close_small_default = /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_primitives10.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_primitives10.Path, { d: "M12 13.06l3.712 3.713 1.061-1.06L13.061 12l3.712-3.712-1.06-1.06L12 10.938 8.288 7.227l-1.061 1.06L10.939 12l-3.712 3.712 1.06 1.061L12 13.061z" }) });
+  var close_small_default = /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_primitives10.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_primitives10.Path, { d: "M12 13.06l3.712 3.713 1.061-1.06L13.061 12l3.712-3.712-1.06-1.06L12 10.938 8.288 7.227l-1.061 1.06L10.939 12l-3.712 3.712 1.06 1.061L12 13.061z" }) });
 
   // packages/icons/build-module/library/cog.mjs
   var import_primitives11 = __toESM(require_primitives(), 1);
   var import_jsx_runtime11 = __toESM(require_jsx_runtime(), 1);
-  var cog_default = /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_primitives11.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_primitives11.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M10.289 4.836A1 1 0 0111.275 4h1.306a1 1 0 01.987.836l.244 1.466c.787.26 1.503.679 2.108 1.218l1.393-.522a1 1 0 011.216.437l.653 1.13a1 1 0 01-.23 1.273l-1.148.944a6.025 6.025 0 010 2.435l1.149.946a1 1 0 01.23 1.272l-.653 1.13a1 1 0 01-1.216.437l-1.394-.522c-.605.54-1.32.958-2.108 1.218l-.244 1.466a1 1 0 01-.987.836h-1.306a1 1 0 01-.986-.836l-.244-1.466a5.995 5.995 0 01-2.108-1.218l-1.394.522a1 1 0 01-1.217-.436l-.653-1.131a1 1 0 01.23-1.272l1.149-.946a6.026 6.026 0 010-2.435l-1.148-.944a1 1 0 01-.23-1.272l.653-1.131a1 1 0 011.217-.437l1.393.522a5.994 5.994 0 012.108-1.218l.244-1.466zM14.929 12a3 3 0 11-6 0 3 3 0 016 0z" }) });
+  var cog_default = /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_primitives11.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_primitives11.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M10.289 4.836A1 1 0 0111.275 4h1.306a1 1 0 01.987.836l.244 1.466c.787.26 1.503.679 2.108 1.218l1.393-.522a1 1 0 011.216.437l.653 1.13a1 1 0 01-.23 1.273l-1.148.944a6.025 6.025 0 010 2.435l1.149.946a1 1 0 01.23 1.272l-.653 1.13a1 1 0 01-1.216.437l-1.394-.522c-.605.54-1.32.958-2.108 1.218l-.244 1.466a1 1 0 01-.987.836h-1.306a1 1 0 01-.986-.836l-.244-1.466a5.995 5.995 0 01-2.108-1.218l-1.394.522a1 1 0 01-1.217-.436l-.653-1.131a1 1 0 01.23-1.272l1.149-.946a6.026 6.026 0 010-2.435l-1.148-.944a1 1 0 01-.23-1.272l.653-1.131a1 1 0 011.217-.437l1.393.522a5.994 5.994 0 012.108-1.218l.244-1.466zM14.929 12a3 3 0 11-6 0 3 3 0 016 0z" }) });
 
   // packages/icons/build-module/library/comment-author-avatar.mjs
   var import_primitives12 = __toESM(require_primitives(), 1);
   var import_jsx_runtime12 = __toESM(require_jsx_runtime(), 1);
-  var comment_author_avatar_default = /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_primitives12.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_primitives12.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M7.25 16.437a6.5 6.5 0 1 1 9.5 0V16A2.75 2.75 0 0 0 14 13.25h-4A2.75 2.75 0 0 0 7.25 16v.437Zm1.5 1.193a6.47 6.47 0 0 0 3.25.87 6.47 6.47 0 0 0 3.25-.87V16c0-.69-.56-1.25-1.25-1.25h-4c-.69 0-1.25.56-1.25 1.25v1.63ZM4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm10-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" }) });
+  var comment_author_avatar_default = /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_primitives12.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_primitives12.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M7.25 16.437a6.5 6.5 0 1 1 9.5 0V16A2.75 2.75 0 0 0 14 13.25h-4A2.75 2.75 0 0 0 7.25 16v.437Zm1.5 1.193a6.47 6.47 0 0 0 3.25.87 6.47 6.47 0 0 0 3.25-.87V16c0-.69-.56-1.25-1.25-1.25h-4c-.69 0-1.25.56-1.25 1.25v1.63ZM4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm10-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" }) });
 
   // packages/icons/build-module/library/envelope.mjs
   var import_primitives13 = __toESM(require_primitives(), 1);
   var import_jsx_runtime13 = __toESM(require_jsx_runtime(), 1);
-  var envelope_default = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_primitives13.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_primitives13.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M3 7c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm2-.5h14c.3 0 .5.2.5.5v1L12 13.5 4.5 7.9V7c0-.3.2-.5.5-.5Zm-.5 3.3V17c0 .3.2.5.5.5h14c.3 0 .5-.2.5-.5V9.8L12 15.4 4.5 9.8Z" }) });
+  var envelope_default = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_primitives13.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_primitives13.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M3 7c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm2-.5h14c.3 0 .5.2.5.5v1L12 13.5 4.5 7.9V7c0-.3.2-.5.5-.5Zm-.5 3.3V17c0 .3.2.5.5.5h14c.3 0 .5-.2.5-.5V9.8L12 15.4 4.5 9.8Z" }) });
 
   // packages/icons/build-module/library/error.mjs
   var import_primitives14 = __toESM(require_primitives(), 1);
   var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
-  var error_default = /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_primitives14.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_primitives14.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M12.218 5.377a.25.25 0 0 0-.436 0l-7.29 12.96a.25.25 0 0 0 .218.373h14.58a.25.25 0 0 0 .218-.372l-7.29-12.96Zm-1.743-.735c.669-1.19 2.381-1.19 3.05 0l7.29 12.96a1.75 1.75 0 0 1-1.525 2.608H4.71a1.75 1.75 0 0 1-1.525-2.608l7.29-12.96ZM12.75 17.46h-1.5v-1.5h1.5v1.5Zm-1.5-3h1.5v-5h-1.5v5Z" }) });
+  var error_default = /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_primitives14.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_primitives14.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M12.218 5.377a.25.25 0 0 0-.436 0l-7.29 12.96a.25.25 0 0 0 .218.373h14.58a.25.25 0 0 0 .218-.372l-7.29-12.96Zm-1.743-.735c.669-1.19 2.381-1.19 3.05 0l7.29 12.96a1.75 1.75 0 0 1-1.525 2.608H4.71a1.75 1.75 0 0 1-1.525-2.608l7.29-12.96ZM12.75 17.46h-1.5v-1.5h1.5v1.5Zm-1.5-3h1.5v-5h-1.5v5Z" }) });
 
   // packages/icons/build-module/library/file.mjs
   var import_primitives15 = __toESM(require_primitives(), 1);
   var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1);
-  var file_default = /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_primitives15.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_primitives15.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M12.848 8a1 1 0 0 1-.914-.594l-.723-1.63a.5.5 0 0 0-.447-.276H5a.5.5 0 0 0-.5.5v11.5a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-9A.5.5 0 0 0 19 8h-6.152Zm.612-1.5a.5.5 0 0 1-.462-.31l-.445-1.084A2 2 0 0 0 10.763 4H5a2 2 0 0 0-2 2v11.5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-5.54Z" }) });
+  var file_default = /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_primitives15.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_primitives15.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M12.848 8a1 1 0 0 1-.914-.594l-.723-1.63a.5.5 0 0 0-.447-.276H5a.5.5 0 0 0-.5.5v11.5a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5v-9A.5.5 0 0 0 19 8h-6.152Zm.612-1.5a.5.5 0 0 1-.462-.31l-.445-1.084A2 2 0 0 0 10.763 4H5a2 2 0 0 0-2 2v11.5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-5.54Z" }) });
 
   // packages/icons/build-module/library/format-list-bullets-rtl.mjs
   var import_primitives16 = __toESM(require_primitives(), 1);
   var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
-  var format_list_bullets_rtl_default = /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_primitives16.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_primitives16.Path, { d: "M4 8.8h8.9V7.2H4v1.6zm0 7h8.9v-1.5H4v1.5zM18 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" }) });
+  var format_list_bullets_rtl_default = /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_primitives16.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_primitives16.Path, { d: "M4 8.8h8.9V7.2H4v1.6zm0 7h8.9v-1.5H4v1.5zM18 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" }) });
 
   // packages/icons/build-module/library/format-list-bullets.mjs
   var import_primitives17 = __toESM(require_primitives(), 1);
   var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
-  var format_list_bullets_default = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_primitives17.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_primitives17.Path, { d: "M11.1 15.8H20v-1.5h-8.9v1.5zm0-8.6v1.5H20V7.2h-8.9zM6 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" }) });
+  var format_list_bullets_default = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_primitives17.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_primitives17.Path, { d: "M11.1 15.8H20v-1.5h-8.9v1.5zm0-8.6v1.5H20V7.2h-8.9zM6 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" }) });
 
   // packages/icons/build-module/library/funnel.mjs
   var import_primitives18 = __toESM(require_primitives(), 1);
   var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
-  var funnel_default = /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_primitives18.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_primitives18.Path, { d: "M10 17.5H14V16H10V17.5ZM6 6V7.5H18V6H6ZM8 12.5H16V11H8V12.5Z" }) });
+  var funnel_default = /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_primitives18.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_primitives18.Path, { d: "M10 17.5H14V16H10V17.5ZM6 6V7.5H18V6H6ZM8 12.5H16V11H8V12.5Z" }) });
 
   // packages/icons/build-module/library/image.mjs
   var import_primitives19 = __toESM(require_primitives(), 1);
   var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
-  var image_default = /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_primitives19.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_primitives19.Path, { d: "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 4.5h14c.3 0 .5.2.5.5v8.4l-3-2.9c-.3-.3-.8-.3-1 0L11.9 14 9 12c-.3-.2-.6-.2-.8 0l-3.6 2.6V5c-.1-.3.1-.5.4-.5zm14 15H5c-.3 0-.5-.2-.5-.5v-2.4l4.1-3 3 1.9c.3.2.7.2.9-.1L16 12l3.5 3.4V19c0 .3-.2.5-.5.5z" }) });
+  var image_default = /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_primitives19.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_primitives19.Path, { d: "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 4.5h14c.3 0 .5.2.5.5v8.4l-3-2.9c-.3-.3-.8-.3-1 0L11.9 14 9 12c-.3-.2-.6-.2-.8 0l-3.6 2.6V5c-.1-.3.1-.5.4-.5zm14 15H5c-.3 0-.5-.2-.5-.5v-2.4l4.1-3 3 1.9c.3.2.7.2.9-.1L16 12l3.5 3.4V19c0 .3-.2.5-.5.5z" }) });
 
   // packages/icons/build-module/library/link.mjs
   var import_primitives20 = __toESM(require_primitives(), 1);
   var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
-  var link_default = /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_primitives20.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_primitives20.Path, { d: "M10 17.389H8.444A5.194 5.194 0 1 1 8.444 7H10v1.5H8.444a3.694 3.694 0 0 0 0 7.389H10v1.5ZM14 7h1.556a5.194 5.194 0 0 1 0 10.39H14v-1.5h1.556a3.694 3.694 0 0 0 0-7.39H14V7Zm-4.5 6h5v-1.5h-5V13Z" }) });
+  var link_default = /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_primitives20.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_primitives20.Path, { d: "M10 17.389H8.444A5.194 5.194 0 1 1 8.444 7H10v1.5H8.444a3.694 3.694 0 0 0 0 7.389H10v1.5ZM14 7h1.556a5.194 5.194 0 0 1 0 10.39H14v-1.5h1.556a3.694 3.694 0 0 0 0-7.39H14V7Zm-4.5 6h5v-1.5h-5V13Z" }) });
 
   // packages/icons/build-module/library/mobile.mjs
   var import_primitives21 = __toESM(require_primitives(), 1);
   var import_jsx_runtime21 = __toESM(require_jsx_runtime(), 1);
-  var mobile_default = /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_primitives21.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_primitives21.Path, { d: "M15 4H9c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm.5 14c0 .3-.2.5-.5.5H9c-.3 0-.5-.2-.5-.5V6c0-.3.2-.5.5-.5h6c.3 0 .5.2.5.5v12zm-4.5-.5h2V16h-2v1.5z" }) });
+  var mobile_default = /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_primitives21.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_primitives21.Path, { d: "M15 4H9c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm.5 14c0 .3-.2.5-.5.5H9c-.3 0-.5-.2-.5-.5V6c0-.3.2-.5.5-.5h6c.3 0 .5.2.5.5v12zm-4.5-.5h2V16h-2v1.5z" }) });
 
   // packages/icons/build-module/library/more-vertical.mjs
   var import_primitives22 = __toESM(require_primitives(), 1);
   var import_jsx_runtime22 = __toESM(require_jsx_runtime(), 1);
-  var more_vertical_default = /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(import_primitives22.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(import_primitives22.Path, { d: "M13 19h-2v-2h2v2zm0-6h-2v-2h2v2zm0-6h-2V5h2v2z" }) });
+  var more_vertical_default = /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(import_primitives22.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(import_primitives22.Path, { d: "M13 19h-2v-2h2v2zm0-6h-2v-2h2v2zm0-6h-2V5h2v2z" }) });
 
   // packages/icons/build-module/library/next.mjs
   var import_primitives23 = __toESM(require_primitives(), 1);
   var import_jsx_runtime23 = __toESM(require_jsx_runtime(), 1);
-  var next_default = /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_primitives23.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_primitives23.Path, { d: "M6.6 6L5.4 7l4.5 5-4.5 5 1.1 1 5.5-6-5.4-6zm6 0l-1.1 1 4.5 5-4.5 5 1.1 1 5.5-6-5.5-6z" }) });
+  var next_default = /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_primitives23.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_primitives23.Path, { d: "M6.6 6L5.4 7l4.5 5-4.5 5 1.1 1 5.5-6-5.4-6zm6 0l-1.1 1 4.5 5-4.5 5 1.1 1 5.5-6-5.5-6z" }) });
 
   // packages/icons/build-module/library/previous.mjs
   var import_primitives24 = __toESM(require_primitives(), 1);
   var import_jsx_runtime24 = __toESM(require_jsx_runtime(), 1);
-  var previous_default = /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(import_primitives24.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(import_primitives24.Path, { d: "M11.6 7l-1.1-1L5 12l5.5 6 1.1-1L7 12l4.6-5zm6 0l-1.1-1-5.5 6 5.5 6 1.1-1-4.6-5 4.6-5z" }) });
+  var previous_default = /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(import_primitives24.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(import_primitives24.Path, { d: "M11.6 7l-1.1-1L5 12l5.5 6 1.1-1L7 12l4.6-5zm6 0l-1.1-1-5.5 6 5.5 6 1.1-1-4.6-5 4.6-5z" }) });
 
   // packages/icons/build-module/library/scheduled.mjs
   var import_primitives25 = __toESM(require_primitives(), 1);
   var import_jsx_runtime25 = __toESM(require_jsx_runtime(), 1);
-  var scheduled_default = /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(import_primitives25.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(import_primitives25.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M12 18.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13ZM4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm9 1V8h-1.5v3.5h-2V13H13Z" }) });
+  var scheduled_default = /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(import_primitives25.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(import_primitives25.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M12 18.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13ZM4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm9 1V8h-1.5v3.5h-2V13H13Z" }) });
 
   // packages/icons/build-module/library/search.mjs
   var import_primitives26 = __toESM(require_primitives(), 1);
   var import_jsx_runtime26 = __toESM(require_jsx_runtime(), 1);
-  var search_default = /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(import_primitives26.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(import_primitives26.Path, { d: "M13 5c-3.3 0-6 2.7-6 6 0 1.4.5 2.7 1.3 3.7l-3.8 3.8 1.1 1.1 3.8-3.8c1 .8 2.3 1.3 3.7 1.3 3.3 0 6-2.7 6-6S16.3 5 13 5zm0 10.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z" }) });
+  var search_default = /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(import_primitives26.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(import_primitives26.Path, { d: "M13 5c-3.3 0-6 2.7-6 6 0 1.4.5 2.7 1.3 3.7l-3.8 3.8 1.1 1.1 3.8-3.8c1 .8 2.3 1.3 3.7 1.3 3.3 0 6-2.7 6-6S16.3 5 13 5zm0 10.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z" }) });
 
   // packages/icons/build-module/library/seen.mjs
   var import_primitives27 = __toESM(require_primitives(), 1);
   var import_jsx_runtime27 = __toESM(require_jsx_runtime(), 1);
-  var seen_default = /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_primitives27.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_primitives27.Path, { d: "M3.99961 13C4.67043 13.3354 4.6703 13.3357 4.67017 13.3359L4.67298 13.3305C4.67621 13.3242 4.68184 13.3135 4.68988 13.2985C4.70595 13.2686 4.7316 13.2218 4.76695 13.1608C4.8377 13.0385 4.94692 12.8592 5.09541 12.6419C5.39312 12.2062 5.84436 11.624 6.45435 11.0431C7.67308 9.88241 9.49719 8.75 11.9996 8.75C14.502 8.75 16.3261 9.88241 17.5449 11.0431C18.1549 11.624 18.6061 12.2062 18.9038 12.6419C19.0523 12.8592 19.1615 13.0385 19.2323 13.1608C19.2676 13.2218 19.2933 13.2686 19.3093 13.2985C19.3174 13.3135 19.323 13.3242 19.3262 13.3305L19.3291 13.3359C19.3289 13.3357 19.3288 13.3354 19.9996 13C20.6704 12.6646 20.6703 12.6643 20.6701 12.664L20.6697 12.6632L20.6688 12.6614L20.6662 12.6563L20.6583 12.6408C20.6517 12.6282 20.6427 12.6108 20.631 12.5892C20.6078 12.5459 20.5744 12.4852 20.5306 12.4096C20.4432 12.2584 20.3141 12.0471 20.1423 11.7956C19.7994 11.2938 19.2819 10.626 18.5794 9.9569C17.1731 8.61759 14.9972 7.25 11.9996 7.25C9.00203 7.25 6.82614 8.61759 5.41987 9.9569C4.71736 10.626 4.19984 11.2938 3.85694 11.7956C3.68511 12.0471 3.55605 12.2584 3.4686 12.4096C3.42484 12.4852 3.39142 12.5459 3.36818 12.5892C3.35656 12.6108 3.34748 12.6282 3.34092 12.6408L3.33297 12.6563L3.33041 12.6614L3.32948 12.6632L3.32911 12.664C3.32894 12.6643 3.32879 12.6646 3.99961 13ZM11.9996 16C13.9326 16 15.4996 14.433 15.4996 12.5C15.4996 10.567 13.9326 9 11.9996 9C10.0666 9 8.49961 10.567 8.49961 12.5C8.49961 14.433 10.0666 16 11.9996 16Z" }) });
+  var seen_default = /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_primitives27.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_primitives27.Path, { d: "M3.99961 13C4.67043 13.3354 4.6703 13.3357 4.67017 13.3359L4.67298 13.3305C4.67621 13.3242 4.68184 13.3135 4.68988 13.2985C4.70595 13.2686 4.7316 13.2218 4.76695 13.1608C4.8377 13.0385 4.94692 12.8592 5.09541 12.6419C5.39312 12.2062 5.84436 11.624 6.45435 11.0431C7.67308 9.88241 9.49719 8.75 11.9996 8.75C14.502 8.75 16.3261 9.88241 17.5449 11.0431C18.1549 11.624 18.6061 12.2062 18.9038 12.6419C19.0523 12.8592 19.1615 13.0385 19.2323 13.1608C19.2676 13.2218 19.2933 13.2686 19.3093 13.2985C19.3174 13.3135 19.323 13.3242 19.3262 13.3305L19.3291 13.3359C19.3289 13.3357 19.3288 13.3354 19.9996 13C20.6704 12.6646 20.6703 12.6643 20.6701 12.664L20.6697 12.6632L20.6688 12.6614L20.6662 12.6563L20.6583 12.6408C20.6517 12.6282 20.6427 12.6108 20.631 12.5892C20.6078 12.5459 20.5744 12.4852 20.5306 12.4096C20.4432 12.2584 20.3141 12.0471 20.1423 11.7956C19.7994 11.2938 19.2819 10.626 18.5794 9.9569C17.1731 8.61759 14.9972 7.25 11.9996 7.25C9.00203 7.25 6.82614 8.61759 5.41987 9.9569C4.71736 10.626 4.19984 11.2938 3.85694 11.7956C3.68511 12.0471 3.55605 12.2584 3.4686 12.4096C3.42484 12.4852 3.39142 12.5459 3.36818 12.5892C3.35656 12.6108 3.34748 12.6282 3.34092 12.6408L3.33297 12.6563L3.33041 12.6614L3.32948 12.6632L3.32911 12.664C3.32894 12.6643 3.32879 12.6646 3.99961 13ZM11.9996 16C13.9326 16 15.4996 14.433 15.4996 12.5C15.4996 10.567 13.9326 9 11.9996 9C10.0666 9 8.49961 10.567 8.49961 12.5C8.49961 14.433 10.0666 16 11.9996 16Z" }) });
 
   // packages/icons/build-module/library/unseen.mjs
   var import_primitives28 = __toESM(require_primitives(), 1);
   var import_jsx_runtime28 = __toESM(require_jsx_runtime(), 1);
-  var unseen_default = /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_primitives28.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_primitives28.Path, { d: "M20.7 12.7s0-.1-.1-.2c0-.2-.2-.4-.4-.6-.3-.5-.9-1.2-1.6-1.8-.7-.6-1.5-1.3-2.6-1.8l-.6 1.4c.9.4 1.6 1 2.1 1.5.6.6 1.1 1.2 1.4 1.6.1.2.3.4.3.5v.1l.7-.3.7-.3Zm-5.2-9.3-1.8 4c-.5-.1-1.1-.2-1.7-.2-3 0-5.2 1.4-6.6 2.7-.7.7-1.2 1.3-1.6 1.8-.2.3-.3.5-.4.6 0 0 0 .1-.1.2s0 0 .7.3l.7.3V13c0-.1.2-.3.3-.5.3-.4.7-1 1.4-1.6 1.2-1.2 3-2.3 5.5-2.3H13v.3c-.4 0-.8-.1-1.1-.1-1.9 0-3.5 1.6-3.5 3.5s.6 2.3 1.6 2.9l-2 4.4.9.4 7.6-16.2-.9-.4Zm-3 12.6c1.7-.2 3-1.7 3-3.5s-.2-1.4-.6-1.9L12.4 16Z" }) });
+  var unseen_default = /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_primitives28.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_primitives28.Path, { d: "M20.7 12.7s0-.1-.1-.2c0-.2-.2-.4-.4-.6-.3-.5-.9-1.2-1.6-1.8-.7-.6-1.5-1.3-2.6-1.8l-.6 1.4c.9.4 1.6 1 2.1 1.5.6.6 1.1 1.2 1.4 1.6.1.2.3.4.3.5v.1l.7-.3.7-.3Zm-5.2-9.3-1.8 4c-.5-.1-1.1-.2-1.7-.2-3 0-5.2 1.4-6.6 2.7-.7.7-1.2 1.3-1.6 1.8-.2.3-.3.5-.4.6 0 0 0 .1-.1.2s0 0 .7.3l.7.3V13c0-.1.2-.3.3-.5.3-.4.7-1 1.4-1.6 1.2-1.2 3-2.3 5.5-2.3H13v.3c-.4 0-.8-.1-1.1-.1-1.9 0-3.5 1.6-3.5 3.5s.6 2.3 1.6 2.9l-2 4.4.9.4 7.6-16.2-.9-.4Zm-3 12.6c1.7-.2 3-1.7 3-3.5s-.2-1.4-.6-1.9L12.4 16Z" }) });
 
   // packages/icons/build-module/library/upload.mjs
   var import_primitives29 = __toESM(require_primitives(), 1);
   var import_jsx_runtime29 = __toESM(require_jsx_runtime(), 1);
-  var upload_default = /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_primitives29.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_primitives29.Path, { d: "M18.5 15v3.5H13V6.7l4.5 4.1 1-1.1-6.2-5.8-5.8 5.8 1 1.1 4-4v11.7h-6V15H4v5h16v-5z" }) });
+  var upload_default = /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_primitives29.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_primitives29.Path, { d: "M18.5 15v3.5H13V6.7l4.5 4.1 1-1.1-6.2-5.8-5.8 5.8 1 1.1 4-4v11.7h-6V15H4v5h16v-5z" }) });
 
   // packages/icons/build-module/library/video.mjs
   var import_primitives30 = __toESM(require_primitives(), 1);
   var import_jsx_runtime30 = __toESM(require_jsx_runtime(), 1);
-  var video_default = /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(import_primitives30.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", children: /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(import_primitives30.Path, { d: "M18.7 3H5.3C4 3 3 4 3 5.3v13.4C3 20 4 21 5.3 21h13.4c1.3 0 2.3-1 2.3-2.3V5.3C21 4 20 3 18.7 3zm.8 15.7c0 .4-.4.8-.8.8H5.3c-.4 0-.8-.4-.8-.8V5.3c0-.4.4-.8.8-.8h13.4c.4 0 .8.4.8.8v13.4zM10 15l5-3-5-3v6z" }) });
+  var video_default = /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(import_primitives30.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(import_primitives30.Path, { d: "M18.7 3H5.3C4 3 3 4 3 5.3v13.4C3 20 4 21 5.3 21h13.4c1.3 0 2.3-1 2.3-2.3V5.3C21 4 20 3 18.7 3zm.8 15.7c0 .4-.4.8-.8.8H5.3c-.4 0-.8-.4-.8-.8V5.3c0-.4.4-.8.8-.8h13.4c.4 0 .8.4.8.8v13.4zM10 15l5-3-5-3v6z" }) });
 
-  // node_modules/@base-ui/utils/esm/useStableCallback.js
-  var React2 = __toESM(require_react(), 1);
+  // node_modules/@base-ui/utils/esm/safeReact.js
+  var React = __toESM(require_react(), 1);
+  var SafeReact = {
+    ...React
+  };
 
   // node_modules/@base-ui/utils/esm/useRefWithInit.js
-  var React = __toESM(require_react(), 1);
+  var React2 = __toESM(require_react(), 1);
   var UNINITIALIZED = {};
   function useRefWithInit(init2, initArg) {
-    const ref = React.useRef(UNINITIALIZED);
+    const ref = React2.useRef(UNINITIALIZED);
     if (ref.current === UNINITIALIZED) {
       ref.current = init2(initArg);
     }
@@ -1799,11 +1802,11 @@ var wp;
   }
 
   // node_modules/@base-ui/utils/esm/useStableCallback.js
-  var useInsertionEffect = React2[`useInsertionEffect${Math.random().toFixed(1)}`.slice(0, -3)];
+  var useInsertionEffect = SafeReact.useInsertionEffect;
   var useSafeInsertionEffect = (
     // React 17 doesn't have useInsertionEffect.
     useInsertionEffect && // Preact replaces useInsertionEffect with useLayoutEffect and fires too late.
-    useInsertionEffect !== React2.useLayoutEffect ? useInsertionEffect : (fn) => fn()
+    useInsertionEffect !== SafeReact.useLayoutEffect ? useInsertionEffect : (fn) => fn()
   );
   function useStableCallback(callback) {
     const stable = useRefWithInit(createStableCallback).current;
@@ -2315,6 +2318,7 @@ var wp;
     focusOut: () => focusOut,
     imperativeAction: () => imperativeAction,
     incrementPress: () => incrementPress,
+    initial: () => initial,
     inputBlur: () => inputBlur,
     inputChange: () => inputChange,
     inputClear: () => inputClear,
@@ -2324,6 +2328,7 @@ var wp;
     keyboard: () => keyboard,
     linkPress: () => linkPress,
     listNavigation: () => listNavigation,
+    missing: () => missing,
     none: () => none,
     outsidePress: () => outsidePress,
     pointer: () => pointer,
@@ -2367,6 +2372,8 @@ var wp;
   var cancelOpen = "cancel-open";
   var siblingOpen = "sibling-open";
   var disabled = "disabled";
+  var missing = "missing";
+  var initial = "initial";
   var imperativeAction = "imperative-action";
   var swipe = "swipe";
   var windowResize = "window-resize";
@@ -2398,20 +2405,12 @@ var wp;
   }
 
   // node_modules/@base-ui/utils/esm/useId.js
-  var React9 = __toESM(require_react(), 1);
-
-  // node_modules/@base-ui/utils/esm/safeReact.js
   var React8 = __toESM(require_react(), 1);
-  var SafeReact = {
-    ...React8
-  };
-
-  // node_modules/@base-ui/utils/esm/useId.js
   var globalId = 0;
   function useGlobalId(idOverride, prefix = "mui") {
-    const [defaultId, setDefaultId] = React9.useState(idOverride);
+    const [defaultId, setDefaultId] = React8.useState(idOverride);
     const id = idOverride || defaultId;
-    React9.useEffect(() => {
+    React8.useEffect(() => {
       if (defaultId == null) {
         globalId += 1;
         setDefaultId(`${prefix}-${globalId}`);
@@ -2433,14 +2432,14 @@ var wp;
     return useId(idOverride, "base-ui");
   }
 
-  // node_modules/@base-ui/react/esm/internals/useAnimationsFinished.js
-  var ReactDOM = __toESM(require_react_dom(), 1);
+  // node_modules/@base-ui/react/esm/internals/useTransitionStatus.js
+  var React10 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/utils/esm/useOnMount.js
-  var React10 = __toESM(require_react(), 1);
+  var React9 = __toESM(require_react(), 1);
   var EMPTY = [];
   function useOnMount(fn) {
-    React10.useEffect(fn, EMPTY);
+    React9.useEffect(fn, EMPTY);
   }
 
   // node_modules/@base-ui/utils/esm/useAnimationFrame.js
@@ -2531,103 +2530,10 @@ var wp;
     return timeout;
   }
 
-  // node_modules/@base-ui/react/esm/utils/resolveRef.js
-  function resolveRef(maybeRef) {
-    if (maybeRef == null) {
-      return maybeRef;
-    }
-    return "current" in maybeRef ? maybeRef.current : maybeRef;
-  }
-
-  // node_modules/@base-ui/react/esm/internals/stateAttributesMapping.js
-  var TransitionStatusDataAttributes = /* @__PURE__ */ (function(TransitionStatusDataAttributes2) {
-    TransitionStatusDataAttributes2["startingStyle"] = "data-starting-style";
-    TransitionStatusDataAttributes2["endingStyle"] = "data-ending-style";
-    return TransitionStatusDataAttributes2;
-  })({});
-  var STARTING_HOOK = {
-    [TransitionStatusDataAttributes.startingStyle]: ""
-  };
-  var ENDING_HOOK = {
-    [TransitionStatusDataAttributes.endingStyle]: ""
-  };
-  var transitionStatusMapping = {
-    transitionStatus(value) {
-      if (value === "starting") {
-        return STARTING_HOOK;
-      }
-      if (value === "ending") {
-        return ENDING_HOOK;
-      }
-      return null;
-    }
-  };
-
-  // node_modules/@base-ui/react/esm/internals/useAnimationsFinished.js
-  function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false, treatAbortedAsFinished = true) {
-    const frame = useAnimationFrame();
-    return useStableCallback((fnToExecute, signal = null) => {
-      frame.cancel();
-      const element = resolveRef(elementOrRef);
-      if (element == null) {
-        return;
-      }
-      const resolvedElement = element;
-      const done = () => {
-        ReactDOM.flushSync(fnToExecute);
-      };
-      if (typeof resolvedElement.getAnimations !== "function" || globalThis.BASE_UI_ANIMATIONS_DISABLED) {
-        fnToExecute();
-        return;
-      }
-      function exec() {
-        Promise.all(resolvedElement.getAnimations().map((animation) => animation.finished)).then(() => {
-          if (!signal?.aborted) {
-            done();
-          }
-        }).catch(() => {
-          if (treatAbortedAsFinished) {
-            if (!signal?.aborted) {
-              done();
-            }
-            return;
-          }
-          const currentAnimations = resolvedElement.getAnimations();
-          if (!signal?.aborted && currentAnimations.length > 0 && currentAnimations.some((animation) => animation.pending || animation.playState !== "finished")) {
-            exec();
-          }
-        });
-      }
-      if (waitForStartingStyleRemoved) {
-        const startingStyleAttribute = TransitionStatusDataAttributes.startingStyle;
-        if (!resolvedElement.hasAttribute(startingStyleAttribute)) {
-          frame.request(exec);
-          return;
-        }
-        const attributeObserver = new MutationObserver(() => {
-          if (!resolvedElement.hasAttribute(startingStyleAttribute)) {
-            attributeObserver.disconnect();
-            exec();
-          }
-        });
-        attributeObserver.observe(resolvedElement, {
-          attributes: true,
-          attributeFilter: [startingStyleAttribute]
-        });
-        signal?.addEventListener("abort", () => attributeObserver.disconnect(), {
-          once: true
-        });
-        return;
-      }
-      frame.request(exec);
-    });
-  }
-
   // node_modules/@base-ui/react/esm/internals/useTransitionStatus.js
-  var React11 = __toESM(require_react(), 1);
   function useTransitionStatus(open, enableIdleState = false, deferEndingState = false) {
-    const [transitionStatus, setTransitionStatus] = React11.useState(open && enableIdleState ? "idle" : void 0);
-    const [mounted, setMounted] = React11.useState(open);
+    const [transitionStatus, setTransitionStatus] = React10.useState(open && enableIdleState ? "idle" : void 0);
+    const [mounted, setMounted] = React10.useState(open);
     if (open && !mounted) {
       setMounted(true);
       setTransitionStatus("starting");
@@ -2680,6 +2586,30 @@ var wp;
       transitionStatus
     };
   }
+
+  // node_modules/@base-ui/react/esm/internals/stateAttributesMapping.js
+  var TransitionStatusDataAttributes = /* @__PURE__ */ (function(TransitionStatusDataAttributes2) {
+    TransitionStatusDataAttributes2["startingStyle"] = "data-starting-style";
+    TransitionStatusDataAttributes2["endingStyle"] = "data-ending-style";
+    return TransitionStatusDataAttributes2;
+  })({});
+  var STARTING_HOOK = {
+    [TransitionStatusDataAttributes.startingStyle]: ""
+  };
+  var ENDING_HOOK = {
+    [TransitionStatusDataAttributes.endingStyle]: ""
+  };
+  var transitionStatusMapping = {
+    transitionStatus(value) {
+      if (value === "starting") {
+        return STARTING_HOOK;
+      }
+      if (value === "ending") {
+        return ENDING_HOOK;
+      }
+      return null;
+    }
+  };
 
   // node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
   function hasWindow() {
@@ -2898,8 +2828,6 @@ var wp;
 
   // node_modules/@base-ui/react/esm/floating-ui-react/utils/constants.js
   var FOCUSABLE_ATTRIBUTE = "data-base-ui-focusable";
-  var ACTIVE_KEY = "active";
-  var SELECTED_KEY = "selected";
   var TYPEABLE_SELECTOR = "input:not([type='hidden']):not([disabled]),[contenteditable]:not([contenteditable='false']),textarea:not([disabled])";
 
   // node_modules/@base-ui/react/esm/internals/shadowDom.js
@@ -3328,8 +3256,99 @@ var wp;
     };
   }
 
+  // node_modules/@base-ui/utils/esm/useValueAsRef.js
+  function useValueAsRef(value) {
+    const latest = useRefWithInit(createLatestRef, value).current;
+    latest.next = value;
+    useIsoLayoutEffect(latest.effect);
+    return latest;
+  }
+  function createLatestRef(value) {
+    const latest = {
+      current: value,
+      next: value,
+      effect: () => {
+        latest.current = latest.next;
+      }
+    };
+    return latest;
+  }
+
   // node_modules/@base-ui/react/esm/internals/useOpenChangeComplete.js
-  var React12 = __toESM(require_react(), 1);
+  var React11 = __toESM(require_react(), 1);
+
+  // node_modules/@base-ui/react/esm/internals/useAnimationsFinished.js
+  var ReactDOM = __toESM(require_react_dom(), 1);
+
+  // node_modules/@base-ui/react/esm/utils/resolveRef.js
+  function resolveRef(maybeRef) {
+    if (maybeRef == null) {
+      return maybeRef;
+    }
+    return "current" in maybeRef ? maybeRef.current : maybeRef;
+  }
+
+  // node_modules/@base-ui/react/esm/internals/useAnimationsFinished.js
+  function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false, treatAbortedAsFinished = true) {
+    const frame = useAnimationFrame();
+    return useStableCallback((fnToExecute, signal = null) => {
+      frame.cancel();
+      const element = resolveRef(elementOrRef);
+      if (element == null) {
+        return;
+      }
+      const resolvedElement = element;
+      const done = () => {
+        ReactDOM.flushSync(fnToExecute);
+      };
+      if (typeof resolvedElement.getAnimations !== "function" || globalThis.BASE_UI_ANIMATIONS_DISABLED) {
+        fnToExecute();
+        return;
+      }
+      function exec() {
+        Promise.all(resolvedElement.getAnimations().map((animation) => animation.finished)).then(() => {
+          if (!signal?.aborted) {
+            done();
+          }
+        }).catch(() => {
+          if (treatAbortedAsFinished) {
+            if (!signal?.aborted) {
+              done();
+            }
+            return;
+          }
+          const currentAnimations = resolvedElement.getAnimations();
+          if (!signal?.aborted && currentAnimations.length > 0 && currentAnimations.some((animation) => animation.pending || animation.playState !== "finished")) {
+            exec();
+          }
+        });
+      }
+      if (waitForStartingStyleRemoved) {
+        const startingStyleAttribute = TransitionStatusDataAttributes.startingStyle;
+        if (!resolvedElement.hasAttribute(startingStyleAttribute)) {
+          frame.request(exec);
+          return;
+        }
+        const attributeObserver = new MutationObserver(() => {
+          if (!resolvedElement.hasAttribute(startingStyleAttribute)) {
+            attributeObserver.disconnect();
+            exec();
+          }
+        });
+        attributeObserver.observe(resolvedElement, {
+          attributes: true,
+          attributeFilter: [startingStyleAttribute]
+        });
+        signal?.addEventListener("abort", () => attributeObserver.disconnect(), {
+          once: true
+        });
+        return;
+      }
+      frame.request(exec);
+    });
+  }
+
+  // node_modules/@base-ui/react/esm/internals/useOpenChangeComplete.js
   function useOpenChangeComplete(parameters) {
     const {
       enabled = true,
@@ -3339,7 +3358,7 @@ var wp;
     } = parameters;
     const onComplete = useStableCallback(onCompleteParam);
     const runOnceAnimationsFinish = useAnimationsFinished(ref, open, false);
-    React12.useEffect(() => {
+    React11.useEffect(() => {
       if (!enabled) {
         return void 0;
       }
@@ -3352,9 +3371,9 @@ var wp;
   }
 
   // node_modules/@base-ui/utils/esm/useOnFirstRender.js
-  var React13 = __toESM(require_react(), 1);
+  var React12 = __toESM(require_react(), 1);
   function useOnFirstRender(fn) {
-    const ref = React13.useRef(true);
+    const ref = React12.useRef(true);
     if (ref.current) {
       ref.current = false;
       fn();
@@ -3398,7 +3417,7 @@ var wp;
   }
 
   // node_modules/@base-ui/react/esm/floating-ui-react/components/FloatingDelayGroup.js
-  var React14 = __toESM(require_react(), 1);
+  var React13 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useHoverShared.js
   function resolveValue(value, pointerType) {
@@ -3426,10 +3445,13 @@ var wp;
   function isClickLikeOpenEvent(openEventType, interactedInside) {
     return interactedInside || openEventType === "click" || openEventType === "mousedown";
   }
+  function isHoverOpenEvent(openEventType) {
+    return openEventType?.includes("mouse") && openEventType !== "mousedown";
+  }
 
   // node_modules/@base-ui/react/esm/floating-ui-react/components/FloatingDelayGroup.js
   var import_jsx_runtime31 = __toESM(require_jsx_runtime(), 1);
-  var FloatingDelayGroupContext = /* @__PURE__ */ React14.createContext({
+  var FloatingDelayGroupContext = /* @__PURE__ */ React13.createContext({
     hasProvider: false,
     timeoutMs: 0,
     delayRef: {
@@ -3453,13 +3475,13 @@ var wp;
       delay,
       timeoutMs = 0
     } = props;
-    const delayRef = React14.useRef(delay);
-    const initialDelayRef = React14.useRef(delay);
-    const currentIdRef = React14.useRef(null);
-    const currentContextRef = React14.useRef(null);
+    const delayRef = React13.useRef(delay);
+    const initialDelayRef = React13.useRef(delay);
+    const currentIdRef = React13.useRef(null);
+    const currentContextRef = React13.useRef(null);
     const timeout = useTimeout();
     return /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(FloatingDelayGroupContext.Provider, {
-      value: React14.useMemo(() => ({
+      value: React13.useMemo(() => ({
         hasProvider: true,
         delayRef,
         initialDelayRef,
@@ -3474,12 +3496,12 @@ var wp;
   function useDelayGroup(context, options = {
     open: false
   }) {
-    const store = "rootStore" in context ? context.rootStore : context;
-    const floatingId = store.useState("floatingId");
     const {
       open
     } = options;
-    const groupContext = React14.useContext(FloatingDelayGroupContext);
+    const store = "rootStore" in context ? context.rootStore : context;
+    const floatingId = store.useState("floatingId");
+    const groupContext = React13.useContext(FloatingDelayGroupContext);
     const {
       currentIdRef,
       delayRef,
@@ -3489,7 +3511,7 @@ var wp;
       hasProvider,
       timeout
     } = groupContext;
-    const [isInstantPhase, setIsInstantPhase] = React14.useState(false);
+    const [isInstantPhase, setIsInstantPhase] = React13.useState(false);
     useIsoLayoutEffect(() => {
       function unset() {
         setIsInstantPhase(false);
@@ -3543,13 +3565,13 @@ var wp;
         setIsInstantPhase(false);
         prevContext?.setIsInstantPhase(false);
       }
-    }, [open, floatingId, store, currentIdRef, delayRef, timeoutMs, initialDelayRef, currentContextRef, timeout]);
+    }, [open, floatingId, store, currentIdRef, delayRef, initialDelayRef, currentContextRef, timeout]);
     useIsoLayoutEffect(() => {
       return () => {
         currentContextRef.current = null;
       };
     }, [currentContextRef]);
-    return React14.useMemo(() => ({
+    return React13.useMemo(() => ({
       hasProvider,
       delayRef,
       isInstantPhase
@@ -3568,26 +3590,8 @@ var wp;
     };
   }
 
-  // node_modules/@base-ui/utils/esm/useValueAsRef.js
-  function useValueAsRef(value) {
-    const latest = useRefWithInit(createLatestRef, value).current;
-    latest.next = value;
-    useIsoLayoutEffect(latest.effect);
-    return latest;
-  }
-  function createLatestRef(value) {
-    const latest = {
-      current: value,
-      next: value,
-      effect: () => {
-        latest.current = latest.next;
-      }
-    };
-    return latest;
-  }
-
   // node_modules/@base-ui/react/esm/utils/FocusGuard.js
-  var React15 = __toESM(require_react(), 1);
+  var React14 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/utils/esm/visuallyHidden.js
   var visuallyHiddenBase = {
@@ -3613,8 +3617,8 @@ var wp;
 
   // node_modules/@base-ui/react/esm/utils/FocusGuard.js
   var import_jsx_runtime32 = __toESM(require_jsx_runtime(), 1);
-  var FocusGuard = /* @__PURE__ */ React15.forwardRef(function FocusGuard2(props, ref) {
-    const [role, setRole] = React15.useState();
+  var FocusGuard = /* @__PURE__ */ React14.forwardRef(function FocusGuard2(props, ref) {
+    const [role, setRole] = React14.useState();
     useIsoLayoutEffect(() => {
       if (isSafari) {
         setRole("button");
@@ -3642,7 +3646,7 @@ var wp;
   }
 
   // node_modules/@base-ui/react/esm/floating-ui-react/components/FloatingPortal.js
-  var React16 = __toESM(require_react(), 1);
+  var React15 = __toESM(require_react(), 1);
   var ReactDOM2 = __toESM(require_react_dom(), 1);
 
   // node_modules/@base-ui/react/esm/internals/constants.js
@@ -3667,9 +3671,9 @@ var wp;
 
   // node_modules/@base-ui/react/esm/floating-ui-react/components/FloatingPortal.js
   var import_jsx_runtime33 = __toESM(require_jsx_runtime(), 1);
-  var PortalContext = /* @__PURE__ */ React16.createContext(null);
+  var PortalContext = /* @__PURE__ */ React15.createContext(null);
   if (true) PortalContext.displayName = "PortalContext";
-  var usePortalContext = () => React16.useContext(PortalContext);
+  var usePortalContext = () => React15.useContext(PortalContext);
   var attr = createAttribute("portal");
   function useFloatingPortalNode(props = {}) {
     const {
@@ -3681,14 +3685,14 @@ var wp;
     const uniqueId = useId();
     const portalContext = usePortalContext();
     const parentPortalNode = portalContext?.portalNode;
-    const [containerElement, setContainerElement] = React16.useState(null);
-    const [portalNode, setPortalNode] = React16.useState(null);
+    const [containerElement, setContainerElement] = React15.useState(null);
+    const [portalNode, setPortalNode] = React15.useState(null);
     const setPortalNodeRef = useStableCallback((node) => {
       if (node !== null) {
         setPortalNode(node);
       }
     });
-    const containerRef = React16.useRef(null);
+    const containerRef = React15.useRef(null);
     useIsoLayoutEffect(() => {
       if (containerProp === null) {
         if (containerRef.current) {
@@ -3729,14 +3733,14 @@ var wp;
       portalSubtree
     };
   }
-  var FloatingPortal = /* @__PURE__ */ React16.forwardRef(function FloatingPortal2(componentProps, forwardedRef) {
+  var FloatingPortal = /* @__PURE__ */ React15.forwardRef(function FloatingPortal2(componentProps, forwardedRef) {
     const {
+      render: render4,
+      className,
+      style,
       children,
       container,
-      className,
-      render: render4,
       renderGuards,
-      style,
       ...elementProps
     } = componentProps;
     const {
@@ -3748,16 +3752,16 @@ var wp;
       componentProps,
       elementProps
     });
-    const beforeOutsideRef = React16.useRef(null);
-    const afterOutsideRef = React16.useRef(null);
-    const beforeInsideRef = React16.useRef(null);
-    const afterInsideRef = React16.useRef(null);
-    const [focusManagerState, setFocusManagerState] = React16.useState(null);
-    const focusInsideDisabledRef = React16.useRef(false);
+    const beforeOutsideRef = React15.useRef(null);
+    const afterOutsideRef = React15.useRef(null);
+    const beforeInsideRef = React15.useRef(null);
+    const afterInsideRef = React15.useRef(null);
+    const [focusManagerState, setFocusManagerState] = React15.useState(null);
+    const focusInsideDisabledRef = React15.useRef(false);
     const modal = focusManagerState?.modal;
     const open = focusManagerState?.open;
     const shouldRenderGuards = typeof renderGuards === "boolean" ? renderGuards : !!focusManagerState && !focusManagerState.modal && focusManagerState.open && !!portalNode;
-    React16.useEffect(() => {
+    React15.useEffect(() => {
       if (!portalNode || modal) {
         return void 0;
       }
@@ -3776,14 +3780,14 @@ var wp;
       }
       return mergeCleanups(addEventListener(portalNode, "focusin", onFocus, true), addEventListener(portalNode, "focusout", onFocus, true));
     }, [portalNode, modal]);
-    React16.useEffect(() => {
+    React15.useEffect(() => {
       if (!portalNode || open !== false) {
         return;
       }
       enableFocusInside(portalNode);
       focusInsideDisabledRef.current = false;
     }, [open, portalNode]);
-    const portalContextValue = React16.useMemo(() => ({
+    const portalContextValue = React15.useMemo(() => ({
       beforeOutsideRef,
       afterOutsideRef,
       beforeInsideRef,
@@ -3791,7 +3795,7 @@ var wp;
       portalNode,
       setFocusManagerState
     }), [portalNode]);
-    return /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)(React16.Fragment, {
+    return /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)(React15.Fragment, {
       children: [portalSubtree, /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)(PortalContext.Provider, {
         value: portalContextValue,
         children: [shouldRenderGuards && portalNode && /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(FocusGuard, {
@@ -3831,7 +3835,7 @@ var wp;
   if (true) FloatingPortal.displayName = "FloatingPortal";
 
   // node_modules/@base-ui/react/esm/floating-ui-react/components/FloatingTree.js
-  var React17 = __toESM(require_react(), 1);
+  var React16 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/floating-ui-react/utils/createEventEmitter.js
   function createEventEmitter() {
@@ -3854,18 +3858,18 @@ var wp;
 
   // node_modules/@base-ui/react/esm/floating-ui-react/components/FloatingTree.js
   var import_jsx_runtime34 = __toESM(require_jsx_runtime(), 1);
-  var FloatingNodeContext = /* @__PURE__ */ React17.createContext(null);
+  var FloatingNodeContext = /* @__PURE__ */ React16.createContext(null);
   if (true) FloatingNodeContext.displayName = "FloatingNodeContext";
-  var FloatingTreeContext = /* @__PURE__ */ React17.createContext(null);
+  var FloatingTreeContext = /* @__PURE__ */ React16.createContext(null);
   if (true) FloatingTreeContext.displayName = "FloatingTreeContext";
-  var useFloatingParentNodeId = () => React17.useContext(FloatingNodeContext)?.id || null;
+  var useFloatingParentNodeId = () => React16.useContext(FloatingNodeContext)?.id || null;
   var useFloatingTree = (externalTree) => {
-    const contextTree = React17.useContext(FloatingTreeContext);
+    const contextTree = React16.useContext(FloatingTreeContext);
     return externalTree ?? contextTree;
   };
 
   // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useClientPoint.js
-  var React18 = __toESM(require_react(), 1);
+  var React17 = __toESM(require_react(), 1);
   function createVirtualElement(domElement, data) {
     let offsetX = null;
     let offsetY = null;
@@ -3923,19 +3927,22 @@ var wp;
     return event != null && event.clientX != null;
   }
   function useClientPoint(context, props = {}) {
+    const {
+      enabled = true,
+      axis = "both"
+    } = props;
     const store = "rootStore" in context ? context.rootStore : context;
     const open = store.useState("open");
     const floating = store.useState("floatingElement");
     const domReference = store.useState("domReferenceElement");
     const dataRef = store.context.dataRef;
-    const {
-      enabled = true,
-      axis = "both"
-    } = props;
-    const initialRef = React18.useRef(false);
-    const cleanupListenerRef = React18.useRef(null);
-    const [pointerType, setPointerType] = React18.useState();
-    const [reactive, setReactive] = React18.useState([]);
+    const initialRef = React17.useRef(false);
+    const cleanupListenerRef = React17.useRef(null);
+    const [pointerType, setPointerType] = React17.useState();
+    const [reactive, setReactive] = React17.useState([]);
+    const resetReference = useStableCallback((reference2) => {
+      store.set("positionReference", reference2);
+    });
     const setReference = useStableCallback((newX, newY, referenceElement) => {
       if (initialRef.current) {
         return;
@@ -3955,13 +3962,22 @@ var wp;
       if (!open) {
         setReference(event.clientX, event.clientY, event.currentTarget);
       } else if (!cleanupListenerRef.current) {
+        setReference(event.clientX, event.clientY, event.currentTarget);
         setReactive([]);
       }
     });
     const openCheck = isMouseLikePointerType(pointerType) ? floating : open;
-    const addListener = React18.useCallback(() => {
-      if (!openCheck || !enabled) {
+    React17.useEffect(() => {
+      if (!enabled) {
+        resetReference(domReference);
         return void 0;
+      }
+      if (!openCheck) {
+        return void 0;
+      }
+      function cleanupListener() {
+        cleanupListenerRef.current?.();
+        cleanupListenerRef.current = null;
       }
       const win = getWindow(floating);
       function handleMouseMove(event) {
@@ -3969,35 +3985,30 @@ var wp;
         if (!contains(floating, target)) {
           setReference(event.clientX, event.clientY);
         } else {
-          cleanupListenerRef.current?.();
-          cleanupListenerRef.current = null;
+          cleanupListener();
         }
       }
       if (!dataRef.current.openEvent || isMouseBasedEvent(dataRef.current.openEvent)) {
-        const cleanup = () => {
-          cleanupListenerRef.current?.();
-          cleanupListenerRef.current = null;
-        };
         cleanupListenerRef.current = addEventListener(win, "mousemove", handleMouseMove);
-        return cleanup;
+      } else {
+        resetReference(domReference);
       }
-      store.set("positionReference", domReference);
-      return void 0;
-    }, [openCheck, enabled, floating, dataRef, domReference, store, setReference]);
-    React18.useEffect(() => {
-      return addListener();
-    }, [addListener, reactive]);
-    React18.useEffect(() => {
+      return cleanupListener;
+    }, [openCheck, enabled, floating, dataRef, domReference, store, setReference, resetReference, reactive]);
+    React17.useEffect(() => () => {
+      store.set("positionReference", null);
+    }, [store]);
+    React17.useEffect(() => {
       if (enabled && !floating) {
         initialRef.current = false;
       }
     }, [enabled, floating]);
-    React18.useEffect(() => {
+    React17.useEffect(() => {
       if (!enabled && open) {
         initialRef.current = true;
       }
     }, [enabled, open]);
-    const reference = React18.useMemo(() => {
+    const reference = React17.useMemo(() => {
       function setPointerTypeRef(event) {
         setPointerType(event.pointerType);
       }
@@ -4008,14 +4019,14 @@ var wp;
         onMouseEnter: handleReferenceEnterOrMove
       };
     }, [handleReferenceEnterOrMove]);
-    return React18.useMemo(() => enabled ? {
+    return React17.useMemo(() => enabled ? {
       reference,
       trigger: reference
     } : {}, [enabled, reference]);
   }
 
   // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useDismiss.js
-  var React19 = __toESM(require_react(), 1);
+  var React18 = __toESM(require_react(), 1);
   var bubbleHandlerKeys = {
     intentional: "onClick",
     sloppy: "onPointerDown"
@@ -4030,12 +4041,6 @@ var wp;
     };
   }
   function useDismiss(context, props = {}) {
-    const store = "rootStore" in context ? context.rootStore : context;
-    const open = store.useState("open");
-    const floatingElement = store.useState("floatingElement");
-    const {
-      dataRef
-    } = store.context;
     const {
       enabled = true,
       escapeKey: escapeKey2 = true,
@@ -4046,28 +4051,47 @@ var wp;
       bubbles,
       externalTree
     } = props;
+    const store = "rootStore" in context ? context.rootStore : context;
+    const open = store.useState("open");
+    const floatingElement = store.useState("floatingElement");
+    const {
+      dataRef
+    } = store.context;
     const tree = useFloatingTree(externalTree);
     const outsidePressFn = useStableCallback(typeof outsidePressProp === "function" ? outsidePressProp : () => false);
     const outsidePress2 = typeof outsidePressProp === "function" ? outsidePressFn : outsidePressProp;
     const outsidePressEnabled = outsidePress2 !== false;
     const getOutsidePressEventProp = useStableCallback(() => outsidePressEvent);
-    const pressStartedInsideRef = React19.useRef(false);
-    const pressStartPreventedRef = React19.useRef(false);
-    const suppressNextOutsideClickRef = React19.useRef(false);
     const {
       escapeKey: escapeKeyBubbles,
       outsidePress: outsidePressBubbles
     } = normalizeProp(bubbles);
-    const touchStateRef = React19.useRef(null);
+    const pressStartedInsideRef = React18.useRef(false);
+    const pressStartPreventedRef = React18.useRef(false);
+    const suppressNextOutsideClickRef = React18.useRef(false);
+    const isComposingRef = React18.useRef(false);
+    const currentPointerTypeRef = React18.useRef("");
+    const touchStateRef = React18.useRef(null);
     const cancelDismissOnEndTimeout = useTimeout();
     const clearInsideReactTreeTimeout = useTimeout();
     const clearInsideReactTree = useStableCallback(() => {
       clearInsideReactTreeTimeout.clear();
       dataRef.current.insideReactTree = false;
     });
-    const isComposingRef = React19.useRef(false);
-    const currentPointerTypeRef = React19.useRef("");
-    const isReferencePressEnabled = useStableCallback(referencePress);
+    const hasBlockingChild = useStableCallback((bubbleKey) => {
+      const nodeId = dataRef.current.floatingContext?.nodeId;
+      const children = tree ? getNodeChildren(tree.nodesRef.current, nodeId) : [];
+      return children.some((child) => child.context?.open && !child.context.dataRef.current[bubbleKey]);
+    });
+    const isEventWithinOwnElements = useStableCallback((event) => {
+      return isEventTargetWithin(event, store.select("floatingElement")) || isEventTargetWithin(event, store.select("domReferenceElement"));
+    });
+    const closeOnReferencePress = useStableCallback((event) => {
+      if (!referencePress()) {
+        return;
+      }
+      store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerPress, event.nativeEvent));
+    });
     const closeOnEscapeKeyDown = useStableCallback((event) => {
       if (!open || !enabled || !escapeKey2 || event.key !== "Escape") {
         return;
@@ -4075,24 +4099,15 @@ var wp;
       if (isComposingRef.current) {
         return;
       }
-      const nodeId = dataRef.current.floatingContext?.nodeId;
-      const children = tree ? getNodeChildren(tree.nodesRef.current, nodeId) : [];
-      if (!escapeKeyBubbles) {
-        if (children.length > 0) {
-          let shouldDismiss = true;
-          children.forEach((child) => {
-            if (child.context?.open && !child.context.dataRef.current.__escapeKeyBubbles) {
-              shouldDismiss = false;
-            }
-          });
-          if (!shouldDismiss) {
-            return;
-          }
-        }
+      if (!escapeKeyBubbles && hasBlockingChild("__escapeKeyBubbles")) {
+        return;
       }
       const native = isReactEvent(event) ? event.nativeEvent : event;
       const eventDetails = createChangeEventDetails(reason_parts_exports.escapeKey, native);
       store.setOpen(false, eventDetails);
+      if (!eventDetails.isCanceled) {
+        event.preventDefault();
+      }
       if (!escapeKeyBubbles && !eventDetails.isPropagationAllowed) {
         event.stopPropagation();
       }
@@ -4101,7 +4116,31 @@ var wp;
       dataRef.current.insideReactTree = true;
       clearInsideReactTreeTimeout.start(0, clearInsideReactTree);
     });
-    React19.useEffect(() => {
+    const markPressStartedInsideReactTree = useStableCallback((event) => {
+      if (!open || !enabled || event.button !== 0) {
+        return;
+      }
+      const target = getTarget(event.nativeEvent);
+      if (!contains(store.select("floatingElement"), target)) {
+        return;
+      }
+      if (!pressStartedInsideRef.current) {
+        pressStartedInsideRef.current = true;
+        pressStartPreventedRef.current = false;
+      }
+    });
+    const markInsidePressStartPrevented = useStableCallback((event) => {
+      if (!open || !enabled) {
+        return;
+      }
+      if (!(event.defaultPrevented || event.nativeEvent.defaultPrevented)) {
+        return;
+      }
+      if (pressStartedInsideRef.current) {
+        pressStartPreventedRef.current = true;
+      }
+    });
+    React18.useEffect(() => {
       if (!open || !enabled) {
         return void 0;
       }
@@ -4150,10 +4189,14 @@ var wp;
       function isEventWithinFloatingTree(event) {
         const nodeId = dataRef.current.floatingContext?.nodeId;
         const targetIsInsideChildren = tree && getNodeChildren(tree.nodesRef.current, nodeId).some((node) => isEventTargetWithin(event, node.context?.elements.floating));
-        return isEventTargetWithin(event, store.select("floatingElement")) || isEventTargetWithin(event, store.select("domReferenceElement")) || targetIsInsideChildren;
+        return isEventWithinOwnElements(event) || targetIsInsideChildren;
       }
       function closeOnPressOutside(event) {
         if (shouldIgnoreEvent(event)) {
+          if (event.type !== "click" && !isEventWithinOwnElements(event)) {
+            preventedPressSuppressionTimeout.clear();
+            suppressNextOutsideClickRef.current = false;
+          }
           clearInsideReactTree();
           return;
         }
@@ -4209,30 +4252,20 @@ var wp;
         if (typeof outsidePress2 === "function" && !outsidePress2(event)) {
           return;
         }
-        const nodeId = dataRef.current.floatingContext?.nodeId;
-        const children = tree ? getNodeChildren(tree.nodesRef.current, nodeId) : [];
-        if (children.length > 0) {
-          let shouldDismiss = true;
-          children.forEach((child) => {
-            if (child.context?.open && !child.context.dataRef.current.__outsidePressBubbles) {
-              shouldDismiss = false;
-            }
-          });
-          if (!shouldDismiss) {
-            return;
-          }
+        if (hasBlockingChild("__outsidePressBubbles")) {
+          return;
         }
         store.setOpen(false, createChangeEventDetails(reason_parts_exports.outsidePress, event));
         clearInsideReactTree();
       }
       function handlePointerDown(event) {
-        if (getOutsidePressEvent() !== "sloppy" || event.pointerType === "touch" || !store.select("open") || !enabled || isEventTargetWithin(event, store.select("floatingElement")) || isEventTargetWithin(event, store.select("domReferenceElement"))) {
+        if (getOutsidePressEvent() !== "sloppy" || event.pointerType === "touch" || !store.select("open") || !enabled || isEventWithinOwnElements(event)) {
           return;
         }
         closeOnPressOutside(event);
       }
       function handleTouchStart(event) {
-        if (getOutsidePressEvent() !== "sloppy" || !store.select("open") || !enabled || isEventTargetWithin(event, store.select("floatingElement")) || isEventTargetWithin(event, store.select("domReferenceElement"))) {
+        if (getOutsidePressEvent() !== "sloppy" || !store.select("open") || !enabled || isEventWithinOwnElements(event)) {
           return;
         }
         const touch = event.touches[0];
@@ -4312,7 +4345,7 @@ var wp;
         clearInsideReactTree();
       }
       function handleTouchMove(event) {
-        if (getOutsidePressEvent() !== "sloppy" || !touchStateRef.current || isEventTargetWithin(event, store.select("floatingElement")) || isEventTargetWithin(event, store.select("domReferenceElement"))) {
+        if (getOutsidePressEvent() !== "sloppy" || !touchStateRef.current || isEventWithinOwnElements(event)) {
           return;
         }
         const touch = event.touches[0];
@@ -4335,7 +4368,7 @@ var wp;
         addTargetEventListenerOnce(event, handleTouchMove);
       }
       function handleTouchEnd(event) {
-        if (getOutsidePressEvent() !== "sloppy" || !touchStateRef.current || isEventTargetWithin(event, store.select("floatingElement")) || isEventTargetWithin(event, store.select("domReferenceElement"))) {
+        if (getOutsidePressEvent() !== "sloppy" || !touchStateRef.current || isEventWithinOwnElements(event)) {
           return;
         }
         if (touchStateRef.current.dismissOnTouchEnd) {
@@ -4356,50 +4389,16 @@ var wp;
         resetPressStartState();
         suppressNextOutsideClickRef.current = false;
       };
-    }, [dataRef, floatingElement, escapeKey2, outsidePressEnabled, outsidePress2, open, enabled, escapeKeyBubbles, outsidePressBubbles, closeOnEscapeKeyDown, clearInsideReactTree, getOutsidePressEventProp, tree, store, cancelDismissOnEndTimeout]);
-    React19.useEffect(clearInsideReactTree, [outsidePress2, clearInsideReactTree]);
-    const reference = React19.useMemo(() => ({
+    }, [dataRef, floatingElement, escapeKey2, outsidePressEnabled, outsidePress2, open, enabled, escapeKeyBubbles, outsidePressBubbles, closeOnEscapeKeyDown, clearInsideReactTree, getOutsidePressEventProp, hasBlockingChild, isEventWithinOwnElements, tree, store, cancelDismissOnEndTimeout]);
+    React18.useEffect(clearInsideReactTree, [outsidePress2, clearInsideReactTree]);
+    const reference = React18.useMemo(() => ({
       onKeyDown: closeOnEscapeKeyDown,
-      [bubbleHandlerKeys[referencePressEvent]]: (event) => {
-        if (!isReferencePressEnabled()) {
-          return;
-        }
-        store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerPress, event.nativeEvent));
-      },
+      [bubbleHandlerKeys[referencePressEvent]]: closeOnReferencePress,
       ...referencePressEvent !== "intentional" && {
-        onClick(event) {
-          if (!isReferencePressEnabled()) {
-            return;
-          }
-          store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerPress, event.nativeEvent));
-        }
+        onClick: closeOnReferencePress
       }
-    }), [closeOnEscapeKeyDown, store, referencePressEvent, isReferencePressEnabled]);
-    const markPressStartedInsideReactTree = useStableCallback((event) => {
-      if (!open || !enabled || event.button !== 0) {
-        return;
-      }
-      const target = getTarget(event.nativeEvent);
-      if (!contains(store.select("floatingElement"), target)) {
-        return;
-      }
-      if (!pressStartedInsideRef.current) {
-        pressStartedInsideRef.current = true;
-        pressStartPreventedRef.current = false;
-      }
-    });
-    const markInsidePressStartPrevented = useStableCallback((event) => {
-      if (!open || !enabled) {
-        return;
-      }
-      if (!(event.defaultPrevented || event.nativeEvent.defaultPrevented)) {
-        return;
-      }
-      if (pressStartedInsideRef.current) {
-        pressStartPreventedRef.current = true;
-      }
-    });
-    const floating = React19.useMemo(() => ({
+    }), [closeOnEscapeKeyDown, closeOnReferencePress, referencePressEvent]);
+    const floating = React18.useMemo(() => ({
       onKeyDown: closeOnEscapeKeyDown,
       // `onMouseDown` may be blocked if `event.preventDefault()` is called in
       // `onPointerDown`, such as with <NumberField.ScrubArea>.
@@ -4419,7 +4418,7 @@ var wp;
       onTouchEndCapture: markInsideReactTree,
       onTouchMoveCapture: markInsideReactTree
     }), [closeOnEscapeKeyDown, markInsideReactTree, markPressStartedInsideReactTree, markInsidePressStartPrevented]);
-    return React19.useMemo(() => enabled ? {
+    return React18.useMemo(() => enabled ? {
       reference,
       floating,
       trigger: reference
@@ -5699,7 +5698,7 @@ var wp;
   };
 
   // node_modules/@base-ui/react/node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs
-  var React20 = __toESM(require_react(), 1);
+  var React19 = __toESM(require_react(), 1);
   var import_react2 = __toESM(require_react(), 1);
   var ReactDOM3 = __toESM(require_react_dom(), 1);
   var isClient = typeof document !== "undefined";
@@ -5765,7 +5764,7 @@ var wp;
     return Math.round(value * dpr) / dpr;
   }
   function useLatestRef(value) {
-    const ref = React20.useRef(value);
+    const ref = React19.useRef(value);
     index(() => {
       ref.current = value;
     });
@@ -5788,7 +5787,7 @@ var wp;
       whileElementsMounted,
       open
     } = options;
-    const [data, setData] = React20.useState({
+    const [data, setData] = React19.useState({
       x: 0,
       y: 0,
       strategy,
@@ -5796,19 +5795,19 @@ var wp;
       middlewareData: {},
       isPositioned: false
     });
-    const [latestMiddleware, setLatestMiddleware] = React20.useState(middleware);
+    const [latestMiddleware, setLatestMiddleware] = React19.useState(middleware);
     if (!deepEqual(latestMiddleware, middleware)) {
       setLatestMiddleware(middleware);
     }
-    const [_reference, _setReference] = React20.useState(null);
-    const [_floating, _setFloating] = React20.useState(null);
-    const setReference = React20.useCallback((node) => {
+    const [_reference, _setReference] = React19.useState(null);
+    const [_floating, _setFloating] = React19.useState(null);
+    const setReference = React19.useCallback((node) => {
       if (node !== referenceRef.current) {
         referenceRef.current = node;
         _setReference(node);
       }
     }, []);
-    const setFloating = React20.useCallback((node) => {
+    const setFloating = React19.useCallback((node) => {
       if (node !== floatingRef.current) {
         floatingRef.current = node;
         _setFloating(node);
@@ -5816,14 +5815,14 @@ var wp;
     }, []);
     const referenceEl = externalReference || _reference;
     const floatingEl = externalFloating || _floating;
-    const referenceRef = React20.useRef(null);
-    const floatingRef = React20.useRef(null);
-    const dataRef = React20.useRef(data);
+    const referenceRef = React19.useRef(null);
+    const floatingRef = React19.useRef(null);
+    const dataRef = React19.useRef(data);
     const hasWhileElementsMounted = whileElementsMounted != null;
     const whileElementsMountedRef = useLatestRef(whileElementsMounted);
     const platformRef = useLatestRef(platform3);
     const openRef = useLatestRef(open);
-    const update2 = React20.useCallback(() => {
+    const update2 = React19.useCallback(() => {
       if (!referenceRef.current || !floatingRef.current) {
         return;
       }
@@ -5861,7 +5860,7 @@ var wp;
         }));
       }
     }, [open]);
-    const isMountedRef = React20.useRef(false);
+    const isMountedRef = React19.useRef(false);
     index(() => {
       isMountedRef.current = true;
       return () => {
@@ -5878,17 +5877,17 @@ var wp;
         update2();
       }
     }, [referenceEl, floatingEl, update2, whileElementsMountedRef, hasWhileElementsMounted]);
-    const refs = React20.useMemo(() => ({
+    const refs = React19.useMemo(() => ({
       reference: referenceRef,
       floating: floatingRef,
       setReference,
       setFloating
     }), [setReference, setFloating]);
-    const elements = React20.useMemo(() => ({
+    const elements = React19.useMemo(() => ({
       reference: referenceEl,
       floating: floatingEl
     }), [referenceEl, floatingEl]);
-    const floatingStyles = React20.useMemo(() => {
+    const floatingStyles = React19.useMemo(() => {
       const initialStyles = {
         position: strategy,
         left: 0,
@@ -5914,7 +5913,7 @@ var wp;
         top: y2
       };
     }, [strategy, transform, elements.floating, data.x, data.y]);
-    return React20.useMemo(() => ({
+    return React19.useMemo(() => ({
       ...data,
       update: update2,
       refs,
@@ -5970,6 +5969,12 @@ var wp;
     };
   };
 
+  // node_modules/@base-ui/react/esm/utils/popups/popupStoreUtils.js
+  var React24 = __toESM(require_react(), 1);
+
+  // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useSyncedFloatingRootContext.js
+  var React23 = __toESM(require_react(), 1);
+
   // node_modules/@base-ui/utils/esm/store/createSelector.js
   var createSelector = (a2, b2, c2, d2, e2, f2, ...other) => {
     if (other.length > 0) {
@@ -6023,12 +6028,12 @@ var wp;
   };
 
   // node_modules/@base-ui/utils/esm/store/useStore.js
-  var React22 = __toESM(require_react(), 1);
+  var React21 = __toESM(require_react(), 1);
   var import_shim = __toESM(require_shim(), 1);
   var import_with_selector = __toESM(require_with_selector(), 1);
 
   // node_modules/@base-ui/utils/esm/fastHooks.js
-  var React21 = __toESM(require_react(), 1);
+  var React20 = __toESM(require_react(), 1);
   var hooks = [];
   var currentInstance = void 0;
   function getInstance() {
@@ -6060,7 +6065,7 @@ var wp;
     return FastComponent;
   }
   function fastComponentRef(fn) {
-    return /* @__PURE__ */ React21.forwardRef(fastComponent(fn));
+    return /* @__PURE__ */ React20.forwardRef(fastComponent(fn));
   }
   function createInstance() {
     return {
@@ -6075,7 +6080,7 @@ var wp;
     return useStoreImplementation(store, selector2, a1, a2, a3);
   }
   function useStoreR19(store, selector2, a1, a2, a3) {
-    const getSelection = React22.useCallback(() => selector2(store.getSnapshot(), a1, a2, a3), [store, selector2, a1, a2, a3]);
+    const getSelection = React21.useCallback(() => selector2(store.getSnapshot(), a1, a2, a3), [store, selector2, a1, a2, a3]);
     return (0, import_shim.useSyncExternalStore)(store.subscribe, getSelection, getSelection);
   }
   register({
@@ -6264,7 +6269,7 @@ var wp;
   };
 
   // node_modules/@base-ui/utils/esm/store/ReactStore.js
-  var React23 = __toESM(require_react(), 1);
+  var React22 = __toESM(require_react(), 1);
   var ReactStore = class extends Store {
     /**
      * Creates a new ReactStore instance.
@@ -6288,12 +6293,13 @@ var wp;
      * by `useState` is updated before the next render (similarly to React's `useState`).
      */
     useSyncedValue(key, value) {
-      React23.useDebugValue(key);
+      React22.useDebugValue(key);
+      const store = this;
       useIsoLayoutEffect(() => {
-        if (this.state[key] !== value) {
-          this.set(key, value);
+        if (store.state[key] !== value) {
+          store.set(key, value);
         }
-      }, [key, value]);
+      }, [store, key, value]);
     }
     /**
      * Synchronizes a single external value into the store and
@@ -6322,8 +6328,8 @@ var wp;
     useSyncedValues(statePart) {
       const store = this;
       if (true) {
-        React23.useDebugValue(statePart, (p2) => Object.keys(p2));
-        const keys = React23.useRef(Object.keys(statePart)).current;
+        React22.useDebugValue(statePart, (p2) => Object.keys(p2));
+        const keys = React22.useRef(Object.keys(statePart)).current;
         const nextKeys = Object.keys(statePart);
         if (keys.length !== nextKeys.length || keys.some((key, index2) => key !== nextKeys[index2])) {
           console.error("ReactStore.useSyncedValues expects the same prop keys on every render. Keys should be stable.");
@@ -6339,16 +6345,17 @@ var wp;
      * is non-undefined, the store's state at `key` is updated to match `controlled`.
      */
     useControlledProp(key, controlled) {
-      React23.useDebugValue(key);
+      React22.useDebugValue(key);
+      const store = this;
       const isControlled = controlled !== void 0;
       useIsoLayoutEffect(() => {
-        if (isControlled && !Object.is(this.state[key], controlled)) {
-          super.setState({
-            ...this.state,
+        if (isControlled && !Object.is(store.state[key], controlled)) {
+          store.setState({
+            ...store.state,
             [key]: controlled
           });
         }
-      }, [key, controlled, isControlled]);
+      }, [store, key, controlled, isControlled]);
       if (true) {
         const cache = this.controlledValues ??= /* @__PURE__ */ new Map();
         if (!cache.has(key)) {
@@ -6376,7 +6383,7 @@ var wp;
      * @param key Key of the selector to use.
      */
     useState(key, a1, a2, a3) {
-      React23.useDebugValue(key);
+      React22.useDebugValue(key);
       return useStore(this, this.selectors[key], a1, a2, a3);
     }
     /**
@@ -6387,7 +6394,7 @@ var wp;
      * @param fn Function to assign.
      */
     useContextCallback(key, fn) {
-      React23.useDebugValue(key);
+      React22.useDebugValue(key);
       const stableFunction = useStableCallback(fn ?? NOOP);
       this.context[key] = stableFunction;
     }
@@ -6398,7 +6405,7 @@ var wp;
      * @param key Key of the state to set.
      */
     useStateSetter(key) {
-      const ref = React23.useRef(void 0);
+      const ref = React22.useRef(void 0);
       if (ref.current === void 0) {
         ref.current = (value) => {
           this.set(key, value);
@@ -6505,8 +6512,83 @@ var wp;
     };
   };
 
+  // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useSyncedFloatingRootContext.js
+  function useSyncedFloatingRootContext(options) {
+    const {
+      popupStore,
+      treatPopupAsFloatingElement = false,
+      floatingRootContext: floatingRootContextProp,
+      floatingId,
+      nested,
+      onOpenChange
+    } = options;
+    const open = popupStore.useState("open");
+    const referenceElement = popupStore.useState("activeTriggerElement");
+    const floatingElement = popupStore.useState(treatPopupAsFloatingElement ? "popupElement" : "positionerElement");
+    const triggerElements = popupStore.context.triggerElements;
+    const handleOpenChange = onOpenChange;
+    const internalStoreRef = React23.useRef(null);
+    if (floatingRootContextProp === void 0 && internalStoreRef.current === null) {
+      internalStoreRef.current = new FloatingRootStore({
+        open,
+        transitionStatus: void 0,
+        referenceElement,
+        floatingElement,
+        triggerElements,
+        onOpenChange: handleOpenChange,
+        floatingId,
+        syncOnly: true,
+        nested
+      });
+    }
+    const store = floatingRootContextProp ?? internalStoreRef.current;
+    popupStore.useSyncedValue("floatingId", floatingId);
+    useIsoLayoutEffect(() => {
+      const valuesToSync = {
+        open,
+        floatingId,
+        referenceElement,
+        floatingElement
+      };
+      if (isElement(referenceElement)) {
+        valuesToSync.domReferenceElement = referenceElement;
+      }
+      if (store.state.positionReference === store.state.referenceElement) {
+        valuesToSync.positionReference = referenceElement;
+      }
+      store.update(valuesToSync);
+    }, [open, floatingId, referenceElement, floatingElement, store]);
+    store.context.onOpenChange = handleOpenChange;
+    store.context.nested = nested;
+    return store;
+  }
+
   // node_modules/@base-ui/react/esm/utils/popups/popupStoreUtils.js
-  var React24 = __toESM(require_react(), 1);
+  var FOCUSABLE_POPUP_PROPS = {
+    tabIndex: -1,
+    [FOCUSABLE_ATTRIBUTE]: ""
+  };
+  function usePopupStore(externalStore, createStore2, treatPopupAsFloatingElement = false) {
+    const floatingId = useId();
+    const nested = useFloatingParentNodeId() != null;
+    const internalStoreRef = React24.useRef(null);
+    if (externalStore === void 0 && internalStoreRef.current === null) {
+      internalStoreRef.current = createStore2(floatingId, nested);
+    }
+    const store = externalStore ?? internalStoreRef.current;
+    useSyncedFloatingRootContext({
+      popupStore: store,
+      treatPopupAsFloatingElement,
+      floatingRootContext: store.state.floatingRootContext,
+      floatingId,
+      nested,
+      onOpenChange: store.setOpen
+    });
+    return {
+      store,
+      internalStore: internalStoreRef.current
+    };
+  }
   function useTriggerRegistration(id, store) {
     const registeredElementIdRef = React24.useRef(null);
     const registeredElementRef = React24.useRef(null);
@@ -6514,12 +6596,14 @@ var wp;
       if (id === void 0) {
         return;
       }
+      let shouldSyncTriggerCount = false;
       if (registeredElementIdRef.current !== null) {
         const registeredId = registeredElementIdRef.current;
         const registeredElement = registeredElementRef.current;
         const currentElement = store.context.triggerElements.getById(registeredId);
         if (registeredElement && currentElement === registeredElement) {
           store.context.triggerElements.delete(registeredId);
+          shouldSyncTriggerCount = true;
         }
         registeredElementIdRef.current = null;
         registeredElementRef.current = null;
@@ -6528,26 +6612,41 @@ var wp;
         registeredElementIdRef.current = id;
         registeredElementRef.current = element;
         store.context.triggerElements.add(id, element);
+        shouldSyncTriggerCount = true;
+      }
+      if (shouldSyncTriggerCount) {
+        const triggerCount = store.context.triggerElements.size;
+        if (store.select("open") && store.state.triggerCount !== triggerCount) {
+          store.set("triggerCount", triggerCount);
+        }
       }
     }, [store, id]);
+  }
+  function setOpenTriggerState(state, open, trigger) {
+    const triggerId = trigger?.id ?? null;
+    if (triggerId || open) {
+      state.activeTriggerId = triggerId;
+      state.activeTriggerElement = trigger ?? null;
+    }
   }
   function useTriggerDataForwarding(triggerId, triggerElementRef, store, stateUpdates) {
     const isMountedByThisTrigger = store.useState("isMountedByTrigger", triggerId);
     const baseRegisterTrigger = useTriggerRegistration(triggerId, store);
     const registerTrigger = useStableCallback((element) => {
       baseRegisterTrigger(element);
-      if (!element || !store.select("open")) {
+      if (!element) {
         return;
       }
+      const open = store.select("open");
       const activeTriggerId = store.select("activeTriggerId");
       if (activeTriggerId === triggerId) {
         store.update({
           activeTriggerElement: element,
-          ...stateUpdates
+          ...open ? stateUpdates : null
         });
         return;
       }
-      if (activeTriggerId == null) {
+      if (activeTriggerId == null && open) {
         store.update({
           activeTriggerId: triggerId,
           activeTriggerElement: element,
@@ -6570,18 +6669,31 @@ var wp;
   }
   function useImplicitActiveTrigger(store) {
     const open = store.useState("open");
+    const reactiveTriggerCount = store.useState("triggerCount");
     useIsoLayoutEffect(() => {
-      if (open && !store.select("activeTriggerId") && store.context.triggerElements.size === 1) {
+      if (!open) {
+        if (store.state.triggerCount !== 0) {
+          store.set("triggerCount", 0);
+        }
+        return;
+      }
+      const triggerCount = store.context.triggerElements.size;
+      const stateUpdates = {};
+      if (store.state.triggerCount !== triggerCount) {
+        stateUpdates.triggerCount = triggerCount;
+      }
+      if (!store.select("activeTriggerId") && triggerCount === 1) {
         const iteratorResult = store.context.triggerElements.entries().next();
         if (!iteratorResult.done) {
           const [implicitTriggerId, implicitTriggerElement] = iteratorResult.value;
-          store.update({
-            activeTriggerId: implicitTriggerId,
-            activeTriggerElement: implicitTriggerElement
-          });
+          stateUpdates.activeTriggerId = implicitTriggerId;
+          stateUpdates.activeTriggerElement = implicitTriggerElement;
         }
       }
-    }, [open, store]);
+      if (stateUpdates.triggerCount !== void 0 || stateUpdates.activeTriggerId !== void 0) {
+        store.update(stateUpdates);
+      }
+    }, [open, store, reactiveTriggerCount]);
   }
   function useOpenStateTransitions(open, store, onUnmount) {
     const {
@@ -6598,14 +6710,15 @@ var wp;
       store.update({
         activeTriggerId: null,
         activeTriggerElement: null,
-        mounted: false
+        mounted: false,
+        preventUnmountingOnClose: false
       });
       onUnmount?.();
       store.context.onOpenChangeComplete?.(false);
     });
     const preventUnmountingOnClose = store.useState("preventUnmountingOnClose");
     useOpenChangeComplete({
-      enabled: !preventUnmountingOnClose,
+      enabled: mounted && !open && !preventUnmountingOnClose,
       open,
       ref: store.context.popupRef,
       onComplete() {
@@ -6618,6 +6731,16 @@ var wp;
       forceUnmount,
       transitionStatus
     };
+  }
+  function usePopupInteractionProps(store, statePart) {
+    store.useSyncedValues(statePart);
+    useIsoLayoutEffect(() => () => {
+      store.update({
+        activeTriggerProps: EMPTY_OBJECT,
+        inactiveTriggerProps: EMPTY_OBJECT,
+        popupProps: EMPTY_OBJECT
+      });
+    }, [store]);
   }
 
   // node_modules/@base-ui/react/esm/utils/popups/popupTriggerMap.js
@@ -6708,7 +6831,7 @@ var wp;
       floatingElement: null,
       referenceElement: null,
       triggerElements: new PopupTriggerMap(),
-      floatingId: "",
+      floatingId: void 0,
       syncOnly: false,
       nested: false,
       onOpenChange: void 0
@@ -6723,6 +6846,8 @@ var wp;
       mounted: false,
       transitionStatus: void 0,
       floatingRootContext: getEmptyRootContext(),
+      floatingId: void 0,
+      triggerCount: 0,
       preventUnmountingOnClose: false,
       payload: void 0,
       activeTriggerId: null,
@@ -6735,16 +6860,45 @@ var wp;
       popupProps: EMPTY_OBJECT
     };
   }
+  function createPopupFloatingRootContext(triggerElements, floatingId, nested = false) {
+    return new FloatingRootStore({
+      open: false,
+      transitionStatus: void 0,
+      floatingElement: null,
+      referenceElement: null,
+      triggerElements,
+      floatingId,
+      syncOnly: true,
+      nested,
+      onOpenChange: void 0
+    });
+  }
   var activeTriggerIdSelector = createSelector((state) => state.triggerIdProp ?? state.activeTriggerId);
+  var openSelector = createSelector((state) => state.openProp ?? state.open);
+  var popupIdSelector = createSelector((state) => {
+    const popupId = state.popupElement?.id ?? state.floatingId;
+    return popupId || void 0;
+  });
+  function triggerOwnsOpenPopup(state, triggerId) {
+    return triggerId !== void 0 && openSelector(state) && activeTriggerIdSelector(state) === triggerId;
+  }
+  function triggerOwnsOpenPopupOrIsOnlyTrigger(state, triggerId) {
+    if (triggerOwnsOpenPopup(state, triggerId)) {
+      return true;
+    }
+    return triggerId !== void 0 && openSelector(state) && activeTriggerIdSelector(state) == null && state.triggerCount === 1;
+  }
   var popupStoreSelectors = {
-    open: createSelector((state) => state.openProp ?? state.open),
+    open: openSelector,
     mounted: createSelector((state) => state.mounted),
     transitionStatus: createSelector((state) => state.transitionStatus),
     floatingRootContext: createSelector((state) => state.floatingRootContext),
+    triggerCount: createSelector((state) => state.triggerCount),
     preventUnmountingOnClose: createSelector((state) => state.preventUnmountingOnClose),
     payload: createSelector((state) => state.payload),
     activeTriggerId: activeTriggerIdSelector,
     activeTriggerElement: createSelector((state) => state.mounted ? state.activeTriggerElement : null),
+    popupId: popupIdSelector,
     /**
      * Whether the trigger with the given ID was used to open the popup.
      */
@@ -6752,12 +6906,16 @@ var wp;
     /**
      * Whether the popup is open and was activated by a trigger with the given ID.
      */
-    isOpenedByTrigger: createSelector((state, triggerId) => triggerId !== void 0 && activeTriggerIdSelector(state) === triggerId && state.open),
+    isOpenedByTrigger: createSelector((state, triggerId) => triggerOwnsOpenPopup(state, triggerId)),
     /**
      * Whether the popup is mounted and was activated by a trigger with the given ID.
      */
     isMountedByTrigger: createSelector((state, triggerId) => triggerId !== void 0 && activeTriggerIdSelector(state) === triggerId && state.mounted),
     triggerProps: createSelector((state, isActive) => isActive ? state.activeTriggerProps : state.inactiveTriggerProps),
+    /**
+     * Popup id for the trigger that currently owns the open popup.
+     */
+    triggerPopupId: createSelector((state, triggerId) => triggerOwnsOpenPopupOrIsOnlyTrigger(state, triggerId) ? popupIdSelector(state) : void 0),
     popupProps: createSelector((state) => state.popupProps),
     popupElement: createSelector((state) => state.popupElement),
     positionerElement: createSelector((state) => state.positionerElement)
@@ -6814,30 +6972,37 @@ var wp;
       nodeId,
       externalTree
     } = options;
-    const internalRootStore = useFloatingRootContext(options);
-    const rootContext = options.rootContext || internalRootStore;
-    const rootContextElements = {
-      reference: rootContext.useState("referenceElement"),
-      floating: rootContext.useState("floatingElement"),
-      domReference: rootContext.useState("domReferenceElement")
-    };
+    const internalStore = useFloatingRootContext(options);
+    const store = options.rootContext || internalStore;
+    const referenceElement = store.useState("referenceElement");
+    const floatingElement = store.useState("floatingElement");
+    const domReferenceElement = store.useState("domReferenceElement");
+    const open = store.useState("open");
+    const floatingId = store.useState("floatingId");
     const [positionReference, setPositionReferenceRaw] = React25.useState(null);
+    const [localDomReference, setLocalDomReference] = React25.useState(void 0);
+    const [localFloatingElement, setLocalFloatingElement] = React25.useState(void 0);
     const domReferenceRef = React25.useRef(null);
     const tree = useFloatingTree(externalTree);
-    useIsoLayoutEffect(() => {
-      if (rootContextElements.domReference) {
-        domReferenceRef.current = rootContextElements.domReference;
-      }
-    }, [rootContextElements.domReference]);
+    const storeElements = React25.useMemo(() => ({
+      reference: referenceElement,
+      floating: floatingElement,
+      domReference: domReferenceElement
+    }), [referenceElement, floatingElement, domReferenceElement]);
     const position = useFloating({
       ...options,
       elements: {
-        ...rootContextElements,
+        ...storeElements,
         ...positionReference && {
           reference: positionReference
         }
       }
     });
+    const localDomReferenceElement = isElement(localDomReference) ? localDomReference : null;
+    const syncedFloatingElement = localFloatingElement === void 0 ? store.state.floatingElement : localFloatingElement;
+    store.useSyncedValue("referenceElement", localDomReference ?? null);
+    store.useSyncedValue("domReferenceElement", localDomReference === void 0 ? domReferenceElement : localDomReferenceElement);
+    store.useSyncedValue("floatingElement", syncedFloatingElement);
     const setPositionReference = React25.useCallback((node) => {
       const computedPositionReference = isElement(node) ? {
         getBoundingClientRect: () => node.getBoundingClientRect(),
@@ -6847,12 +7012,6 @@ var wp;
       setPositionReferenceRaw(computedPositionReference);
       position.refs.setReference(computedPositionReference);
     }, [position.refs]);
-    const [localDomReference, setLocalDomReference] = React25.useState(void 0);
-    const [localFloatingElement, setLocalFloatingElement] = React25.useState(null);
-    rootContext.useSyncedValue("referenceElement", localDomReference ?? null);
-    const localDomReferenceElement = isElement(localDomReference) ? localDomReference : null;
-    rootContext.useSyncedValue("domReferenceElement", localDomReference === void 0 ? rootContextElements.domReference : localDomReferenceElement);
-    rootContext.useSyncedValue("floatingElement", localFloatingElement);
     const setReference = React25.useCallback((node) => {
       if (isElement(node) || node === null) {
         domReferenceRef.current = node;
@@ -6878,24 +7037,27 @@ var wp;
     }), [position.refs, setReference, setFloating, setPositionReference]);
     const elements = React25.useMemo(() => ({
       ...position.elements,
-      domReference: rootContextElements.domReference
-    }), [position.elements, rootContextElements.domReference]);
-    const open = rootContext.useState("open");
-    const floatingId = rootContext.useState("floatingId");
+      domReference: domReferenceElement
+    }), [position.elements, domReferenceElement]);
     const context = React25.useMemo(() => ({
       ...position,
-      dataRef: rootContext.context.dataRef,
+      dataRef: store.context.dataRef,
       open,
-      onOpenChange: rootContext.setOpen,
-      events: rootContext.context.events,
+      onOpenChange: store.setOpen,
+      events: store.context.events,
       floatingId,
       refs,
       elements,
       nodeId,
-      rootStore: rootContext
-    }), [position, refs, elements, nodeId, rootContext, open, floatingId]);
+      rootStore: store
+    }), [position, refs, elements, nodeId, store, open, floatingId]);
     useIsoLayoutEffect(() => {
-      rootContext.context.dataRef.current.floatingContext = context;
+      if (domReferenceElement) {
+        domReferenceRef.current = domReferenceElement;
+      }
+    }, [domReferenceElement]);
+    useIsoLayoutEffect(() => {
+      store.context.dataRef.current.floatingContext = context;
       const node = tree?.nodesRef.current.find((n2) => n2.id === nodeId);
       if (node) {
         node.context = context;
@@ -6906,71 +7068,27 @@ var wp;
       context,
       refs,
       elements,
-      rootStore: rootContext
-    }), [position, refs, elements, context, rootContext]);
-  }
-
-  // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useSyncedFloatingRootContext.js
-  function useSyncedFloatingRootContext(options) {
-    const {
-      popupStore,
-      treatPopupAsFloatingElement = false,
-      onOpenChange
-    } = options;
-    const floatingId = useId();
-    const nested = useFloatingParentNodeId() != null;
-    const open = popupStore.useState("open");
-    const referenceElement = popupStore.useState("activeTriggerElement");
-    const floatingElement = popupStore.useState(treatPopupAsFloatingElement ? "popupElement" : "positionerElement");
-    const triggerElements = popupStore.context.triggerElements;
-    const store = useRefWithInit(() => new FloatingRootStore({
-      open,
-      transitionStatus: void 0,
-      referenceElement,
-      floatingElement,
-      triggerElements,
-      onOpenChange,
-      floatingId,
-      syncOnly: true,
-      nested
-    })).current;
-    useIsoLayoutEffect(() => {
-      const valuesToSync = {
-        open,
-        floatingId,
-        referenceElement,
-        floatingElement
-      };
-      if (isElement(referenceElement)) {
-        valuesToSync.domReferenceElement = referenceElement;
-      }
-      if (store.state.positionReference === store.state.referenceElement) {
-        valuesToSync.positionReference = referenceElement;
-      }
-      store.update(valuesToSync);
-    }, [open, floatingId, referenceElement, floatingElement, store]);
-    store.context.onOpenChange = onOpenChange;
-    store.context.nested = nested;
-    return store;
+      rootStore: store
+    }), [position, refs, elements, context, store]);
   }
 
   // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useFocus.js
   var React26 = __toESM(require_react(), 1);
   var isMacSafari = isMac && isSafari;
   function useFocus(context, props = {}) {
+    const {
+      enabled = true,
+      delay
+    } = props;
     const store = "rootStore" in context ? context.rootStore : context;
     const {
       events,
       dataRef
     } = store.context;
-    const {
-      enabled = true,
-      delay
-    } = props;
     const blockFocusRef = React26.useRef(false);
     const blockedReferenceRef = React26.useRef(null);
-    const timeout = useTimeout();
     const keyboardModalityRef = React26.useRef(true);
+    const timeout = useTimeout();
     React26.useEffect(() => {
       const domReference = store.select("domReferenceElement");
       if (!enabled) {
@@ -7009,70 +7127,73 @@ var wp;
         events.off("openchange", onOpenChangeLocal);
       };
     }, [events, enabled, store]);
-    const reference = React26.useMemo(() => ({
-      onMouseLeave() {
+    const reference = React26.useMemo(() => {
+      function resetBlockedFocus() {
         blockFocusRef.current = false;
         blockedReferenceRef.current = null;
-      },
-      onFocus(event) {
-        const focusTarget = event.currentTarget;
-        if (blockFocusRef.current) {
-          if (blockedReferenceRef.current === focusTarget) {
-            return;
-          }
-          blockFocusRef.current = false;
-          blockedReferenceRef.current = null;
-        }
-        const target = getTarget(event.nativeEvent);
-        if (isElement(target)) {
-          if (isMacSafari && !event.relatedTarget) {
-            if (!keyboardModalityRef.current && !isTypeableElement(target)) {
+      }
+      return {
+        onMouseLeave() {
+          resetBlockedFocus();
+        },
+        onFocus(event) {
+          const focusTarget = event.currentTarget;
+          if (blockFocusRef.current) {
+            if (blockedReferenceRef.current === focusTarget) {
               return;
             }
-          } else if (!matchesFocusVisible(target)) {
+            resetBlockedFocus();
+          }
+          const target = getTarget(event.nativeEvent);
+          if (isElement(target)) {
+            if (isMacSafari && !event.relatedTarget) {
+              if (!keyboardModalityRef.current && !isTypeableElement(target)) {
+                return;
+              }
+            } else if (!matchesFocusVisible(target)) {
+              return;
+            }
+          }
+          const movedFromOtherEnabledTrigger = isTargetInsideEnabledTrigger(event.relatedTarget, store.context.triggerElements);
+          const {
+            nativeEvent,
+            currentTarget
+          } = event;
+          const delayValue = typeof delay === "function" ? delay() : delay;
+          if (store.select("open") && movedFromOtherEnabledTrigger || delayValue === 0 || delayValue === void 0) {
+            store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerFocus, nativeEvent, currentTarget));
             return;
           }
+          timeout.start(delayValue, () => {
+            if (blockFocusRef.current) {
+              return;
+            }
+            store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerFocus, nativeEvent, currentTarget));
+          });
+        },
+        onBlur(event) {
+          resetBlockedFocus();
+          const relatedTarget = event.relatedTarget;
+          const nativeEvent = event.nativeEvent;
+          const movedToFocusGuard = isElement(relatedTarget) && relatedTarget.hasAttribute(createAttribute("focus-guard")) && relatedTarget.getAttribute("data-type") === "outside";
+          timeout.start(0, () => {
+            const domReference = store.select("domReferenceElement");
+            const activeEl = activeElement(ownerDocument(domReference));
+            if (!relatedTarget && activeEl === domReference) {
+              return;
+            }
+            if (contains(dataRef.current.floatingContext?.refs.floating.current, activeEl) || contains(domReference, activeEl) || movedToFocusGuard) {
+              return;
+            }
+            const nextFocusedElement = relatedTarget ?? activeEl;
+            if (isTargetInsideEnabledTrigger(nextFocusedElement, store.context.triggerElements)) {
+              return;
+            }
+            store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerFocus, nativeEvent));
+          });
         }
-        const movedFromOtherEnabledTrigger = isTargetInsideEnabledTrigger(event.relatedTarget, store.context.triggerElements);
-        const {
-          nativeEvent,
-          currentTarget
-        } = event;
-        const delayValue = typeof delay === "function" ? delay() : delay;
-        if (store.select("open") && movedFromOtherEnabledTrigger || delayValue === 0 || delayValue === void 0) {
-          store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerFocus, nativeEvent, currentTarget));
-          return;
-        }
-        timeout.start(delayValue, () => {
-          if (blockFocusRef.current) {
-            return;
-          }
-          store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerFocus, nativeEvent, currentTarget));
-        });
-      },
-      onBlur(event) {
-        blockFocusRef.current = false;
-        blockedReferenceRef.current = null;
-        const relatedTarget = event.relatedTarget;
-        const nativeEvent = event.nativeEvent;
-        const movedToFocusGuard = isElement(relatedTarget) && relatedTarget.hasAttribute(createAttribute("focus-guard")) && relatedTarget.getAttribute("data-type") === "outside";
-        timeout.start(0, () => {
-          const domReference = store.select("domReferenceElement");
-          const activeEl = activeElement(ownerDocument(domReference));
-          if (!relatedTarget && activeEl === domReference) {
-            return;
-          }
-          if (contains(dataRef.current.floatingContext?.refs.floating.current, activeEl) || contains(domReference, activeEl) || movedToFocusGuard) {
-            return;
-          }
-          const nextFocusedElement = relatedTarget ?? activeEl;
-          if (isTargetInsideEnabledTrigger(nextFocusedElement, store.context.triggerElements)) {
-            return;
-          }
-          store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerFocus, nativeEvent));
-        });
-      }
-    }), [dataRef, store, timeout, delay]);
+      };
+    }, [dataRef, delay, store, timeout]);
     return React26.useMemo(() => enabled ? {
       reference,
       trigger: reference
@@ -7147,8 +7268,8 @@ var wp;
     floatingElement.style.pointerEvents = "auto";
   }
   function useHoverInteractionSharedState(store) {
-    const instance = useRefWithInit(HoverInteraction.create).current;
     const data = store.context.dataRef.current;
+    const instance = useRefWithInit(() => data.hoverInteractionState ?? HoverInteraction.create()).current;
     if (!data.hoverInteractionState) {
       data.hoverInteractionState = instance;
     }
@@ -7158,6 +7279,11 @@ var wp;
 
   // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useHoverFloatingInteraction.js
   function useHoverFloatingInteraction(context, parameters = {}) {
+    const {
+      enabled = true,
+      closeDelay: closeDelayProp = 0,
+      nodeId: nodeIdProp
+    } = parameters;
     const store = "rootStore" in context ? context.rootStore : context;
     const open = store.useState("open");
     const floatingElement = store.useState("floatingElement");
@@ -7165,47 +7291,18 @@ var wp;
     const {
       dataRef
     } = store.context;
-    const {
-      enabled = true,
-      closeDelay: closeDelayProp = 0,
-      nodeId: nodeIdProp
-    } = parameters;
-    const instance = useHoverInteractionSharedState(store);
     const tree = useFloatingTree();
     const parentId = useFloatingParentNodeId();
+    const instance = useHoverInteractionSharedState(store);
+    const childClosedTimeout = useTimeout();
     const isClickLikeOpenEvent2 = useStableCallback(() => {
       return isClickLikeOpenEvent(dataRef.current.openEvent?.type, instance.interactedInside);
     });
     const isHoverOpen = useStableCallback(() => {
-      const type = dataRef.current.openEvent?.type;
-      return type?.includes("mouse") && type !== "mousedown";
+      return isHoverOpenEvent(dataRef.current.openEvent?.type);
     });
-    const isRelatedTargetInsideEnabledTrigger = useStableCallback((target) => {
-      return isTargetInsideEnabledTrigger(target, store.context.triggerElements);
-    });
-    const closeWithDelay = React27.useCallback((event) => {
-      const closeDelay = getDelay(closeDelayProp, "close", instance.pointerType);
-      const close = () => {
-        store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerHover, event));
-        tree?.events.emit("floating.closed", event);
-      };
-      if (closeDelay) {
-        instance.openChangeTimeout.start(closeDelay, close);
-      } else {
-        instance.openChangeTimeout.clear();
-        close();
-      }
-    }, [closeDelayProp, store, instance, tree]);
     const clearPointerEvents = useStableCallback(() => {
       clearSafePolygonPointerEventsMutation(instance);
-    });
-    const handleInteractInside = useStableCallback((event) => {
-      const target = getTarget(event);
-      if (!isInteractiveElement(target)) {
-        instance.interactedInside = false;
-        return;
-      }
-      instance.interactedInside = target?.closest("[aria-haspopup]") != null;
     });
     useIsoLayoutEffect(() => {
       if (!open) {
@@ -7230,7 +7327,9 @@ var wp;
         if (parentFloating) {
           parentFloating.style.pointerEvents = "";
         }
-        const scopeElement = instance.handleCloseOptions?.getScope?.() ?? instance.pointerEventsScopeElement ?? parentFloating ?? ref.closest("[data-rootownerid]") ?? doc.body;
+        const cachedScopeElement = instance.pointerEventsScopeElement !== floatingEl ? instance.pointerEventsScopeElement : null;
+        const parentScopeElement = parentFloating !== floatingEl ? parentFloating : null;
+        const scopeElement = instance.handleCloseOptions?.getScope?.() ?? cachedScopeElement ?? parentScopeElement ?? ref.closest("[data-rootownerid]") ?? doc.body;
         applySafePolygonPointerEventsMutation(instance, {
           scopeElement,
           referenceElement: ref,
@@ -7242,10 +7341,33 @@ var wp;
       }
       return void 0;
     }, [enabled, open, domReferenceElement, floatingElement, instance, isHoverOpen, tree, parentId, clearPointerEvents]);
-    const childClosedTimeout = useTimeout();
     React27.useEffect(() => {
       if (!enabled) {
         return void 0;
+      }
+      function hasParentChildren() {
+        return !!(tree && parentId && getNodeChildren(tree.nodesRef.current, parentId).length > 0);
+      }
+      function closeWithDelay(event) {
+        const closeDelay = getDelay(closeDelayProp, "close", instance.pointerType);
+        const close = () => {
+          store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerHover, event));
+          tree?.events.emit("floating.closed", event);
+        };
+        if (closeDelay) {
+          instance.openChangeTimeout.start(closeDelay, close);
+        } else {
+          instance.openChangeTimeout.clear();
+          close();
+        }
+      }
+      function handleInteractInside(event) {
+        const target = getTarget(event);
+        if (!isInteractiveElement(target)) {
+          instance.interactedInside = false;
+          return;
+        }
+        instance.interactedInside = target?.closest("[aria-haspopup]") != null;
       }
       function onFloatingMouseEnter() {
         instance.openChangeTimeout.clear();
@@ -7254,11 +7376,11 @@ var wp;
         clearPointerEvents();
       }
       function onFloatingMouseLeave(event) {
-        if (tree && parentId && getNodeChildren(tree.nodesRef.current, parentId).length > 0) {
+        if (hasParentChildren() && tree) {
           tree.events.on("floating.closed", onNodeClosed);
           return;
         }
-        if (isRelatedTargetInsideEnabledTrigger(event.relatedTarget)) {
+        if (isTargetInsideEnabledTrigger(event.relatedTarget, store.context.triggerElements)) {
           return;
         }
         const currentNodeId = dataRef.current.floatingContext?.nodeId ?? nodeIdProp;
@@ -7277,7 +7399,7 @@ var wp;
         }
       }
       function onNodeClosed(event) {
-        if (!tree || !parentId || getNodeChildren(tree.nodesRef.current, parentId).length > 0) {
+        if (!tree || !parentId || hasParentChildren()) {
           return;
         }
         childClosedTimeout.start(0, () => {
@@ -7290,7 +7412,7 @@ var wp;
       return mergeCleanups(floating && addEventListener(floating, "mouseenter", onFloatingMouseEnter), floating && addEventListener(floating, "mouseleave", onFloatingMouseLeave), floating && addEventListener(floating, "pointerdown", handleInteractInside, true), () => {
         tree?.events.off("floating.closed", onNodeClosed);
       });
-    }, [enabled, floatingElement, store, dataRef, nodeIdProp, isClickLikeOpenEvent2, isRelatedTargetInsideEnabledTrigger, closeWithDelay, clearPointerEvents, handleInteractInside, instance, tree, parentId, childClosedTimeout]);
+    }, [enabled, floatingElement, store, dataRef, closeDelayProp, nodeIdProp, isClickLikeOpenEvent2, clearPointerEvents, instance, tree, parentId, childClosedTimeout]);
   }
 
   // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useHoverReferenceInteraction.js
@@ -7300,11 +7422,6 @@ var wp;
     current: null
   };
   function useHoverReferenceInteraction(context, props = {}) {
-    const store = "rootStore" in context ? context.rootStore : context;
-    const {
-      dataRef,
-      events
-    } = store.context;
     const {
       enabled = true,
       delay = 0,
@@ -7316,8 +7433,14 @@ var wp;
       externalTree,
       isActiveTrigger = true,
       getHandleCloseContext,
-      isClosing
+      isClosing,
+      shouldOpen: shouldOpenProp
     } = props;
+    const store = "rootStore" in context ? context.rootStore : context;
+    const {
+      dataRef,
+      events
+    } = store.context;
     const tree = useFloatingTree(externalTree);
     const instance = useHoverInteractionSharedState(store);
     const isHoverCloseActiveRef = React28.useRef(false);
@@ -7325,15 +7448,13 @@ var wp;
     const delayRef = useValueAsRef(delay);
     const restMsRef = useValueAsRef(restMs);
     const enabledRef = useValueAsRef(enabled);
+    const shouldOpenRef = useValueAsRef(shouldOpenProp);
     const isClosingRef = useValueAsRef(isClosing);
-    if (isActiveTrigger) {
-      instance.handleCloseOptions = handleCloseRef.current?.__options;
-    }
     const isClickLikeOpenEvent2 = useStableCallback(() => {
       return isClickLikeOpenEvent(dataRef.current.openEvent?.type, instance.interactedInside);
     });
-    const isRelatedTargetInsideEnabledTrigger = useStableCallback((target) => {
-      return isTargetInsideEnabledTrigger(target, store.context.triggerElements);
+    const checkShouldOpen = useStableCallback(() => {
+      return shouldOpenRef.current?.() !== false;
     });
     const isOverInactiveTrigger = useStableCallback((currentDomReference, currentTarget, target) => {
       const allTriggers = store.context.triggerElements;
@@ -7346,19 +7467,6 @@ var wp;
       const targetElement = target;
       return allTriggers.hasMatchingElement((trigger) => contains(trigger, targetElement)) && (!currentDomReference || !contains(currentDomReference, targetElement));
     });
-    const closeWithDelay = useStableCallback((event, runElseBranch = true) => {
-      const closeDelay = getDelay(delayRef.current, "close", instance.pointerType);
-      if (closeDelay) {
-        instance.openChangeTimeout.start(closeDelay, () => {
-          store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerHover, event));
-          tree?.events.emit("floating.closed", event);
-        });
-      } else if (runElseBranch) {
-        instance.openChangeTimeout.clear();
-        store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerHover, event));
-        tree?.events.emit("floating.closed", event);
-      }
-    });
     const cleanupMouseMoveHandler = useStableCallback(() => {
       if (!instance.handler) {
         return;
@@ -7370,6 +7478,9 @@ var wp;
     const clearPointerEvents = useStableCallback(() => {
       clearSafePolygonPointerEventsMutation(instance);
     });
+    if (isActiveTrigger) {
+      instance.handleCloseOptions = handleCloseRef.current?.__options;
+    }
     React28.useEffect(() => cleanupMouseMoveHandler, [cleanupMouseMoveHandler]);
     React28.useEffect(() => {
       if (!enabled) {
@@ -7395,6 +7506,19 @@ var wp;
     React28.useEffect(() => {
       if (!enabled) {
         return void 0;
+      }
+      function closeWithDelay(event, runElseBranch = true) {
+        const closeDelay = getDelay(delayRef.current, "close", instance.pointerType);
+        if (closeDelay) {
+          instance.openChangeTimeout.start(closeDelay, () => {
+            store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerHover, event));
+            tree?.events.emit("floating.closed", event);
+          });
+        } else if (runElseBranch) {
+          instance.openChangeTimeout.clear();
+          store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerHover, event));
+          tree?.events.emit("floating.closed", event);
+        }
       }
       const trigger = triggerElementRef.current ?? (isActiveTrigger ? store.select("domReferenceElement") : null);
       if (!isElement(trigger)) {
@@ -7432,7 +7556,9 @@ var wp;
         const shouldOpenImmediately = isOverInactive && (isOpen || isHoverCloseTransition) || isReenteringSameTriggerDuringCloseTransition;
         const shouldOpen = !isOpen || isOverInactive;
         if (shouldOpenImmediately) {
-          store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerHover, event, triggerNode));
+          if (checkShouldOpen()) {
+            store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerHover, event, triggerNode));
+          }
           return;
         }
         if (isRestOnlyDelay) {
@@ -7440,12 +7566,14 @@ var wp;
         }
         if (openDelay) {
           instance.openChangeTimeout.start(openDelay, () => {
-            if (shouldOpen) {
+            if (shouldOpen && checkShouldOpen()) {
               store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerHover, event, triggerNode));
             }
           });
         } else if (shouldOpen) {
-          store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerHover, event, triggerNode));
+          if (checkShouldOpen()) {
+            store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerHover, event, triggerNode));
+          }
         }
       }
       function onMouseLeave(event) {
@@ -7459,8 +7587,7 @@ var wp;
         instance.restTimeout.clear();
         instance.restTimeoutPending = false;
         const handleCloseContextBase = dataRef.current.floatingContext ?? getHandleCloseContext?.();
-        const ignoreRelatedTargetTrigger = isRelatedTargetInsideEnabledTrigger(event.relatedTarget);
-        if (ignoreRelatedTargetTrigger) {
+        if (isTargetInsideEnabledTrigger(event.relatedTarget, store.context.triggerElements)) {
           return;
         }
         if (handleCloseRef.current && handleCloseContextBase) {
@@ -7496,7 +7623,7 @@ var wp;
         }), addEventListener(trigger, "mouseenter", onMouseEnter), addEventListener(trigger, "mouseleave", onMouseLeave));
       }
       return mergeCleanups(addEventListener(trigger, "mouseenter", onMouseEnter), addEventListener(trigger, "mouseleave", onMouseLeave));
-    }, [cleanupMouseMoveHandler, clearPointerEvents, dataRef, delayRef, closeWithDelay, store, enabled, handleCloseRef, instance, isActiveTrigger, isOverInactiveTrigger, isClickLikeOpenEvent2, isRelatedTargetInsideEnabledTrigger, mouseOnly, move, restMsRef, triggerElementRef, tree, enabledRef, getHandleCloseContext, isClosingRef]);
+    }, [cleanupMouseMoveHandler, clearPointerEvents, dataRef, delayRef, store, enabled, handleCloseRef, instance, isActiveTrigger, isOverInactiveTrigger, isClickLikeOpenEvent2, mouseOnly, move, restMsRef, triggerElementRef, tree, enabledRef, getHandleCloseContext, isClosingRef, checkShouldOpen]);
     return React28.useMemo(() => {
       if (!enabled) {
         return void 0;
@@ -7543,7 +7670,7 @@ var wp;
               return;
             }
             const latestOpen = store.select("open");
-            if (!instance.blockMouseMove && (!latestOpen || isOverInactive)) {
+            if (!instance.blockMouseMove && (!latestOpen || isOverInactive) && checkShouldOpen()) {
               store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerHover, nativeEvent, trigger));
             }
           }
@@ -7559,95 +7686,7 @@ var wp;
           }
         }
       };
-    }, [enabled, instance, isClickLikeOpenEvent2, isOverInactiveTrigger, mouseOnly, store, restMsRef]);
-  }
-
-  // node_modules/@base-ui/react/esm/floating-ui-react/hooks/useInteractions.js
-  var React29 = __toESM(require_react(), 1);
-  function useInteractions(propsList = []) {
-    const referenceDeps = propsList.map((key) => key?.reference);
-    const floatingDeps = propsList.map((key) => key?.floating);
-    const itemDeps = propsList.map((key) => key?.item);
-    const triggerDeps = propsList.map((key) => key?.trigger);
-    const getReferenceProps = React29.useCallback(
-      (userProps) => mergeProps2(userProps, propsList, "reference"),
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      referenceDeps
-    );
-    const getFloatingProps = React29.useCallback(
-      (userProps) => mergeProps2(userProps, propsList, "floating"),
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      floatingDeps
-    );
-    const getItemProps = React29.useCallback(
-      (userProps) => mergeProps2(userProps, propsList, "item"),
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      itemDeps
-    );
-    const getTriggerProps = React29.useCallback(
-      (userProps) => mergeProps2(userProps, propsList, "trigger"),
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      triggerDeps
-    );
-    return React29.useMemo(() => ({
-      getReferenceProps,
-      getFloatingProps,
-      getItemProps,
-      getTriggerProps
-    }), [getReferenceProps, getFloatingProps, getItemProps, getTriggerProps]);
-  }
-  function mergeProps2(userProps, propsList, elementKey) {
-    const eventHandlers = /* @__PURE__ */ new Map();
-    const isItem2 = elementKey === "item";
-    const outputProps = {};
-    if (elementKey === "floating") {
-      outputProps.tabIndex = -1;
-      outputProps[FOCUSABLE_ATTRIBUTE] = "";
-    }
-    for (const key in userProps) {
-      if (isItem2 && userProps) {
-        if (key === ACTIVE_KEY || key === SELECTED_KEY) {
-          continue;
-        }
-      }
-      outputProps[key] = userProps[key];
-    }
-    for (let i2 = 0; i2 < propsList.length; i2 += 1) {
-      let props;
-      const propsOrGetProps = propsList[i2]?.[elementKey];
-      if (typeof propsOrGetProps === "function") {
-        props = userProps ? propsOrGetProps(userProps) : null;
-      } else {
-        props = propsOrGetProps;
-      }
-      if (!props) {
-        continue;
-      }
-      mutablyMergeProps(outputProps, props, isItem2, eventHandlers);
-    }
-    mutablyMergeProps(outputProps, userProps, isItem2, eventHandlers);
-    return outputProps;
-  }
-  function mutablyMergeProps(outputProps, props, isItem2, eventHandlers) {
-    for (const key in props) {
-      const value = props[key];
-      if (isItem2 && (key === ACTIVE_KEY || key === SELECTED_KEY)) {
-        continue;
-      }
-      if (!key.startsWith("on")) {
-        outputProps[key] = value;
-      } else {
-        if (!eventHandlers.has(key)) {
-          eventHandlers.set(key, []);
-        }
-        if (typeof value === "function") {
-          eventHandlers.get(key)?.push(value);
-          outputProps[key] = (...args) => {
-            return eventHandlers.get(key)?.map((fn) => fn(...args)).find((val) => val !== void 0);
-          };
-        }
-      }
-    }
+    }, [enabled, instance, isClickLikeOpenEvent2, isOverInactiveTrigger, mouseOnly, store, restMsRef, checkShouldOpen]);
   }
 
   // node_modules/@base-ui/react/esm/floating-ui-react/safePolygon.js
@@ -7930,7 +7969,7 @@ var wp;
   }
 
   // node_modules/@base-ui/react/esm/utils/useAnchorPositioning.js
-  var React30 = __toESM(require_react(), 1);
+  var React29 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/floating-ui-react/middleware/arrow.js
   var baseArrow = (options) => ({
@@ -8138,6 +8177,7 @@ var wp;
       sticky = false,
       arrowPadding = 5,
       disableAnchorTracking = false,
+      inline: inlineMiddleware,
       // Private parameters
       keepMounted = false,
       floatingRootContext,
@@ -8149,7 +8189,7 @@ var wp;
       lazyFlip = false,
       externalTree
     } = params;
-    const [mountSide, setMountSide] = React30.useState(null);
+    const [mountSide, setMountSide] = React29.useState(null);
     if (!mounted && mountSide !== null) {
       setMountSide(null);
     }
@@ -8197,12 +8237,16 @@ var wp;
       boundary: collisionBoundary === "clipping-ancestors" ? "clippingAncestors" : collisionBoundary,
       padding: collisionPadding
     };
-    const arrowRef = React30.useRef(null);
+    const arrowRef = React29.useRef(null);
     const sideOffsetRef = useValueAsRef(sideOffset);
     const alignOffsetRef = useValueAsRef(alignOffset);
     const sideOffsetDep = typeof sideOffset !== "function" ? sideOffset : 0;
     const alignOffsetDep = typeof alignOffset !== "function" ? alignOffset : 0;
-    const middleware = [offset3((state) => {
+    const middleware = [];
+    if (inlineMiddleware) {
+      middleware.push(inlineMiddleware);
+    }
+    middleware.push(offset3((state) => {
       const data = getOffsetData(state, sideParam, isRtl);
       const sideAxis = typeof sideOffsetRef.current === "function" ? sideOffsetRef.current(data) : sideOffsetRef.current;
       const alignAxis = typeof alignOffsetRef.current === "function" ? alignOffsetRef.current(data) : alignOffsetRef.current;
@@ -8211,7 +8255,7 @@ var wp;
         crossAxis: alignAxis,
         alignmentAxis: alignAxis
       };
-    }, [sideOffsetDep, alignOffsetDep, isRtl, sideParam])];
+    }, [sideOffsetDep, alignOffsetDep, isRtl, sideParam]));
     const shiftDisabled = collisionAvoidanceAlign === "none" && collisionAvoidanceSide !== "shift";
     const crossAxisShiftEnabled = !shiftDisabled && (sticky || shiftCrossAxis || collisionAvoidanceSide === "shift");
     const flipMiddleware = collisionAvoidanceSide === "none" ? null : flip3({
@@ -8292,10 +8336,10 @@ var wp;
         floatingStyle.setProperty("--anchor-width", `${anchorWidth}px`);
         floatingStyle.setProperty("--anchor-height", `${anchorHeight}px`);
       }
-    }), arrow4(() => ({
+    }), arrow4((state) => ({
       // `transform-origin` calculations rely on an element existing. If the arrow hasn't been set,
       // we'll create a fake element.
-      element: arrowRef.current || ownerDocument(arrowRef.current).createElement("div"),
+      element: arrowRef.current || ownerDocument(state.elements.floating).createElement("div"),
       padding: arrowPadding,
       offsetParent: "floating"
     }), [arrowPadding]), {
@@ -8342,7 +8386,7 @@ var wp;
         });
       }
     }, [mounted, floatingRootContext]);
-    const autoUpdateOptions = React30.useMemo(() => ({
+    const autoUpdateOptions = React29.useMemo(() => ({
       elementResize: !disableAnchorTracking && typeof ResizeObserver !== "undefined",
       layoutShift: !disableAnchorTracking && typeof IntersectionObserver !== "undefined"
     }), [disableAnchorTracking]);
@@ -8372,7 +8416,7 @@ var wp;
       sideY
     } = middlewareData.adaptiveOrigin || DEFAULT_SIDES;
     const resolvedPosition = isPositioned ? positionMethod : "fixed";
-    const floatingStyles = React30.useMemo(() => {
+    const floatingStyles = React29.useMemo(() => {
       const base = adaptiveOrigin2 ? {
         position: resolvedPosition,
         [sideX]: x2,
@@ -8386,7 +8430,7 @@ var wp;
       }
       return base;
     }, [adaptiveOrigin2, resolvedPosition, sideX, x2, sideY, y2, originalFloatingStyles, isPositioned]);
-    const registeredPositionReferenceRef = React30.useRef(null);
+    const registeredPositionReferenceRef = React29.useRef(null);
     useIsoLayoutEffect(() => {
       if (!mounted) {
         return;
@@ -8400,7 +8444,7 @@ var wp;
         registeredPositionReferenceRef.current = finalAnchor;
       }
     }, [mounted, refs, anchorDep, anchorValueRef]);
-    React30.useEffect(() => {
+    React29.useEffect(() => {
       if (!mounted) {
         return;
       }
@@ -8413,7 +8457,7 @@ var wp;
         registeredPositionReferenceRef.current = anchorValue.current;
       }
     }, [mounted, refs, anchorDep, anchorValueRef]);
-    React30.useEffect(() => {
+    React29.useEffect(() => {
       if (keepMounted && mounted && elements.domReference && elements.floating) {
         return autoUpdate(elements.domReference, elements.floating, update2, autoUpdateOptions);
       }
@@ -8428,13 +8472,13 @@ var wp;
         setMountSide(renderedSide);
       }
     }, [lazyFlip, mounted, isPositioned, renderedSide]);
-    const arrowStyles = React30.useMemo(() => ({
+    const arrowStyles = React29.useMemo(() => ({
       position: "absolute",
       top: middlewareData.arrow?.y,
       left: middlewareData.arrow?.x
     }), [middlewareData.arrow]);
     const arrowUncentered = middlewareData.arrow?.centerOffset !== 0;
-    return React30.useMemo(() => ({
+    return React29.useMemo(() => ({
       positionerStyles: floatingStyles,
       arrowStyles,
       arrowRef,
@@ -8486,13 +8530,13 @@ var wp;
   }
 
   // node_modules/@base-ui/react/esm/utils/usePopupViewport.js
-  var React33 = __toESM(require_react(), 1);
+  var React32 = __toESM(require_react(), 1);
   var ReactDOM5 = __toESM(require_react_dom(), 1);
 
   // node_modules/@base-ui/utils/esm/usePreviousValue.js
-  var React31 = __toESM(require_react(), 1);
+  var React30 = __toESM(require_react(), 1);
   function usePreviousValue(value) {
-    const [state, setState] = React31.useState({
+    const [state, setState] = React30.useState({
       current: value,
       previous: null
     });
@@ -8506,7 +8550,7 @@ var wp;
   }
 
   // node_modules/@base-ui/react/esm/utils/usePopupAutoResize.js
-  var React32 = __toESM(require_react(), 1);
+  var React31 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/utils/getCssDimensions.js
   function getCssDimensions2(element) {
@@ -8543,13 +8587,13 @@ var wp;
     } = parameters;
     const runOnceAnimationsFinish = useAnimationsFinished(popupElement, true, false);
     const animationFrame = useAnimationFrame();
-    const committedDimensionsRef = React32.useRef(null);
-    const liveDimensionsRef = React32.useRef(null);
-    const isInitialRenderRef = React32.useRef(true);
-    const restoreAnchoringStylesRef = React32.useRef(NOOP);
+    const committedDimensionsRef = React31.useRef(null);
+    const liveDimensionsRef = React31.useRef(null);
+    const isInitialRenderRef = React31.useRef(true);
+    const restoreAnchoringStylesRef = React31.useRef(NOOP);
     const onMeasureLayout = useStableCallback(onMeasureLayoutParam);
     const onMeasureLayoutComplete = useStableCallback(onMeasureLayoutCompleteParam);
-    const anchoringStyles = React32.useMemo(() => {
+    const anchoringStyles = React31.useMemo(() => {
       let isOriginSide = side === "top";
       let isPhysicalLeft = side === "left";
       if (direction === "rtl") {
@@ -8704,15 +8748,15 @@ var wp;
     const positionerElement = store.useState("positionerElement");
     const previousActiveTrigger = usePreviousValue(open ? activeTrigger : null);
     const currentContentKey = usePopupContentKey(activeTriggerId, payload);
-    const capturedNodeRef = React33.useRef(null);
-    const [previousContentNode, setPreviousContentNode] = React33.useState(null);
-    const [newTriggerOffset, setNewTriggerOffset] = React33.useState(null);
-    const currentContainerRef = React33.useRef(null);
-    const previousContainerRef = React33.useRef(null);
+    const capturedNodeRef = React32.useRef(null);
+    const [previousContentNode, setPreviousContentNode] = React32.useState(null);
+    const [newTriggerOffset, setNewTriggerOffset] = React32.useState(null);
+    const currentContainerRef = React32.useRef(null);
+    const previousContainerRef = React32.useRef(null);
     const onAnimationsFinished = useAnimationsFinished(currentContainerRef, true, false);
     const cleanupFrame = useAnimationFrame();
-    const [previousContentDimensions, setPreviousContentDimensions] = React33.useState(null);
-    const [showStartingStyleAttribute, setShowStartingStyleAttribute] = React33.useState(false);
+    const [previousContentDimensions, setPreviousContentDimensions] = React32.useState(null);
+    const [showStartingStyleAttribute, setShowStartingStyleAttribute] = React32.useState(false);
     useIsoLayoutEffect(() => {
       store.set("hasViewport", true);
       return () => {
@@ -8732,7 +8776,7 @@ var wp;
         setPreviousContentDimensions(previousDimensions);
       }
     });
-    const lastHandledTriggerRef = React33.useRef(null);
+    const lastHandledTriggerRef = React32.useRef(null);
     useIsoLayoutEffect(() => {
       if (activeTrigger && previousActiveTrigger && activeTrigger !== previousActiveTrigger && lastHandledTriggerRef.current !== activeTrigger && capturedNodeRef.current) {
         setPreviousContentNode(capturedNodeRef.current);
@@ -8772,7 +8816,7 @@ var wp;
         children
       }, currentContentKey);
     } else {
-      childrenToRender = /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(React33.Fragment, {
+      childrenToRender = /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(React32.Fragment, {
         children: [/* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", {
           "data-previous": true,
           inert: inertValue(true),
@@ -8851,10 +8895,10 @@ var wp;
     };
   }
   function usePopupContentKey(activeTriggerId, payload) {
-    const [contentKey, setContentKey] = React33.useState(0);
-    const previousActiveTriggerIdRef = React33.useRef(activeTriggerId);
-    const previousPayloadRef = React33.useRef(payload);
-    const pendingPayloadUpdateRef = React33.useRef(false);
+    const [contentKey, setContentKey] = React32.useState(0);
+    const previousActiveTriggerIdRef = React32.useRef(activeTriggerId);
+    const previousPayloadRef = React32.useRef(payload);
+    const pendingPayloadUpdateRef = React32.useRef(false);
     useIsoLayoutEffect(() => {
       const previousActiveTriggerId = previousActiveTriggerIdRef.current;
       const previousPayload = previousPayloadRef.current;
@@ -8874,10 +8918,10 @@ var wp;
   }
 
   // node_modules/@base-ui/react/esm/utils/FloatingPortalLite.js
-  var React34 = __toESM(require_react(), 1);
+  var React33 = __toESM(require_react(), 1);
   var ReactDOM6 = __toESM(require_react_dom(), 1);
   var import_jsx_runtime36 = __toESM(require_jsx_runtime(), 1);
-  var FloatingPortalLite = /* @__PURE__ */ React34.forwardRef(function FloatingPortalLite2(componentProps, forwardedRef) {
+  var FloatingPortalLite = /* @__PURE__ */ React33.forwardRef(function FloatingPortalLite2(componentProps, forwardedRef) {
     const {
       children,
       container,
@@ -8898,7 +8942,7 @@ var wp;
     if (!portalSubtree && !portalNode) {
       return null;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(React34.Fragment, {
+    return /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(React33.Fragment, {
       children: [portalSubtree, portalNode && /* @__PURE__ */ ReactDOM6.createPortal(children, portalNode)]
     });
   });
@@ -8920,14 +8964,14 @@ var wp;
   });
 
   // node_modules/@base-ui/react/esm/tooltip/root/TooltipRoot.js
-  var React37 = __toESM(require_react(), 1);
+  var React36 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/tooltip/root/TooltipRootContext.js
-  var React35 = __toESM(require_react(), 1);
-  var TooltipRootContext = /* @__PURE__ */ React35.createContext(void 0);
+  var React34 = __toESM(require_react(), 1);
+  var TooltipRootContext = /* @__PURE__ */ React34.createContext(void 0);
   if (true) TooltipRootContext.displayName = "TooltipRootContext";
   function useTooltipRootContext(optional) {
-    const context = React35.useContext(TooltipRootContext);
+    const context = React34.useContext(TooltipRootContext);
     if (context === void 0 && !optional) {
       throw new Error(true ? "Base UI: TooltipRootContext is missing. Tooltip parts must be placed within <Tooltip.Root>." : formatErrorMessage_default(72));
     }
@@ -8935,7 +8979,7 @@ var wp;
   }
 
   // node_modules/@base-ui/react/esm/tooltip/store/TooltipStore.js
-  var React36 = __toESM(require_react(), 1);
+  var React35 = __toESM(require_react(), 1);
   var ReactDOM7 = __toESM(require_react_dom(), 1);
   var selectors2 = {
     ...popupStoreSelectors,
@@ -8950,15 +8994,18 @@ var wp;
     hasViewport: createSelector((state) => state.hasViewport)
   };
   var TooltipStore = class _TooltipStore extends ReactStore {
-    constructor(initialState) {
-      super({
+    constructor(initialState, floatingId, nested = false) {
+      const triggerElements = new PopupTriggerMap();
+      const state = {
         ...createInitialState(),
         ...initialState
-      }, {
-        popupRef: /* @__PURE__ */ React36.createRef(),
+      };
+      state.floatingRootContext = createPopupFloatingRootContext(triggerElements, floatingId, nested);
+      super(state, {
+        popupRef: /* @__PURE__ */ React35.createRef(),
         onOpenChange: void 0,
         onOpenChangeComplete: void 0,
-        triggerElements: new PopupTriggerMap()
+        triggerElements
       }, selectors2);
     }
     setOpen = (nextOpen, eventDetails) => {
@@ -8986,11 +9033,7 @@ var wp;
         } else if (reason === reason_parts_exports.triggerHover) {
           updatedState.instantType = void 0;
         }
-        const newTriggerId = eventDetails.trigger?.id ?? null;
-        if (newTriggerId || nextOpen) {
-          updatedState.activeTriggerId = newTriggerId;
-          updatedState.activeTriggerElement = eventDetails.trigger ?? null;
-        }
+        setOpenTriggerState(updatedState, nextOpen, eventDetails.trigger);
         this.update(updatedState);
       };
       if (isHover) {
@@ -8999,16 +9042,12 @@ var wp;
         changeState();
       }
     };
+    // Used by trigger clicks to clear a delayed hover open without reporting a public open-state change.
+    cancelPendingOpen(event) {
+      this.state.floatingRootContext.dispatchOpenChange(false, createChangeEventDetails(reason_parts_exports.triggerPress, event));
+    }
     static useStore(externalStore, initialState) {
-      const internalStore = useRefWithInit(() => {
-        return new _TooltipStore(initialState);
-      }).current;
-      const store = externalStore ?? internalStore;
-      const floatingRootContext = useSyncedFloatingRootContext({
-        popupStore: store,
-        onOpenChange: store.setOpen
-      });
-      store.state.floatingRootContext = floatingRootContext;
+      const store = usePopupStore(externalStore, (floatingId, nested) => new _TooltipStore(initialState, floatingId, nested)).store;
       return store;
     }
   };
@@ -9065,27 +9104,27 @@ var wp;
     const openState = store.useState("open");
     const open = !disabled2 && openState;
     const activeTriggerId = store.useState("activeTriggerId");
+    const mounted = store.useState("mounted");
     const payload = store.useState("payload");
     store.useSyncedValues({
       trackCursorAxis,
       disableHoverablePopup
     });
-    useIsoLayoutEffect(() => {
-      if (openState && disabled2) {
-        store.setOpen(false, createChangeEventDetails(reason_parts_exports.disabled));
-      }
-    }, [openState, disabled2, store]);
     store.useSyncedValue("disabled", disabled2);
     useImplicitActiveTrigger(store);
     const {
       forceUnmount,
       transitionStatus
     } = useOpenStateTransitions(open, store);
-    const floatingRootContext = store.select("floatingRootContext");
     const isInstantPhase = store.useState("isInstantPhase");
     const instantType = store.useState("instantType");
     const lastOpenChangeReason = store.useState("lastOpenChangeReason");
-    const previousInstantTypeRef = React37.useRef(null);
+    const previousInstantTypeRef = React36.useRef(null);
+    useIsoLayoutEffect(() => {
+      if (openState && disabled2) {
+        store.setOpen(false, createChangeEventDetails(reason_parts_exports.disabled));
+      }
+    }, [openState, disabled2, store]);
     useIsoLayoutEffect(() => {
       if (transitionStatus === "ending" && lastOpenChangeReason === reason_parts_exports.none || transitionStatus !== "ending" && isInstantPhase) {
         if (instantType !== "delay") {
@@ -9104,13 +9143,32 @@ var wp;
         }
       }
     }, [store, activeTriggerId, open]);
-    const handleImperativeClose = React37.useCallback(() => {
+    const handleImperativeClose = React36.useCallback(() => {
       store.setOpen(false, createChangeEventDetails(reason_parts_exports.imperativeAction));
     }, [store]);
-    React37.useImperativeHandle(actionsRef, () => ({
+    React36.useImperativeHandle(actionsRef, () => ({
       unmount: forceUnmount,
       close: handleImperativeClose
     }), [forceUnmount, handleImperativeClose]);
+    const shouldRenderInteractions = open || mounted || !disabled2 && trackCursorAxis !== "none";
+    return /* @__PURE__ */ (0, import_jsx_runtime37.jsxs)(TooltipRootContext.Provider, {
+      value: store,
+      children: [shouldRenderInteractions && /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(TooltipInteractions, {
+        store,
+        disabled: disabled2,
+        trackCursorAxis
+      }), typeof children === "function" ? children({
+        payload
+      }) : children]
+    });
+  });
+  if (true) TooltipRoot.displayName = "TooltipRoot";
+  function TooltipInteractions({
+    store,
+    disabled: disabled2,
+    trackCursorAxis
+  }) {
+    const floatingRootContext = store.useState("floatingRootContext");
     const dismiss = useDismiss(floatingRootContext, {
       enabled: !disabled2,
       referencePress: () => store.select("closeOnClick")
@@ -9119,37 +9177,26 @@ var wp;
       enabled: !disabled2 && trackCursorAxis !== "none",
       axis: trackCursorAxis === "none" ? void 0 : trackCursorAxis
     });
-    const {
-      getReferenceProps,
-      getFloatingProps,
-      getTriggerProps
-    } = useInteractions([dismiss, clientPoint]);
-    const activeTriggerProps = React37.useMemo(() => getReferenceProps(), [getReferenceProps]);
-    const inactiveTriggerProps = React37.useMemo(() => getTriggerProps(), [getTriggerProps]);
-    const popupProps = React37.useMemo(() => getFloatingProps(), [getFloatingProps]);
-    store.useSyncedValues({
+    const activeTriggerProps = React36.useMemo(() => mergeProps(clientPoint.reference, dismiss.reference), [clientPoint.reference, dismiss.reference]);
+    const inactiveTriggerProps = React36.useMemo(() => mergeProps(clientPoint.trigger, dismiss.trigger), [clientPoint.trigger, dismiss.trigger]);
+    const popupProps = React36.useMemo(() => mergeProps(FOCUSABLE_POPUP_PROPS, clientPoint.floating, dismiss.floating), [clientPoint.floating, dismiss.floating]);
+    usePopupInteractionProps(store, {
       activeTriggerProps,
       inactiveTriggerProps,
       popupProps
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(TooltipRootContext.Provider, {
-      value: store,
-      children: typeof children === "function" ? children({
-        payload
-      }) : children
-    });
-  });
-  if (true) TooltipRoot.displayName = "TooltipRoot";
+    return null;
+  }
 
   // node_modules/@base-ui/react/esm/tooltip/trigger/TooltipTrigger.js
-  var React39 = __toESM(require_react(), 1);
+  var React38 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/tooltip/provider/TooltipProviderContext.js
-  var React38 = __toESM(require_react(), 1);
-  var TooltipProviderContext = /* @__PURE__ */ React38.createContext(void 0);
+  var React37 = __toESM(require_react(), 1);
+  var TooltipProviderContext = /* @__PURE__ */ React37.createContext(void 0);
   if (true) TooltipProviderContext.displayName = "TooltipProviderContext";
   function useTooltipProviderContext() {
-    return React38.useContext(TooltipProviderContext);
+    return React37.useContext(TooltipProviderContext);
   }
 
   // node_modules/@base-ui/react/esm/tooltip/trigger/TooltipTriggerDataAttributes.js
@@ -9163,10 +9210,44 @@ var wp;
   var OPEN_DELAY = 600;
 
   // node_modules/@base-ui/react/esm/tooltip/trigger/TooltipTrigger.js
+  var TOOLTIP_TRIGGER_IDENTIFIER = "data-base-ui-tooltip-trigger";
+  function getTargetElement(event) {
+    if ("composedPath" in event) {
+      const path = event.composedPath();
+      for (let i2 = 0; i2 < path.length; i2 += 1) {
+        const element = path[i2];
+        if (isElement(element)) {
+          return element;
+        }
+      }
+    }
+    const target = event.target;
+    if (isElement(target)) {
+      return target;
+    }
+    return null;
+  }
+  function closestEnabledTooltipTrigger(element) {
+    let current = element;
+    while (current) {
+      if (current.hasAttribute(TOOLTIP_TRIGGER_IDENTIFIER)) {
+        return current;
+      }
+      const parentElement = current.parentElement;
+      if (parentElement) {
+        current = parentElement;
+        continue;
+      }
+      const root = current.getRootNode();
+      current = "host" in root && isElement(root.host) ? root.host : null;
+    }
+    return null;
+  }
   var TooltipTrigger = fastComponentRef(function TooltipTrigger2(componentProps, forwardedRef) {
     const {
-      className,
       render: render4,
+      className,
+      style,
       handle,
       payload,
       disabled: disabledProp,
@@ -9174,7 +9255,6 @@ var wp;
       closeOnClick = true,
       closeDelay,
       id: idProp,
-      style,
       ...elementProps
     } = componentProps;
     const rootContext = useTooltipRootContext(true);
@@ -9186,7 +9266,7 @@ var wp;
     const isTriggerActive = store.useState("isTriggerActive", thisTriggerId);
     const isOpenedByThisTrigger = store.useState("isOpenedByTrigger", thisTriggerId);
     const floatingRootContext = store.useState("floatingRootContext");
-    const triggerElementRef = React39.useRef(null);
+    const triggerElementRef = React38.useRef(null);
     const delayWithDefault = delay ?? OPEN_DELAY;
     const closeDelayWithDefault = closeDelay ?? 0;
     const {
@@ -9205,29 +9285,54 @@ var wp;
     } = useDelayGroup(floatingRootContext, {
       open: isOpenedByThisTrigger
     });
+    const hoverInteraction = useHoverInteractionSharedState(floatingRootContext);
     store.useSyncedValue("isInstantPhase", isInstantPhase);
     const rootDisabled = store.useState("disabled");
     const disabled2 = disabledProp ?? rootDisabled;
+    const disabledRef = useValueAsRef(disabled2);
     const trackCursorAxis = store.useState("trackCursorAxis");
     const disableHoverablePopup = store.useState("disableHoverablePopup");
+    const isNestedTriggerHoveredRef = React38.useRef(false);
+    const nestedTriggerOpenTimeout = useTimeout();
+    const pointerTypeRef = React38.useRef(void 0);
+    function getOpenDelay() {
+      const providerDelay = providerContext?.delay;
+      const groupOpenValue = typeof delayRef.current === "object" ? delayRef.current.open : void 0;
+      let computedOpenDelay = delayWithDefault;
+      if (hasProvider) {
+        if (groupOpenValue !== 0) {
+          computedOpenDelay = delay ?? providerDelay ?? delayWithDefault;
+        } else {
+          computedOpenDelay = 0;
+        }
+      }
+      return computedOpenDelay;
+    }
+    function isEnabledNestedTriggerTarget(target) {
+      const triggerEl = triggerElementRef.current;
+      if (!triggerEl || !target) {
+        return false;
+      }
+      const nearestTrigger = closestEnabledTooltipTrigger(target);
+      return nearestTrigger !== null && nearestTrigger !== triggerEl && contains(triggerEl, nearestTrigger);
+    }
+    function detectNestedTriggerHover(target) {
+      const nestedTriggerHovered = isEnabledNestedTriggerTarget(target);
+      isNestedTriggerHoveredRef.current = nestedTriggerHovered;
+      if (nestedTriggerHovered) {
+        hoverInteraction.openChangeTimeout.clear();
+        hoverInteraction.restTimeout.clear();
+        hoverInteraction.restTimeoutPending = false;
+        nestedTriggerOpenTimeout.clear();
+      }
+      return nestedTriggerHovered;
+    }
     const hoverProps = useHoverReferenceInteraction(floatingRootContext, {
       enabled: !disabled2,
       mouseOnly: true,
       move: false,
       handleClose: !disableHoverablePopup && trackCursorAxis !== "both" ? safePolygon() : null,
-      restMs() {
-        const providerDelay = providerContext?.delay;
-        const groupOpenValue = typeof delayRef.current === "object" ? delayRef.current.open : void 0;
-        let computedRestMs = delayWithDefault;
-        if (hasProvider) {
-          if (groupOpenValue !== 0) {
-            computedRestMs = delay ?? providerDelay ?? delayWithDefault;
-          } else {
-            computedRestMs = 0;
-          }
-        }
-        return computedRestMs;
-      },
+      restMs: getOpenDelay,
       delay() {
         const closeValue = typeof delayRef.current === "object" ? delayRef.current.close : void 0;
         let computedCloseDelay = closeDelayWithDefault;
@@ -9240,24 +9345,80 @@ var wp;
       },
       triggerElementRef,
       isActiveTrigger: isTriggerActive,
-      isClosing: () => store.select("transitionStatus") === "ending"
+      isClosing: () => store.select("transitionStatus") === "ending",
+      shouldOpen() {
+        return !isNestedTriggerHoveredRef.current;
+      }
     });
     const focusProps = useFocus(floatingRootContext, {
       enabled: !disabled2
     }).reference;
+    const handleNestedTriggerHover = (event) => {
+      const wasNestedTriggerHovered = isNestedTriggerHoveredRef.current;
+      const target = getTargetElement(event);
+      const nestedTriggerHovered = detectNestedTriggerHover(target);
+      const triggerEl = triggerElementRef.current;
+      const targetInsideTrigger = triggerEl && target && contains(triggerEl, target);
+      if (nestedTriggerHovered && store.select("open") && store.select("lastOpenChangeReason") === reason_parts_exports.triggerHover) {
+        store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerHover, event));
+        return;
+      }
+      if (wasNestedTriggerHovered && !nestedTriggerHovered && targetInsideTrigger && !disabledRef.current && !store.select("open") && triggerEl && // Match the hover hook's non-strict mouse fallback for mouse-only event sequences.
+      isMouseLikePointerType(pointerTypeRef.current)) {
+        const open = () => {
+          if (!isNestedTriggerHoveredRef.current && !disabledRef.current && !store.select("open")) {
+            store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerHover, event, triggerEl));
+          }
+        };
+        const openDelay = getOpenDelay();
+        if (openDelay === 0) {
+          nestedTriggerOpenTimeout.clear();
+          open();
+        } else {
+          nestedTriggerOpenTimeout.start(openDelay, open);
+        }
+      }
+    };
+    const rootTriggerProps = store.useState("triggerProps", isMountedByThisTrigger);
+    const shouldApplyRootTriggerProps = isMountedByThisTrigger || trackCursorAxis !== "none";
     const state = {
       open: isOpenedByThisTrigger
     };
-    const rootTriggerProps = store.useState("triggerProps", isMountedByThisTrigger);
     const element = useRenderElement("button", componentProps, {
       state,
       ref: [forwardedRef, registerTrigger, triggerElementRef],
-      props: [hoverProps, focusProps, rootTriggerProps, {
-        onPointerDown() {
+      props: [hoverProps, focusProps, shouldApplyRootTriggerProps ? rootTriggerProps : void 0, {
+        onMouseOver(event) {
+          handleNestedTriggerHover(event.nativeEvent);
+        },
+        onFocus(event) {
+          if (isEnabledNestedTriggerTarget(getTargetElement(event.nativeEvent))) {
+            event.preventBaseUIHandler();
+          }
+        },
+        onMouseLeave() {
+          isNestedTriggerHoveredRef.current = false;
+          nestedTriggerOpenTimeout.clear();
+          pointerTypeRef.current = void 0;
+        },
+        onPointerEnter(event) {
+          pointerTypeRef.current = event.pointerType;
+        },
+        onPointerDown(event) {
+          pointerTypeRef.current = event.pointerType;
           store.set("closeOnClick", closeOnClick);
+          if (closeOnClick && !store.select("open")) {
+            store.cancelPendingOpen(event.nativeEvent);
+          }
+        },
+        onClick(event) {
+          if (closeOnClick && !store.select("open")) {
+            store.cancelPendingOpen(event.nativeEvent);
+          }
         },
         id: thisTriggerId,
-        [TooltipTriggerDataAttributes.triggerDisabled]: disabled2 ? "" : void 0
+        [TooltipTriggerDataAttributes.triggerDisabled]: disabled2 ? "" : void 0,
+        [TOOLTIP_TRIGGER_IDENTIFIER]: disabled2 ? void 0 : ""
       }, elementProps],
       stateAttributesMapping: triggerOpenStateMapping
     });
@@ -9266,14 +9427,14 @@ var wp;
   if (true) TooltipTrigger.displayName = "TooltipTrigger";
 
   // node_modules/@base-ui/react/esm/tooltip/portal/TooltipPortal.js
-  var React41 = __toESM(require_react(), 1);
+  var React40 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/tooltip/portal/TooltipPortalContext.js
-  var React40 = __toESM(require_react(), 1);
-  var TooltipPortalContext = /* @__PURE__ */ React40.createContext(void 0);
+  var React39 = __toESM(require_react(), 1);
+  var TooltipPortalContext = /* @__PURE__ */ React39.createContext(void 0);
   if (true) TooltipPortalContext.displayName = "TooltipPortalContext";
   function useTooltipPortalContext() {
-    const value = React40.useContext(TooltipPortalContext);
+    const value = React39.useContext(TooltipPortalContext);
     if (value === void 0) {
       throw new Error(true ? "Base UI: <Tooltip.Portal> is missing." : formatErrorMessage_default(70));
     }
@@ -9282,7 +9443,7 @@ var wp;
 
   // node_modules/@base-ui/react/esm/tooltip/portal/TooltipPortal.js
   var import_jsx_runtime38 = __toESM(require_jsx_runtime(), 1);
-  var TooltipPortal = /* @__PURE__ */ React41.forwardRef(function TooltipPortal2(props, forwardedRef) {
+  var TooltipPortal = /* @__PURE__ */ React40.forwardRef(function TooltipPortal2(props, forwardedRef) {
     const {
       keepMounted = false,
       ...portalProps
@@ -9304,14 +9465,14 @@ var wp;
   if (true) TooltipPortal.displayName = "TooltipPortal";
 
   // node_modules/@base-ui/react/esm/tooltip/positioner/TooltipPositioner.js
-  var React43 = __toESM(require_react(), 1);
+  var React42 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/tooltip/positioner/TooltipPositionerContext.js
-  var React42 = __toESM(require_react(), 1);
-  var TooltipPositionerContext = /* @__PURE__ */ React42.createContext(void 0);
+  var React41 = __toESM(require_react(), 1);
+  var TooltipPositionerContext = /* @__PURE__ */ React41.createContext(void 0);
   if (true) TooltipPositionerContext.displayName = "TooltipPositionerContext";
   function useTooltipPositionerContext() {
-    const context = React42.useContext(TooltipPositionerContext);
+    const context = React41.useContext(TooltipPositionerContext);
     if (context === void 0) {
       throw new Error(true ? "Base UI: TooltipPositionerContext is missing. TooltipPositioner parts must be placed within <Tooltip.Positioner>." : formatErrorMessage_default(71));
     }
@@ -9320,7 +9481,7 @@ var wp;
 
   // node_modules/@base-ui/react/esm/tooltip/positioner/TooltipPositioner.js
   var import_jsx_runtime39 = __toESM(require_jsx_runtime(), 1);
-  var TooltipPositioner = /* @__PURE__ */ React43.forwardRef(function TooltipPositioner2(componentProps, forwardedRef) {
+  var TooltipPositioner = /* @__PURE__ */ React42.forwardRef(function TooltipPositioner2(componentProps, forwardedRef) {
     const {
       render: render4,
       className,
@@ -9367,7 +9528,7 @@ var wp;
       collisionAvoidance,
       adaptiveOrigin: hasViewport ? adaptiveOrigin : void 0
     });
-    const state = React43.useMemo(() => ({
+    const state = React42.useMemo(() => ({
       open,
       side: positioning.side,
       align: positioning.align,
@@ -9390,15 +9551,15 @@ var wp;
   if (true) TooltipPositioner.displayName = "TooltipPositioner";
 
   // node_modules/@base-ui/react/esm/tooltip/popup/TooltipPopup.js
-  var React44 = __toESM(require_react(), 1);
+  var React43 = __toESM(require_react(), 1);
   var stateAttributesMapping = {
     ...popupStateMapping,
     ...transitionStatusMapping
   };
-  var TooltipPopup = /* @__PURE__ */ React44.forwardRef(function TooltipPopup2(componentProps, forwardedRef) {
+  var TooltipPopup = /* @__PURE__ */ React43.forwardRef(function TooltipPopup2(componentProps, forwardedRef) {
     const {
-      className,
       render: render4,
+      className,
       style,
       ...elementProps
     } = componentProps;
@@ -9412,6 +9573,8 @@ var wp;
     const transitionStatus = store.useState("transitionStatus");
     const popupProps = store.useState("popupProps");
     const floatingContext = store.useState("floatingRootContext");
+    const disabled2 = store.useState("disabled");
+    const closeDelay = store.useState("closeDelay");
     useOpenChangeComplete({
       open,
       ref: store.context.popupRef,
@@ -9421,12 +9584,11 @@ var wp;
         }
       }
     });
-    const disabled2 = store.useState("disabled");
-    const closeDelay = store.useState("closeDelay");
     useHoverFloatingInteraction(floatingContext, {
       enabled: !disabled2,
       closeDelay
     });
+    const setPopupElement = store.useStateSetter("popupElement");
     const state = {
       open,
       side,
@@ -9436,7 +9598,7 @@ var wp;
     };
     const element = useRenderElement("div", componentProps, {
       state,
-      ref: [forwardedRef, store.context.popupRef, store.useStateSetter("popupElement")],
+      ref: [forwardedRef, store.context.popupRef, setPopupElement],
       props: [popupProps, getDisabledMountTransitionStyles(transitionStatus), elementProps],
       stateAttributesMapping
     });
@@ -9445,17 +9607,15 @@ var wp;
   if (true) TooltipPopup.displayName = "TooltipPopup";
 
   // node_modules/@base-ui/react/esm/tooltip/arrow/TooltipArrow.js
-  var React45 = __toESM(require_react(), 1);
-  var TooltipArrow = /* @__PURE__ */ React45.forwardRef(function TooltipArrow2(componentProps, forwardedRef) {
+  var React44 = __toESM(require_react(), 1);
+  var TooltipArrow = /* @__PURE__ */ React44.forwardRef(function TooltipArrow2(componentProps, forwardedRef) {
     const {
-      className,
       render: render4,
+      className,
       style,
       ...elementProps
     } = componentProps;
     const store = useTooltipRootContext();
-    const open = store.useState("open");
-    const instantType = store.useState("instantType");
     const {
       arrowRef,
       side,
@@ -9463,6 +9623,8 @@ var wp;
       arrowUncentered,
       arrowStyles
     } = useTooltipPositionerContext();
+    const open = store.useState("open");
+    const instantType = store.useState("instantType");
     const state = {
       open,
       side,
@@ -9484,7 +9646,7 @@ var wp;
   if (true) TooltipArrow.displayName = "TooltipArrow";
 
   // node_modules/@base-ui/react/esm/tooltip/provider/TooltipProvider.js
-  var React46 = __toESM(require_react(), 1);
+  var React45 = __toESM(require_react(), 1);
   var import_jsx_runtime40 = __toESM(require_jsx_runtime(), 1);
   var TooltipProvider = function TooltipProvider2(props) {
     const {
@@ -9492,11 +9654,11 @@ var wp;
       closeDelay,
       timeout = 400
     } = props;
-    const contextValue = React46.useMemo(() => ({
+    const contextValue = React45.useMemo(() => ({
       delay,
       closeDelay
     }), [delay, closeDelay]);
-    const delayValue = React46.useMemo(() => ({
+    const delayValue = React45.useMemo(() => ({
       open: delay,
       close: closeDelay
     }), [delay, closeDelay]);
@@ -9512,7 +9674,7 @@ var wp;
   if (true) TooltipProvider.displayName = "TooltipProvider";
 
   // node_modules/@base-ui/react/esm/tooltip/viewport/TooltipViewport.js
-  var React47 = __toESM(require_react(), 1);
+  var React46 = __toESM(require_react(), 1);
 
   // node_modules/@base-ui/react/esm/tooltip/viewport/TooltipViewportCssVars.js
   var TooltipViewportCssVars = /* @__PURE__ */ (function(TooltipViewportCssVars2) {
@@ -9527,7 +9689,7 @@ var wp;
       "data-activation-direction": value
     } : null
   };
-  var TooltipViewport = /* @__PURE__ */ React47.forwardRef(function TooltipViewport2(componentProps, forwardedRef) {
+  var TooltipViewport = /* @__PURE__ */ React46.forwardRef(function TooltipViewport2(componentProps, forwardedRef) {
     const {
       render: render4,
       className,
@@ -9597,7 +9759,7 @@ var wp;
      * Indicates whether the tooltip is currently open.
      */
     get isOpen() {
-      return this.store.state.open;
+      return this.store.select("open");
     }
   };
   function createTooltipHandle() {
@@ -9610,10 +9772,13 @@ var wp;
   }
 
   // packages/ui/build-module/utils/render-slot-with-children.mjs
-  var import_element9 = __toESM(require_element(), 1);
+  var import_element11 = __toESM(require_element(), 1);
   function renderSlotWithChildren(slot, defaultSlot, children) {
-    return (0, import_element9.cloneElement)(slot ?? defaultSlot, { children });
+    return (0, import_element11.cloneElement)(slot ?? defaultSlot, { children });
   }
+
+  // packages/ui/build-module/utils/theme-provider.mjs
+  var theme = __toESM(require_theme(), 1);
 
   // packages/ui/build-module/lock-unlock.mjs
   var import_private_apis = __toESM(require_private_apis(), 1);
@@ -9622,8 +9787,25 @@ var wp;
     "@wordpress/ui"
   );
 
+  // packages/ui/build-module/utils/theme-provider.mjs
+  function getThemeProvider() {
+    const themePackage = theme;
+    if (themePackage.ThemeProvider) {
+      return themePackage.ThemeProvider;
+    }
+    if (!themePackage.privateApis) {
+      throw new Error(
+        "@wordpress/ui: @wordpress/theme must expose `ThemeProvider` or `privateApis.ThemeProvider`."
+      );
+    }
+    return unlock(
+      themePackage.privateApis
+    ).ThemeProvider;
+  }
+  var ThemeProvider = getThemeProvider();
+
   // packages/ui/build-module/stack/stack.mjs
-  var import_element10 = __toESM(require_element(), 1);
+  var import_element12 = __toESM(require_element(), 1);
   var STYLE_HASH_ATTRIBUTE = "data-wp-hash";
   function getRuntime() {
     const globalScope = globalThis;
@@ -9705,7 +9887,7 @@ var wp;
     }
   }
   if (typeof process === "undefined" || true) {
-    registerStyle("b51ff41489", "@layer wp-ui-utilities, wp-ui-components, wp-ui-compositions, wp-ui-overrides;@layer wp-ui-components{._19ce0419607e1896__stack{display:flex}}");
+    registerStyle("32aba35fe1", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._19ce0419607e1896__stack{display:flex}}}");
   }
   var style_default = { "stack": "_19ce0419607e1896__stack" };
   var gapTokens = {
@@ -9717,7 +9899,7 @@ var wp;
     "2xl": "var(--wpds-dimension-gap-2xl, 32px)",
     "3xl": "var(--wpds-dimension-gap-3xl, 40px)"
   };
-  var Stack = (0, import_element10.forwardRef)(function Stack2({ direction, gap, align, justify, wrap, render: render4, ...props }, ref) {
+  var Stack = (0, import_element12.forwardRef)(function Stack2({ direction, gap, align, justify, wrap, render: render4, ...props }, ref) {
     const style = {
       gap: gap && gapTokens[gap],
       alignItems: align,
@@ -9745,11 +9927,10 @@ var wp;
   });
 
   // packages/ui/build-module/tooltip/popup.mjs
-  var import_element13 = __toESM(require_element(), 1);
-  var import_theme = __toESM(require_theme(), 1);
+  var import_element15 = __toESM(require_element(), 1);
 
   // packages/ui/build-module/tooltip/portal.mjs
-  var import_element11 = __toESM(require_element(), 1);
+  var import_element13 = __toESM(require_element(), 1);
 
   // packages/ui/build-module/utils/wp-compat-overlay-slot.mjs
   var STYLE_HASH_ATTRIBUTE2 = "data-wp-hash";
@@ -9833,7 +10014,7 @@ var wp;
     }
   }
   if (typeof process === "undefined" || true) {
-    registerStyle2("45eb1fe20f", "@layer wp-ui-utilities, wp-ui-components, wp-ui-compositions, wp-ui-overrides;._11fc52b637ff8a7e__slot{inset:0;isolation:isolate;pointer-events:none;position:fixed;z-index:1000000003}@layer wp-ui-utilities{._11fc52b637ff8a7e__slot>*{pointer-events:auto}}");
+    registerStyle2("be37f31c1e", "._11fc52b637ff8a7e__slot{inset:0;isolation:isolate;pointer-events:none;position:fixed;z-index:1000000003}@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{._11fc52b637ff8a7e__slot>*{pointer-events:auto}}}");
   }
   var wp_compat_overlay_slot_default = { "slot": "_11fc52b637ff8a7e__slot" };
   var WP_COMPAT_OVERLAY_SLOT_ATTRIBUTE = "data-wp-compat-overlay-slot";
@@ -9889,7 +10070,7 @@ var wp;
 
   // packages/ui/build-module/tooltip/portal.mjs
   var import_jsx_runtime41 = __toESM(require_jsx_runtime(), 1);
-  var Portal = (0, import_element11.forwardRef)(
+  var Portal = (0, import_element13.forwardRef)(
     function TooltipPortal3({ container, ...restProps }, ref) {
       return /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
         index_parts_exports.Portal,
@@ -9903,7 +10084,7 @@ var wp;
   );
 
   // packages/ui/build-module/tooltip/positioner.mjs
-  var import_element12 = __toESM(require_element(), 1);
+  var import_element14 = __toESM(require_element(), 1);
   var import_jsx_runtime42 = __toESM(require_jsx_runtime(), 1);
   var STYLE_HASH_ATTRIBUTE3 = "data-wp-hash";
   function getRuntime3() {
@@ -9986,14 +10167,14 @@ var wp;
     }
   }
   if (typeof process === "undefined" || true) {
-    registerStyle3("e3ae230cea", "@layer wp-ui-utilities, wp-ui-components, wp-ui-compositions, wp-ui-overrides;@layer wp-ui-utilities{._336cd3e4e743482f__box-sizing{box-sizing:border-box;*,:after,:before{box-sizing:inherit}}}");
+    registerStyle3("10f3806643", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{._336cd3e4e743482f__box-sizing{box-sizing:border-box;*,:after,:before{box-sizing:inherit}}}}");
   }
   var resets_default = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
   if (typeof process === "undefined" || true) {
-    registerStyle3("8293efbb49", '@layer wp-ui-utilities, wp-ui-components, wp-ui-compositions, wp-ui-overrides;@layer wp-ui-components{._480b748dd3510e64__positioner{z-index:var(--wp-ui-tooltip-z-index,initial)}._50096b232db7709d__popup{background-color:var(--wpds-color-bg-surface-neutral-strong,#fff);border-radius:var(--wpds-border-radius-sm,2px);box-shadow:var(--wpds-elevation-sm,0 1px 2px 0 #0000000d,0 2px 3px 0 #0000000a,0 6px 6px 0 #00000008,0 8px 8px 0 #00000005);color:var(--wpds-color-fg-content-neutral,#1e1e1e);font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-sm,12px);line-height:1.4;padding:var(--wpds-dimension-padding-xs,4px) var(--wpds-dimension-padding-sm,8px);@media (forced-colors:active){border-bottom-color:CanvasText;border-bottom-style:solid;border-bottom-width:1px;border-left-color:CanvasText;border-left-style:solid;border-left-width:1px;border-right-color:CanvasText;border-right-style:solid;border-right-width:1px;border-top-color:CanvasText;border-top-style:solid;border-top-width:1px}}}');
+    registerStyle3("789467362f", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._480b748dd3510e64__positioner{z-index:var(--wp-ui-tooltip-z-index,initial)}._50096b232db7709d__popup{background-color:var(--wpds-color-background-surface-neutral-strong,#fff);border-radius:var(--wpds-border-radius-md,4px);box-shadow:var(--wpds-elevation-sm,0 1px 2px 0 #0000000d,0 2px 3px 0 #0000000a,0 6px 6px 0 #00000008,0 8px 8px 0 #00000005);color:var(--wpds-color-foreground-content-neutral,#1e1e1e);font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-sm,12px);line-height:1.4;padding:var(--wpds-dimension-padding-xs,4px) var(--wpds-dimension-padding-sm,8px);@media (forced-colors:active){border-bottom-color:CanvasText;border-bottom-style:solid;border-bottom-width:1px;border-left-color:CanvasText;border-left-style:solid;border-left-width:1px;border-right-color:CanvasText;border-right-style:solid;border-right-width:1px;border-top-color:CanvasText;border-top-style:solid;border-top-width:1px}}}}');
   }
   var style_default2 = { "positioner": "_480b748dd3510e64__positioner", "popup": "_50096b232db7709d__popup" };
-  var Positioner = (0, import_element12.forwardRef)(
+  var Positioner = (0, import_element14.forwardRef)(
     function TooltipPositioner3({ align = "center", className, side = "top", sideOffset = 4, ...props }, ref) {
       return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
         index_parts_exports.Positioner,
@@ -10096,32 +10277,20 @@ var wp;
     }
   }
   if (typeof process === "undefined" || true) {
-    registerStyle4("8293efbb49", '@layer wp-ui-utilities, wp-ui-components, wp-ui-compositions, wp-ui-overrides;@layer wp-ui-components{._480b748dd3510e64__positioner{z-index:var(--wp-ui-tooltip-z-index,initial)}._50096b232db7709d__popup{background-color:var(--wpds-color-bg-surface-neutral-strong,#fff);border-radius:var(--wpds-border-radius-sm,2px);box-shadow:var(--wpds-elevation-sm,0 1px 2px 0 #0000000d,0 2px 3px 0 #0000000a,0 6px 6px 0 #00000008,0 8px 8px 0 #00000005);color:var(--wpds-color-fg-content-neutral,#1e1e1e);font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-sm,12px);line-height:1.4;padding:var(--wpds-dimension-padding-xs,4px) var(--wpds-dimension-padding-sm,8px);@media (forced-colors:active){border-bottom-color:CanvasText;border-bottom-style:solid;border-bottom-width:1px;border-left-color:CanvasText;border-left-style:solid;border-left-width:1px;border-right-color:CanvasText;border-right-style:solid;border-right-width:1px;border-top-color:CanvasText;border-top-style:solid;border-top-width:1px}}}');
+    registerStyle4("789467362f", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._480b748dd3510e64__positioner{z-index:var(--wp-ui-tooltip-z-index,initial)}._50096b232db7709d__popup{background-color:var(--wpds-color-background-surface-neutral-strong,#fff);border-radius:var(--wpds-border-radius-md,4px);box-shadow:var(--wpds-elevation-sm,0 1px 2px 0 #0000000d,0 2px 3px 0 #0000000a,0 6px 6px 0 #00000008,0 8px 8px 0 #00000005);color:var(--wpds-color-foreground-content-neutral,#1e1e1e);font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-sm,12px);line-height:1.4;padding:var(--wpds-dimension-padding-xs,4px) var(--wpds-dimension-padding-sm,8px);@media (forced-colors:active){border-bottom-color:CanvasText;border-bottom-style:solid;border-bottom-width:1px;border-left-color:CanvasText;border-left-style:solid;border-left-width:1px;border-right-color:CanvasText;border-right-style:solid;border-right-width:1px;border-top-color:CanvasText;border-top-style:solid;border-top-width:1px}}}}');
   }
   var style_default3 = { "positioner": "_480b748dd3510e64__positioner", "popup": "_50096b232db7709d__popup" };
-  var ThemeProvider = unlock(import_theme.privateApis).ThemeProvider;
-  var Popup = (0, import_element13.forwardRef)(function TooltipPopup3({ portal, positioner, children, className, ...props }, ref) {
-    const popupContent = (
-      /* This should ideally use whatever dark color makes sense,
-       * and not be hardcoded to #1e1e1e. The solutions would be to:
-       *   - review the design of the tooltip, in case we want to stop
-       *     hardcoding it to a dark background
-       *   - create new semantic tokens as needed (aliasing either the
-       *     "inverted bg" or "perma-dark bg" private tokens) and have
-       *     Tooltip.Popup use them;
-       *   - remove the hardcoded `bg` setting from the `ThemeProvider`
-       *     below
-       */
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ThemeProvider, { color: { bg: "#1e1e1e" }, children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
-        index_parts_exports.Popup,
-        {
-          ref,
-          className: clsx_default(style_default3.popup, className),
-          ...props,
-          children
-        }
-      ) })
-    );
+  var POPUP_COLOR = { background: "#1e1e1e" };
+  var Popup = (0, import_element15.forwardRef)(function TooltipPopup3({ portal, positioner, children, className, ...props }, ref) {
+    const popupContent = /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ThemeProvider, { color: POPUP_COLOR, children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
+      index_parts_exports.Popup,
+      {
+        ref,
+        className: clsx_default(style_default3.popup, className),
+        ...props,
+        children
+      }
+    ) });
     const positionedPopup = renderSlotWithChildren(
       positioner,
       /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Positioner, {}),
@@ -10131,9 +10300,9 @@ var wp;
   });
 
   // packages/ui/build-module/tooltip/trigger.mjs
-  var import_element14 = __toESM(require_element(), 1);
+  var import_element16 = __toESM(require_element(), 1);
   var import_jsx_runtime44 = __toESM(require_jsx_runtime(), 1);
-  var Trigger = (0, import_element14.forwardRef)(
+  var Trigger = (0, import_element16.forwardRef)(
     function TooltipTrigger3(props, ref) {
       return /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(index_parts_exports.Trigger, { ref, ...props });
     }
@@ -10152,7 +10321,7 @@ var wp;
   }
 
   // packages/ui/build-module/visually-hidden/visually-hidden.mjs
-  var import_element15 = __toESM(require_element(), 1);
+  var import_element17 = __toESM(require_element(), 1);
   var STYLE_HASH_ATTRIBUTE5 = "data-wp-hash";
   function getRuntime5() {
     const globalScope = globalThis;
@@ -10234,10 +10403,10 @@ var wp;
     }
   }
   if (typeof process === "undefined" || true) {
-    registerStyle5("c46e8cb841", "@layer wp-ui-utilities, wp-ui-components, wp-ui-compositions, wp-ui-overrides;@layer wp-ui-components{.f37b9e2e191ebd66__visually-hidden{word-wrap:normal;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal}}");
+    registerStyle5("fa606a57ae", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.f37b9e2e191ebd66__visually-hidden{word-wrap:normal;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal}}}");
   }
   var style_default4 = { "visually-hidden": "f37b9e2e191ebd66__visually-hidden" };
-  var VisuallyHidden = (0, import_element15.forwardRef)(
+  var VisuallyHidden = (0, import_element17.forwardRef)(
     function VisuallyHidden2({ render: render4, ...restProps }, ref) {
       const element = useRender({
         render: render4,
@@ -10256,7 +10425,7 @@ var wp;
   );
 
   // packages/dataviews/build-module/components/dataviews-context/index.mjs
-  var import_element16 = __toESM(require_element(), 1);
+  var import_element18 = __toESM(require_element(), 1);
 
   // packages/dataviews/build-module/constants.mjs
   var import_i18n7 = __toESM(require_i18n(), 1);
@@ -10299,9 +10468,10 @@ var wp;
   var LAYOUT_ACTIVITY = "activity";
   var LAYOUT_PICKER_GRID = "pickerGrid";
   var LAYOUT_PICKER_TABLE = "pickerTable";
+  var LAYOUT_PICKER_ACTIVITY = "pickerActivity";
 
   // packages/dataviews/build-module/components/dataviews-context/index.mjs
-  var DataViewsContext = (0, import_element16.createContext)({
+  var DataViewsContext = (0, import_element18.createContext)({
     view: { type: LAYOUT_TABLE },
     onChangeView: () => {
     },
@@ -10321,7 +10491,7 @@ var wp;
     isItemClickable: () => true,
     renderItemLink: void 0,
     containerWidth: 0,
-    containerRef: (0, import_element16.createRef)(),
+    containerRef: (0, import_element18.createRef)(),
     resizeObserverRef: () => {
     },
     defaultLayouts: { list: {}, grid: {}, table: {} },
@@ -10339,12 +10509,12 @@ var wp;
   var dataviews_context_default = DataViewsContext;
 
   // packages/dataviews/build-module/components/dataviews-layouts/index.mjs
-  var import_i18n27 = __toESM(require_i18n(), 1);
+  var import_i18n28 = __toESM(require_i18n(), 1);
 
   // packages/dataviews/build-module/components/dataviews-layouts/table/index.mjs
   var import_i18n15 = __toESM(require_i18n(), 1);
   var import_components6 = __toESM(require_components(), 1);
-  var import_element24 = __toESM(require_element(), 1);
+  var import_element26 = __toESM(require_element(), 1);
   var import_keycodes = __toESM(require_keycodes(), 1);
 
   // packages/dataviews/build-module/components/dataviews-selection-checkbox/index.mjs
@@ -10387,7 +10557,7 @@ var wp;
   // packages/dataviews/build-module/components/dataviews-item-actions/index.mjs
   var import_components2 = __toESM(require_components(), 1);
   var import_i18n9 = __toESM(require_i18n(), 1);
-  var import_element17 = __toESM(require_element(), 1);
+  var import_element19 = __toESM(require_element(), 1);
   var import_data = __toESM(require_data(), 1);
   var import_compose = __toESM(require_compose(), 1);
 
@@ -10456,7 +10626,7 @@ var wp;
     registry,
     setActiveModalAction
   }) {
-    const { primaryActions, regularActions } = (0, import_element17.useMemo)(() => {
+    const { primaryActions, regularActions } = (0, import_element19.useMemo)(() => {
       return actions.reduce(
         (acc, action) => {
           (action.isPrimary ? acc.primaryActions : acc.regularActions).push(action);
@@ -10494,7 +10664,7 @@ var wp;
     isCompact
   }) {
     const registry = (0, import_data.useRegistry)();
-    const { primaryActions, eligibleActions } = (0, import_element17.useMemo)(() => {
+    const { primaryActions, eligibleActions } = (0, import_element19.useMemo)(() => {
       const _eligibleActions = actions.filter(
         (action) => !action.isEligible || action.isEligible(item)
       );
@@ -10557,7 +10727,7 @@ var wp;
     isSmall,
     registry
   }) {
-    const [activeModalAction, setActiveModalAction] = (0, import_element17.useState)(
+    const [activeModalAction, setActiveModalAction] = (0, import_element19.useState)(
       null
     );
     return /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(import_jsx_runtime48.Fragment, { children: [
@@ -10604,7 +10774,7 @@ var wp;
     registry,
     buttonVariant
   }) {
-    const [activeModalAction, setActiveModalAction] = (0, import_element17.useState)(null);
+    const [activeModalAction, setActiveModalAction] = (0, import_element19.useState)(null);
     const isMobileViewport = (0, import_compose.useViewportMatch)("medium", "<");
     if (isMobileViewport) {
       return null;
@@ -10643,7 +10813,7 @@ var wp;
   // packages/dataviews/build-module/components/dataviews-bulk-actions/index.mjs
   var import_components3 = __toESM(require_components(), 1);
   var import_i18n11 = __toESM(require_i18n(), 1);
-  var import_element18 = __toESM(require_element(), 1);
+  var import_element20 = __toESM(require_element(), 1);
   var import_data2 = __toESM(require_data(), 1);
   var import_compose2 = __toESM(require_compose(), 1);
 
@@ -10675,14 +10845,14 @@ var wp;
   // packages/dataviews/build-module/components/dataviews-bulk-actions/index.mjs
   var import_jsx_runtime49 = __toESM(require_jsx_runtime(), 1);
   function useHasAPossibleBulkAction(actions, item) {
-    return (0, import_element18.useMemo)(() => {
+    return (0, import_element20.useMemo)(() => {
       return actions.some((action) => {
         return action.supportsBulk && (!action.isEligible || action.isEligible(item));
       });
     }, [actions, item]);
   }
   function useSomeItemHasAPossibleBulkAction(actions, data) {
-    return (0, import_element18.useMemo)(() => {
+    return (0, import_element20.useMemo)(() => {
       return data.some((item) => {
         return actions.some((action) => {
           return action.supportsBulk && (!action.isEligible || action.isEligible(item));
@@ -10698,7 +10868,7 @@ var wp;
     getItemId,
     disableSelectAll = false
   }) {
-    const selectableItems = (0, import_element18.useMemo)(() => {
+    const selectableItems = (0, import_element20.useMemo)(() => {
       return data.filter((item) => {
         return actions.some(
           (action) => action.supportsBulk && (!action.isEligible || action.isEligible(item))
@@ -10747,7 +10917,7 @@ var wp;
   // packages/dataviews/build-module/components/dataviews-layouts/table/column-header-menu.mjs
   var import_i18n12 = __toESM(require_i18n(), 1);
   var import_components4 = __toESM(require_components(), 1);
-  var import_element19 = __toESM(require_element(), 1);
+  var import_element21 = __toESM(require_element(), 1);
 
   // packages/dataviews/build-module/utils/get-hideable-fields.mjs
   function getHideableFields(view, fields) {
@@ -10765,12 +10935,12 @@ var wp;
   var import_jsx_runtime50 = __toESM(require_jsx_runtime(), 1);
   var { Menu: Menu2 } = unlock2(import_components4.privateApis);
   function WithMenuSeparators({ children }) {
-    return import_element19.Children.toArray(children).filter(Boolean).map((child, i2) => /* @__PURE__ */ (0, import_jsx_runtime50.jsxs)(import_element19.Fragment, { children: [
+    return import_element21.Children.toArray(children).filter(Boolean).map((child, i2) => /* @__PURE__ */ (0, import_jsx_runtime50.jsxs)(import_element21.Fragment, { children: [
       i2 > 0 && /* @__PURE__ */ (0, import_jsx_runtime50.jsx)(Menu2.Separator, {}),
       child
     ] }, i2));
   }
-  var _HeaderMenu = (0, import_element19.forwardRef)(function HeaderMenu({
+  var _HeaderMenu = (0, import_element21.forwardRef)(function HeaderMenu({
     fieldId,
     view,
     fields,
@@ -10789,7 +10959,7 @@ var wp;
     let canAddFilter = false;
     let operators = [];
     const field = fields.find((f2) => f2.id === fieldId);
-    const { setIsShowingFilter } = (0, import_element19.useContext)(dataviews_context_default);
+    const { setIsShowingFilter } = (0, import_element21.useContext)(dataviews_context_default);
     if (!field) {
       return null;
     }
@@ -11004,7 +11174,7 @@ var wp;
   var column_header_menu_default = ColumnHeaderMenu;
 
   // packages/dataviews/build-module/components/dataviews-layouts/utils/item-click-wrapper.mjs
-  var import_element20 = __toESM(require_element(), 1);
+  var import_element22 = __toESM(require_element(), 1);
   var import_jsx_runtime51 = __toESM(require_jsx_runtime(), 1);
   function getClickableItemProps({
     item,
@@ -11050,7 +11220,7 @@ var wp;
         ...extraProps,
         children
       });
-      return (0, import_element20.cloneElement)(renderedElement, {
+      return (0, import_element22.cloneElement)(renderedElement, {
         onClick: (event) => {
           event.stopPropagation();
           if (renderedElement.props.onClick) {
@@ -11147,7 +11317,7 @@ var wp;
   var column_primary_default = ColumnPrimary;
 
   // packages/dataviews/build-module/components/dataviews-layouts/table/use-scroll-state.mjs
-  var import_element21 = __toESM(require_element(), 1);
+  var import_element23 = __toESM(require_element(), 1);
   var import_i18n13 = __toESM(require_i18n(), 1);
   var isScrolledToEnd = (element) => {
     if ((0, import_i18n13.isRTL)()) {
@@ -11160,9 +11330,9 @@ var wp;
     scrollContainerRef,
     enabledHorizontal = false
   }) {
-    const [isHorizontalScrollEnd, setIsHorizontalScrollEnd] = (0, import_element21.useState)(false);
-    const [isVerticallyScrolled, setIsVerticallyScrolled] = (0, import_element21.useState)(false);
-    const handleScroll = (0, import_element21.useCallback)(() => {
+    const [isHorizontalScrollEnd, setIsHorizontalScrollEnd] = (0, import_element23.useState)(false);
+    const [isVerticallyScrolled, setIsVerticallyScrolled] = (0, import_element23.useState)(false);
+    const handleScroll = (0, import_element23.useCallback)(() => {
       const scrollContainer = scrollContainerRef.current;
       if (!scrollContainer) {
         return;
@@ -11172,7 +11342,7 @@ var wp;
       }
       setIsVerticallyScrolled(scrollContainer.scrollTop > 0);
     }, [scrollContainerRef, enabledHorizontal]);
-    (0, import_element21.useEffect)(() => {
+    (0, import_element23.useEffect)(() => {
       if (typeof window === "undefined" || !scrollContainerRef.current) {
         return () => {
         };
@@ -11204,7 +11374,7 @@ var wp;
   // packages/dataviews/build-module/components/dataviews-view-config/properties-section.mjs
   var import_components5 = __toESM(require_components(), 1);
   var import_i18n14 = __toESM(require_i18n(), 1);
-  var import_element22 = __toESM(require_element(), 1);
+  var import_element24 = __toESM(require_element(), 1);
   var import_jsx_runtime53 = __toESM(require_jsx_runtime(), 1);
   function FieldItem({
     field,
@@ -11222,7 +11392,7 @@ var wp;
   function PropertiesSection({
     showLabel = true
   }) {
-    const { view, fields, onChangeView } = (0, import_element22.useContext)(dataviews_context_default);
+    const { view, fields, onChangeView } = (0, import_element24.useContext)(dataviews_context_default);
     const regularFields = getHideableFields(view, fields);
     if (!regularFields?.length) {
       return null;
@@ -11311,10 +11481,10 @@ var wp;
   }
 
   // packages/dataviews/build-module/hooks/use-delayed-loading.mjs
-  var import_element23 = __toESM(require_element(), 1);
+  var import_element25 = __toESM(require_element(), 1);
   function useDelayedLoading(isLoading, options = { delay: 400 }) {
-    const [showLoader, setShowLoader] = (0, import_element23.useState)(false);
-    (0, import_element23.useEffect)(() => {
+    const [showLoader, setShowLoader] = (0, import_element25.useState)(false);
+    (0, import_element25.useEffect)(() => {
       if (!isLoading) {
         return;
       }
@@ -11376,7 +11546,7 @@ var wp;
     isActionsColumnSticky,
     posinset
   }) {
-    const { paginationInfo } = (0, import_element24.useContext)(dataviews_context_default);
+    const { paginationInfo } = (0, import_element26.useContext)(dataviews_context_default);
     const hasPossibleBulkAction = useHasAPossibleBulkAction(actions, item);
     const isSelected2 = hasPossibleBulkAction && selection.includes(id);
     const {
@@ -11385,7 +11555,7 @@ var wp;
       showDescription = true,
       infiniteScrollEnabled
     } = view;
-    const isTouchDeviceRef = (0, import_element24.useRef)(false);
+    const isTouchDeviceRef = (0, import_element26.useRef)(false);
     const columns = view.fields ?? [];
     const hasPrimaryColumn = titleField && showTitle || mediaField && showMedia || descriptionField2 && showDescription;
     return /* @__PURE__ */ (0, import_jsx_runtime54.jsxs)(
@@ -11506,19 +11676,19 @@ var wp;
     className,
     empty
   }) {
-    const { containerRef } = (0, import_element24.useContext)(dataviews_context_default);
+    const { containerRef } = (0, import_element26.useContext)(dataviews_context_default);
     const isDelayedLoading = useDelayedLoading(isLoading);
-    const headerMenuRefs = (0, import_element24.useRef)(/* @__PURE__ */ new Map());
-    const headerMenuToFocusRef = (0, import_element24.useRef)(void 0);
-    const [nextHeaderMenuToFocus, setNextHeaderMenuToFocus] = (0, import_element24.useState)();
-    const [contextMenuAnchor, setContextMenuAnchor] = (0, import_element24.useState)(null);
-    (0, import_element24.useEffect)(() => {
+    const headerMenuRefs = (0, import_element26.useRef)(/* @__PURE__ */ new Map());
+    const headerMenuToFocusRef = (0, import_element26.useRef)(void 0);
+    const [nextHeaderMenuToFocus, setNextHeaderMenuToFocus] = (0, import_element26.useState)();
+    const [contextMenuAnchor, setContextMenuAnchor] = (0, import_element26.useState)(null);
+    (0, import_element26.useEffect)(() => {
       if (headerMenuToFocusRef.current) {
         headerMenuToFocusRef.current.focus();
         headerMenuToFocusRef.current = void 0;
       }
     });
-    const tableNoticeId = (0, import_element24.useId)();
+    const tableNoticeId = (0, import_element26.useId)();
     const { isHorizontalScrollEnd, isVerticallyScrolled } = useScrollState({
       scrollContainerRef: containerRef,
       enabledHorizontal: !!actions?.length
@@ -11811,12 +11981,12 @@ var wp;
   var import_i18n17 = __toESM(require_i18n(), 1);
   var import_compose3 = __toESM(require_compose(), 1);
   var import_keycodes2 = __toESM(require_keycodes(), 1);
-  var import_element28 = __toESM(require_element(), 1);
+  var import_element30 = __toESM(require_element(), 1);
 
   // packages/dataviews/build-module/components/dataviews-layouts/grid/preview-size-picker.mjs
   var import_components7 = __toESM(require_components(), 1);
   var import_i18n16 = __toESM(require_i18n(), 1);
-  var import_element25 = __toESM(require_element(), 1);
+  var import_element27 = __toESM(require_element(), 1);
   var import_jsx_runtime55 = __toESM(require_jsx_runtime(), 1);
   var imageSizes = [
     {
@@ -11849,9 +12019,9 @@ var wp;
   ];
   var DEFAULT_PREVIEW_SIZE = imageSizes[2].value;
   function useGridColumns() {
-    const context = (0, import_element25.useContext)(dataviews_context_default);
+    const context = (0, import_element27.useContext)(dataviews_context_default);
     const view = context.view;
-    return (0, import_element25.useMemo)(() => {
+    return (0, import_element27.useMemo)(() => {
       const containerWidth = context.containerWidth;
       const gap = 32;
       const previewSize = view.layout?.previewSize ?? DEFAULT_PREVIEW_SIZE;
@@ -11863,9 +12033,9 @@ var wp;
   }
 
   // packages/dataviews/build-module/components/dataviews-layouts/utils/grid-items.mjs
-  var import_element26 = __toESM(require_element(), 1);
+  var import_element28 = __toESM(require_element(), 1);
   var import_jsx_runtime56 = __toESM(require_jsx_runtime(), 1);
-  var GridItems = (0, import_element26.forwardRef)(({ className, previewSize, ...props }, ref) => {
+  var GridItems = (0, import_element28.forwardRef)(({ className, previewSize, ...props }, ref) => {
     return /* @__PURE__ */ (0, import_jsx_runtime56.jsx)(
       "div",
       {
@@ -11880,10 +12050,10 @@ var wp;
   });
 
   // packages/dataviews/build-module/components/dataviews-layouts/utils/use-infinite-scroll.mjs
-  var import_element27 = __toESM(require_element(), 1);
+  var import_element29 = __toESM(require_element(), 1);
   function useIntersectionObserver(elementRef, posinset) {
-    const { intersectionObserver } = (0, import_element27.useContext)(dataviews_context_default);
-    (0, import_element27.useEffect)(() => {
+    const { intersectionObserver } = (0, import_element29.useContext)(dataviews_context_default);
+    (0, import_element29.useEffect)(() => {
       const element = elementRef.current;
       if (!element || posinset === void 0 || !intersectionObserver) {
         return;
@@ -11910,7 +12080,7 @@ var wp;
     }
     return chunks;
   }
-  var GridItem = (0, import_element28.forwardRef)(
+  var GridItem = (0, import_element30.forwardRef)(
     function GridItem2({
       view,
       selection,
@@ -11939,8 +12109,8 @@ var wp;
       } = view;
       const hasBulkAction = useHasAPossibleBulkAction(actions, item);
       const id = getItemId(item);
-      const elementRef = (0, import_element28.useRef)(null);
-      const setRefs = (0, import_element28.useCallback)(
+      const elementRef = (0, import_element30.useRef)(null);
+      const setRefs = (0, import_element30.useCallback)(
         (node) => {
           elementRef.current = node;
           if (typeof forwardedRef === "function") {
@@ -12166,7 +12336,7 @@ var wp;
     getItemId,
     actions
   }) {
-    const { paginationInfo, resizeObserverRef } = (0, import_element28.useContext)(dataviews_context_default);
+    const { paginationInfo, resizeObserverRef } = (0, import_element30.useContext)(dataviews_context_default);
     const gridColumns = useGridColumns();
     const hasBulkActions = useSomeItemHasAPossibleBulkAction(actions, data);
     const titleField = fields.find(
@@ -12460,7 +12630,7 @@ var wp;
   // packages/dataviews/build-module/components/dataviews-layouts/list/index.mjs
   var import_compose4 = __toESM(require_compose(), 1);
   var import_components10 = __toESM(require_components(), 1);
-  var import_element29 = __toESM(require_element(), 1);
+  var import_element31 = __toESM(require_element(), 1);
   var import_i18n19 = __toESM(require_i18n(), 1);
   var import_data3 = __toESM(require_data(), 1);
   var import_jsx_runtime59 = __toESM(require_jsx_runtime(), 1);
@@ -12480,7 +12650,7 @@ var wp;
     item
   }) {
     const registry = (0, import_data3.useRegistry)();
-    const [isModalOpen, setIsModalOpen] = (0, import_element29.useState)(false);
+    const [isModalOpen, setIsModalOpen] = (0, import_element31.useState)(false);
     const compositeItemId = generatePrimaryActionCompositeId(
       idPrefix,
       primaryAction.id
@@ -12548,20 +12718,20 @@ var wp;
       showDescription = true,
       infiniteScrollEnabled
     } = view;
-    const itemRef = (0, import_element29.useRef)(null);
+    const itemRef = (0, import_element31.useRef)(null);
     const labelId = `${idPrefix}-label`;
     const descriptionId = `${idPrefix}-description`;
     const registry = (0, import_data3.useRegistry)();
-    const [isHovered, setIsHovered] = (0, import_element29.useState)(false);
-    const [activeModalAction, setActiveModalAction] = (0, import_element29.useState)(
+    const [isHovered, setIsHovered] = (0, import_element31.useState)(false);
+    const [activeModalAction, setActiveModalAction] = (0, import_element31.useState)(
       null
     );
     const handleHover = ({ type }) => {
       const isHover = type === "mouseenter";
       setIsHovered(isHover);
     };
-    const { paginationInfo } = (0, import_element29.useContext)(dataviews_context_default);
-    (0, import_element29.useEffect)(() => {
+    const { paginationInfo } = (0, import_element31.useContext)(dataviews_context_default);
+    (0, import_element31.useEffect)(() => {
       if (isSelected2) {
         itemRef.current?.scrollIntoView({
           behavior: "auto",
@@ -12570,7 +12740,7 @@ var wp;
         });
       }
     }, [isSelected2]);
-    const { primaryAction, eligibleActions } = (0, import_element29.useMemo)(() => {
+    const { primaryAction, eligibleActions } = (0, import_element31.useMemo)(() => {
       const _eligibleActions = actions.filter(
         (action) => !action.isEligible || action.isEligible(item)
       );
@@ -12801,11 +12971,11 @@ var wp;
     );
     const otherFields = (view?.fields ?? []).map((fieldId) => fields.find((f2) => fieldId === f2.id)).filter(isDefined2);
     const onSelect = (item) => onChangeSelection([getItemId(item)]);
-    const generateCompositeItemIdPrefix = (0, import_element29.useCallback)(
+    const generateCompositeItemIdPrefix = (0, import_element31.useCallback)(
       (item) => `${baseId}-${getItemId(item)}`,
       [baseId, getItemId]
     );
-    const isActiveCompositeItem = (0, import_element29.useCallback)(
+    const isActiveCompositeItem = (0, import_element31.useCallback)(
       (item, idToCheck) => {
         return idToCheck.startsWith(
           generateCompositeItemIdPrefix(item)
@@ -12813,9 +12983,9 @@ var wp;
       },
       [generateCompositeItemIdPrefix]
     );
-    const [activeCompositeId, setActiveCompositeId] = (0, import_element29.useState)(void 0);
-    const compositeRef = (0, import_element29.useRef)(null);
-    (0, import_element29.useEffect)(() => {
+    const [activeCompositeId, setActiveCompositeId] = (0, import_element31.useState)(void 0);
+    const compositeRef = (0, import_element31.useRef)(null);
+    (0, import_element31.useEffect)(() => {
       if (selectedItem) {
         setActiveCompositeId(
           generateItemWrapperCompositeId(
@@ -12829,7 +12999,7 @@ var wp;
     );
     const previousActiveItemIndex = (0, import_compose4.usePrevious)(activeItemIndex);
     const isActiveIdInList = activeItemIndex !== -1;
-    const selectCompositeItem = (0, import_element29.useCallback)(
+    const selectCompositeItem = (0, import_element31.useCallback)(
       (targetIndex, generateCompositeId) => {
         const clampedIndex = Math.min(
           data.length - 1,
@@ -12851,7 +13021,7 @@ var wp;
       },
       [data, generateCompositeItemIdPrefix]
     );
-    (0, import_element29.useEffect)(() => {
+    (0, import_element31.useEffect)(() => {
       const wasActiveIdInList = previousActiveItemIndex !== void 0 && previousActiveItemIndex !== -1;
       if (!isActiveIdInList && wasActiveIdInList) {
         selectCompositeItem(
@@ -12860,7 +13030,7 @@ var wp;
         );
       }
     }, [isActiveIdInList, selectCompositeItem, previousActiveItemIndex]);
-    const onDropdownTriggerKeyDown = (0, import_element29.useCallback)(
+    const onDropdownTriggerKeyDown = (0, import_element31.useCallback)(
       (event) => {
         if (event.key === "ArrowDown") {
           event.preventDefault();
@@ -13003,7 +13173,7 @@ var wp;
 
   // packages/dataviews/build-module/components/dataviews-layouts/activity/activity-group.mjs
   var import_i18n20 = __toESM(require_i18n(), 1);
-  var import_element30 = __toESM(require_element(), 1);
+  var import_element32 = __toESM(require_element(), 1);
   var import_jsx_runtime60 = __toESM(require_jsx_runtime(), 1);
   function ActivityGroup({
     groupName,
@@ -13012,7 +13182,7 @@ var wp;
     showLabel = true,
     children
   }) {
-    const groupHeader = showLabel ? (0, import_element30.createInterpolateElement)(
+    const groupHeader = showLabel ? (0, import_element32.createInterpolateElement)(
       // translators: %s: The label of the field e.g. "Status".
       (0, import_i18n20.sprintf)((0, import_i18n20.__)("%s: <groupName />"), groupField.label).trim(),
       {
@@ -13040,7 +13210,7 @@ var wp;
   }
 
   // packages/dataviews/build-module/components/dataviews-layouts/activity/activity-item.mjs
-  var import_element31 = __toESM(require_element(), 1);
+  var import_element33 = __toESM(require_element(), 1);
   var import_data4 = __toESM(require_data(), 1);
   var import_compose5 = __toESM(require_compose(), 1);
   var import_jsx_runtime61 = __toESM(require_jsx_runtime(), 1);
@@ -13064,10 +13234,10 @@ var wp;
       showDescription = true,
       infiniteScrollEnabled
     } = view;
-    const itemRef = (0, import_element31.useRef)(null);
+    const itemRef = (0, import_element33.useRef)(null);
     const registry = (0, import_data4.useRegistry)();
-    const { paginationInfo } = (0, import_element31.useContext)(dataviews_context_default);
-    const { primaryActions, eligibleActions } = (0, import_element31.useMemo)(() => {
+    const { paginationInfo } = (0, import_element33.useContext)(dataviews_context_default);
+    const { primaryActions, eligibleActions } = (0, import_element33.useMemo)(() => {
       const _eligibleActions = actions.filter(
         (action) => !action.isEligible || action.isEligible(item)
       );
@@ -13099,7 +13269,7 @@ var wp;
       }
     ) });
     const renderedTitleField = showTitle && titleField?.render ? /* @__PURE__ */ (0, import_jsx_runtime61.jsx)(titleField.render, { item, field: titleField }) : null;
-    const verticalGap = (0, import_element31.useMemo)(() => {
+    const verticalGap = (0, import_element33.useMemo)(() => {
       switch (density) {
         case "comfortable":
           return "md";
@@ -13313,17 +13483,17 @@ var wp;
   var import_components14 = __toESM(require_components(), 1);
   var import_i18n23 = __toESM(require_i18n(), 1);
   var import_compose6 = __toESM(require_compose(), 1);
-  var import_element34 = __toESM(require_element(), 1);
+  var import_element36 = __toESM(require_element(), 1);
 
   // packages/dataviews/build-module/components/dataviews-picker-footer/index.mjs
   var import_components13 = __toESM(require_components(), 1);
   var import_data5 = __toESM(require_data(), 1);
-  var import_element33 = __toESM(require_element(), 1);
+  var import_element35 = __toESM(require_element(), 1);
   var import_i18n22 = __toESM(require_i18n(), 1);
 
   // packages/dataviews/build-module/components/dataviews-pagination/index.mjs
   var import_components12 = __toESM(require_components(), 1);
-  var import_element32 = __toESM(require_element(), 1);
+  var import_element34 = __toESM(require_element(), 1);
   var import_i18n21 = __toESM(require_i18n(), 1);
   var import_jsx_runtime63 = __toESM(require_jsx_runtime(), 1);
   function DataViewsPagination() {
@@ -13331,7 +13501,7 @@ var wp;
       view,
       onChangeView,
       paginationInfo: { totalItems = 0, totalPages }
-    } = (0, import_element32.useContext)(dataviews_context_default);
+    } = (0, import_element34.useContext)(dataviews_context_default);
     if (!totalItems || !totalPages || view.infiniteScrollEnabled) {
       return null;
     }
@@ -13368,7 +13538,7 @@ var wp;
               align: "center",
               gap: "xs",
               className: "dataviews-pagination__page-select",
-              children: (0, import_element32.createInterpolateElement)(
+              children: (0, import_element34.createInterpolateElement)(
                 (0, import_i18n21.sprintf)(
                   // translators: 1: Current page number, 2: Total number of pages.
                   (0, import_i18n21._x)(
@@ -13436,14 +13606,14 @@ var wp;
       }
     );
   }
-  var dataviews_pagination_default = (0, import_element32.memo)(DataViewsPagination);
+  var dataviews_pagination_default = (0, import_element34.memo)(DataViewsPagination);
 
   // packages/dataviews/build-module/components/dataviews-picker-footer/index.mjs
   var import_jsx_runtime64 = __toESM(require_jsx_runtime(), 1);
   var EMPTY_ARRAY2 = [];
   function useIsMultiselectPicker(actions) {
-    return (0, import_element33.useMemo)(() => {
-      return actions?.every((action) => action.supportsBulk);
+    return (0, import_element35.useMemo)(() => {
+      return !!actions?.length && actions?.every((action) => action.supportsBulk);
     }, [actions]);
   }
   function BulkSelectionCheckbox2({
@@ -13503,7 +13673,7 @@ var wp;
     selection
   }) {
     const registry = (0, import_data5.useRegistry)();
-    const [actionInProgress, setActionInProgress] = (0, import_element33.useState)(
+    const [actionInProgress, setActionInProgress] = (0, import_element35.useState)(
       null
     );
     return /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(Stack, { direction: "row", gap: "xs", children: actions.map((action) => {
@@ -13536,7 +13706,7 @@ var wp;
       );
     }) });
   }
-  function DataViewsPickerFooter() {
+  function PickerBulkSelectionInfo() {
     const {
       data,
       selection,
@@ -13545,18 +13715,84 @@ var wp;
       actions = EMPTY_ARRAY2,
       paginationInfo,
       view
-    } = (0, import_element33.useContext)(dataviews_context_default);
+    } = (0, import_element35.useContext)(dataviews_context_default);
     const isMultiselect = useIsMultiselectPicker(actions);
+    const selectedItems = (0, import_element35.useMemo)(
+      () => data.filter((item) => selection.includes(getItemId(item))),
+      [selection, getItemId, data]
+    );
+    if (!actions.length) {
+      return null;
+    }
     const message2 = getFooterMessage(
       selection.length,
       data.length,
       paginationInfo.totalItems,
       !!view.infiniteScrollEnabled
     );
-    const selectedItems = (0, import_element33.useMemo)(
+    return /* @__PURE__ */ (0, import_jsx_runtime64.jsxs)(
+      Stack,
+      {
+        direction: "row",
+        className: "dataviews-picker-footer__bulk-selection",
+        gap: "md",
+        align: "center",
+        children: [
+          isMultiselect && /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(
+            BulkSelectionCheckbox2,
+            {
+              selection,
+              selectedItems,
+              onChangeSelection,
+              data,
+              getItemId,
+              disableSelectAll: !!view.infiniteScrollEnabled
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime64.jsx)("span", { className: "dataviews-bulk-actions-footer__item-count", children: message2 })
+        ]
+      }
+    );
+  }
+  function PickerActions() {
+    const {
+      data,
+      selection,
+      getItemId,
+      actions = EMPTY_ARRAY2
+    } = (0, import_element35.useContext)(dataviews_context_default);
+    const selectedItems = (0, import_element35.useMemo)(
       () => data.filter((item) => selection.includes(getItemId(item))),
       [selection, getItemId, data]
     );
+    if (!actions.length) {
+      return null;
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime64.jsx)("div", { className: "dataviews-picker-footer__actions", children: /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(
+      ActionButtons,
+      {
+        actions,
+        items: selectedItems,
+        selection
+      }
+    ) });
+  }
+  function DataViewsPickerBulkActionToolbar() {
+    return /* @__PURE__ */ (0, import_jsx_runtime64.jsxs)(Stack, { direction: "row", gap: "md", align: "center", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(PickerBulkSelectionInfo, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(PickerActions, {})
+    ] });
+  }
+  function DataViewsPickerFooter() {
+    const {
+      actions = EMPTY_ARRAY2,
+      paginationInfo,
+      view
+    } = (0, import_element35.useContext)(dataviews_context_default);
+    const hasPagination = !view.infiniteScrollEnabled && !!paginationInfo.totalItems && paginationInfo.totalPages > 1;
+    if (!actions.length && !hasPagination) {
+      return null;
+    }
     return /* @__PURE__ */ (0, import_jsx_runtime64.jsxs)(
       Stack,
       {
@@ -13566,38 +13802,9 @@ var wp;
         className: "dataviews-footer",
         gap: "sm",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime64.jsxs)(
-            Stack,
-            {
-              direction: "row",
-              className: "dataviews-picker-footer__bulk-selection",
-              gap: "md",
-              align: "center",
-              children: [
-                isMultiselect && /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(
-                  BulkSelectionCheckbox2,
-                  {
-                    selection,
-                    selectedItems,
-                    onChangeSelection,
-                    data,
-                    getItemId,
-                    disableSelectAll: !!view.infiniteScrollEnabled
-                  }
-                ),
-                /* @__PURE__ */ (0, import_jsx_runtime64.jsx)("span", { className: "dataviews-bulk-actions-footer__item-count", children: message2 })
-              ]
-            }
-          ),
+          /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(PickerBulkSelectionInfo, {}),
           /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(dataviews_pagination_default, {}),
-          Boolean(actions?.length) && /* @__PURE__ */ (0, import_jsx_runtime64.jsx)("div", { className: "dataviews-picker-footer__actions", children: /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(
-            ActionButtons,
-            {
-              actions,
-              items: selectedItems,
-              selection
-            }
-          ) })
+          /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(PickerActions, {})
         ]
       }
     );
@@ -13624,7 +13831,7 @@ var wp;
   }) {
     const { showTitle = true, showMedia = true, showDescription = true } = view;
     const id = getItemId(item);
-    const elementRef = (0, import_element34.useRef)(null);
+    const elementRef = (0, import_element36.useRef)(null);
     const isSelected2 = selection.includes(id);
     useIntersectionObserver(elementRef, posinset);
     const renderedMediaField = mediaField?.render ? /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(
@@ -13812,7 +14019,7 @@ var wp;
     className,
     empty
   }) {
-    const { resizeObserverRef, paginationInfo, itemListLabel } = (0, import_element34.useContext)(dataviews_context_default);
+    const { resizeObserverRef, paginationInfo, itemListLabel } = (0, import_element36.useContext)(dataviews_context_default);
     const titleField = fields.find(
       (field) => field.id === view?.titleField
     );
@@ -14025,7 +14232,7 @@ var wp;
   // packages/dataviews/build-module/components/dataviews-layouts/picker-table/index.mjs
   var import_i18n24 = __toESM(require_i18n(), 1);
   var import_components15 = __toESM(require_components(), 1);
-  var import_element35 = __toESM(require_element(), 1);
+  var import_element37 = __toESM(require_element(), 1);
   var import_jsx_runtime66 = __toESM(require_jsx_runtime(), 1);
   function TableColumnField2({
     item,
@@ -14057,10 +14264,10 @@ var wp;
     multiselect,
     posinset
   }) {
-    const { paginationInfo } = (0, import_element35.useContext)(dataviews_context_default);
+    const { paginationInfo } = (0, import_element37.useContext)(dataviews_context_default);
     const isSelected2 = selection.includes(id);
-    const [isHovered, setIsHovered] = (0, import_element35.useState)(false);
-    const elementRef = (0, import_element35.useRef)(null);
+    const [isHovered, setIsHovered] = (0, import_element37.useState)(false);
+    const elementRef = (0, import_element37.useRef)(null);
     useIntersectionObserver(elementRef, posinset);
     const {
       showTitle = true,
@@ -14195,11 +14402,11 @@ var wp;
     className,
     empty
   }) {
-    const headerMenuRefs = (0, import_element35.useRef)(/* @__PURE__ */ new Map());
-    const headerMenuToFocusRef = (0, import_element35.useRef)(void 0);
-    const [nextHeaderMenuToFocus, setNextHeaderMenuToFocus] = (0, import_element35.useState)();
+    const headerMenuRefs = (0, import_element37.useRef)(/* @__PURE__ */ new Map());
+    const headerMenuToFocusRef = (0, import_element37.useRef)(void 0);
+    const [nextHeaderMenuToFocus, setNextHeaderMenuToFocus] = (0, import_element37.useState)();
     const isMultiselect = useIsMultiselectPicker(actions) ?? false;
-    (0, import_element35.useEffect)(() => {
+    (0, import_element37.useEffect)(() => {
       if (headerMenuToFocusRef.current) {
         headerMenuToFocusRef.current.focus();
         headerMenuToFocusRef.current = void 0;
@@ -14208,7 +14415,7 @@ var wp;
     const groupField = view.groupBy?.field ? fields.find((f2) => f2.id === view.groupBy?.field) : null;
     const dataByGroup = groupField ? getDataByGroup(data, groupField) : null;
     const isInfiniteScroll = view.infiniteScrollEnabled && !dataByGroup;
-    const tableNoticeId = (0, import_element35.useId)();
+    const tableNoticeId = (0, import_element37.useId)();
     if (nextHeaderMenuToFocus) {
       headerMenuToFocusRef.current = nextHeaderMenuToFocus;
       setNextHeaderMenuToFocus(void 0);
@@ -14423,19 +14630,283 @@ var wp;
   }
   var picker_table_default = ViewPickerTable;
 
-  // packages/dataviews/build-module/components/dataviews-layouts/utils/density-picker.mjs
+  // packages/dataviews/build-module/components/dataviews-layouts/picker-activity/index.mjs
   var import_components16 = __toESM(require_components(), 1);
+  var import_element38 = __toESM(require_element(), 1);
+  var import_compose7 = __toESM(require_compose(), 1);
   var import_i18n25 = __toESM(require_i18n(), 1);
-  var import_element36 = __toESM(require_element(), 1);
   var import_jsx_runtime67 = __toESM(require_jsx_runtime(), 1);
-  function DensityPicker() {
-    const context = (0, import_element36.useContext)(dataviews_context_default);
-    const view = context.view;
+  function isDefined4(item) {
+    return !!item;
+  }
+  function PickerActivityItem({
+    view,
+    multiselect,
+    selection,
+    onChangeSelection,
+    getItemId,
+    item,
+    titleField,
+    mediaField,
+    descriptionField: descriptionField2,
+    otherFields,
+    posinset,
+    setsize
+  }) {
+    const elementRef = (0, import_element38.useRef)(null);
+    useIntersectionObserver(elementRef, posinset);
+    const { showTitle = true, showMedia = true, showDescription = true } = view;
+    const id = getItemId(item);
+    const isSelected2 = selection.includes(id);
+    const density = view.layout?.density ?? "balanced";
+    const mediaContent = showMedia && density !== "compact" && mediaField?.render ? /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+      mediaField.render,
+      {
+        item,
+        field: mediaField,
+        config: {
+          sizes: density === "comfortable" ? "32px" : "24px"
+        }
+      }
+    ) : null;
+    const renderedMediaField = /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("div", { className: "dataviews-view-picker-activity__item-type-icon", children: mediaContent || /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+      "span",
+      {
+        className: "dataviews-view-picker-activity__item-bullet",
+        "aria-hidden": "true"
+      }
+    ) });
+    const renderedTitleField = showTitle && titleField?.render ? /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(titleField.render, { item, field: titleField }) : null;
+    const renderedDescriptionField = showDescription && descriptionField2?.render ? /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(descriptionField2.render, { item, field: descriptionField2 }) : null;
+    const verticalGap = (0, import_element38.useMemo)(() => {
+      switch (density) {
+        case "comfortable":
+          return "md";
+        default:
+          return "sm";
+      }
+    }, [density]);
+    return /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+      import_components16.Composite.Item,
+      {
+        ref: elementRef,
+        role: "option",
+        "aria-label": titleField ? titleField.getValue({ item }) || void 0 : void 0,
+        "aria-posinset": posinset,
+        "aria-setsize": setsize,
+        "aria-selected": isSelected2,
+        className: clsx_default(
+          "dataviews-view-picker-activity__item",
+          density === "compact" && "is-compact",
+          density === "balanced" && "is-balanced",
+          density === "comfortable" && "is-comfortable",
+          isSelected2 && "is-selected"
+        ),
+        onClick: () => {
+          if (isSelected2) {
+            onChangeSelection(
+              selection.filter((itemId) => id !== itemId)
+            );
+          } else {
+            const newSelection = multiselect ? [...selection, id] : [id];
+            onChangeSelection(newSelection);
+          }
+        },
+        render: /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("div", {}),
+        children: /* @__PURE__ */ (0, import_jsx_runtime67.jsxs)(Stack, { direction: "row", gap: "lg", justify: "start", align: "flex-start", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+            Stack,
+            {
+              direction: "column",
+              gap: "xs",
+              align: "center",
+              className: "dataviews-view-picker-activity__item-type",
+              children: renderedMediaField
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime67.jsxs)(
+            Stack,
+            {
+              direction: "column",
+              gap: verticalGap,
+              align: "flex-start",
+              className: "dataviews-view-picker-activity__item-content",
+              children: [
+                renderedTitleField && /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("div", { className: "dataviews-view-picker-activity__item-title", children: renderedTitleField }),
+                renderedDescriptionField && /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("div", { className: "dataviews-view-picker-activity__item-description", children: renderedDescriptionField }),
+                /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("div", { className: "dataviews-view-picker-activity__item-fields", children: otherFields.map((field) => /* @__PURE__ */ (0, import_jsx_runtime67.jsxs)(
+                  "div",
+                  {
+                    className: "dataviews-view-picker-activity__item-field",
+                    children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+                        VisuallyHidden,
+                        {
+                          render: /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("span", {}),
+                          className: "dataviews-view-picker-activity__item-field-label",
+                          children: field.label
+                        }
+                      ),
+                      /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("span", { className: "dataviews-view-picker-activity__item-field-value", children: /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+                        field.render,
+                        {
+                          item,
+                          field
+                        }
+                      ) })
+                    ]
+                  },
+                  field.id
+                )) })
+              ]
+            }
+          )
+        ] })
+      }
+    );
+  }
+  function PickerActivityGroup({
+    groupName,
+    groupField,
+    showLabel = true,
+    children
+  }) {
+    const headerId = (0, import_compose7.useInstanceId)(
+      PickerActivityGroup,
+      "dataviews-view-picker-activity-group__header"
+    );
     return /* @__PURE__ */ (0, import_jsx_runtime67.jsxs)(
-      import_components16.__experimentalToggleGroupControl,
+      Stack,
+      {
+        direction: "column",
+        role: "group",
+        "aria-labelledby": headerId,
+        className: "dataviews-view-picker-activity-group",
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+            "h3",
+            {
+              className: "dataviews-view-picker-activity-group__header",
+              id: headerId,
+              children: showLabel ? (0, import_i18n25.sprintf)(
+                // translators: 1: The label of the field e.g. "Date". 2: The value of the field, e.g.: "May 2022".
+                (0, import_i18n25.__)("%1$s: %2$s"),
+                groupField.label,
+                groupName
+              ) : groupName
+            }
+          ),
+          children
+        ]
+      }
+    );
+  }
+  function ViewPickerActivity({
+    data,
+    fields,
+    getItemId,
+    isLoading,
+    onChangeSelection,
+    selection,
+    view,
+    actions,
+    className,
+    empty
+  }) {
+    const { itemListLabel, paginationInfo } = (0, import_element38.useContext)(dataviews_context_default);
+    const isMultiselect = useIsMultiselectPicker(actions);
+    const titleField = fields.find(
+      (field) => field.id === view?.titleField
+    );
+    const mediaField = fields.find(
+      (field) => field.id === view?.mediaField
+    );
+    const descriptionField2 = fields.find(
+      (field) => field.id === view?.descriptionField
+    );
+    const otherFields = (view?.fields ?? []).map((fieldId) => fields.find((f2) => fieldId === f2.id)).filter(isDefined4);
+    const groupField = view.groupBy?.field ? fields.find((f2) => f2.id === view.groupBy?.field) : null;
+    const dataByGroup = groupField ? getDataByGroup(data, groupField) : null;
+    const isInfiniteScroll = (view.infiniteScrollEnabled && !dataByGroup) ?? false;
+    const setsize = isInfiniteScroll ? paginationInfo?.totalItems : void 0;
+    const hasData = !!data?.length;
+    const isGrouped = !!(groupField && dataByGroup);
+    const renderItem = (item) => /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+      PickerActivityItem,
+      {
+        view,
+        multiselect: isMultiselect,
+        selection,
+        onChangeSelection,
+        getItemId,
+        item,
+        titleField,
+        mediaField,
+        descriptionField: descriptionField2,
+        otherFields,
+        posinset: item.position,
+        setsize
+      },
+      getItemId(item)
+    );
+    if (!hasData) {
+      return /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+        "div",
+        {
+          className: clsx_default({
+            "dataviews-loading": isLoading,
+            "dataviews-no-results": !isLoading
+          }),
+          children: isLoading ? /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(import_components16.Spinner, {}) }) : empty
+        }
+      );
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime67.jsxs)(import_jsx_runtime67.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+        import_components16.Composite,
+        {
+          virtualFocus: true,
+          orientation: "vertical",
+          role: "listbox",
+          "aria-multiselectable": isMultiselect,
+          "aria-label": itemListLabel,
+          "aria-busy": isLoading,
+          render: isGrouped ? /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(Stack, { direction: "column", gap: "sm" }) : void 0,
+          className: clsx_default(
+            "dataviews-view-picker-activity",
+            className
+          ),
+          children: isGrouped && dataByGroup ? Array.from(dataByGroup.entries()).map(
+            ([groupName, groupItems]) => /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
+              PickerActivityGroup,
+              {
+                groupName,
+                groupField,
+                showLabel: view.groupBy?.showLabel !== false,
+                children: groupItems.map(renderItem)
+              },
+              groupName
+            )
+          ) : data.map(renderItem)
+        }
+      ),
+      isLoading && /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("p", { className: "dataviews-loading-more", children: /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(import_components16.Spinner, {}) })
+    ] });
+  }
+
+  // packages/dataviews/build-module/components/dataviews-layouts/utils/density-picker.mjs
+  var import_components17 = __toESM(require_components(), 1);
+  var import_i18n26 = __toESM(require_i18n(), 1);
+  var import_element39 = __toESM(require_element(), 1);
+  var import_jsx_runtime68 = __toESM(require_jsx_runtime(), 1);
+  function DensityPicker() {
+    const context = (0, import_element39.useContext)(dataviews_context_default);
+    const view = context.view;
+    return /* @__PURE__ */ (0, import_jsx_runtime68.jsxs)(
+      import_components17.__experimentalToggleGroupControl,
       {
         size: "__unstable-large",
-        label: (0, import_i18n25.__)("Density"),
+        label: (0, import_i18n26.__)("Density"),
         value: view.layout?.density || "balanced",
         onChange: (value) => {
           context.onChangeView({
@@ -14448,30 +14919,30 @@ var wp;
         },
         isBlock: true,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
-            import_components16.__experimentalToggleGroupControlOption,
+          /* @__PURE__ */ (0, import_jsx_runtime68.jsx)(
+            import_components17.__experimentalToggleGroupControlOption,
             {
               value: "comfortable",
-              label: (0, import_i18n25._x)(
+              label: (0, import_i18n26._x)(
                 "Comfortable",
                 "Density option for DataView layout"
               )
             },
             "comfortable"
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
-            import_components16.__experimentalToggleGroupControlOption,
+          /* @__PURE__ */ (0, import_jsx_runtime68.jsx)(
+            import_components17.__experimentalToggleGroupControlOption,
             {
               value: "balanced",
-              label: (0, import_i18n25._x)("Balanced", "Density option for DataView layout")
+              label: (0, import_i18n26._x)("Balanced", "Density option for DataView layout")
             },
             "balanced"
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
-            import_components16.__experimentalToggleGroupControlOption,
+          /* @__PURE__ */ (0, import_jsx_runtime68.jsx)(
+            import_components17.__experimentalToggleGroupControlOption,
             {
               value: "compact",
-              label: (0, import_i18n25._x)("Compact", "Density option for DataView layout")
+              label: (0, import_i18n26._x)("Compact", "Density option for DataView layout")
             },
             "compact"
           )
@@ -14481,10 +14952,10 @@ var wp;
   }
 
   // packages/dataviews/build-module/components/dataviews-layouts/utils/preview-size-picker.mjs
-  var import_components17 = __toESM(require_components(), 1);
-  var import_i18n26 = __toESM(require_i18n(), 1);
-  var import_element37 = __toESM(require_element(), 1);
-  var import_jsx_runtime68 = __toESM(require_jsx_runtime(), 1);
+  var import_components18 = __toESM(require_components(), 1);
+  var import_i18n27 = __toESM(require_i18n(), 1);
+  var import_element40 = __toESM(require_element(), 1);
+  var import_jsx_runtime69 = __toESM(require_jsx_runtime(), 1);
   var imageSizes2 = [
     {
       value: 120,
@@ -14515,7 +14986,7 @@ var wp;
     }
   ];
   function PreviewSizePicker() {
-    const context = (0, import_element37.useContext)(dataviews_context_default);
+    const context = (0, import_element40.useContext)(dataviews_context_default);
     const view = context.view;
     const breakValues = imageSizes2.filter((size4) => {
       return context.containerWidth >= size4.breakpoint;
@@ -14527,12 +14998,12 @@ var wp;
         value: index2
       };
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime68.jsx)(
-      import_components17.RangeControl,
+    return /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(
+      import_components18.RangeControl,
       {
         __next40pxDefaultSize: true,
         showTooltip: false,
-        label: (0, import_i18n26.__)("Preview size"),
+        label: (0, import_i18n27.__)("Preview size"),
         value: previewSizeToUse,
         min: 0,
         max: breakValues.length - 1,
@@ -14553,11 +15024,11 @@ var wp;
   }
 
   // packages/dataviews/build-module/components/dataviews-layouts/utils/grid-config-options.mjs
-  var import_jsx_runtime69 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime70 = __toESM(require_jsx_runtime(), 1);
   function GridConfigOptions() {
-    return /* @__PURE__ */ (0, import_jsx_runtime69.jsxs)(import_jsx_runtime69.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(DensityPicker, {}),
-      /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(PreviewSizePicker, {})
+    return /* @__PURE__ */ (0, import_jsx_runtime70.jsxs)(import_jsx_runtime70.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(DensityPicker, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(PreviewSizePicker, {})
     ] });
   }
 
@@ -14565,35 +15036,35 @@ var wp;
   var VIEW_LAYOUTS = [
     {
       type: LAYOUT_TABLE,
-      label: (0, import_i18n27.__)("Table"),
+      label: (0, import_i18n28.__)("Table"),
       component: table_default,
       icon: block_table_default,
       viewConfigOptions: DensityPicker
     },
     {
       type: LAYOUT_GRID,
-      label: (0, import_i18n27.__)("Grid"),
+      label: (0, import_i18n28.__)("Grid"),
       component: grid_default,
       icon: category_default,
       viewConfigOptions: GridConfigOptions
     },
     {
       type: LAYOUT_LIST,
-      label: (0, import_i18n27.__)("List"),
+      label: (0, import_i18n28.__)("List"),
       component: ViewList,
-      icon: (0, import_i18n27.isRTL)() ? format_list_bullets_rtl_default : format_list_bullets_default,
+      icon: (0, import_i18n28.isRTL)() ? format_list_bullets_rtl_default : format_list_bullets_default,
       viewConfigOptions: DensityPicker
     },
     {
       type: LAYOUT_ACTIVITY,
-      label: (0, import_i18n27.__)("Activity"),
+      label: (0, import_i18n28.__)("Activity"),
       component: ViewActivity,
       icon: scheduled_default,
       viewConfigOptions: DensityPicker
     },
     {
       type: LAYOUT_PICKER_GRID,
-      label: (0, import_i18n27.__)("Grid"),
+      label: (0, import_i18n28.__)("Grid"),
       component: picker_grid_default,
       icon: category_default,
       viewConfigOptions: GridConfigOptions,
@@ -14601,165 +15072,50 @@ var wp;
     },
     {
       type: LAYOUT_PICKER_TABLE,
-      label: (0, import_i18n27.__)("Table"),
+      label: (0, import_i18n28.__)("Table"),
       component: picker_table_default,
       icon: block_table_default,
+      viewConfigOptions: DensityPicker,
+      isPicker: true
+    },
+    {
+      type: LAYOUT_PICKER_ACTIVITY,
+      label: (0, import_i18n28.__)("Activity"),
+      component: ViewPickerActivity,
+      icon: scheduled_default,
       viewConfigOptions: DensityPicker,
       isPicker: true
     }
   ];
 
   // packages/dataviews/build-module/components/dataviews-filters/filters.mjs
-  var import_element45 = __toESM(require_element(), 1);
+  var import_element48 = __toESM(require_element(), 1);
 
   // packages/dataviews/build-module/components/dataviews-filters/filter.mjs
-  var import_components20 = __toESM(require_components(), 1);
-  var import_i18n30 = __toESM(require_i18n(), 1);
-  var import_element42 = __toESM(require_element(), 1);
+  var import_components21 = __toESM(require_components(), 1);
+  var import_i18n31 = __toESM(require_i18n(), 1);
+  var import_element45 = __toESM(require_element(), 1);
 
-  // node_modules/@ariakit/core/esm/__chunks/XMCVU3LR.js
-  function noop5(..._) {
-  }
-  function applyState(argument, currentValue) {
-    if (isUpdater(argument)) {
-      const value = isLazyValue(currentValue) ? currentValue() : currentValue;
-      return argument(value);
-    }
-    return argument;
-  }
-  function isUpdater(argument) {
-    return typeof argument === "function";
-  }
-  function isLazyValue(value) {
-    return typeof value === "function";
-  }
-  function hasOwnProperty(object, prop) {
-    if (typeof Object.hasOwn === "function") {
-      return Object.hasOwn(object, prop);
-    }
-    return Object.prototype.hasOwnProperty.call(object, prop);
-  }
-  function chain(...fns) {
-    return (...args) => {
-      for (const fn of fns) {
-        if (typeof fn === "function") {
-          fn(...args);
-        }
-      }
-    };
-  }
-  function normalizeString(str) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  }
-  function omit(object, keys) {
-    const result = { ...object };
-    for (const key of keys) {
-      if (hasOwnProperty(result, key)) {
-        delete result[key];
-      }
-    }
-    return result;
-  }
-  function pick(object, paths) {
-    const result = {};
-    for (const key of paths) {
-      if (hasOwnProperty(object, key)) {
-        result[key] = object[key];
-      }
-    }
-    return result;
-  }
-  function identity(value) {
-    return value;
-  }
-  function invariant(condition, message2) {
-    if (condition) return;
-    if (typeof message2 !== "string") throw new Error("Invariant failed");
-    throw new Error(message2);
-  }
-  function getKeys(obj) {
-    return Object.keys(obj);
-  }
-  function isFalsyBooleanCallback(booleanOrCallback, ...args) {
-    const result = typeof booleanOrCallback === "function" ? booleanOrCallback(...args) : booleanOrCallback;
-    if (result == null) return false;
-    return !result;
-  }
-  function disabledFromProps(props) {
-    return props.disabled || props["aria-disabled"] === true || props["aria-disabled"] === "true";
-  }
-  function removeUndefinedValues(obj) {
-    const result = {};
-    for (const key in obj) {
-      if (obj[key] !== void 0) {
-        result[key] = obj[key];
-      }
-    }
-    return result;
-  }
-  function defaultValue(...values) {
-    for (const value of values) {
-      if (value !== void 0) return value;
-    }
-    return void 0;
-  }
-
-  // node_modules/@ariakit/react-core/esm/__chunks/YXGXYGQX.js
+  // node_modules/@ariakit/react-components/dist/focusable/focusable-context.js
   var import_react6 = __toESM(require_react(), 1);
-  function setRef(ref, value) {
-    if (typeof ref === "function") {
-      ref(value);
-    } else if (ref) {
-      ref.current = value;
-    }
-  }
-  function isValidElementWithRef(element) {
-    if (!element) return false;
-    if (!(0, import_react6.isValidElement)(element)) return false;
-    if ("ref" in element.props) return true;
-    if ("ref" in element) return true;
-    return false;
-  }
-  function getRefProperty(element) {
-    if (!isValidElementWithRef(element)) return null;
-    const props = { ...element.props };
-    return props.ref || element.ref;
-  }
-  function mergeProps3(base, overrides) {
-    const props = { ...base };
-    for (const key in overrides) {
-      if (!hasOwnProperty(overrides, key)) continue;
-      if (key === "className") {
-        const prop = "className";
-        props[prop] = base[prop] ? `${base[prop]} ${overrides[prop]}` : overrides[prop];
-        continue;
-      }
-      if (key === "style") {
-        const prop = "style";
-        props[prop] = base[prop] ? { ...base[prop], ...overrides[prop] } : overrides[prop];
-        continue;
-      }
-      const overrideValue = overrides[key];
-      if (typeof overrideValue === "function" && key.startsWith("on")) {
-        const baseValue = base[key];
-        if (typeof baseValue === "function") {
-          props[key] = (...args) => {
-            overrideValue(...args);
-            baseValue(...args);
-          };
-          continue;
-        }
-      }
-      props[key] = overrideValue;
-    }
-    return props;
-  }
+  var FocusableContext = (0, import_react6.createContext)(true);
 
-  // node_modules/@ariakit/core/esm/__chunks/3DNM6L6E.js
+  // node_modules/@ariakit/utils/dist/index.js
+  function toArray(arg) {
+    if (Array.isArray(arg)) return arg;
+    return typeof arg !== "undefined" ? [arg] : [];
+  }
+  function flatten2DArray(array) {
+    const flattened = [];
+    for (const row of array) flattened.push(...row);
+    return flattened;
+  }
+  function reverseArray(array) {
+    return array.slice().reverse();
+  }
   var canUseDOM = checkIsBrowser();
   function checkIsBrowser() {
-    var _a;
-    return typeof window !== "undefined" && !!((_a = window.document) == null ? void 0 : _a.createElement);
+    return typeof window !== "undefined" && !!window.document?.createElement;
   }
   function getDocument(node) {
     if (!node) return document;
@@ -14767,24 +15123,14 @@ var wp;
     return node.ownerDocument || document;
   }
   function getActiveElement(node, activeDescendant = false) {
-    var _a;
     const { activeElement: activeElement2 } = getDocument(node);
-    if (!(activeElement2 == null ? void 0 : activeElement2.nodeName)) {
-      return null;
-    }
-    if (isFrame(activeElement2) && ((_a = activeElement2.contentDocument) == null ? void 0 : _a.body)) {
-      return getActiveElement(
-        activeElement2.contentDocument.body,
-        activeDescendant
-      );
-    }
+    if (!activeElement2?.nodeName) return null;
+    if (isFrame(activeElement2) && activeElement2.contentDocument?.body) return getActiveElement(activeElement2.contentDocument.body, activeDescendant);
     if (activeDescendant) {
       const id = activeElement2.getAttribute("aria-activedescendant");
       if (id) {
         const element = getDocument(activeElement2).getElementById(id);
-        if (element) {
-          return element;
-        }
+        if (element) return element;
       }
     }
     return activeElement2;
@@ -14792,15 +15138,19 @@ var wp;
   function contains2(parent, child) {
     return parent === child || parent.contains(child);
   }
+  function isElement2(target) {
+    return target?.nodeType === 1;
+  }
+  function isNode2(target) {
+    return typeof target?.nodeType === "number";
+  }
   function isFrame(element) {
     return element.tagName === "IFRAME";
   }
   function isButton(element) {
     const tagName = element.tagName.toLowerCase();
     if (tagName === "button") return true;
-    if (tagName === "input" && element.type) {
-      return buttonInputTypes.indexOf(element.type) !== -1;
-    }
+    if (tagName === "input" && element.type) return buttonInputTypes.indexOf(element.type) !== -1;
     return false;
   }
   var buttonInputTypes = [
@@ -14812,9 +15162,7 @@ var wp;
     "submit"
   ];
   function isVisible(element) {
-    if (typeof element.checkVisibility === "function") {
-      return element.checkVisibility();
-    }
+    if (typeof element.checkVisibility === "function") return element.checkVisibility();
     const htmlElement = element;
     return htmlElement.offsetWidth > 0 || htmlElement.offsetHeight > 0 || element.getClientRects().length > 0;
   }
@@ -14831,9 +15179,7 @@ var wp;
     return element.isContentEditable || isTextField(element);
   }
   function getTextboxValue(element) {
-    if (isTextField(element)) {
-      return element.value;
-    }
+    if (isTextField(element)) return element.value;
     if (element.isContentEditable) {
       const range = getDocument(element).createRange();
       range.selectNodeContents(element);
@@ -14849,7 +15195,7 @@ var wp;
       end = element.selectionEnd || 0;
     } else if (element.isContentEditable) {
       const selection = getDocument(element).getSelection();
-      if ((selection == null ? void 0 : selection.rangeCount) && selection.anchorNode && contains2(element, selection.anchorNode) && selection.focusNode && contains2(element, selection.focusNode)) {
+      if (selection?.rangeCount && selection.anchorNode && contains2(element, selection.anchorNode) && selection.focusNode && contains2(element, selection.focusNode)) {
         const range = selection.getRangeAt(0);
         const nextRange = range.cloneRange();
         nextRange.selectNodeContents(element);
@@ -14859,14 +15205,21 @@ var wp;
         end = nextRange.toString().length;
       }
     }
-    return { start, end };
+    return {
+      start,
+      end
+    };
   }
   function getPopupRole(element, fallback) {
-    const allowedPopupRoles = ["dialog", "menu", "listbox", "tree", "grid"];
-    const role = element == null ? void 0 : element.getAttribute("role");
-    if (role && allowedPopupRoles.indexOf(role) !== -1) {
-      return role;
-    }
+    const allowedPopupRoles = [
+      "dialog",
+      "menu",
+      "listbox",
+      "tree",
+      "grid"
+    ];
+    const role = element?.getAttribute("role");
+    if (role && allowedPopupRoles.indexOf(role) !== -1) return role;
     return fallback;
   }
   function getScrollingElement(element) {
@@ -14886,9 +15239,7 @@ var wp;
     return getScrollingElement(element.parentElement) || document.scrollingElement || document.body;
   }
   function setSelectionRange(element, ...args) {
-    if (/text|search|password|tel|url/i.test(element.type)) {
-      element.setSelectionRange(...args);
-    }
+    if (/text|search|password|tel|url/i.test(element.type)) element.setSelectionRange(...args);
   }
   function sortBasedOnDOMPosition(items, getElement) {
     const pairs = items.map((item, index2) => [index2, item]);
@@ -14899,28 +15250,18 @@ var wp;
       if (elementA === elementB) return 0;
       if (!elementA || !elementB) return 0;
       if (isElementPreceding(elementA, elementB)) {
-        if (indexA > indexB) {
-          isOrderDifferent = true;
-        }
+        if (indexA > indexB) isOrderDifferent = true;
         return -1;
       }
-      if (indexA < indexB) {
-        isOrderDifferent = true;
-      }
+      if (indexA < indexB) isOrderDifferent = true;
       return 1;
     });
-    if (isOrderDifferent) {
-      return pairs.map(([_, item]) => item);
-    }
+    if (isOrderDifferent) return pairs.map(([_, item]) => item);
     return items;
   }
   function isElementPreceding(a2, b2) {
-    return Boolean(
-      b2.compareDocumentPosition(a2) & Node.DOCUMENT_POSITION_PRECEDING
-    );
+    return Boolean(b2.compareDocumentPosition(a2) & Node.DOCUMENT_POSITION_PRECEDING);
   }
-
-  // node_modules/@ariakit/core/esm/__chunks/SNHYQNEZ.js
   function isTouchDevice() {
     return canUseDOM && !!navigator.maxTouchPoints;
   }
@@ -14934,12 +15275,11 @@ var wp;
   function isFirefox2() {
     return canUseDOM && /firefox\//i.test(navigator.userAgent);
   }
-
-  // node_modules/@ariakit/core/esm/utils/events.js
   function isPortalEvent(event) {
-    return Boolean(
-      event.currentTarget && !contains2(event.currentTarget, event.target)
-    );
+    const { currentTarget, target } = event;
+    if (!currentTarget) return false;
+    if (!isNode2(target)) return true;
+    return !contains2(currentTarget, target);
   }
   function isSelfTarget(event) {
     return event.target === event.currentTarget;
@@ -14969,7 +15309,10 @@ var wp;
   function fireBlurEvent(element, eventInit) {
     const event = new FocusEvent("blur", eventInit);
     const defaultAllowed = element.dispatchEvent(event);
-    const bubbleInit = { ...eventInit, bubbles: true };
+    const bubbleInit = {
+      ...eventInit,
+      bubbles: true
+    };
     element.dispatchEvent(new FocusEvent("focusout", bubbleInit));
     return defaultAllowed;
   }
@@ -14984,7 +15327,7 @@ var wp;
   function isFocusEventOutside(event, container) {
     const containerElement = container || event.currentTarget;
     const relatedTarget = event.relatedTarget;
-    return !relatedTarget || !contains2(containerElement, relatedTarget);
+    return !isNode2(relatedTarget) || !contains2(containerElement, relatedTarget);
   }
   function queueBeforeEvent(element, type, callback, timeout) {
     const createTimer = (callback2) => {
@@ -15003,34 +15346,225 @@ var wp;
       cancelTimer();
       callback();
     };
-    element.addEventListener(type, callSync, { once: true, capture: true });
+    element.addEventListener(type, callSync, {
+      once: true,
+      capture: true
+    });
     return cancelTimer;
   }
   function addGlobalEventListener(type, listener, options, scope = window) {
     const children = [];
     try {
       scope.document.addEventListener(type, listener, options);
-      for (const frame of Array.from(scope.frames)) {
-        children.push(addGlobalEventListener(type, listener, options, frame));
-      }
-    } catch (e2) {
+      for (const frame of Array.from(scope.frames)) children.push(addGlobalEventListener(type, listener, options, frame));
+    } catch {
     }
     const removeEventListener = () => {
       try {
         scope.document.removeEventListener(type, listener, options);
-      } catch (e2) {
+      } catch {
       }
-      for (const remove of children) {
-        remove();
-      }
+      for (const remove of children) remove();
     };
     return removeEventListener;
   }
+  var selector = "input:not([type='hidden']):not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href], button:not([disabled]), [tabindex], summary, iframe, object, embed, area[href], audio[controls], video[controls], [contenteditable]:not([contenteditable='false'])";
+  function isFocusable(element) {
+    if (!element.matches(selector)) return false;
+    if (!isVisible(element)) return false;
+    if (element.closest("[inert]")) return false;
+    return true;
+  }
+  function hasFocus(element) {
+    const activeElement2 = getActiveElement(element);
+    if (!activeElement2) return false;
+    if (activeElement2 === element) return true;
+    const activeDescendant = activeElement2.getAttribute("aria-activedescendant");
+    if (!activeDescendant) return false;
+    return activeDescendant === element.id;
+  }
+  function hasFocusWithin(element) {
+    const activeElement2 = getActiveElement(element);
+    if (!activeElement2) return false;
+    if (contains2(element, activeElement2)) return true;
+    const activeDescendant = activeElement2.getAttribute("aria-activedescendant");
+    if (!activeDescendant) return false;
+    if (!("id" in element)) return false;
+    if (activeDescendant === element.id) return true;
+    return !!element.querySelector(`#${CSS.escape(activeDescendant)}`);
+  }
+  function focusIntoView(element, options) {
+    if (!("scrollIntoView" in element)) element.focus();
+    else {
+      element.focus({ preventScroll: true });
+      element.scrollIntoView({
+        block: "nearest",
+        inline: "nearest",
+        ...options
+      });
+    }
+  }
+  function noop5(..._) {
+  }
+  function hasOwnProperty(object, prop) {
+    if (typeof Object.hasOwn === "function") return Object.hasOwn(object, prop);
+    return Object.prototype.hasOwnProperty.call(object, prop);
+  }
+  function chain(...fns) {
+    return (...args) => {
+      for (const fn of fns) if (typeof fn === "function") fn(...args);
+    };
+  }
+  function normalizeString(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+  function omit(object, keys) {
+    const result = { ...object };
+    for (const key of keys) if (hasOwnProperty(result, key)) delete result[key];
+    return result;
+  }
+  function pick(object, paths) {
+    const result = {};
+    for (const key of paths) if (hasOwnProperty(object, key)) result[key] = object[key];
+    return result;
+  }
+  function identity(value) {
+    return value;
+  }
+  function invariant(condition, message2) {
+    if (condition) return;
+    if (typeof message2 !== "string") throw new Error("Invariant failed");
+    throw new Error(message2);
+  }
+  function getKeys(obj) {
+    return Object.keys(obj);
+  }
+  function isFalsyBooleanCallback(booleanOrCallback, ...args) {
+    const result = typeof booleanOrCallback === "function" ? booleanOrCallback(...args) : booleanOrCallback;
+    if (result == null) return false;
+    return !result;
+  }
+  function disabledFromProps(props) {
+    return props.disabled || props["aria-disabled"] === true || props["aria-disabled"] === "true";
+  }
+  function removeUndefinedValues(obj) {
+    const result = {};
+    for (const key in obj) if (obj[key] !== void 0) result[key] = obj[key];
+    return result;
+  }
+  function defaultValue(...values) {
+    for (const value of values) if (value !== void 0) return value;
+  }
+  function createUndoCallback(callback) {
+    return async () => {
+      const redo = await callback?.();
+      return createUndoCallback(async () => {
+        await redo?.();
+        return callback;
+      });
+    };
+  }
+  var UndoManager = createUndoManager();
+  function createUndoManager({ limit = 100 } = {}) {
+    const undoStack = [];
+    let redoStack = [];
+    let currentGroup = null;
+    const canUndo = () => undoStack.length > 0;
+    const canRedo = () => redoStack.length > 0;
+    const undo = async () => {
+      if (!canUndo()) return;
+      currentGroup = null;
+      redoStack.push(await undoStack.pop()?.());
+    };
+    const redo = async () => {
+      if (!canRedo()) return;
+      currentGroup = null;
+      undoStack.push(await redoStack.pop()?.());
+    };
+    const execute = async (callback, group) => {
+      if (!callback) return;
+      while (undoStack.length > limit) undoStack.shift();
+      const sameGroup = group === currentGroup;
+      currentGroup = group ?? null;
+      const nextIndex = sameGroup ? Math.max(0, undoStack.length - 1) : undoStack.length;
+      const undoCallback = await callback();
+      if (!undoCallback) return;
+      redoStack = [];
+      const currentUndo = undoStack[nextIndex];
+      undoStack[nextIndex] = createUndoCallback(async () => {
+        await undoCallback?.();
+        const currentRedo = await currentUndo?.();
+        return async () => {
+          await currentRedo?.();
+          await callback?.();
+        };
+      });
+    };
+    return {
+      canUndo,
+      canRedo,
+      undo,
+      redo,
+      execute
+    };
+  }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/KPHZR4MB.js
-  var React48 = __toESM(require_react(), 1);
+  // node_modules/@ariakit/react-utils/dist/index.js
+  var React47 = __toESM(require_react(), 1);
   var import_react7 = __toESM(require_react(), 1);
-  var _React = { ...React48 };
+  var import_jsx_runtime71 = __toESM(require_jsx_runtime(), 1);
+  function setRef(ref, value) {
+    if (typeof ref === "function") ref(value);
+    else if (ref) ref.current = value;
+  }
+  function isValidElementWithRef(element) {
+    if (!element) return false;
+    if (!(0, import_react7.isValidElement)(element)) return false;
+    if ("ref" in element.props) return true;
+    if ("ref" in element) return true;
+    return false;
+  }
+  function getRefProperty(element) {
+    if (!isValidElementWithRef(element)) return null;
+    return { ...element.props }.ref || element.ref;
+  }
+  function mergeProps2(base, overrides) {
+    const props = { ...base };
+    for (const key in overrides) {
+      if (!hasOwnProperty(overrides, key)) continue;
+      if (key === "className") {
+        const prop = "className";
+        const baseClass = base[prop];
+        const overrideClass = overrides[prop];
+        if (baseClass && overrideClass) props[prop] = `${baseClass} ${overrideClass}`;
+        else props[prop] = overrideClass || baseClass;
+        continue;
+      }
+      if (key === "style") {
+        const prop = "style";
+        props[prop] = base[prop] ? {
+          ...base[prop],
+          ...overrides[prop]
+        } : overrides[prop];
+        continue;
+      }
+      const overrideValue = overrides[key];
+      if (key.startsWith("on")) {
+        if (typeof overrideValue !== "function") continue;
+        const baseValue = base[key];
+        if (typeof baseValue === "function") {
+          props[key] = (...args) => {
+            overrideValue(...args);
+            baseValue(...args);
+          };
+          continue;
+        }
+      }
+      props[key] = overrideValue;
+    }
+    return props;
+  }
+  var _React = { ...React47 };
   var useReactId = _React.useId;
   var useReactDeferredValue = _React.useDeferredValue;
   var useReactInsertionEffect = _React.useInsertionEffect;
@@ -15050,17 +15584,11 @@ var wp;
     const ref = (0, import_react7.useRef)(() => {
       throw new Error("Cannot call an event handler while rendering.");
     });
-    if (useReactInsertionEffect) {
-      useReactInsertionEffect(() => {
-        ref.current = callback;
-      });
-    } else {
+    if (useReactInsertionEffect) useReactInsertionEffect(() => {
       ref.current = callback;
-    }
-    return (0, import_react7.useCallback)((...args) => {
-      var _a;
-      return (_a = ref.current) == null ? void 0 : _a.call(ref, ...args);
-    }, []);
+    });
+    else ref.current = callback;
+    return (0, import_react7.useCallback)((...args) => ref.current?.(...args), []);
   }
   function useTransactionState(callback) {
     const [state, setState] = (0, import_react7.useState)(null);
@@ -15082,9 +15610,7 @@ var wp;
     return (0, import_react7.useMemo)(() => {
       if (!refs.some(Boolean)) return;
       return (value) => {
-        for (const ref of refs) {
-          setRef(ref, value);
-        }
+        for (const ref of refs) setRef(ref, value);
       };
     }, refs);
   }
@@ -15097,8 +15623,7 @@ var wp;
     const [id, setId] = (0, import_react7.useState)(defaultId);
     useSafeLayoutEffect(() => {
       if (defaultId || id) return;
-      const random = Math.random().toString(36).slice(2, 8);
-      setId(`id-${random}`);
+      setId(`id-${Math.random().toString(36).slice(2, 8)}`);
     }, [defaultId, id]);
     return defaultId || id;
   }
@@ -15109,8 +15634,7 @@ var wp;
     };
     const [tagName, setTagName] = (0, import_react7.useState)(() => stringOrUndefined(type));
     useSafeLayoutEffect(() => {
-      const element = refOrElement && "current" in refOrElement ? refOrElement.current : refOrElement;
-      setTagName((element == null ? void 0 : element.tagName.toLowerCase()) || stringOrUndefined(type));
+      setTagName((refOrElement && "current" in refOrElement ? refOrElement.current : refOrElement)?.tagName.toLowerCase() || stringOrUndefined(type));
     }, [refOrElement, type]);
     return tagName;
   }
@@ -15128,66 +15652,60 @@ var wp;
       observer.observe(element, { attributeFilter: [attributeName] });
       callback();
       return () => observer.disconnect();
-    }, [refOrElement, attributeName, initialValue]);
+    }, [
+      refOrElement,
+      attributeName,
+      initialValue
+    ]);
     return attribute;
   }
   function useUpdateEffect(effect, deps) {
     const mounted = (0, import_react7.useRef)(false);
     (0, import_react7.useEffect)(() => {
-      if (mounted.current) {
-        return effect();
-      }
+      if (mounted.current) return effect();
       mounted.current = true;
     }, deps);
-    (0, import_react7.useEffect)(
-      () => () => {
-        mounted.current = false;
-      },
-      []
-    );
+    (0, import_react7.useEffect)(() => () => {
+      mounted.current = false;
+    }, []);
   }
   function useUpdateLayoutEffect(effect, deps) {
     const mounted = (0, import_react7.useRef)(false);
     useSafeLayoutEffect(() => {
-      if (mounted.current) {
-        return effect();
-      }
+      if (mounted.current) return effect();
       mounted.current = true;
     }, deps);
-    useSafeLayoutEffect(
-      () => () => {
-        mounted.current = false;
-      },
-      []
-    );
+    useSafeLayoutEffect(() => () => {
+      mounted.current = false;
+    }, []);
   }
   function useForceUpdate() {
     return (0, import_react7.useReducer)(() => [], []);
   }
   function useBooleanEvent(booleanOrCallback) {
-    return useEvent(
-      typeof booleanOrCallback === "function" ? booleanOrCallback : () => booleanOrCallback
-    );
+    return useEvent(typeof booleanOrCallback === "function" ? booleanOrCallback : () => booleanOrCallback);
   }
   function useWrapElement(props, callback, deps = []) {
-    const wrapElement = (0, import_react7.useCallback)(
-      (element) => {
-        if (props.wrapElement) {
-          element = props.wrapElement(element);
-        }
-        return callback(element);
-      },
-      [...deps, props.wrapElement]
-    );
-    return { ...props, wrapElement };
+    const wrapElement = (0, import_react7.useCallback)((element) => {
+      if (props.wrapElement) element = props.wrapElement(element);
+      return callback(element);
+    }, [...deps, props.wrapElement]);
+    return {
+      ...props,
+      wrapElement
+    };
   }
   function useMetadataProps(props, key, value) {
     const parent = props.onLoadedMetadataCapture;
     const onLoadedMetadataCapture = (0, import_react7.useMemo)(() => {
       return Object.assign(() => {
-      }, { ...parent, [key]: value });
-    }, [parent, key, value]);
-    return [parent == null ? void 0 : parent[key], { onLoadedMetadataCapture }];
+      }, parent, ...value !== void 0 ? [{ [key]: value }] : []);
+    }, [
+      parent,
+      key,
+      value
+    ]);
+    return [parent?.[key], { onLoadedMetadataCapture }];
   }
   var hasInstalledGlobalEventListeners = false;
   function useIsMouseMoving() {
@@ -15200,8 +15718,7 @@ var wp;
       addGlobalEventListener("scroll", resetMouseMoving, true);
       hasInstalledGlobalEventListeners = true;
     }, []);
-    const isMouseMoving = useEvent(() => mouseMoving);
-    return isMouseMoving;
+    return useEvent(() => mouseMoving);
   }
   var mouseMoving = false;
   var previousScreenX = 0;
@@ -15220,40 +15737,30 @@ var wp;
   function resetMouseMoving() {
     mouseMoving = false;
   }
-
-  // node_modules/@ariakit/react-core/esm/__chunks/GWSL6KNJ.js
-  var React49 = __toESM(require_react(), 1);
-  var import_jsx_runtime70 = __toESM(require_jsx_runtime(), 1);
-  function forwardRef22(render4) {
-    const Role = React49.forwardRef(
-      // @ts-ignore Incompatible with React 19 types. Ignore for now.
-      (props, ref) => render4({ ...props, ref })
-    );
+  function forwardRef20(render4) {
+    const Role = React47.forwardRef((props, ref) => render4({
+      ...props,
+      ref
+    }));
     Role.displayName = render4.displayName || render4.name;
     return Role;
   }
-  function memo22(Component2, propsAreEqual) {
-    return React49.memo(Component2, propsAreEqual);
+  function memo3(Component2, propsAreEqual) {
+    return React47.memo(Component2, propsAreEqual);
   }
   function createElement3(Type, props) {
     const { wrapElement, render: render4, ...rest } = props;
     const mergedRef = useMergeRefs(props.ref, getRefProperty(render4));
     let element;
-    if (React49.isValidElement(render4)) {
+    if (React47.isValidElement(render4)) {
       const renderProps = {
-        // @ts-ignore Incompatible with React 19 types. Ignore for now.
         ...render4.props,
         ref: mergedRef
       };
-      element = React49.cloneElement(render4, mergeProps3(rest, renderProps));
-    } else if (render4) {
-      element = render4(rest);
-    } else {
-      element = /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(Type, { ...rest });
-    }
-    if (wrapElement) {
-      return wrapElement(element);
-    }
+      element = React47.cloneElement(render4, mergeProps2(rest, renderProps));
+    } else if (render4) element = render4(rest);
+    else element = /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(Type, { ...rest });
+    if (wrapElement) return wrapElement(element);
     return element;
   }
   function createHook(useProps) {
@@ -15264,37 +15771,40 @@ var wp;
     return useRole;
   }
   function createStoreContext(providers = [], scopedProviders = []) {
-    const context = React49.createContext(void 0);
-    const scopedContext = React49.createContext(void 0);
-    const useContext210 = () => React49.useContext(context);
+    const context = React47.createContext(void 0);
+    const scopedContext = React47.createContext(void 0);
+    const useContext37 = () => React47.useContext(context);
     const useScopedContext = (onlyScoped = false) => {
-      const scoped = React49.useContext(scopedContext);
-      const store = useContext210();
+      const scoped = React47.useContext(scopedContext);
+      const store = useContext37();
       if (onlyScoped) return scoped;
       return scoped || store;
     };
     const useProviderContext = () => {
-      const scoped = React49.useContext(scopedContext);
-      const store = useContext210();
+      const scoped = React47.useContext(scopedContext);
+      const store = useContext37();
       if (scoped && scoped === store) return;
       return store;
     };
     const ContextProvider = (props) => {
-      return providers.reduceRight(
-        (children, Provider2) => /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(Provider2, { ...props, children }),
-        /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(context.Provider, { ...props })
-      );
+      return providers.reduceRight((children, Provider2) => /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(Provider2, {
+        ...props,
+        children
+      }), /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(context.Provider, { ...props }));
     };
     const ScopedContextProvider = (props) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(ContextProvider, { ...props, children: scopedProviders.reduceRight(
-        (children, Provider2) => /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(Provider2, { ...props, children }),
-        /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(scopedContext.Provider, { ...props })
-      ) });
+      return /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(ContextProvider, {
+        ...props,
+        children: scopedProviders.reduceRight((children, Provider2) => /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(Provider2, {
+          ...props,
+          children
+        }), /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(scopedContext.Provider, { ...props }))
+      });
     };
     return {
       context,
       scopedContext,
-      useContext: useContext210,
+      useContext: useContext37,
       useScopedContext,
       useProviderContext,
       ContextProvider,
@@ -15302,7 +15812,378 @@ var wp;
     };
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/SMPCIMZM.js
+  // node_modules/@ariakit/react-components/dist/focusable/focusable.js
+  var import_react8 = __toESM(require_react(), 1);
+  var TagName = "div";
+  var accessibleWhenDisabledSymbol = /* @__PURE__ */ Symbol("accessibleWhenDisabled");
+  var isSafariBrowser = isSafari2();
+  var alwaysFocusVisibleInputTypes = [
+    "text",
+    "search",
+    "url",
+    "tel",
+    "email",
+    "password",
+    "number",
+    "date",
+    "month",
+    "week",
+    "time",
+    "datetime",
+    "datetime-local"
+  ];
+  function isAlwaysFocusVisible(element) {
+    const { tagName, readOnly, type } = element;
+    if (tagName === "TEXTAREA" && !readOnly) return true;
+    if (tagName === "SELECT" && !readOnly) return true;
+    if (tagName === "INPUT" && !readOnly) return alwaysFocusVisibleInputTypes.includes(type);
+    if (element.isContentEditable) return true;
+    if (element.getAttribute("role") === "combobox" && element.dataset.name) return true;
+    return false;
+  }
+  function isNativeTabbable(tagName) {
+    if (!tagName) return true;
+    return tagName === "button" || tagName === "summary" || tagName === "input" || tagName === "select" || tagName === "textarea" || tagName === "a";
+  }
+  function supportsDisabledAttribute(tagName) {
+    if (!tagName) return true;
+    return tagName === "button" || tagName === "input" || tagName === "select" || tagName === "textarea";
+  }
+  var buttonInputTypes2 = [
+    "button",
+    "color",
+    "file",
+    "image",
+    "reset",
+    "submit"
+  ];
+  function needsSafariTabIndex(tagName, inputType) {
+    if (tagName === "button") return true;
+    if (tagName === "input" && inputType) {
+      if (inputType === "checkbox" || inputType === "radio") return true;
+      return buttonInputTypes2.includes(inputType);
+    }
+    return false;
+  }
+  function isNativeSubmitControl(element) {
+    if (element.tagName === "BUTTON") {
+      const { type } = element;
+      return type === "submit";
+    }
+    if (element.tagName === "INPUT") {
+      const { type } = element;
+      return type === "submit" || type === "image";
+    }
+    return false;
+  }
+  function getTabIndex2({ focusable: focusable2, trulyDisabled, nativeTabbable, supportsDisabled, safariTabIndex, tabIndexProp }) {
+    if (!focusable2) return tabIndexProp;
+    if (trulyDisabled) {
+      if (nativeTabbable && !supportsDisabled) return -1;
+      return;
+    }
+    if (nativeTabbable) {
+      if (safariTabIndex && tabIndexProp == null) return 0;
+      return tabIndexProp;
+    }
+    return tabIndexProp ?? 0;
+  }
+  function useDisableEvent(onEvent, disabled2) {
+    return useEvent((event) => {
+      onEvent?.(event);
+      if (event.defaultPrevented) return;
+      if (disabled2) {
+        event.stopPropagation();
+        event.preventDefault();
+      }
+    });
+  }
+  var hasInstalledGlobalEventListeners2 = false;
+  var isKeyboardModality = true;
+  function onGlobalMouseDown(event) {
+    const target = event.target;
+    if (isElement2(target) && !target.hasAttribute("data-focus-visible")) isKeyboardModality = false;
+  }
+  function onGlobalKeyDown(event) {
+    if (event.metaKey) return;
+    if (event.ctrlKey) return;
+    if (event.altKey) return;
+    isKeyboardModality = true;
+  }
+  var useFocusable = createHook(function useFocusable2({ focusable: focusable2 = true, accessibleWhenDisabled, autoFocus, onFocusVisible, ...props }) {
+    const ref = (0, import_react8.useRef)(null);
+    const [parentAccessibleWhenDisabled, metadataProps] = useMetadataProps(props, accessibleWhenDisabledSymbol, accessibleWhenDisabled);
+    accessibleWhenDisabled ??= parentAccessibleWhenDisabled;
+    (0, import_react8.useEffect)(() => {
+      if (!focusable2) return;
+      if (hasInstalledGlobalEventListeners2) return;
+      addGlobalEventListener("mousedown", onGlobalMouseDown, true);
+      addGlobalEventListener("keydown", onGlobalKeyDown, true);
+      hasInstalledGlobalEventListeners2 = true;
+    }, [focusable2]);
+    const disabled2 = focusable2 && disabledFromProps(props);
+    const trulyDisabled = disabled2 && !accessibleWhenDisabled;
+    const [focusVisible, setFocusVisible] = (0, import_react8.useState)(false);
+    const focusVisibleRef = (0, import_react8.useRef)(false);
+    const nativeSubmitObserverCleanupRef = (0, import_react8.useRef)(null);
+    const cleanupFocusVisible = useEvent((element) => {
+      nativeSubmitObserverCleanupRef.current?.();
+      nativeSubmitObserverCleanupRef.current = null;
+      focusVisibleRef.current = false;
+      element?.removeAttribute("data-focus-visible");
+    });
+    (0, import_react8.useEffect)(() => {
+      if (!focusable2) return;
+      if (!trulyDisabled) return;
+      cleanupFocusVisible(ref.current);
+      if (focusVisible) setFocusVisible(false);
+    }, [
+      focusable2,
+      trulyDisabled,
+      focusVisible,
+      cleanupFocusVisible
+    ]);
+    (0, import_react8.useEffect)(() => {
+      if (!focusable2) return;
+      if (!focusVisible) return;
+      const element = ref.current;
+      if (!element) return;
+      if (typeof IntersectionObserver === "undefined") return;
+      const observer = new IntersectionObserver(() => {
+        if (!isFocusable(element)) {
+          focusVisibleRef.current = false;
+          setFocusVisible(false);
+        }
+      });
+      observer.observe(element);
+      return () => observer.disconnect();
+    }, [focusable2, focusVisible]);
+    (0, import_react8.useEffect)(() => {
+      return () => nativeSubmitObserverCleanupRef.current?.();
+    }, []);
+    const onKeyPressCapture = useDisableEvent(props.onKeyPressCapture, disabled2);
+    const onMouseDownCapture = useDisableEvent(props.onMouseDownCapture, disabled2);
+    const onClickCapture = useDisableEvent(props.onClickCapture, disabled2);
+    const handleFocusVisible = (event, currentTarget) => {
+      if (currentTarget) event.currentTarget = currentTarget;
+      if (!focusable2) return;
+      const element = event.currentTarget;
+      if (!element) return;
+      if (!hasFocus(element)) return;
+      onFocusVisible?.(event);
+      if (event.defaultPrevented) return;
+      element.dataset.focusVisible = "true";
+      focusVisibleRef.current = true;
+      if (isNativeSubmitControl(element)) {
+        nativeSubmitObserverCleanupRef.current?.();
+        nativeSubmitObserverCleanupRef.current = null;
+        if (typeof IntersectionObserver !== "undefined") {
+          const observer = new IntersectionObserver(() => {
+            if (isFocusable(element)) return;
+            cleanupFocusVisible(element);
+          });
+          observer.observe(element);
+          nativeSubmitObserverCleanupRef.current = () => observer.disconnect();
+        }
+        return;
+      }
+      setFocusVisible(true);
+    };
+    const onKeyDownCaptureProp = props.onKeyDownCapture;
+    const onKeyDownCapture = useEvent((event) => {
+      onKeyDownCaptureProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!focusable2) return;
+      if (focusVisible) return;
+      if (focusVisibleRef.current) return;
+      if (event.metaKey) return;
+      if (event.altKey) return;
+      if (event.ctrlKey) return;
+      if (!isSelfTarget(event)) return;
+      const element = event.currentTarget;
+      const applyFocusVisible = () => handleFocusVisible(event, element);
+      queueBeforeEvent(element, "focusout", applyFocusVisible);
+    });
+    const onFocusCaptureProp = props.onFocusCapture;
+    const onFocusCapture = useEvent((event) => {
+      onFocusCaptureProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!focusable2) return;
+      if (!isSelfTarget(event)) {
+        setFocusVisible(false);
+        return;
+      }
+      const element = event.currentTarget;
+      const applyFocusVisible = () => handleFocusVisible(event, element);
+      if (isKeyboardModality || isAlwaysFocusVisible(event.target)) queueBeforeEvent(event.target, "focusout", applyFocusVisible);
+      else setFocusVisible(false);
+    });
+    const onBlurProp = props.onBlur;
+    const onBlur = useEvent((event) => {
+      onBlurProp?.(event);
+      if (!focusable2) return;
+      if (!isFocusEventOutside(event)) return;
+      cleanupFocusVisible(event.currentTarget);
+      setFocusVisible(false);
+    });
+    const autoFocusOnShow = (0, import_react8.useContext)(FocusableContext);
+    const autoFocusRef = useEvent((element) => {
+      if (!focusable2) return;
+      if (!autoFocus) return;
+      if (!element) return;
+      if (!autoFocusOnShow) return;
+      queueMicrotask(() => {
+        if (hasFocus(element)) return;
+        if (!isFocusable(element)) return;
+        element.focus();
+      });
+    });
+    const tagName = useTagName(ref);
+    const nativeTabbable = focusable2 && isNativeTabbable(tagName);
+    const supportsDisabled = focusable2 && supportsDisabledAttribute(tagName);
+    const [safariTabIndex, setSafariTabIndex] = (0, import_react8.useState)(false);
+    if (isSafariBrowser) (0, import_react8.useEffect)(() => {
+      if (!focusable2) return;
+      const element = ref.current;
+      if (!element) return;
+      const tag = element.tagName.toLowerCase();
+      const type = element.type;
+      setSafariTabIndex(needsSafariTabIndex(tag, type));
+    }, [focusable2]);
+    const styleProp = props.style;
+    const style = (0, import_react8.useMemo)(() => {
+      if (trulyDisabled) return {
+        pointerEvents: "none",
+        ...styleProp
+      };
+      return styleProp;
+    }, [trulyDisabled, styleProp]);
+    props = {
+      "data-focus-visible": focusable2 && focusVisible || void 0,
+      "data-autofocus": autoFocus || void 0,
+      "aria-disabled": disabled2 || void 0,
+      ...props,
+      ...metadataProps,
+      ref: useMergeRefs(ref, autoFocusRef, props.ref),
+      style,
+      tabIndex: getTabIndex2({
+        focusable: focusable2,
+        trulyDisabled,
+        nativeTabbable,
+        supportsDisabled,
+        safariTabIndex,
+        tabIndexProp: props.tabIndex
+      }),
+      disabled: supportsDisabled && trulyDisabled ? true : void 0,
+      contentEditable: disabled2 ? void 0 : props.contentEditable,
+      onKeyPressCapture,
+      onClickCapture,
+      onMouseDownCapture,
+      onKeyDownCapture,
+      onFocusCapture,
+      onBlur
+    };
+    return removeUndefinedValues(props);
+  });
+  var Focusable = forwardRef20(function Focusable2(props) {
+    return createElement3(TagName, useFocusable(props));
+  });
+
+  // node_modules/@ariakit/react-components/dist/command/command.js
+  var import_react9 = __toESM(require_react(), 1);
+  var TagName2 = "button";
+  function isNativeClick(event) {
+    if (!event.isTrusted) return false;
+    const element = event.currentTarget;
+    if (event.key === "Enter") return isButton(element) || element.tagName === "SUMMARY" || element.tagName === "A";
+    if (event.key === " ") return isButton(element) || element.tagName === "SUMMARY" || element.tagName === "INPUT" || element.tagName === "SELECT";
+    return false;
+  }
+  var symbol = /* @__PURE__ */ Symbol("command");
+  var useCommand = createHook(function useCommand2({ clickOnEnter = true, clickOnSpace = true, ...props }) {
+    const ref = (0, import_react9.useRef)(null);
+    const [isNativeButton, setIsNativeButton] = (0, import_react9.useState)(false);
+    (0, import_react9.useEffect)(() => {
+      if (!ref.current) return;
+      setIsNativeButton(isButton(ref.current));
+    }, []);
+    const [active, setActive] = (0, import_react9.useState)(false);
+    const activeRef = (0, import_react9.useRef)(false);
+    const disabled2 = disabledFromProps(props);
+    const [isDuplicate, metadataProps] = useMetadataProps(props, symbol, true);
+    const onKeyDownProp = props.onKeyDown;
+    const onKeyDown = useEvent((event) => {
+      onKeyDownProp?.(event);
+      const element = event.currentTarget;
+      if (event.defaultPrevented) return;
+      if (isDuplicate) return;
+      if (disabled2) return;
+      if (!isSelfTarget(event)) return;
+      if (isTextField(element)) return;
+      if (element.isContentEditable) return;
+      const isEnter = clickOnEnter && event.key === "Enter";
+      const isSpace = clickOnSpace && event.key === " ";
+      const shouldPreventEnter = event.key === "Enter" && !clickOnEnter;
+      const shouldPreventSpace = event.key === " " && !clickOnSpace;
+      if (shouldPreventEnter || shouldPreventSpace) {
+        event.preventDefault();
+        return;
+      }
+      if (isEnter || isSpace) {
+        const nativeClick = isNativeClick(event);
+        if (isEnter) {
+          if (!nativeClick) {
+            event.preventDefault();
+            const { view, ...eventInit } = event;
+            const click = () => fireClickEvent(element, eventInit);
+            if (isFirefox2()) queueBeforeEvent(element, "keyup", click);
+            else queueMicrotask(click);
+          }
+        } else if (isSpace) {
+          activeRef.current = true;
+          if (!nativeClick) {
+            event.preventDefault();
+            setActive(true);
+          }
+        }
+      }
+    });
+    const onKeyUpProp = props.onKeyUp;
+    const onKeyUp = useEvent((event) => {
+      onKeyUpProp?.(event);
+      if (event.defaultPrevented) return;
+      if (isDuplicate) return;
+      if (disabled2) return;
+      if (event.metaKey) return;
+      const isSpace = clickOnSpace && event.key === " ";
+      if (activeRef.current && isSpace) {
+        activeRef.current = false;
+        if (!isNativeClick(event)) {
+          event.preventDefault();
+          setActive(false);
+          const element = event.currentTarget;
+          const { view, ...eventInit } = event;
+          queueMicrotask(() => fireClickEvent(element, eventInit));
+        }
+      }
+    });
+    props = {
+      "data-active": active || void 0,
+      type: isNativeButton ? "button" : void 0,
+      ...metadataProps,
+      ...props,
+      ref: useMergeRefs(ref, props.ref),
+      onKeyDown,
+      onKeyUp
+    };
+    props = useFocusable(props);
+    return props;
+  });
+  var Command = forwardRef20(function Command2(props) {
+    return createElement3(TagName2, useCommand(props));
+  });
+
+  // node_modules/@ariakit/react-components/dist/collection/collection-context.js
   var ctx = createStoreContext();
   var useCollectionContext = ctx.useContext;
   var useCollectionScopedContext = ctx.useScopedContext;
@@ -15310,30 +16191,55 @@ var wp;
   var CollectionContextProvider = ctx.ContextProvider;
   var CollectionScopedContextProvider = ctx.ScopedContextProvider;
 
-  // node_modules/@ariakit/react-core/esm/__chunks/AVVXDJMZ.js
-  var import_react8 = __toESM(require_react(), 1);
-  var ctx2 = createStoreContext(
-    [CollectionContextProvider],
-    [CollectionScopedContextProvider]
-  );
+  // node_modules/@ariakit/react-components/dist/collection/collection-item.js
+  var import_react10 = __toESM(require_react(), 1);
+  var TagName3 = "div";
+  var useCollectionItem = createHook(function useCollectionItem2({ store, shouldRegisterItem = true, getItem = identity, element, ...props }) {
+    const context = useCollectionContext();
+    store = store || context;
+    const id = useId4(props.id);
+    const ref = (0, import_react10.useRef)(element);
+    (0, import_react10.useEffect)(() => {
+      const element2 = ref.current;
+      if (!id) return;
+      if (!element2) return;
+      if (!shouldRegisterItem) return;
+      const item = getItem({
+        id,
+        element: element2
+      });
+      return store?.renderItem(item);
+    }, [
+      id,
+      shouldRegisterItem,
+      getItem,
+      store
+    ]);
+    props = {
+      ...props,
+      ref: useMergeRefs(ref, props.ref)
+    };
+    return removeUndefinedValues(props);
+  });
+  var CollectionItem = forwardRef20(function CollectionItem2(props) {
+    return createElement3(TagName3, useCollectionItem(props));
+  });
+
+  // node_modules/@ariakit/react-components/dist/composite/composite-context.js
+  var import_react11 = __toESM(require_react(), 1);
+  var ctx2 = createStoreContext([CollectionContextProvider], [CollectionScopedContextProvider]);
   var useCompositeContext = ctx2.useContext;
   var useCompositeScopedContext = ctx2.useScopedContext;
   var useCompositeProviderContext = ctx2.useProviderContext;
   var CompositeContextProvider = ctx2.ContextProvider;
   var CompositeScopedContextProvider = ctx2.ScopedContextProvider;
-  var CompositeItemContext = (0, import_react8.createContext)(
-    void 0
-  );
-  var CompositeRowContext = (0, import_react8.createContext)(
-    void 0
-  );
+  var CompositeItemContext = (0, import_react11.createContext)(void 0);
+  var CompositeRowContext = (0, import_react11.createContext)(void 0);
 
-  // node_modules/@ariakit/react-core/esm/__chunks/5VQZOHHZ.js
+  // node_modules/@ariakit/react-components/dist/composite/utils.js
   function findFirstEnabledItem(items, excludeId) {
     return items.find((item) => {
-      if (excludeId) {
-        return !item.disabled && item.id !== excludeId;
-      }
+      if (excludeId) return !item.disabled && item.id !== excludeId;
       return !item.disabled;
     });
   }
@@ -15344,30 +16250,18 @@ var wp;
   function groupItemsByRows(items) {
     const rows = [];
     for (const item of items) {
-      const row = rows.find((currentRow) => {
-        var _a;
-        return ((_a = currentRow[0]) == null ? void 0 : _a.rowId) === item.rowId;
-      });
-      if (row) {
-        row.push(item);
-      } else {
-        rows.push([item]);
-      }
+      const row = rows.find((currentRow) => currentRow[0]?.rowId === item.rowId);
+      if (row) row.push(item);
+      else rows.push([item]);
     }
     return rows;
   }
   function selectTextField(element, collapseToEnd = false) {
-    if (isTextField(element)) {
-      element.setSelectionRange(
-        collapseToEnd ? element.value.length : 0,
-        element.value.length
-      );
-    } else if (element.isContentEditable) {
+    if (isTextField(element)) element.setSelectionRange(collapseToEnd ? element.value.length : 0, element.value.length);
+    else if (element.isContentEditable) {
       const selection = getDocument(element).getSelection();
-      selection == null ? void 0 : selection.selectAllChildren(element);
-      if (collapseToEnd) {
-        selection == null ? void 0 : selection.collapseToEnd();
-      }
+      selection?.selectAllChildren(element);
+      if (collapseToEnd) selection?.collapseToEnd();
     }
   }
   var FOCUS_SILENTLY = /* @__PURE__ */ Symbol("FOCUS_SILENTLY");
@@ -15389,518 +16283,69 @@ var wp;
     return true;
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/Z2O3VLAQ.js
-  var import_react9 = __toESM(require_react(), 1);
-  var TagName = "div";
-  var useCollectionItem = createHook(
-    function useCollectionItem2({
-      store,
-      shouldRegisterItem = true,
-      getItem = identity,
-      // @ts-expect-error This prop may come from a collection renderer.
-      element,
-      ...props
-    }) {
-      const context = useCollectionContext();
-      store = store || context;
-      const id = useId4(props.id);
-      const ref = (0, import_react9.useRef)(element);
-      (0, import_react9.useEffect)(() => {
-        const element2 = ref.current;
-        if (!id) return;
-        if (!element2) return;
-        if (!shouldRegisterItem) return;
-        const item = getItem({ id, element: element2 });
-        return store == null ? void 0 : store.renderItem(item);
-      }, [id, shouldRegisterItem, getItem, store]);
-      props = {
-        ...props,
-        ref: useMergeRefs(ref, props.ref)
-      };
-      return removeUndefinedValues(props);
-    }
-  );
-  var CollectionItem = forwardRef22(function CollectionItem2(props) {
-    const htmlProps = useCollectionItem(props);
-    return createElement3(TagName, htmlProps);
-  });
-
-  // node_modules/@ariakit/react-core/esm/__chunks/SWN3JYXT.js
-  var import_react10 = __toESM(require_react(), 1);
-  var FocusableContext = (0, import_react10.createContext)(true);
-
-  // node_modules/@ariakit/core/esm/utils/focus.js
-  var selector = "input:not([type='hidden']):not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href], button:not([disabled]), [tabindex], summary, iframe, object, embed, area[href], audio[controls], video[controls], [contenteditable]:not([contenteditable='false'])";
-  function isFocusable(element) {
-    if (!element.matches(selector)) return false;
-    if (!isVisible(element)) return false;
-    if (element.closest("[inert]")) return false;
-    return true;
-  }
-  function getClosestFocusable(element) {
-    while (element && !isFocusable(element)) {
-      element = element.closest(selector);
-    }
-    return element || null;
-  }
-  function hasFocus(element) {
-    const activeElement2 = getActiveElement(element);
-    if (!activeElement2) return false;
-    if (activeElement2 === element) return true;
-    const activeDescendant = activeElement2.getAttribute("aria-activedescendant");
-    if (!activeDescendant) return false;
-    return activeDescendant === element.id;
-  }
-  function hasFocusWithin(element) {
-    const activeElement2 = getActiveElement(element);
-    if (!activeElement2) return false;
-    if (contains2(element, activeElement2)) return true;
-    const activeDescendant = activeElement2.getAttribute("aria-activedescendant");
-    if (!activeDescendant) return false;
-    if (!("id" in element)) return false;
-    if (activeDescendant === element.id) return true;
-    return !!element.querySelector(`#${CSS.escape(activeDescendant)}`);
-  }
-  function focusIfNeeded(element) {
-    if (!hasFocusWithin(element) && isFocusable(element)) {
-      element.focus();
-    }
-  }
-  function focusIntoView(element, options) {
-    if (!("scrollIntoView" in element)) {
-      element.focus();
-    } else {
-      element.focus({ preventScroll: true });
-      element.scrollIntoView({ block: "nearest", inline: "nearest", ...options });
-    }
-  }
-
-  // node_modules/@ariakit/react-core/esm/__chunks/U6HHPQDW.js
-  var import_react11 = __toESM(require_react(), 1);
-  var TagName2 = "div";
-  var isSafariBrowser = isSafari2();
-  var alwaysFocusVisibleInputTypes = [
-    "text",
-    "search",
-    "url",
-    "tel",
-    "email",
-    "password",
-    "number",
-    "date",
-    "month",
-    "week",
-    "time",
-    "datetime",
-    "datetime-local"
-  ];
-  var safariFocusAncestorSymbol = /* @__PURE__ */ Symbol("safariFocusAncestor");
-  function markSafariFocusAncestor(element, value) {
-    if (!element) return;
-    element[safariFocusAncestorSymbol] = value;
-  }
-  function isAlwaysFocusVisible(element) {
-    const { tagName, readOnly, type } = element;
-    if (tagName === "TEXTAREA" && !readOnly) return true;
-    if (tagName === "SELECT" && !readOnly) return true;
-    if (tagName === "INPUT" && !readOnly) {
-      return alwaysFocusVisibleInputTypes.includes(type);
-    }
-    if (element.isContentEditable) return true;
-    const role = element.getAttribute("role");
-    if (role === "combobox" && element.dataset.name) {
-      return true;
-    }
-    return false;
-  }
-  function getLabels(element) {
-    if ("labels" in element) {
-      return element.labels;
-    }
-    return null;
-  }
-  function isNativeCheckboxOrRadio(element) {
-    const tagName = element.tagName.toLowerCase();
-    if (tagName === "input" && element.type) {
-      return element.type === "radio" || element.type === "checkbox";
-    }
-    return false;
-  }
-  function isNativeTabbable(tagName) {
-    if (!tagName) return true;
-    return tagName === "button" || tagName === "summary" || tagName === "input" || tagName === "select" || tagName === "textarea" || tagName === "a";
-  }
-  function supportsDisabledAttribute(tagName) {
-    if (!tagName) return true;
-    return tagName === "button" || tagName === "input" || tagName === "select" || tagName === "textarea";
-  }
-  function getTabIndex2(focusable2, trulyDisabled, nativeTabbable, supportsDisabled, tabIndexProp) {
-    if (!focusable2) {
-      return tabIndexProp;
-    }
-    if (trulyDisabled) {
-      if (nativeTabbable && !supportsDisabled) {
-        return -1;
-      }
-      return;
-    }
-    if (nativeTabbable) {
-      return tabIndexProp;
-    }
-    return tabIndexProp || 0;
-  }
-  function useDisableEvent(onEvent, disabled2) {
-    return useEvent((event) => {
-      onEvent == null ? void 0 : onEvent(event);
-      if (event.defaultPrevented) return;
-      if (disabled2) {
-        event.stopPropagation();
-        event.preventDefault();
-      }
-    });
-  }
-  var hasInstalledGlobalEventListeners2 = false;
-  var isKeyboardModality = true;
-  function onGlobalMouseDown(event) {
-    const target = event.target;
-    if (target && "hasAttribute" in target) {
-      if (!target.hasAttribute("data-focus-visible")) {
-        isKeyboardModality = false;
-      }
-    }
-  }
-  function onGlobalKeyDown(event) {
-    if (event.metaKey) return;
-    if (event.ctrlKey) return;
-    if (event.altKey) return;
-    isKeyboardModality = true;
-  }
-  var useFocusable = createHook(
-    function useFocusable2({
-      focusable: focusable2 = true,
-      accessibleWhenDisabled,
-      autoFocus,
-      onFocusVisible,
-      ...props
-    }) {
-      const ref = (0, import_react11.useRef)(null);
-      (0, import_react11.useEffect)(() => {
-        if (!focusable2) return;
-        if (hasInstalledGlobalEventListeners2) return;
-        addGlobalEventListener("mousedown", onGlobalMouseDown, true);
-        addGlobalEventListener("keydown", onGlobalKeyDown, true);
-        hasInstalledGlobalEventListeners2 = true;
-      }, [focusable2]);
-      if (isSafariBrowser) {
-        (0, import_react11.useEffect)(() => {
-          if (!focusable2) return;
-          const element = ref.current;
-          if (!element) return;
-          if (!isNativeCheckboxOrRadio(element)) return;
-          const labels = getLabels(element);
-          if (!labels) return;
-          const onMouseUp = () => queueMicrotask(() => element.focus());
-          for (const label of labels) {
-            label.addEventListener("mouseup", onMouseUp);
-          }
-          return () => {
-            for (const label of labels) {
-              label.removeEventListener("mouseup", onMouseUp);
-            }
-          };
-        }, [focusable2]);
-      }
-      const disabled2 = focusable2 && disabledFromProps(props);
-      const trulyDisabled = !!disabled2 && !accessibleWhenDisabled;
-      const [focusVisible, setFocusVisible] = (0, import_react11.useState)(false);
-      (0, import_react11.useEffect)(() => {
-        if (!focusable2) return;
-        if (trulyDisabled && focusVisible) {
-          setFocusVisible(false);
-        }
-      }, [focusable2, trulyDisabled, focusVisible]);
-      (0, import_react11.useEffect)(() => {
-        if (!focusable2) return;
-        if (!focusVisible) return;
-        const element = ref.current;
-        if (!element) return;
-        if (typeof IntersectionObserver === "undefined") return;
-        const observer = new IntersectionObserver(() => {
-          if (!isFocusable(element)) {
-            setFocusVisible(false);
-          }
-        });
-        observer.observe(element);
-        return () => observer.disconnect();
-      }, [focusable2, focusVisible]);
-      const onKeyPressCapture = useDisableEvent(
-        props.onKeyPressCapture,
-        disabled2
-      );
-      const onMouseDownCapture = useDisableEvent(
-        props.onMouseDownCapture,
-        disabled2
-      );
-      const onClickCapture = useDisableEvent(props.onClickCapture, disabled2);
-      const onMouseDownProp = props.onMouseDown;
-      const onMouseDown = useEvent((event) => {
-        onMouseDownProp == null ? void 0 : onMouseDownProp(event);
-        if (event.defaultPrevented) return;
-        if (!focusable2) return;
-        const element = event.currentTarget;
-        if (!isSafariBrowser) return;
-        if (isPortalEvent(event)) return;
-        if (!isButton(element) && !isNativeCheckboxOrRadio(element)) return;
-        let receivedFocus = false;
-        const onFocus = () => {
-          receivedFocus = true;
-        };
-        const options = { capture: true, once: true };
-        element.addEventListener("focusin", onFocus, options);
-        const focusableContainer = getClosestFocusable(element.parentElement);
-        markSafariFocusAncestor(focusableContainer, true);
-        queueBeforeEvent(element, "mouseup", () => {
-          element.removeEventListener("focusin", onFocus, true);
-          markSafariFocusAncestor(focusableContainer, false);
-          if (receivedFocus) return;
-          focusIfNeeded(element);
-        });
-      });
-      const handleFocusVisible = (event, currentTarget) => {
-        if (currentTarget) {
-          event.currentTarget = currentTarget;
-        }
-        if (!focusable2) return;
-        const element = event.currentTarget;
-        if (!element) return;
-        if (!hasFocus(element)) return;
-        onFocusVisible == null ? void 0 : onFocusVisible(event);
-        if (event.defaultPrevented) return;
-        element.dataset.focusVisible = "true";
-        setFocusVisible(true);
-      };
-      const onKeyDownCaptureProp = props.onKeyDownCapture;
-      const onKeyDownCapture = useEvent((event) => {
-        onKeyDownCaptureProp == null ? void 0 : onKeyDownCaptureProp(event);
-        if (event.defaultPrevented) return;
-        if (!focusable2) return;
-        if (focusVisible) return;
-        if (event.metaKey) return;
-        if (event.altKey) return;
-        if (event.ctrlKey) return;
-        if (!isSelfTarget(event)) return;
-        const element = event.currentTarget;
-        const applyFocusVisible = () => handleFocusVisible(event, element);
-        queueBeforeEvent(element, "focusout", applyFocusVisible);
-      });
-      const onFocusCaptureProp = props.onFocusCapture;
-      const onFocusCapture = useEvent((event) => {
-        onFocusCaptureProp == null ? void 0 : onFocusCaptureProp(event);
-        if (event.defaultPrevented) return;
-        if (!focusable2) return;
-        if (!isSelfTarget(event)) {
-          setFocusVisible(false);
-          return;
-        }
-        const element = event.currentTarget;
-        const applyFocusVisible = () => handleFocusVisible(event, element);
-        if (isKeyboardModality || isAlwaysFocusVisible(event.target)) {
-          queueBeforeEvent(event.target, "focusout", applyFocusVisible);
-        } else {
-          setFocusVisible(false);
-        }
-      });
-      const onBlurProp = props.onBlur;
-      const onBlur = useEvent((event) => {
-        onBlurProp == null ? void 0 : onBlurProp(event);
-        if (!focusable2) return;
-        if (!isFocusEventOutside(event)) return;
-        event.currentTarget.removeAttribute("data-focus-visible");
-        setFocusVisible(false);
-      });
-      const autoFocusOnShow = (0, import_react11.useContext)(FocusableContext);
-      const autoFocusRef = useEvent((element) => {
-        if (!focusable2) return;
-        if (!autoFocus) return;
-        if (!element) return;
-        if (!autoFocusOnShow) return;
-        queueMicrotask(() => {
-          if (hasFocus(element)) return;
-          if (!isFocusable(element)) return;
-          element.focus();
-        });
-      });
-      const tagName = useTagName(ref);
-      const nativeTabbable = focusable2 && isNativeTabbable(tagName);
-      const supportsDisabled = focusable2 && supportsDisabledAttribute(tagName);
-      const styleProp = props.style;
-      const style = (0, import_react11.useMemo)(() => {
-        if (trulyDisabled) {
-          return { pointerEvents: "none", ...styleProp };
-        }
-        return styleProp;
-      }, [trulyDisabled, styleProp]);
-      props = {
-        "data-focus-visible": focusable2 && focusVisible || void 0,
-        "data-autofocus": autoFocus || void 0,
-        "aria-disabled": disabled2 || void 0,
-        ...props,
-        ref: useMergeRefs(ref, autoFocusRef, props.ref),
-        style,
-        tabIndex: getTabIndex2(
-          focusable2,
-          trulyDisabled,
-          nativeTabbable,
-          supportsDisabled,
-          props.tabIndex
-        ),
-        disabled: supportsDisabled && trulyDisabled ? true : void 0,
-        // TODO: Test Focusable contentEditable.
-        contentEditable: disabled2 ? void 0 : props.contentEditable,
-        onKeyPressCapture,
-        onClickCapture,
-        onMouseDownCapture,
-        onMouseDown,
-        onKeyDownCapture,
-        onFocusCapture,
-        onBlur
-      };
-      return removeUndefinedValues(props);
-    }
-  );
-  var Focusable = forwardRef22(function Focusable2(props) {
-    const htmlProps = useFocusable(props);
-    return createElement3(TagName2, htmlProps);
-  });
-
-  // node_modules/@ariakit/react-core/esm/__chunks/PZ3OL7I2.js
+  // node_modules/@ariakit/react-components/dist/composite/composite-item.js
   var import_react12 = __toESM(require_react(), 1);
-  var TagName3 = "button";
-  function isNativeClick(event) {
-    if (!event.isTrusted) return false;
-    const element = event.currentTarget;
-    if (event.key === "Enter") {
-      return isButton(element) || element.tagName === "SUMMARY" || element.tagName === "A";
-    }
-    if (event.key === " ") {
-      return isButton(element) || element.tagName === "SUMMARY" || element.tagName === "INPUT" || element.tagName === "SELECT";
-    }
-    return false;
-  }
-  var symbol = /* @__PURE__ */ Symbol("command");
-  var useCommand = createHook(
-    function useCommand2({ clickOnEnter = true, clickOnSpace = true, ...props }) {
-      const ref = (0, import_react12.useRef)(null);
-      const [isNativeButton, setIsNativeButton] = (0, import_react12.useState)(false);
-      (0, import_react12.useEffect)(() => {
-        if (!ref.current) return;
-        setIsNativeButton(isButton(ref.current));
-      }, []);
-      const [active, setActive] = (0, import_react12.useState)(false);
-      const activeRef = (0, import_react12.useRef)(false);
-      const disabled2 = disabledFromProps(props);
-      const [isDuplicate, metadataProps] = useMetadataProps(props, symbol, true);
-      const onKeyDownProp = props.onKeyDown;
-      const onKeyDown = useEvent((event) => {
-        onKeyDownProp == null ? void 0 : onKeyDownProp(event);
-        const element = event.currentTarget;
-        if (event.defaultPrevented) return;
-        if (isDuplicate) return;
-        if (disabled2) return;
-        if (!isSelfTarget(event)) return;
-        if (isTextField(element)) return;
-        if (element.isContentEditable) return;
-        const isEnter = clickOnEnter && event.key === "Enter";
-        const isSpace = clickOnSpace && event.key === " ";
-        const shouldPreventEnter = event.key === "Enter" && !clickOnEnter;
-        const shouldPreventSpace = event.key === " " && !clickOnSpace;
-        if (shouldPreventEnter || shouldPreventSpace) {
-          event.preventDefault();
-          return;
-        }
-        if (isEnter || isSpace) {
-          const nativeClick = isNativeClick(event);
-          if (isEnter) {
-            if (!nativeClick) {
-              event.preventDefault();
-              const { view, ...eventInit } = event;
-              const click = () => fireClickEvent(element, eventInit);
-              if (isFirefox2()) {
-                queueBeforeEvent(element, "keyup", click);
-              } else {
-                queueMicrotask(click);
-              }
-            }
-          } else if (isSpace) {
-            activeRef.current = true;
-            if (!nativeClick) {
-              event.preventDefault();
-              setActive(true);
-            }
-          }
-        }
-      });
-      const onKeyUpProp = props.onKeyUp;
-      const onKeyUp = useEvent((event) => {
-        onKeyUpProp == null ? void 0 : onKeyUpProp(event);
-        if (event.defaultPrevented) return;
-        if (isDuplicate) return;
-        if (disabled2) return;
-        if (event.metaKey) return;
-        const isSpace = clickOnSpace && event.key === " ";
-        if (activeRef.current && isSpace) {
-          activeRef.current = false;
-          if (!isNativeClick(event)) {
-            event.preventDefault();
-            setActive(false);
-            const element = event.currentTarget;
-            const { view, ...eventInit } = event;
-            queueMicrotask(() => fireClickEvent(element, eventInit));
-          }
-        }
-      });
-      props = {
-        "data-active": active || void 0,
-        type: isNativeButton ? "button" : void 0,
-        ...metadataProps,
-        ...props,
-        ref: useMergeRefs(ref, props.ref),
-        onKeyDown,
-        onKeyUp
-      };
-      props = useFocusable(props);
-      return props;
-    }
-  );
-  var Command = forwardRef22(function Command2(props) {
-    const htmlProps = useCommand(props);
-    return createElement3(TagName3, htmlProps);
-  });
+  var import_jsx_runtime72 = __toESM(require_jsx_runtime(), 1);
 
-  // node_modules/@ariakit/core/esm/__chunks/SXKM4CGU.js
+  // node_modules/@ariakit/store/dist/index.js
   function getInternal(store, key) {
     const internals = store.__unstableInternals;
     invariant(internals, "Invalid store");
     return internals[key];
   }
+  function hasUpdatedKey(keys, updatedKey) {
+    if (!keys) return true;
+    for (const currentKey of keys) if (updatedKey instanceof Set) {
+      if (updatedKey.has(currentKey)) return true;
+    } else if (currentKey === updatedKey) return true;
+    return false;
+  }
+  function addKeyedListener(map, keys, listener) {
+    if (!keys) return;
+    for (const key of keys) {
+      let listeners = map.get(key);
+      if (!listeners) {
+        listeners = /* @__PURE__ */ new Set();
+        map.set(key, listeners);
+      }
+      listeners.add(listener);
+    }
+  }
+  function deleteKeyedListener(map, keys, listener) {
+    if (!map) return;
+    if (!keys) return;
+    for (const key of keys) {
+      const listeners = map.get(key);
+      if (!listeners) continue;
+      listeners.delete(listener);
+      if (!listeners.size) map.delete(key);
+    }
+  }
   function createStore(initialState, ...stores) {
     let state = initialState;
     let prevStateBatch = state;
-    let lastUpdate = /* @__PURE__ */ Symbol();
     let destroy = noop5;
+    let batchPending = false;
+    let inDispatch = false;
+    let updatedKeys = /* @__PURE__ */ new Set();
     const instances = /* @__PURE__ */ new Set();
-    const updatedKeys = /* @__PURE__ */ new Set();
     const setups = /* @__PURE__ */ new Set();
-    const listeners = /* @__PURE__ */ new Set();
-    const batchListeners = /* @__PURE__ */ new Set();
-    const disposables = /* @__PURE__ */ new WeakMap();
-    const listenerKeys = /* @__PURE__ */ new WeakMap();
+    const syncListenerGroup = {
+      listeners: /* @__PURE__ */ new Set(),
+      disposables: /* @__PURE__ */ new Map(),
+      listenerKeys: /* @__PURE__ */ new WeakMap()
+    };
+    const batchListenerGroup = {
+      listeners: /* @__PURE__ */ new Set(),
+      disposables: /* @__PURE__ */ new Map(),
+      listenerKeys: /* @__PURE__ */ new WeakMap()
+    };
     const storeSetup = (callback) => {
       setups.add(callback);
       return () => setups.delete(callback);
     };
     const storeInit = () => {
-      const initialized = instances.size;
+      const initializedInstances = instances.size;
       const instance = /* @__PURE__ */ Symbol();
       instances.add(instance);
       const maybeDestroy = () => {
@@ -15908,92 +16353,138 @@ var wp;
         if (instances.size) return;
         destroy();
       };
-      if (initialized) return maybeDestroy;
-      const desyncs = getKeys(state).map(
-        (key) => chain(
-          ...stores.map((store) => {
-            var _a;
-            const storeState = (_a = store == null ? void 0 : store.getState) == null ? void 0 : _a.call(store);
-            if (!storeState) return;
-            if (!hasOwnProperty(storeState, key)) return;
-            return sync(store, [key], (state2) => {
-              setState(
-                key,
-                state2[key],
-                // @ts-expect-error - Not public API. This is just to prevent
-                // infinite loops.
-                true
-              );
-            });
-          })
-        )
-      );
-      const teardowns = [];
-      for (const setup2 of setups) {
-        teardowns.push(setup2());
+      if (initializedInstances) return maybeDestroy;
+      const stateKeys = getKeys(state);
+      const desyncs = [];
+      for (const store of stores) {
+        const storeState = store?.getState?.();
+        if (!storeState) continue;
+        const keys = stateKeys.filter((key) => hasOwnProperty(storeState, key));
+        if (!keys.length) continue;
+        if (stores.length === 1 || keys.length === stateKeys.length) {
+          for (const key of keys) desyncs.push(sync(store, [key], (state2) => {
+            setState(key, state2[key], true);
+          }));
+          continue;
+        }
+        let didSyncInitialState = false;
+        desyncs.push(sync(store, keys, (state2, prevState) => {
+          for (const key of keys) {
+            if (didSyncInitialState && state2[key] === prevState[key]) continue;
+            setState(key, state2[key], true);
+          }
+          didSyncInitialState = true;
+        }));
       }
+      const teardowns = [];
+      for (const setup2 of setups) teardowns.push(setup2());
       const cleanups = stores.map(init);
       destroy = chain(...desyncs, ...teardowns, ...cleanups);
       return maybeDestroy;
     };
-    const sub = (keys, listener, set2 = listeners) => {
-      set2.add(listener);
-      listenerKeys.set(listener, keys);
+    const deleteListenerIndexes = (group, listener, keys) => {
+      if (keys === void 0) return;
+      if (keys) deleteKeyedListener(group.listenersByKey, keys, listener);
+      else group.allKeysListeners?.delete(listener);
+    };
+    const registerListener = (keys, listener, group = syncListenerGroup) => {
+      const listenerKeysValue = keys ? [...keys] : null;
+      if (group.listeners.has(listener)) deleteListenerIndexes(group, listener, group.listenerKeys.get(listener));
+      group.listeners.add(listener);
+      if (listenerKeysValue) {
+        group.listenersByKey ??= /* @__PURE__ */ new Map();
+        addKeyedListener(group.listenersByKey, listenerKeysValue, listener);
+      } else {
+        group.allKeysListeners ??= /* @__PURE__ */ new Set();
+        group.allKeysListeners.add(listener);
+      }
+      group.listenerKeys.set(listener, listenerKeysValue);
       return () => {
-        var _a;
-        (_a = disposables.get(listener)) == null ? void 0 : _a();
-        disposables.delete(listener);
-        listenerKeys.delete(listener);
-        set2.delete(listener);
+        group.disposables.get(listener)?.();
+        group.disposables.delete(listener);
+        const currentKeys = group.listenerKeys.get(listener);
+        deleteListenerIndexes(group, listener, listenerKeysValue);
+        if (currentKeys !== listenerKeysValue) deleteListenerIndexes(group, listener, currentKeys);
+        group.listenerKeys.delete(listener);
+        group.listeners.delete(listener);
       };
     };
-    const storeSubscribe = (keys, listener) => sub(keys, listener);
+    const storeSubscribe = (keys, listener) => registerListener(keys, listener);
+    const reconcileInitialCleanup = (group, listener, cleanup) => {
+      if (cleanup) group.disposables.set(listener, cleanup);
+      else group.disposables.delete(listener);
+    };
     const storeSync = (keys, listener) => {
-      disposables.set(listener, listener(state, state));
-      return sub(keys, listener);
+      reconcileInitialCleanup(syncListenerGroup, listener, listener(state, state));
+      return registerListener(keys, listener);
     };
     const storeBatch = (keys, listener) => {
-      disposables.set(listener, listener(state, prevStateBatch));
-      return sub(keys, listener, batchListeners);
+      if (!batchListenerGroup.listeners.size && !inDispatch) prevStateBatch = state;
+      reconcileInitialCleanup(batchListenerGroup, listener, listener(state, prevStateBatch));
+      return registerListener(keys, listener, batchListenerGroup);
     };
     const storePick = (keys) => createStore(pick(state, keys), finalStore);
     const storeOmit = (keys) => createStore(omit(state, keys), finalStore);
     const getState = () => state;
+    const runListeners = (group, prevState, updatedKey) => {
+      const { disposables } = group;
+      if (!(updatedKey instanceof Set) && !group.allKeysListeners?.size) {
+        const keyedListeners = group.listenersByKey?.get(updatedKey);
+        if (!keyedListeners) return;
+        for (const listener of keyedListeners) {
+          const cleanup = disposables.size ? disposables.get(listener) : void 0;
+          if (cleanup) cleanup();
+          const result = listener(state, prevState);
+          if (result) disposables.set(listener, result);
+          else if (cleanup) disposables.delete(listener);
+        }
+        return;
+      }
+      const allKeysListeners = group.allKeysListeners;
+      for (const listener of group.listeners) {
+        if (!allKeysListeners?.has(listener)) {
+          if (!hasUpdatedKey(group.listenerKeys.get(listener), updatedKey)) continue;
+        }
+        const cleanup = disposables.size ? disposables.get(listener) : void 0;
+        if (cleanup) cleanup();
+        const result = listener(state, prevState);
+        if (result) disposables.set(listener, result);
+        else if (cleanup) disposables.delete(listener);
+      }
+    };
     const setState = (key, value, fromStores = false) => {
-      var _a;
       if (!hasOwnProperty(state, key)) return;
-      const nextValue = applyState(value, state[key]);
-      if (nextValue === state[key]) return;
-      if (!fromStores) {
-        for (const store of stores) {
-          (_a = store == null ? void 0 : store.setState) == null ? void 0 : _a.call(store, key, nextValue);
-        }
-      }
+      const currentValue = state[key];
+      const nextValue = typeof value === "function" ? value(currentValue) : value;
+      if (nextValue === currentValue) return;
+      if (!fromStores && stores.length) for (const store of stores) store?.setState?.(key, nextValue);
       const prevState = state;
-      state = { ...state, [key]: nextValue };
-      const thisUpdate = /* @__PURE__ */ Symbol();
-      lastUpdate = thisUpdate;
-      updatedKeys.add(key);
-      const run = (listener, prev, uKeys) => {
-        var _a2;
-        const keys = listenerKeys.get(listener);
-        const updated = (k) => uKeys ? uKeys.has(k) : k === key;
-        if (!keys || keys.some(updated)) {
-          (_a2 = disposables.get(listener)) == null ? void 0 : _a2();
-          disposables.set(listener, listener(state, prev));
-        }
+      state = {
+        ...state,
+        [key]: nextValue
       };
-      for (const listener of listeners) {
-        run(listener, prevState);
+      const wasInDispatch = inDispatch;
+      inDispatch = true;
+      try {
+        runListeners(syncListenerGroup, prevState, key);
+      } finally {
+        inDispatch = wasInDispatch;
       }
+      if (!batchListenerGroup.listeners.size) {
+        if (!inDispatch) prevStateBatch = state;
+        return;
+      }
+      updatedKeys.add(key);
+      if (batchPending) return;
+      batchPending = true;
       queueMicrotask(() => {
-        if (lastUpdate !== thisUpdate) return;
+        batchPending = false;
         const snapshot = state;
-        for (const listener of batchListeners) {
-          run(listener, prevStateBatch, updatedKeys);
-        }
-        prevStateBatch = snapshot;
-        updatedKeys.clear();
+        const updatedKeysSnapshot = updatedKeys;
+        updatedKeys = /* @__PURE__ */ new Set();
+        const prevStateBatchBefore = prevStateBatch;
+        runListeners(batchListenerGroup, prevStateBatchBefore, updatedKeysSnapshot);
+        if (prevStateBatch === prevStateBatchBefore) prevStateBatch = snapshot;
       });
     };
     const finalStore = {
@@ -16040,13 +16531,10 @@ var wp;
     return getInternal(store, "pick")(...args);
   }
   function mergeStore(...stores) {
-    var _a;
     const initialState = {};
     for (const store2 of stores) {
-      const nextState = (_a = store2 == null ? void 0 : store2.getState) == null ? void 0 : _a.call(store2);
-      if (nextState) {
-        Object.assign(initialState, nextState);
-      }
+      const nextState = store2?.getState?.();
+      if (nextState) Object.assign(initialState, nextState);
     }
     const store = createStore(initialState, ...stores);
     return Object.assign({}, ...stores, store);
@@ -16055,18 +16543,13 @@ var wp;
     if (false) return;
     if (!store) return;
     const defaultKeys = Object.entries(props).filter(([key, value]) => key.startsWith("default") && value !== void 0).map(([key]) => {
-      var _a;
       const stateKey = key.replace("default", "");
-      return `${((_a = stateKey[0]) == null ? void 0 : _a.toLowerCase()) || ""}${stateKey.slice(1)}`;
+      return `${stateKey[0]?.toLowerCase() || ""}${stateKey.slice(1)}`;
     });
     if (!defaultKeys.length) return;
     const storeState = store.getState();
-    const conflictingProps = defaultKeys.filter(
-      (key) => hasOwnProperty(storeState, key)
-    );
-    if (!conflictingProps.length) return;
-    throw new Error(
-      `Passing a store prop in conjunction with a default state is not supported.
+    if (!defaultKeys.filter((key) => hasOwnProperty(storeState, key)).length) return;
+    throw new Error(`Passing a store prop in conjunction with a default state is not supported.
 
 const store = useSelectStore();
 <SelectProvider store={store} defaultValue="Apple" />
@@ -16080,49 +16563,39 @@ const store = useSelectStore({ defaultValue: "Apple" });
 See https://github.com/ariakit/ariakit/pull/2745 for more details.
 
 If there's a particular need for this, please submit a feature request at https://github.com/ariakit/ariakit
-`
-    );
+`);
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/Q5W46E73.js
-  var React50 = __toESM(require_react(), 1);
+  // node_modules/@ariakit/react-store/dist/index.js
+  var React48 = __toESM(require_react(), 1);
   var import_shim2 = __toESM(require_shim(), 1);
-  var { useSyncExternalStore: useSyncExternalStore2 } = import_shim2.default;
   var noopSubscribe = () => () => {
   };
   function useStoreState(store, keyOrSelector = identity) {
-    const storeSubscribe = React50.useCallback(
-      (callback) => {
-        if (!store) return noopSubscribe();
-        return subscribe(store, null, callback);
-      },
-      [store]
-    );
+    const storeSubscribe = React48.useCallback((callback) => {
+      if (!store) return noopSubscribe();
+      return subscribe(store, null, callback);
+    }, [store]);
     const getSnapshot = () => {
       const key = typeof keyOrSelector === "string" ? keyOrSelector : null;
       const selector2 = typeof keyOrSelector === "function" ? keyOrSelector : null;
-      const state = store == null ? void 0 : store.getState();
+      const state = store?.getState();
       if (selector2) return selector2(state);
       if (!state) return;
       if (!key) return;
       if (!hasOwnProperty(state, key)) return;
       return state[key];
     };
-    return useSyncExternalStore2(storeSubscribe, getSnapshot, getSnapshot);
+    return (0, import_shim2.useSyncExternalStore)(storeSubscribe, getSnapshot, getSnapshot);
   }
   function useStoreStateObject(store, object) {
-    const objRef = React50.useRef(
-      {}
-    );
-    const storeSubscribe = React50.useCallback(
-      (callback) => {
-        if (!store) return noopSubscribe();
-        return subscribe(store, null, callback);
-      },
-      [store]
-    );
+    const objRef = React48.useRef({});
+    const storeSubscribe = React48.useCallback((callback) => {
+      if (!store) return noopSubscribe();
+      return subscribe(store, null, callback);
+    }, [store]);
     const getSnapshot = () => {
-      const state = store == null ? void 0 : store.getState();
+      const state = store?.getState();
       let updated = false;
       const obj = objRef.current;
       for (const prop in object) {
@@ -16144,24 +16617,24 @@ If there's a particular need for this, please submit a feature request at https:
           }
         }
       }
-      if (updated) {
-        objRef.current = { ...obj };
-      }
+      if (updated) objRef.current = { ...obj };
       return objRef.current;
     };
-    return useSyncExternalStore2(storeSubscribe, getSnapshot, getSnapshot);
+    return (0, import_shim2.useSyncExternalStore)(storeSubscribe, getSnapshot, getSnapshot);
   }
   function useStoreProps(store, props, key, setKey) {
     const value = hasOwnProperty(props, key) ? props[key] : void 0;
-    const setValue = setKey ? props[setKey] : void 0;
-    const propsRef = useLiveRef({ value, setValue });
+    const propsRef = useLiveRef({
+      value,
+      setValue: setKey ? props[setKey] : void 0
+    });
     useSafeLayoutEffect(() => {
       return sync(store, [key], (state, prev) => {
-        const { value: value2, setValue: setValue2 } = propsRef.current;
-        if (!setValue2) return;
+        const { value: value2, setValue } = propsRef.current;
+        if (!setValue) return;
         if (state[key] === prev[key]) return;
         if (state[key] === value2) return;
-        setValue2(state[key]);
+        setValue(state[key]);
       });
     }, [store, key]);
     useSafeLayoutEffect(() => {
@@ -16174,25 +16647,21 @@ If there's a particular need for this, please submit a feature request at https:
     });
   }
   function useStore2(createStore2, props) {
-    const [store, setStore] = React50.useState(() => createStore2(props));
+    const [store, setStore] = React48.useState(() => createStore2(props));
     useSafeLayoutEffect(() => init(store), [store]);
-    const useState210 = React50.useCallback(
-      (keyOrSelector) => useStoreState(store, keyOrSelector),
-      [store]
-    );
-    const memoizedStore = React50.useMemo(
-      () => ({ ...store, useState: useState210 }),
-      [store, useState210]
-    );
-    const updateStore = useEvent(() => {
-      setStore((store2) => createStore2({ ...props, ...store2.getState() }));
-    });
-    return [memoizedStore, updateStore];
+    const useState42 = React48.useCallback((keyOrSelector) => useStoreState(store, keyOrSelector), [store]);
+    return [React48.useMemo(() => ({
+      ...store,
+      useState: useState42
+    }), [store, useState42]), useEvent(() => {
+      setStore((store2) => createStore2({
+        ...props,
+        ...store2.getState()
+      }));
+    })];
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/WZWDIE3S.js
-  var import_react13 = __toESM(require_react(), 1);
-  var import_jsx_runtime71 = __toESM(require_jsx_runtime(), 1);
+  // node_modules/@ariakit/react-components/dist/composite/composite-item.js
   var TagName4 = "button";
   function isEditableElement(element) {
     if (isTextbox(element)) return true;
@@ -16203,20 +16672,15 @@ If there's a particular need for this, please submit a feature request at https:
     const { top } = scrollingElement.getBoundingClientRect();
     const pageSize = Math.max(height * 0.875, height - 40) * 1.5;
     const pageOffset = pageUp ? height - pageSize + top : pageSize + top;
-    if (scrollingElement.tagName === "HTML") {
-      return pageOffset + scrollingElement.scrollTop;
-    }
+    if (scrollingElement.tagName === "HTML") return pageOffset + scrollingElement.scrollTop;
     return pageOffset;
   }
   function getItemOffset(itemElement, pageUp = false) {
     const { top } = itemElement.getBoundingClientRect();
-    if (pageUp) {
-      return top + itemElement.clientHeight;
-    }
+    if (pageUp) return top + itemElement.clientHeight;
     return top;
   }
   function findNextPageItemId(element, store, next, pageUp = false) {
-    var _a;
     if (!store) return;
     if (!next) return;
     const { renderedItems } = store.getState();
@@ -16230,15 +16694,12 @@ If there's a particular need for this, please submit a feature request at https:
       id = next(i2);
       if (!id) break;
       if (id === previousId) continue;
-      const itemElement = (_a = getEnabledItem(store, id)) == null ? void 0 : _a.element;
+      const itemElement = getEnabledItem(store, id)?.element;
       if (!itemElement) continue;
-      const itemOffset = getItemOffset(itemElement, pageUp);
-      const difference = itemOffset - nextPageOffset;
+      const difference = getItemOffset(itemElement, pageUp) - nextPageOffset;
       const absDifference = Math.abs(difference);
       if (pageUp && difference <= 0 || !pageUp && difference >= 0) {
-        if (prevDifference !== void 0 && prevDifference < absDifference) {
-          id = previousId;
-        }
+        if (prevDifference !== void 0 && prevDifference < absDifference) id = previousId;
         break;
       }
       prevDifference = absDifference;
@@ -16249,263 +16710,203 @@ If there's a particular need for this, please submit a feature request at https:
     if (isSelfTarget(event)) return false;
     return isItem(store, event.target);
   }
-  var useCompositeItem = createHook(
-    function useCompositeItem2({
-      store,
-      rowId: rowIdProp,
-      preventScrollOnKeyDown = false,
-      moveOnKeyPress = true,
-      tabbable: tabbable2 = false,
-      getItem: getItemProp,
-      "aria-setsize": ariaSetSizeProp,
-      "aria-posinset": ariaPosInSetProp,
-      ...props
-    }) {
-      const context = useCompositeContext();
-      store = store || context;
-      const id = useId4(props.id);
-      const ref = (0, import_react13.useRef)(null);
-      const row = (0, import_react13.useContext)(CompositeRowContext);
-      const disabled2 = disabledFromProps(props);
-      const trulyDisabled = disabled2 && !props.accessibleWhenDisabled;
-      const {
+  var useCompositeItem = createHook(function useCompositeItem2({ store, rowId: rowIdProp, preventScrollOnKeyDown = false, moveOnKeyPress = true, tabbable: tabbable2 = false, getItem: getItemProp, "aria-setsize": ariaSetSizeProp, "aria-posinset": ariaPosInSetProp, ...props }) {
+    const context = useCompositeScopedContext();
+    store = store || context;
+    const id = useId4(props.id);
+    const ref = (0, import_react12.useRef)(null);
+    const row = (0, import_react12.useContext)(CompositeRowContext);
+    const trulyDisabled = disabledFromProps(props) && !props.accessibleWhenDisabled;
+    const { rowId, baseElement, isActiveItem, ariaSetSize, ariaPosInSet, isTabbable } = useStoreStateObject(store, {
+      rowId(state) {
+        if (rowIdProp) return rowIdProp;
+        if (!state) return;
+        if (!row?.baseElement) return;
+        if (row.baseElement !== state.baseElement) return;
+        return row.id;
+      },
+      baseElement(state) {
+        return state?.baseElement || void 0;
+      },
+      isActiveItem(state) {
+        return !!state && state.activeId === id;
+      },
+      ariaSetSize(state) {
+        if (ariaSetSizeProp != null) return ariaSetSizeProp;
+        if (!state) return;
+        if (!row?.ariaSetSize) return;
+        if (row.baseElement !== state.baseElement) return;
+        return row.ariaSetSize;
+      },
+      ariaPosInSet(state) {
+        if (ariaPosInSetProp != null) return ariaPosInSetProp;
+        if (!state) return;
+        if (!row?.ariaPosInSet) return;
+        if (row.baseElement !== state.baseElement) return;
+        const itemsInRow = state.renderedItems.filter((item) => item.rowId === rowId);
+        return row.ariaPosInSet + itemsInRow.findIndex((item) => item.id === id);
+      },
+      isTabbable(state) {
+        if (!state?.renderedItems.length) return true;
+        if (state.virtualFocus) return false;
+        if (tabbable2) return true;
+        if (state.activeId === null) return false;
+        const item = store?.item(state.activeId);
+        if (item?.disabled) return true;
+        if (!item?.element) return true;
+        return state.activeId === id;
+      }
+    });
+    const getItem = (0, import_react12.useCallback)((item) => {
+      const nextItem = {
+        ...item,
+        id: id || item.id,
         rowId,
-        baseElement,
-        isActiveItem,
-        ariaSetSize,
-        ariaPosInSet,
-        isTabbable
-      } = useStoreStateObject(store, {
-        rowId(state) {
-          if (rowIdProp) return rowIdProp;
-          if (!state) return;
-          if (!(row == null ? void 0 : row.baseElement)) return;
-          if (row.baseElement !== state.baseElement) return;
-          return row.id;
-        },
-        baseElement(state) {
-          return (state == null ? void 0 : state.baseElement) || void 0;
-        },
-        isActiveItem(state) {
-          return !!state && state.activeId === id;
-        },
-        ariaSetSize(state) {
-          if (ariaSetSizeProp != null) return ariaSetSizeProp;
-          if (!state) return;
-          if (!(row == null ? void 0 : row.ariaSetSize)) return;
-          if (row.baseElement !== state.baseElement) return;
-          return row.ariaSetSize;
-        },
-        ariaPosInSet(state) {
-          if (ariaPosInSetProp != null) return ariaPosInSetProp;
-          if (!state) return;
-          if (!(row == null ? void 0 : row.ariaPosInSet)) return;
-          if (row.baseElement !== state.baseElement) return;
-          const itemsInRow = state.renderedItems.filter(
-            (item) => item.rowId === rowId
-          );
-          return row.ariaPosInSet + itemsInRow.findIndex((item) => item.id === id);
-        },
-        isTabbable(state) {
-          if (!(state == null ? void 0 : state.renderedItems.length)) return true;
-          if (state.virtualFocus) return false;
-          if (tabbable2) return true;
-          if (state.activeId === null) return false;
-          const item = store == null ? void 0 : store.item(state.activeId);
-          if (item == null ? void 0 : item.disabled) return true;
-          if (!(item == null ? void 0 : item.element)) return true;
-          return state.activeId === id;
-        }
-      });
-      const getItem = (0, import_react13.useCallback)(
-        (item) => {
-          var _a;
-          const nextItem = {
-            ...item,
-            id: id || item.id,
-            rowId,
-            disabled: !!trulyDisabled,
-            children: (_a = item.element) == null ? void 0 : _a.textContent
-          };
-          if (getItemProp) {
-            return getItemProp(nextItem);
-          }
-          return nextItem;
-        },
-        [id, rowId, trulyDisabled, getItemProp]
-      );
-      const onFocusProp = props.onFocus;
-      const hasFocusedComposite = (0, import_react13.useRef)(false);
-      const onFocus = useEvent((event) => {
-        onFocusProp == null ? void 0 : onFocusProp(event);
-        if (event.defaultPrevented) return;
-        if (isPortalEvent(event)) return;
-        if (!id) return;
-        if (!store) return;
-        if (targetIsAnotherItem(event, store)) return;
-        const { virtualFocus, baseElement: baseElement2 } = store.getState();
-        store.setActiveId(id);
-        if (isTextbox(event.currentTarget)) {
-          selectTextField(event.currentTarget);
-        }
-        if (!virtualFocus) return;
-        if (!isSelfTarget(event)) return;
-        if (isEditableElement(event.currentTarget)) return;
-        if (!(baseElement2 == null ? void 0 : baseElement2.isConnected)) return;
-        if (isSafari2() && event.currentTarget.hasAttribute("data-autofocus")) {
-          event.currentTarget.scrollIntoView({
-            block: "nearest",
-            inline: "nearest"
-          });
-        }
-        hasFocusedComposite.current = true;
-        const fromComposite = event.relatedTarget === baseElement2 || isItem(store, event.relatedTarget);
-        if (fromComposite) {
-          focusSilently(baseElement2);
-        } else {
-          baseElement2.focus();
-        }
-      });
-      const onBlurCaptureProp = props.onBlurCapture;
-      const onBlurCapture = useEvent((event) => {
-        onBlurCaptureProp == null ? void 0 : onBlurCaptureProp(event);
-        if (event.defaultPrevented) return;
-        const state = store == null ? void 0 : store.getState();
-        if ((state == null ? void 0 : state.virtualFocus) && hasFocusedComposite.current) {
-          hasFocusedComposite.current = false;
-          event.preventDefault();
-          event.stopPropagation();
-        }
-      });
-      const onKeyDownProp = props.onKeyDown;
-      const preventScrollOnKeyDownProp = useBooleanEvent(preventScrollOnKeyDown);
-      const moveOnKeyPressProp = useBooleanEvent(moveOnKeyPress);
-      const onKeyDown = useEvent((event) => {
-        onKeyDownProp == null ? void 0 : onKeyDownProp(event);
-        if (event.defaultPrevented) return;
-        if (!isSelfTarget(event)) return;
-        if (!store) return;
-        const { currentTarget } = event;
-        const state = store.getState();
-        const item = store.item(id);
-        const isGrid2 = !!(item == null ? void 0 : item.rowId);
-        const isVertical = state.orientation !== "horizontal";
-        const isHorizontal = state.orientation !== "vertical";
-        const canHomeEnd = () => {
-          if (isGrid2) return true;
-          if (isHorizontal) return true;
-          if (!state.baseElement) return true;
-          if (!isTextField(state.baseElement)) return true;
-          return false;
-        };
-        const keyMap = {
-          ArrowUp: (isGrid2 || isVertical) && store.up,
-          ArrowRight: (isGrid2 || isHorizontal) && store.next,
-          ArrowDown: (isGrid2 || isVertical) && store.down,
-          ArrowLeft: (isGrid2 || isHorizontal) && store.previous,
-          Home: () => {
-            if (!canHomeEnd()) return;
-            if (!isGrid2 || event.ctrlKey) {
-              return store == null ? void 0 : store.first();
-            }
-            return store == null ? void 0 : store.previous(-1);
-          },
-          End: () => {
-            if (!canHomeEnd()) return;
-            if (!isGrid2 || event.ctrlKey) {
-              return store == null ? void 0 : store.last();
-            }
-            return store == null ? void 0 : store.next(-1);
-          },
-          PageUp: () => {
-            return findNextPageItemId(currentTarget, store, store == null ? void 0 : store.up, true);
-          },
-          PageDown: () => {
-            return findNextPageItemId(currentTarget, store, store == null ? void 0 : store.down);
-          }
-        };
-        const action = keyMap[event.key];
-        if (action) {
-          if (isTextbox(currentTarget)) {
-            const selection = getTextboxSelection(currentTarget);
-            const isLeft = isHorizontal && event.key === "ArrowLeft";
-            const isRight = isHorizontal && event.key === "ArrowRight";
-            const isUp = isVertical && event.key === "ArrowUp";
-            const isDown = isVertical && event.key === "ArrowDown";
-            if (isRight || isDown) {
-              const { length: valueLength } = getTextboxValue(currentTarget);
-              if (selection.end !== valueLength) return;
-            } else if ((isLeft || isUp) && selection.start !== 0) return;
-          }
-          const nextId = action();
-          if (preventScrollOnKeyDownProp(event) || nextId !== void 0) {
-            if (!moveOnKeyPressProp(event)) return;
-            event.preventDefault();
-            store.move(nextId);
-          }
-        }
-      });
-      const providerValue = (0, import_react13.useMemo)(
-        () => ({ id, baseElement }),
-        [id, baseElement]
-      );
-      props = useWrapElement(
-        props,
-        (element) => /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(CompositeItemContext.Provider, { value: providerValue, children: element }),
-        [providerValue]
-      );
-      props = {
-        id,
-        "data-active-item": isActiveItem || void 0,
-        ...props,
-        ref: useMergeRefs(ref, props.ref),
-        tabIndex: isTabbable ? props.tabIndex : -1,
-        onFocus,
-        onBlurCapture,
-        onKeyDown
+        disabled: trulyDisabled,
+        children: item.element?.textContent
       };
-      props = useCommand(props);
-      props = useCollectionItem({
-        store,
-        ...props,
-        getItem,
-        shouldRegisterItem: id ? props.shouldRegisterItem : false
+      if (getItemProp) return getItemProp(nextItem);
+      return nextItem;
+    }, [
+      id,
+      rowId,
+      trulyDisabled,
+      getItemProp
+    ]);
+    const onFocusProp = props.onFocus;
+    const hasFocusedComposite = (0, import_react12.useRef)(false);
+    const onFocus = useEvent((event) => {
+      onFocusProp?.(event);
+      if (event.defaultPrevented) return;
+      if (isPortalEvent(event)) return;
+      if (!id) return;
+      if (!store) return;
+      if (targetIsAnotherItem(event, store)) return;
+      const { virtualFocus, baseElement: baseElement2 } = store.getState();
+      store.setActiveId(id);
+      if (isTextbox(event.currentTarget)) selectTextField(event.currentTarget);
+      if (!virtualFocus) return;
+      if (!isSelfTarget(event)) return;
+      if (isEditableElement(event.currentTarget)) return;
+      if (!baseElement2?.isConnected) return;
+      if (isSafari2() && event.currentTarget.hasAttribute("data-autofocus")) event.currentTarget.scrollIntoView({
+        block: "nearest",
+        inline: "nearest"
       });
-      return removeUndefinedValues({
-        ...props,
-        "aria-setsize": ariaSetSize,
-        "aria-posinset": ariaPosInSet
-      });
-    }
-  );
-  var CompositeItem = memo22(
-    forwardRef22(function CompositeItem2(props) {
-      const htmlProps = useCompositeItem(props);
-      return createElement3(TagName4, htmlProps);
-    })
-  );
+      hasFocusedComposite.current = true;
+      if (event.relatedTarget === baseElement2 || isItem(store, event.relatedTarget)) focusSilently(baseElement2);
+      else baseElement2.focus();
+    });
+    const onBlurCaptureProp = props.onBlurCapture;
+    const onBlurCapture = useEvent((event) => {
+      onBlurCaptureProp?.(event);
+      if (event.defaultPrevented) return;
+      if (store?.getState()?.virtualFocus && hasFocusedComposite.current) {
+        hasFocusedComposite.current = false;
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    });
+    const onKeyDownProp = props.onKeyDown;
+    const preventScrollOnKeyDownProp = useBooleanEvent(preventScrollOnKeyDown);
+    const moveOnKeyPressProp = useBooleanEvent(moveOnKeyPress);
+    const onKeyDown = useEvent((event) => {
+      onKeyDownProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!isSelfTarget(event)) return;
+      if (!store) return;
+      const { currentTarget } = event;
+      const state = store.getState();
+      const isGrid2 = !!store.item(id)?.rowId;
+      const isVertical = state.orientation !== "horizontal";
+      const isHorizontal = state.orientation !== "vertical";
+      const canHomeEnd = () => {
+        if (isGrid2) return true;
+        if (isHorizontal) return true;
+        if (!state.baseElement) return true;
+        if (!isTextField(state.baseElement)) return true;
+        return false;
+      };
+      const action = {
+        ArrowUp: (isGrid2 || isVertical) && store.up,
+        ArrowRight: (isGrid2 || isHorizontal) && store.next,
+        ArrowDown: (isGrid2 || isVertical) && store.down,
+        ArrowLeft: (isGrid2 || isHorizontal) && store.previous,
+        Home: () => {
+          if (!canHomeEnd()) return;
+          if (!isGrid2 || event.ctrlKey) return store?.first();
+          return store?.previous(-1);
+        },
+        End: () => {
+          if (!canHomeEnd()) return;
+          if (!isGrid2 || event.ctrlKey) return store?.last();
+          return store?.next(-1);
+        },
+        PageUp: () => {
+          return findNextPageItemId(currentTarget, store, store?.up, true);
+        },
+        PageDown: () => {
+          return findNextPageItemId(currentTarget, store, store?.down);
+        }
+      }[event.key];
+      if (action) {
+        if (isTextbox(currentTarget)) {
+          const selection = getTextboxSelection(currentTarget);
+          const isLeft = isHorizontal && event.key === "ArrowLeft";
+          const isRight = isHorizontal && event.key === "ArrowRight";
+          const isUp = isVertical && event.key === "ArrowUp";
+          const isDown = isVertical && event.key === "ArrowDown";
+          if (isRight || isDown) {
+            const { length: valueLength } = getTextboxValue(currentTarget);
+            if (selection.end !== valueLength) return;
+          } else if ((isLeft || isUp) && selection.start !== 0) return;
+        }
+        const nextId = action();
+        if (preventScrollOnKeyDownProp(event) || nextId !== void 0) {
+          if (!moveOnKeyPressProp(event)) return;
+          event.preventDefault();
+          store.move(nextId);
+        }
+      }
+    });
+    const providerValue = (0, import_react12.useMemo)(() => ({
+      id,
+      baseElement
+    }), [id, baseElement]);
+    props = useWrapElement(props, (element) => /* @__PURE__ */ (0, import_jsx_runtime72.jsx)(CompositeItemContext.Provider, {
+      value: providerValue,
+      children: element
+    }), [providerValue]);
+    props = {
+      "data-active-item": isActiveItem || void 0,
+      ...props,
+      id,
+      ref: useMergeRefs(ref, props.ref),
+      tabIndex: isTabbable ? props.tabIndex : -1,
+      onFocus,
+      onBlurCapture,
+      onKeyDown
+    };
+    props = useCommand(props);
+    props = useCollectionItem({
+      store,
+      ...props,
+      getItem,
+      shouldRegisterItem: id ? props.shouldRegisterItem : false
+    });
+    return removeUndefinedValues({
+      ...props,
+      "aria-setsize": ariaSetSize,
+      "aria-posinset": ariaPosInSet
+    });
+  });
+  var CompositeItem = memo3(forwardRef20(function CompositeItem2(props) {
+    return createElement3(TagName4, useCompositeItem(props));
+  }));
 
-  // node_modules/@ariakit/core/esm/__chunks/7PRQYBBV.js
-  function toArray(arg) {
-    if (Array.isArray(arg)) {
-      return arg;
-    }
-    return typeof arg !== "undefined" ? [arg] : [];
-  }
-  function flatten2DArray(array) {
-    const flattened = [];
-    for (const row of array) {
-      flattened.push(...row);
-    }
-    return flattened;
-  }
-  function reverseArray(array) {
-    return array.slice().reverse();
-  }
-
-  // node_modules/@ariakit/react-core/esm/__chunks/ZMWF7ASR.js
-  var import_react14 = __toESM(require_react(), 1);
-  var import_jsx_runtime72 = __toESM(require_jsx_runtime(), 1);
+  // node_modules/@ariakit/react-components/dist/composite/composite.js
+  var import_react13 = __toESM(require_react(), 1);
+  var import_jsx_runtime73 = __toESM(require_jsx_runtime(), 1);
   var TagName5 = "div";
   function isGrid(items) {
     return items.some((item) => !!item.rowId);
@@ -16520,264 +16921,228 @@ If there's a particular need for this, please submit a feature request at https:
   }
   function useKeyboardEventProxy(store, onKeyboardEvent, previousElementRef) {
     return useEvent((event) => {
-      var _a;
-      onKeyboardEvent == null ? void 0 : onKeyboardEvent(event);
+      onKeyboardEvent?.(event);
       if (event.defaultPrevented) return;
       if (event.isPropagationStopped()) return;
       if (!isSelfTarget(event)) return;
       if (isModifierKey(event)) return;
       if (isPrintableKey(event)) return;
-      const state = store.getState();
-      const activeElement2 = (_a = getEnabledItem(store, state.activeId)) == null ? void 0 : _a.element;
+      const activeElement2 = getEnabledItem(store, store.getState().activeId)?.element;
       if (!activeElement2) return;
       const { view, ...eventInit } = event;
-      const previousElement = previousElementRef == null ? void 0 : previousElementRef.current;
-      if (activeElement2 !== previousElement) {
-        activeElement2.focus();
-      }
-      if (!fireKeyboardEvent(activeElement2, event.type, eventInit)) {
-        event.preventDefault();
-      }
-      if (event.currentTarget.contains(activeElement2)) {
-        event.stopPropagation();
-      }
+      if (activeElement2 !== previousElementRef?.current) activeElement2.focus();
+      if (!fireKeyboardEvent(activeElement2, event.type, eventInit)) event.preventDefault();
+      if (event.currentTarget.contains(activeElement2)) event.stopPropagation();
     });
   }
   function findFirstEnabledItemInTheLastRow(items) {
-    return findFirstEnabledItem(
-      flatten2DArray(reverseArray(groupItemsByRows(items)))
-    );
+    return findFirstEnabledItem(flatten2DArray(reverseArray(groupItemsByRows(items))));
+  }
+  function withBaseScrollPreserved(store, callback) {
+    const { virtualFocus, baseElement } = store.getState();
+    if (!virtualFocus || !baseElement || !isTextField(baseElement)) {
+      callback();
+      return;
+    }
+    const savedScrollLeft = baseElement.scrollLeft;
+    const savedScrollTop = baseElement.scrollTop;
+    callback();
+    baseElement.scrollLeft = savedScrollLeft;
+    baseElement.scrollTop = savedScrollTop;
   }
   function useScheduleFocus(store) {
-    const [scheduled, setScheduled] = (0, import_react14.useState)(false);
-    const schedule = (0, import_react14.useCallback)(() => setScheduled(true), []);
-    const activeItem = store.useState(
-      (state) => getEnabledItem(store, state.activeId)
-    );
-    (0, import_react14.useEffect)(() => {
-      const activeElement2 = activeItem == null ? void 0 : activeItem.element;
+    const [scheduled, setScheduled] = (0, import_react13.useState)(false);
+    const schedule = (0, import_react13.useCallback)(() => setScheduled(true), []);
+    const activeItem = useStoreState(store, (state) => getEnabledItem(store, state.activeId));
+    (0, import_react13.useEffect)(() => {
+      const activeElement2 = activeItem?.element;
       if (!scheduled) return;
       if (!activeElement2) return;
       setScheduled(false);
-      activeElement2.focus({ preventScroll: true });
-    }, [activeItem, scheduled]);
+      withBaseScrollPreserved(store, () => {
+        activeElement2.focus({ preventScroll: true });
+      });
+    }, [
+      store,
+      activeItem,
+      scheduled
+    ]);
     return schedule;
   }
-  var useComposite = createHook(
-    function useComposite2({
+  var useComposite = createHook(function useComposite2({ store, composite = true, focusOnMove = composite, moveOnKeyPress = true, ...props }) {
+    const context = useCompositeProviderContext();
+    store = store || context;
+    invariant(store, "Composite must receive a `store` prop or be wrapped in a CompositeProvider component.");
+    const ref = (0, import_react13.useRef)(null);
+    const previousElementRef = (0, import_react13.useRef)(null);
+    const scheduleFocus = useScheduleFocus(store);
+    const moves = useStoreState(store, "moves");
+    const [, setBaseElement] = useTransactionState(composite ? store.setBaseElement : null);
+    (0, import_react13.useEffect)(() => {
+      if (!store) return;
+      if (!moves) return;
+      if (!composite) return;
+      if (!focusOnMove) return;
+      const { activeId: activeId2 } = store.getState();
+      const itemElement = getEnabledItem(store, activeId2)?.element;
+      if (!itemElement) return;
+      withBaseScrollPreserved(store, () => focusIntoView(itemElement));
+    }, [
       store,
-      composite = true,
-      focusOnMove = composite,
-      moveOnKeyPress = true,
-      ...props
-    }) {
-      const context = useCompositeProviderContext();
-      store = store || context;
-      invariant(
-        store,
-        "Composite must receive a `store` prop or be wrapped in a CompositeProvider component."
-      );
-      const ref = (0, import_react14.useRef)(null);
-      const previousElementRef = (0, import_react14.useRef)(null);
-      const scheduleFocus = useScheduleFocus(store);
-      const moves = store.useState("moves");
-      const [, setBaseElement] = useTransactionState(
-        composite ? store.setBaseElement : null
-      );
-      (0, import_react14.useEffect)(() => {
-        var _a;
-        if (!store) return;
-        if (!moves) return;
-        if (!composite) return;
-        if (!focusOnMove) return;
-        const { activeId: activeId2 } = store.getState();
-        const itemElement = (_a = getEnabledItem(store, activeId2)) == null ? void 0 : _a.element;
-        if (!itemElement) return;
-        focusIntoView(itemElement);
-      }, [store, moves, composite, focusOnMove]);
-      useSafeLayoutEffect(() => {
-        if (!store) return;
-        if (!moves) return;
-        if (!composite) return;
-        const { baseElement, activeId: activeId2 } = store.getState();
-        const isSelfAcive = activeId2 === null;
-        if (!isSelfAcive) return;
-        if (!baseElement) return;
-        const previousElement = previousElementRef.current;
-        previousElementRef.current = null;
-        if (previousElement) {
-          fireBlurEvent(previousElement, { relatedTarget: baseElement });
+      moves,
+      composite,
+      focusOnMove
+    ]);
+    useSafeLayoutEffect(() => {
+      if (!store) return;
+      if (!moves) return;
+      if (!composite) return;
+      const { baseElement, activeId: activeId2 } = store.getState();
+      if (!(activeId2 === null)) return;
+      if (!baseElement) return;
+      const previousElement = previousElementRef.current;
+      previousElementRef.current = null;
+      if (previousElement) fireBlurEvent(previousElement, { relatedTarget: baseElement });
+      if (!hasFocus(baseElement)) baseElement.focus();
+    }, [
+      store,
+      moves,
+      composite
+    ]);
+    const activeId = useStoreState(store, "activeId");
+    const virtualFocus = useStoreState(store, "virtualFocus");
+    useSafeLayoutEffect(() => {
+      if (!store) return;
+      if (!composite) return;
+      if (!virtualFocus) return;
+      const previousElement = previousElementRef.current;
+      previousElementRef.current = null;
+      if (!previousElement) return;
+      const relatedTarget = getEnabledItem(store, activeId)?.element || getActiveElement(previousElement);
+      if (relatedTarget === previousElement) return;
+      fireBlurEvent(previousElement, { relatedTarget });
+    }, [
+      store,
+      activeId,
+      virtualFocus,
+      composite
+    ]);
+    const onKeyDownCapture = useKeyboardEventProxy(store, props.onKeyDownCapture, previousElementRef);
+    const onKeyUpCapture = useKeyboardEventProxy(store, props.onKeyUpCapture, previousElementRef);
+    const onFocusCaptureProp = props.onFocusCapture;
+    const onFocusCapture = useEvent((event) => {
+      onFocusCaptureProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!store) return;
+      const { virtualFocus: virtualFocus2 } = store.getState();
+      if (!virtualFocus2) return;
+      const previousActiveElement = event.relatedTarget;
+      const isSilentlyFocused = silentlyFocused(event.currentTarget);
+      if (isSelfTarget(event) && isSilentlyFocused) {
+        event.stopPropagation();
+        previousElementRef.current = previousActiveElement;
+      }
+    });
+    const onFocusProp = props.onFocus;
+    const onFocus = useEvent((event) => {
+      onFocusProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!composite) return;
+      if (!store) return;
+      const { relatedTarget } = event;
+      const { virtualFocus: virtualFocus2 } = store.getState();
+      if (virtualFocus2) {
+        if (isSelfTarget(event) && !isItem(store, relatedTarget)) queueMicrotask(scheduleFocus);
+      } else if (isSelfTarget(event)) store.setActiveId(null);
+    });
+    const onBlurCaptureProp = props.onBlurCapture;
+    const onBlurCapture = useEvent((event) => {
+      onBlurCaptureProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!store) return;
+      const { virtualFocus: virtualFocus2, activeId: activeId2 } = store.getState();
+      if (!virtualFocus2) return;
+      const activeElement2 = getEnabledItem(store, activeId2)?.element;
+      const nextActiveElement = event.relatedTarget;
+      const nextActiveElementIsItem = isItem(store, nextActiveElement);
+      const previousElement = previousElementRef.current;
+      previousElementRef.current = null;
+      if (isSelfTarget(event) && nextActiveElementIsItem) {
+        if (nextActiveElement === activeElement2) {
+          if (previousElement && previousElement !== nextActiveElement) fireBlurEvent(previousElement, event);
+        } else if (activeElement2) fireBlurEvent(activeElement2, event);
+        else if (previousElement) fireBlurEvent(previousElement, event);
+        event.stopPropagation();
+      } else if (!isItem(store, event.target) && activeElement2) fireBlurEvent(activeElement2, event);
+    });
+    const onKeyDownProp = props.onKeyDown;
+    const moveOnKeyPressProp = useBooleanEvent(moveOnKeyPress);
+    const onKeyDown = useEvent((event) => {
+      onKeyDownProp?.(event);
+      if (event.nativeEvent.isComposing) return;
+      if (event.defaultPrevented) return;
+      if (!store) return;
+      if (!isSelfTarget(event)) return;
+      const { orientation, renderedItems, activeId: activeId2 } = store.getState();
+      if (getEnabledItem(store, activeId2)?.element?.isConnected) return;
+      const isVertical = orientation !== "horizontal";
+      const isHorizontal = orientation !== "vertical";
+      const grid = isGrid(renderedItems);
+      if ((event.key === "ArrowLeft" || event.key === "ArrowRight" || event.key === "Home" || event.key === "End") && isTextField(event.currentTarget)) return;
+      const up = () => {
+        if (grid) return findFirstEnabledItemInTheLastRow(renderedItems)?.id;
+        return store?.last();
+      };
+      const action = {
+        ArrowUp: (grid || isVertical) && up,
+        ArrowRight: (grid || isHorizontal) && store.first,
+        ArrowDown: (grid || isVertical) && store.first,
+        ArrowLeft: (grid || isHorizontal) && store.last,
+        Home: store.first,
+        End: store.last,
+        PageUp: store.first,
+        PageDown: store.last
+      }[event.key];
+      if (action) {
+        const id = action();
+        if (id !== void 0) {
+          if (!moveOnKeyPressProp(event)) return;
+          event.preventDefault();
+          store.move(id);
         }
-        if (!hasFocus(baseElement)) {
-          baseElement.focus();
-        }
-      }, [store, moves, composite]);
-      const activeId = store.useState("activeId");
-      const virtualFocus = store.useState("virtualFocus");
-      useSafeLayoutEffect(() => {
-        var _a;
-        if (!store) return;
-        if (!composite) return;
-        if (!virtualFocus) return;
-        const previousElement = previousElementRef.current;
-        previousElementRef.current = null;
-        if (!previousElement) return;
-        const activeElement2 = (_a = getEnabledItem(store, activeId)) == null ? void 0 : _a.element;
-        const relatedTarget = activeElement2 || getActiveElement(previousElement);
-        if (relatedTarget === previousElement) return;
-        fireBlurEvent(previousElement, { relatedTarget });
-      }, [store, activeId, virtualFocus, composite]);
-      const onKeyDownCapture = useKeyboardEventProxy(
-        store,
-        props.onKeyDownCapture,
-        previousElementRef
-      );
-      const onKeyUpCapture = useKeyboardEventProxy(
-        store,
-        props.onKeyUpCapture,
-        previousElementRef
-      );
-      const onFocusCaptureProp = props.onFocusCapture;
-      const onFocusCapture = useEvent((event) => {
-        onFocusCaptureProp == null ? void 0 : onFocusCaptureProp(event);
-        if (event.defaultPrevented) return;
-        if (!store) return;
-        const { virtualFocus: virtualFocus2 } = store.getState();
-        if (!virtualFocus2) return;
-        const previousActiveElement = event.relatedTarget;
-        const isSilentlyFocused = silentlyFocused(event.currentTarget);
-        if (isSelfTarget(event) && isSilentlyFocused) {
-          event.stopPropagation();
-          previousElementRef.current = previousActiveElement;
-        }
-      });
-      const onFocusProp = props.onFocus;
-      const onFocus = useEvent((event) => {
-        onFocusProp == null ? void 0 : onFocusProp(event);
-        if (event.defaultPrevented) return;
-        if (!composite) return;
-        if (!store) return;
-        const { relatedTarget } = event;
-        const { virtualFocus: virtualFocus2 } = store.getState();
-        if (virtualFocus2) {
-          if (isSelfTarget(event) && !isItem(store, relatedTarget)) {
-            queueMicrotask(scheduleFocus);
-          }
-        } else if (isSelfTarget(event)) {
-          store.setActiveId(null);
-        }
-      });
-      const onBlurCaptureProp = props.onBlurCapture;
-      const onBlurCapture = useEvent((event) => {
-        var _a;
-        onBlurCaptureProp == null ? void 0 : onBlurCaptureProp(event);
-        if (event.defaultPrevented) return;
-        if (!store) return;
-        const { virtualFocus: virtualFocus2, activeId: activeId2 } = store.getState();
-        if (!virtualFocus2) return;
-        const activeElement2 = (_a = getEnabledItem(store, activeId2)) == null ? void 0 : _a.element;
-        const nextActiveElement = event.relatedTarget;
-        const nextActiveElementIsItem = isItem(store, nextActiveElement);
-        const previousElement = previousElementRef.current;
-        previousElementRef.current = null;
-        if (isSelfTarget(event) && nextActiveElementIsItem) {
-          if (nextActiveElement === activeElement2) {
-            if (previousElement && previousElement !== nextActiveElement) {
-              fireBlurEvent(previousElement, event);
-            }
-          } else if (activeElement2) {
-            fireBlurEvent(activeElement2, event);
-          } else if (previousElement) {
-            fireBlurEvent(previousElement, event);
-          }
-          event.stopPropagation();
-        } else {
-          const targetIsItem = isItem(store, event.target);
-          if (!targetIsItem && activeElement2) {
-            fireBlurEvent(activeElement2, event);
-          }
-        }
-      });
-      const onKeyDownProp = props.onKeyDown;
-      const moveOnKeyPressProp = useBooleanEvent(moveOnKeyPress);
-      const onKeyDown = useEvent((event) => {
-        var _a;
-        onKeyDownProp == null ? void 0 : onKeyDownProp(event);
-        if (event.nativeEvent.isComposing) return;
-        if (event.defaultPrevented) return;
-        if (!store) return;
-        if (!isSelfTarget(event)) return;
-        const { orientation, renderedItems, activeId: activeId2 } = store.getState();
-        const activeItem = getEnabledItem(store, activeId2);
-        if ((_a = activeItem == null ? void 0 : activeItem.element) == null ? void 0 : _a.isConnected) return;
-        const isVertical = orientation !== "horizontal";
-        const isHorizontal = orientation !== "vertical";
-        const grid = isGrid(renderedItems);
-        const isHorizontalKey = event.key === "ArrowLeft" || event.key === "ArrowRight" || event.key === "Home" || event.key === "End";
-        if (isHorizontalKey && isTextField(event.currentTarget)) return;
-        const up = () => {
-          if (grid) {
-            const item = findFirstEnabledItemInTheLastRow(renderedItems);
-            return item == null ? void 0 : item.id;
-          }
-          return store == null ? void 0 : store.last();
-        };
-        const keyMap = {
-          ArrowUp: (grid || isVertical) && up,
-          ArrowRight: (grid || isHorizontal) && store.first,
-          ArrowDown: (grid || isVertical) && store.first,
-          ArrowLeft: (grid || isHorizontal) && store.last,
-          Home: store.first,
-          End: store.last,
-          PageUp: store.first,
-          PageDown: store.last
-        };
-        const action = keyMap[event.key];
-        if (action) {
-          const id = action();
-          if (id !== void 0) {
-            if (!moveOnKeyPressProp(event)) return;
-            event.preventDefault();
-            store.move(id);
-          }
-        }
-      });
-      props = useWrapElement(
-        props,
-        (element) => /* @__PURE__ */ (0, import_jsx_runtime72.jsx)(CompositeContextProvider, { value: store, children: element }),
-        [store]
-      );
-      const activeDescendant = store.useState((state) => {
-        var _a;
+      }
+    });
+    props = useWrapElement(props, (element) => /* @__PURE__ */ (0, import_jsx_runtime73.jsx)(CompositeScopedContextProvider, {
+      value: store,
+      children: element
+    }), [store]);
+    props = {
+      "aria-activedescendant": useStoreState(store, (state) => {
         if (!store) return;
         if (!composite) return;
         if (!state.virtualFocus) return;
-        return (_a = getEnabledItem(store, state.activeId)) == null ? void 0 : _a.id;
-      });
-      props = {
-        "aria-activedescendant": activeDescendant,
-        ...props,
-        ref: useMergeRefs(ref, setBaseElement, props.ref),
-        onKeyDownCapture,
-        onKeyUpCapture,
-        onFocusCapture,
-        onFocus,
-        onBlurCapture,
-        onKeyDown
-      };
-      const focusable2 = store.useState(
-        (state) => composite && (state.virtualFocus || state.activeId === null)
-      );
-      props = useFocusable({ focusable: focusable2, ...props });
-      return props;
-    }
-  );
-  var Composite5 = forwardRef22(function Composite22(props) {
-    const htmlProps = useComposite(props);
-    return createElement3(TagName5, htmlProps);
+        return getEnabledItem(store, state.activeId)?.id;
+      }),
+      ...props,
+      ref: useMergeRefs(ref, setBaseElement, props.ref),
+      onKeyDownCapture,
+      onKeyUpCapture,
+      onFocusCapture,
+      onFocus,
+      onBlurCapture,
+      onKeyDown
+    };
+    props = useFocusable({
+      focusable: useStoreState(store, (state) => composite && (state.virtualFocus || state.activeId === null)),
+      ...props
+    });
+    return props;
+  });
+  var Composite6 = forwardRef20(function Composite7(props) {
+    return createElement3(TagName5, useComposite(props));
   });
 
-  // node_modules/@ariakit/react-core/esm/__chunks/LVDQFHCH.js
+  // node_modules/@ariakit/react-components/dist/disclosure/disclosure-context.js
   var ctx3 = createStoreContext();
   var useDisclosureContext = ctx3.useContext;
   var useDisclosureScopedContext = ctx3.useScopedContext;
@@ -16785,30 +17150,27 @@ If there's a particular need for this, please submit a feature request at https:
   var DisclosureContextProvider = ctx3.ContextProvider;
   var DisclosureScopedContextProvider = ctx3.ScopedContextProvider;
 
-  // node_modules/@ariakit/react-core/esm/__chunks/A62MDFCW.js
-  var import_react15 = __toESM(require_react(), 1);
-  var ctx4 = createStoreContext(
-    [DisclosureContextProvider],
-    [DisclosureScopedContextProvider]
-  );
+  // node_modules/@ariakit/react-components/dist/dialog/dialog-context.js
+  var import_react14 = __toESM(require_react(), 1);
+  var ctx4 = createStoreContext([DisclosureContextProvider], [DisclosureScopedContextProvider]);
   var useDialogContext = ctx4.useContext;
   var useDialogScopedContext = ctx4.useScopedContext;
   var useDialogProviderContext = ctx4.useProviderContext;
   var DialogContextProvider = ctx4.ContextProvider;
   var DialogScopedContextProvider = ctx4.ScopedContextProvider;
-  var DialogHeadingContext = (0, import_react15.createContext)(void 0);
-  var DialogDescriptionContext = (0, import_react15.createContext)(void 0);
+  var DialogHeadingContext = (0, import_react14.createContext)(void 0);
+  var DialogDescriptionContext = (0, import_react14.createContext)(void 0);
 
-  // node_modules/@ariakit/react-core/esm/__chunks/6B3RXHKP.js
-  var import_react16 = __toESM(require_react(), 1);
+  // node_modules/@ariakit/react-components/dist/disclosure/disclosure-content.js
+  var import_react15 = __toESM(require_react(), 1);
+  var import_jsx_runtime74 = __toESM(require_jsx_runtime(), 1);
   var import_react_dom4 = __toESM(require_react_dom(), 1);
-  var import_jsx_runtime73 = __toESM(require_jsx_runtime(), 1);
   var TagName6 = "div";
   function afterTimeout(timeoutMs, cb) {
     const timeoutId = setTimeout(cb, timeoutMs);
     return () => clearTimeout(timeoutId);
   }
-  function afterPaint2(cb) {
+  function afterPaint(cb) {
     let raf = requestAnimationFrame(() => {
       raf = requestAnimationFrame(cb);
     });
@@ -16828,179 +17190,142 @@ If there's a particular need for this, please submit a feature request at https:
   var useDisclosureContent = createHook(function useDisclosureContent2({ store, alwaysVisible, ...props }) {
     const context = useDisclosureProviderContext();
     store = store || context;
-    invariant(
-      store,
-      "DisclosureContent must receive a `store` prop or be wrapped in a DisclosureProvider component."
-    );
-    const ref = (0, import_react16.useRef)(null);
+    invariant(store, "DisclosureContent must receive a `store` prop or be wrapped in a DisclosureProvider component.");
+    const ref = (0, import_react15.useRef)(null);
     const id = useId4(props.id);
-    const [transition, setTransition] = (0, import_react16.useState)(null);
-    const open = store.useState("open");
-    const mounted = store.useState("mounted");
-    const animated = store.useState("animated");
-    const contentElement = store.useState("contentElement");
+    const [transition, setTransition] = (0, import_react15.useState)(null);
+    const open = useStoreState(store, "open");
+    const mounted = useStoreState(store, "mounted");
+    const animated = useStoreState(store, "animated");
+    const contentElement = useStoreState(store, "contentElement");
     const otherElement = useStoreState(store.disclosure, "contentElement");
+    const hasClosedRef = (0, import_react15.useRef)(false);
     useSafeLayoutEffect(() => {
       if (!ref.current) return;
-      store == null ? void 0 : store.setContentElement(ref.current);
+      store?.setContentElement(ref.current);
     }, [store]);
     useSafeLayoutEffect(() => {
       let previousAnimated;
-      store == null ? void 0 : store.setState("animated", (animated2) => {
+      store?.setState("animated", (animated2) => {
         previousAnimated = animated2;
         return true;
       });
       return () => {
         if (previousAnimated === void 0) return;
-        store == null ? void 0 : store.setState("animated", previousAnimated);
+        store?.setState("animated", previousAnimated);
       };
     }, [store]);
     useSafeLayoutEffect(() => {
-      if (!animated) return;
-      if (!(contentElement == null ? void 0 : contentElement.isConnected)) {
+      if (!animated) {
+        if (!open) {
+          hasClosedRef.current = true;
+          setTransition(null);
+        } else if (hasClosedRef.current) {
+          hasClosedRef.current = false;
+          setTransition("enter");
+        }
+        return;
+      }
+      if (!contentElement?.isConnected) {
         setTransition(null);
         return;
       }
-      return afterPaint2(() => {
+      return afterPaint(() => {
         setTransition(open ? "enter" : mounted ? "leave" : null);
       });
-    }, [animated, contentElement, open, mounted]);
+    }, [
+      animated,
+      contentElement,
+      open,
+      mounted
+    ]);
     useSafeLayoutEffect(() => {
       if (!store) return;
       if (!animated) return;
       if (!transition) return;
       if (!contentElement) return;
-      const stopAnimation = () => store == null ? void 0 : store.setState("animating", false);
+      const stopAnimation = () => store?.setState("animating", false);
       const stopAnimationSync = () => (0, import_react_dom4.flushSync)(stopAnimation);
       if (transition === "leave" && open) return;
       if (transition === "enter" && !open) return;
-      if (typeof animated === "number") {
-        const timeout2 = animated;
-        return afterTimeout(timeout2, stopAnimationSync);
-      }
-      const {
-        transitionDuration,
-        animationDuration,
-        transitionDelay,
-        animationDelay
-      } = getComputedStyle(contentElement);
-      const {
-        transitionDuration: transitionDuration2 = "0",
-        animationDuration: animationDuration2 = "0",
-        transitionDelay: transitionDelay2 = "0",
-        animationDelay: animationDelay2 = "0"
-      } = otherElement ? getComputedStyle(otherElement) : {};
-      const delay = parseCSSTime(
-        transitionDelay,
-        animationDelay,
-        transitionDelay2,
-        animationDelay2
-      );
-      const duration = parseCSSTime(
-        transitionDuration,
-        animationDuration,
-        transitionDuration2,
-        animationDuration2
-      );
-      const timeout = delay + duration;
+      if (typeof animated === "number") return afterTimeout(animated, stopAnimationSync);
+      const { transitionDuration, animationDuration, transitionDelay, animationDelay } = getComputedStyle(contentElement);
+      const { transitionDuration: transitionDuration2 = "0", animationDuration: animationDuration2 = "0", transitionDelay: transitionDelay2 = "0", animationDelay: animationDelay2 = "0" } = otherElement ? getComputedStyle(otherElement) : {};
+      const timeout = parseCSSTime(transitionDelay, animationDelay, transitionDelay2, animationDelay2) + parseCSSTime(transitionDuration, animationDuration, transitionDuration2, animationDuration2);
       if (!timeout) {
-        if (transition === "enter") {
-          store.setState("animated", false);
-        }
+        if (transition === "enter") store.setState("animated", false);
         stopAnimation();
         return;
       }
-      const frameRate = 1e3 / 60;
-      const maxTimeout = Math.max(timeout - frameRate, 0);
-      return afterTimeout(maxTimeout, stopAnimationSync);
-    }, [store, animated, contentElement, otherElement, open, transition]);
-    props = useWrapElement(
-      props,
-      (element) => /* @__PURE__ */ (0, import_jsx_runtime73.jsx)(DialogScopedContextProvider, { value: store, children: element }),
-      [store]
-    );
+      return afterTimeout(Math.max(timeout - 1e3 / 60, 0), stopAnimationSync);
+    }, [
+      store,
+      animated,
+      contentElement,
+      otherElement,
+      open,
+      transition
+    ]);
+    props = useWrapElement(props, (element) => /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(DialogScopedContextProvider, {
+      value: store,
+      children: element
+    }), [store]);
     const hidden = isHidden(mounted, props.hidden, alwaysVisible);
     const styleProp = props.style;
-    const style = (0, import_react16.useMemo)(() => {
-      if (hidden) {
-        return { ...styleProp, display: "none" };
-      }
+    const style = (0, import_react15.useMemo)(() => {
+      if (hidden) return {
+        ...styleProp,
+        display: "none"
+      };
       return styleProp;
     }, [hidden, styleProp]);
     props = {
-      id,
       "data-open": open || void 0,
       "data-enter": transition === "enter" || void 0,
       "data-leave": transition === "leave" || void 0,
       hidden,
       ...props,
+      id,
       ref: useMergeRefs(id ? store.setContentElement : null, ref, props.ref),
       style
     };
     return removeUndefinedValues(props);
   });
-  var DisclosureContentImpl = forwardRef22(function DisclosureContentImpl2(props) {
-    const htmlProps = useDisclosureContent(props);
-    return createElement3(TagName6, htmlProps);
+  var DisclosureContentImpl = forwardRef20(function DisclosureContentImpl2(props) {
+    return createElement3(TagName6, useDisclosureContent(props));
   });
-  var DisclosureContent = forwardRef22(function DisclosureContent2({
-    unmountOnHide,
-    ...props
-  }) {
+  var DisclosureContent = forwardRef20(function DisclosureContent2({ unmountOnHide, ...props }) {
     const context = useDisclosureProviderContext();
-    const store = props.store || context;
-    const mounted = useStoreState(
-      store,
-      (state) => !unmountOnHide || (state == null ? void 0 : state.mounted)
-    );
-    if (mounted === false) return null;
-    return /* @__PURE__ */ (0, import_jsx_runtime73.jsx)(DisclosureContentImpl, { ...props });
+    if (useStoreState(props.store || context, (state) => !unmountOnHide || state?.mounted) === false) return null;
+    return /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(DisclosureContentImpl, { ...props });
   });
 
-  // node_modules/@ariakit/core/esm/__chunks/75BJEVSH.js
+  // node_modules/@ariakit/components/dist/disclosure/disclosure-store.js
   function createDisclosureStore(props = {}) {
-    const store = mergeStore(
-      props.store,
-      omit2(props.disclosure, ["contentElement", "disclosureElement"])
-    );
+    const store = mergeStore(props.store, omit2(props.disclosure, ["contentElement", "disclosureElement"]));
     throwOnConflictingProps(props, store);
-    const syncState = store == null ? void 0 : store.getState();
-    const open = defaultValue(
-      props.open,
-      syncState == null ? void 0 : syncState.open,
-      props.defaultOpen,
-      false
-    );
-    const animated = defaultValue(props.animated, syncState == null ? void 0 : syncState.animated, false);
-    const initialState = {
+    const syncState = store?.getState();
+    const open = defaultValue(props.open, syncState?.open, props.defaultOpen, false);
+    const animated = defaultValue(props.animated, syncState?.animated, false);
+    const disclosure = createStore({
       open,
       animated,
       animating: !!animated && open,
       mounted: open,
-      contentElement: defaultValue(syncState == null ? void 0 : syncState.contentElement, null),
-      disclosureElement: defaultValue(syncState == null ? void 0 : syncState.disclosureElement, null)
-    };
-    const disclosure = createStore(initialState, store);
-    setup(
-      disclosure,
-      () => sync(disclosure, ["animated", "animating"], (state) => {
-        if (state.animated) return;
-        disclosure.setState("animating", false);
-      })
-    );
-    setup(
-      disclosure,
-      () => subscribe(disclosure, ["open"], () => {
-        if (!disclosure.getState().animated) return;
-        disclosure.setState("animating", true);
-      })
-    );
-    setup(
-      disclosure,
-      () => sync(disclosure, ["open", "animating"], (state) => {
-        disclosure.setState("mounted", state.open || state.animating);
-      })
-    );
+      contentElement: defaultValue(syncState?.contentElement, null),
+      disclosureElement: defaultValue(syncState?.disclosureElement, null)
+    }, store);
+    setup(disclosure, () => sync(disclosure, ["animated", "animating"], (state) => {
+      if (state.animated) return;
+      disclosure.setState("animating", false);
+    }));
+    setup(disclosure, () => subscribe(disclosure, ["open"], () => {
+      if (!disclosure.getState().animated) return;
+      disclosure.setState("animating", true);
+    }));
+    setup(disclosure, () => sync(disclosure, ["open", "animating"], (state) => {
+      disclosure.setState("mounted", state.open || state.animating);
+    }));
     return {
       ...disclosure,
       disclosure: props.disclosure,
@@ -17014,7 +17339,7 @@ If there's a particular need for this, please submit a feature request at https:
     };
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/WLZ6H5FH.js
+  // node_modules/@ariakit/react-components/dist/disclosure/disclosure-store.js
   function useDisclosureStoreProps(store, update2, props) {
     useUpdateEffect(update2, [props.store, props.disclosure]);
     useStoreProps(store, props, "open", "setOpen");
@@ -17023,55 +17348,55 @@ If there's a particular need for this, please submit a feature request at https:
     return Object.assign(store, { disclosure: props.disclosure });
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/JMU4N4M5.js
-  var ctx5 = createStoreContext(
-    [DialogContextProvider],
-    [DialogScopedContextProvider]
-  );
+  // node_modules/@ariakit/react-components/dist/popover/popover-context.js
+  var ctx5 = createStoreContext([DialogContextProvider], [DialogScopedContextProvider]);
   var usePopoverContext = ctx5.useContext;
   var usePopoverScopedContext = ctx5.useScopedContext;
   var usePopoverProviderContext = ctx5.useProviderContext;
   var PopoverContextProvider = ctx5.ContextProvider;
   var PopoverScopedContextProvider = ctx5.ScopedContextProvider;
 
-  // node_modules/@ariakit/core/esm/__chunks/N5XGANPW.js
+  // node_modules/@ariakit/react-components/dist/combobox/combobox-context.js
+  var import_react16 = __toESM(require_react(), 1);
+  var ComboboxListRoleContext = (0, import_react16.createContext)(void 0);
+  var ctx6 = createStoreContext([PopoverContextProvider, CompositeContextProvider], [PopoverScopedContextProvider, CompositeScopedContextProvider]);
+  var useComboboxContext = ctx6.useContext;
+  var useComboboxScopedContext = ctx6.useScopedContext;
+  var useComboboxProviderContext = ctx6.useProviderContext;
+  var ComboboxContextProvider = ctx6.ContextProvider;
+  var ComboboxScopedContextProvider = ctx6.ScopedContextProvider;
+  var ComboboxItemValueContext = (0, import_react16.createContext)(void 0);
+  var ComboboxItemCheckedContext = (0, import_react16.createContext)(false);
+
+  // node_modules/@ariakit/components/dist/collection/collection-store.js
   function getCommonParent(items) {
-    var _a;
     const firstItem = items.find((item) => !!item.element);
-    const lastItem = [...items].reverse().find((item) => !!item.element);
-    let parentElement = (_a = firstItem == null ? void 0 : firstItem.element) == null ? void 0 : _a.parentElement;
-    while (parentElement && (lastItem == null ? void 0 : lastItem.element)) {
-      const parent = parentElement;
-      if (lastItem && parent.contains(lastItem.element)) {
-        return parentElement;
-      }
+    const lastElement = [...items].reverse().find((item) => !!item.element)?.element;
+    let parentElement = firstItem?.element?.parentElement;
+    if (!lastElement) return getDocument(parentElement).body;
+    while (parentElement) {
+      if (parentElement.contains(lastElement)) return parentElement;
       parentElement = parentElement.parentElement;
     }
     return getDocument(parentElement).body;
   }
   function getPrivateStore(store) {
-    return store == null ? void 0 : store.__unstablePrivateStore;
+    return store?.__unstablePrivateStore;
   }
   function createCollectionStore(props = {}) {
-    var _a;
     throwOnConflictingProps(props, props.store);
-    const syncState = (_a = props.store) == null ? void 0 : _a.getState();
-    const items = defaultValue(
-      props.items,
-      syncState == null ? void 0 : syncState.items,
-      props.defaultItems,
-      []
-    );
+    const syncState = props.store?.getState();
+    const items = defaultValue(props.items, syncState?.items, props.defaultItems, []);
     const itemsMap = new Map(items.map((item) => [item.id, item]));
     const initialState = {
       items,
-      renderedItems: defaultValue(syncState == null ? void 0 : syncState.renderedItems, [])
+      renderedItems: defaultValue(syncState?.renderedItems, [])
     };
     const syncPrivateStore = getPrivateStore(props.store);
-    const privateStore = createStore(
-      { items, renderedItems: initialState.renderedItems },
-      syncPrivateStore
-    );
+    const privateStore = createStore({
+      items,
+      renderedItems: initialState.renderedItems
+    }, syncPrivateStore);
     const collection = createStore(initialState, props.store);
     const sortItems = (renderedItems) => {
       const sortedItems = sortBasedOnDOMPosition(renderedItems, (i2) => i2.element);
@@ -17092,9 +17417,7 @@ If there's a particular need for this, please submit a feature request at https:
           if (state.renderedItems === renderedItems) return;
           sortItems(state.renderedItems);
         });
-        if (typeof IntersectionObserver !== "function") {
-          return () => cancelAnimationFrame(raf);
-        }
+        if (typeof IntersectionObserver !== "function") return () => cancelAnimationFrame(raf);
         const ioCallback = () => {
           if (firstRun) {
             firstRun = false;
@@ -17122,7 +17445,10 @@ If there's a particular need for this, please submit a feature request at https:
         const nextItems = items2.slice();
         if (index2 !== -1) {
           prevItem = items2[index2];
-          const nextItem = { ...prevItem, ...item };
+          const nextItem = {
+            ...prevItem,
+            ...item
+          };
           nextItems[index2] = nextItem;
           itemsMap.set(item.id, nextItem);
         } else {
@@ -17134,9 +17460,7 @@ If there's a particular need for this, please submit a feature request at https:
       const unmergeItem = () => {
         setItems((items2) => {
           if (!prevItem) {
-            if (canDeleteFromMap) {
-              itemsMap.delete(item.id);
-            }
+            if (canDeleteFromMap) itemsMap.delete(item.id);
             return items2.filter(({ id }) => id !== item.id);
           }
           const index2 = items2.findIndex(({ id }) => id === item.id);
@@ -17149,60 +17473,43 @@ If there's a particular need for this, please submit a feature request at https:
       };
       return unmergeItem;
     };
-    const registerItem = (item) => mergeItem(
-      item,
-      (getItems) => privateStore.setState("items", getItems),
-      true
-    );
+    const registerItem = (item) => mergeItem(item, (getItems) => privateStore.setState("items", getItems), true);
     return {
       ...collection,
       registerItem,
-      renderItem: (item) => chain(
-        registerItem(item),
-        mergeItem(
-          item,
-          (getItems) => privateStore.setState("renderedItems", getItems)
-        )
-      ),
+      renderItem: (item) => chain(registerItem(item), mergeItem(item, (getItems) => privateStore.setState("renderedItems", getItems))),
       item: (id) => {
         if (!id) return null;
         let item = itemsMap.get(id);
         if (!item) {
           const { items: items2 } = privateStore.getState();
           item = items2.find((item2) => item2.id === id);
-          if (item) {
-            itemsMap.set(id, item);
-          }
+          if (item) itemsMap.set(id, item);
         }
         return item || null;
       },
-      // @ts-expect-error Internal
       __unstablePrivateStore: privateStore
     };
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/GVAFFF2B.js
+  // node_modules/@ariakit/react-components/dist/collection/collection-store.js
   function useCollectionStoreProps(store, update2, props) {
     useUpdateEffect(update2, [props.store]);
     useStoreProps(store, props, "items", "setItems");
     return store;
   }
 
-  // node_modules/@ariakit/core/esm/__chunks/RVTIKFRL.js
+  // node_modules/@ariakit/components/dist/composite/composite-store.js
   var NULL_ITEM = { id: null };
   function findFirstEnabledItem2(items, excludeId) {
     return items.find((item) => {
-      if (excludeId) {
-        return !item.disabled && item.id !== excludeId;
-      }
+      if (excludeId) return !item.disabled && item.id !== excludeId;
       return !item.disabled;
     });
   }
   function getEnabledItems(items, excludeId) {
     return items.filter((item) => {
-      if (excludeId) {
-        return !item.disabled && item.id !== excludeId;
-      }
+      if (excludeId) return !item.disabled && item.id !== excludeId;
       return !item.disabled;
     });
   }
@@ -17220,25 +17527,15 @@ If there's a particular need for this, please submit a feature request at https:
   function groupItemsByRows2(items) {
     const rows = [];
     for (const item of items) {
-      const row = rows.find((currentRow) => {
-        var _a;
-        return ((_a = currentRow[0]) == null ? void 0 : _a.rowId) === item.rowId;
-      });
-      if (row) {
-        row.push(item);
-      } else {
-        rows.push([item]);
-      }
+      const row = rows.find((currentRow) => currentRow[0]?.rowId === item.rowId);
+      if (row) row.push(item);
+      else rows.push([item]);
     }
     return rows;
   }
   function getMaxRowLength(array) {
     let maxLength = 0;
-    for (const { length } of array) {
-      if (length > maxLength) {
-        maxLength = length;
-      }
-    }
+    for (const { length } of array) if (length > maxLength) maxLength = length;
     return maxLength;
   }
   function createEmptyItem(rowId) {
@@ -17250,14 +17547,11 @@ If there's a particular need for this, please submit a feature request at https:
   }
   function normalizeRows(rows, activeId, focusShift) {
     const maxLength = getMaxRowLength(rows);
-    for (const row of rows) {
-      for (let i2 = 0; i2 < maxLength; i2 += 1) {
-        const item = row[i2];
-        if (!item || focusShift && item.disabled) {
-          const isFirst = i2 === 0;
-          const previousItem = isFirst && focusShift ? findFirstEnabledItem2(row) : row[i2 - 1];
-          row[i2] = previousItem && activeId !== previousItem.id && focusShift ? previousItem : createEmptyItem(previousItem == null ? void 0 : previousItem.rowId);
-        }
+    for (const row of rows) for (let i2 = 0; i2 < maxLength; i2 += 1) {
+      const item = row[i2];
+      if (!item || focusShift && item.disabled) {
+        const previousItem = i2 === 0 && focusShift ? findFirstEnabledItem2(row) : row[i2 - 1];
+        row[i2] = previousItem && activeId !== previousItem.id && focusShift ? previousItem : createEmptyItem(previousItem?.rowId);
       }
     }
     return rows;
@@ -17266,141 +17560,71 @@ If there's a particular need for this, please submit a feature request at https:
     const rows = groupItemsByRows2(items);
     const maxLength = getMaxRowLength(rows);
     const verticalized = [];
-    for (let i2 = 0; i2 < maxLength; i2 += 1) {
-      for (const row of rows) {
-        const item = row[i2];
-        if (item) {
-          verticalized.push({
-            ...item,
-            // If there's no rowId, it means that it's not a grid composite, but
-            // a single row instead. So, instead of verticalizing it, that is,
-            // assigning a different rowId based on the column index, we keep it
-            // undefined so they will be part of the same row. This is useful
-            // when using up/down on one-dimensional composites.
-            rowId: item.rowId ? `${i2}` : void 0
-          });
-        }
-      }
+    for (let i2 = 0; i2 < maxLength; i2 += 1) for (const row of rows) {
+      const item = row[i2];
+      if (item) verticalized.push({
+        ...item,
+        rowId: item.rowId ? `${i2}` : void 0
+      });
     }
     return verticalized;
   }
   function createCompositeStore(props = {}) {
-    var _a;
-    const syncState = (_a = props.store) == null ? void 0 : _a.getState();
+    const syncState = props.store?.getState();
     const collection = createCollectionStore(props);
-    const activeId = defaultValue(
-      props.activeId,
-      syncState == null ? void 0 : syncState.activeId,
-      props.defaultActiveId
-    );
-    const initialState = {
+    const activeId = defaultValue(props.activeId, syncState?.activeId, props.defaultActiveId);
+    const composite = createStore({
       ...collection.getState(),
-      id: defaultValue(
-        props.id,
-        syncState == null ? void 0 : syncState.id,
-        `id-${Math.random().toString(36).slice(2, 8)}`
-      ),
+      id: defaultValue(props.id, syncState?.id) ?? `id-${Math.random().toString(36).slice(2, 8)}`,
       activeId,
-      baseElement: defaultValue(syncState == null ? void 0 : syncState.baseElement, null),
-      includesBaseElement: defaultValue(
-        props.includesBaseElement,
-        syncState == null ? void 0 : syncState.includesBaseElement,
-        activeId === null
-      ),
-      moves: defaultValue(syncState == null ? void 0 : syncState.moves, 0),
-      orientation: defaultValue(
-        props.orientation,
-        syncState == null ? void 0 : syncState.orientation,
-        "both"
-      ),
-      rtl: defaultValue(props.rtl, syncState == null ? void 0 : syncState.rtl, false),
-      virtualFocus: defaultValue(
-        props.virtualFocus,
-        syncState == null ? void 0 : syncState.virtualFocus,
-        false
-      ),
-      focusLoop: defaultValue(props.focusLoop, syncState == null ? void 0 : syncState.focusLoop, false),
-      focusWrap: defaultValue(props.focusWrap, syncState == null ? void 0 : syncState.focusWrap, false),
-      focusShift: defaultValue(props.focusShift, syncState == null ? void 0 : syncState.focusShift, false)
-    };
-    const composite = createStore(initialState, collection, props.store);
-    setup(
-      composite,
-      () => sync(composite, ["renderedItems", "activeId"], (state) => {
-        composite.setState("activeId", (activeId2) => {
-          var _a2;
-          if (activeId2 !== void 0) return activeId2;
-          return (_a2 = findFirstEnabledItem2(state.renderedItems)) == null ? void 0 : _a2.id;
-        });
-      })
-    );
+      baseElement: defaultValue(syncState?.baseElement, null),
+      includesBaseElement: defaultValue(props.includesBaseElement, syncState?.includesBaseElement, activeId === null),
+      moves: defaultValue(syncState?.moves, 0),
+      orientation: defaultValue(props.orientation, syncState?.orientation, "both"),
+      rtl: defaultValue(props.rtl, syncState?.rtl, false),
+      virtualFocus: defaultValue(props.virtualFocus, syncState?.virtualFocus, false),
+      focusLoop: defaultValue(props.focusLoop, syncState?.focusLoop, false),
+      focusWrap: defaultValue(props.focusWrap, syncState?.focusWrap, false),
+      focusShift: defaultValue(props.focusShift, syncState?.focusShift, false)
+    }, collection, props.store);
+    setup(composite, () => sync(composite, ["renderedItems", "activeId"], (state) => {
+      composite.setState("activeId", (activeId2) => {
+        if (activeId2 !== void 0) return activeId2;
+        return findFirstEnabledItem2(state.renderedItems)?.id;
+      });
+    }));
     const getNextId = (direction = "next", options = {}) => {
-      var _a2, _b;
       const defaultState = composite.getState();
-      const {
-        skip = 0,
-        activeId: activeId2 = defaultState.activeId,
-        focusShift = defaultState.focusShift,
-        focusLoop = defaultState.focusLoop,
-        focusWrap = defaultState.focusWrap,
-        includesBaseElement = defaultState.includesBaseElement,
-        renderedItems = defaultState.renderedItems,
-        rtl = defaultState.rtl
-      } = options;
+      const { skip = 0, activeId: activeId2 = defaultState.activeId, focusShift = defaultState.focusShift, focusLoop = defaultState.focusLoop, focusWrap = defaultState.focusWrap, includesBaseElement = defaultState.includesBaseElement, renderedItems = defaultState.renderedItems, rtl = defaultState.rtl } = options;
       const isVerticalDirection = direction === "up" || direction === "down";
       const isNextDirection = direction === "next" || direction === "down";
       const canReverse = isNextDirection ? rtl && !isVerticalDirection : !rtl || isVerticalDirection;
       const canShift = focusShift && !skip;
-      let items = !isVerticalDirection ? renderedItems : flatten2DArray(
-        normalizeRows(groupItemsByRows2(renderedItems), activeId2, canShift)
-      );
+      let items = !isVerticalDirection ? renderedItems : flatten2DArray(normalizeRows(groupItemsByRows2(renderedItems), activeId2, canShift));
       items = canReverse ? reverseArray(items) : items;
       items = isVerticalDirection ? verticalizeItems(items) : items;
-      if (activeId2 == null) {
-        return (_a2 = findFirstEnabledItem2(items)) == null ? void 0 : _a2.id;
-      }
+      if (activeId2 == null) return findFirstEnabledItem2(items)?.id;
       const activeItem = items.find((item) => item.id === activeId2);
-      if (!activeItem) {
-        return (_b = findFirstEnabledItem2(items)) == null ? void 0 : _b.id;
-      }
+      if (!activeItem) return findFirstEnabledItem2(items)?.id;
       const isGrid2 = items.some((item) => item.rowId);
       const activeIndex = items.indexOf(activeItem);
       const nextItems = items.slice(activeIndex + 1);
       const nextItemsInRow = getItemsInRow(nextItems, activeItem.rowId);
       if (skip) {
         const nextEnabledItemsInRow = getEnabledItems(nextItemsInRow, activeId2);
-        const nextItem2 = nextEnabledItemsInRow.slice(skip)[0] || // If we can't find an item, just return the last one.
-        nextEnabledItemsInRow[nextEnabledItemsInRow.length - 1];
-        return nextItem2 == null ? void 0 : nextItem2.id;
+        return (nextEnabledItemsInRow.slice(skip)[0] || nextEnabledItemsInRow[nextEnabledItemsInRow.length - 1])?.id;
       }
       const canLoop = focusLoop && (isVerticalDirection ? focusLoop !== "horizontal" : focusLoop !== "vertical");
       const canWrap = isGrid2 && focusWrap && (isVerticalDirection ? focusWrap !== "horizontal" : focusWrap !== "vertical");
       const hasNullItem = isNextDirection ? (!isGrid2 || isVerticalDirection) && canLoop && includesBaseElement : isVerticalDirection ? includesBaseElement : false;
-      if (canLoop) {
-        const loopItems = canWrap && !hasNullItem ? items : getItemsInRow(items, activeItem.rowId);
-        const sortedItems = flipItems(loopItems, activeId2, hasNullItem);
-        const nextItem2 = findFirstEnabledItem2(sortedItems, activeId2);
-        return nextItem2 == null ? void 0 : nextItem2.id;
-      }
+      if (canLoop) return findFirstEnabledItem2(flipItems(canWrap && !hasNullItem ? items : getItemsInRow(items, activeItem.rowId), activeId2, hasNullItem), activeId2)?.id;
       if (canWrap) {
-        const nextItem2 = findFirstEnabledItem2(
-          // We can use nextItems, which contains all the next items, including
-          // items from other rows, to wrap between rows. However, if there is a
-          // null item (the composite container), we'll only use the next items in
-          // the row. So moving next from the last item will focus on the
-          // composite container. On grid composites, horizontal navigation never
-          // focuses on the composite container, only vertical.
-          hasNullItem ? nextItemsInRow : nextItems,
-          activeId2
-        );
-        const nextId = hasNullItem ? (nextItem2 == null ? void 0 : nextItem2.id) || null : nextItem2 == null ? void 0 : nextItem2.id;
-        return nextId;
+        const nextItem2 = findFirstEnabledItem2(hasNullItem ? nextItemsInRow : nextItems, activeId2);
+        return hasNullItem ? nextItem2?.id || null : nextItem2?.id;
       }
       const nextItem = findFirstEnabledItem2(nextItemsInRow, activeId2);
-      if (!nextItem && hasNullItem) {
-        return null;
-      }
-      return nextItem == null ? void 0 : nextItem.id;
+      if (!nextItem && hasNullItem) return null;
+      return nextItem?.id;
     };
     return {
       ...collection,
@@ -17412,45 +17636,33 @@ If there's a particular need for this, please submit a feature request at https:
         composite.setState("activeId", id);
         composite.setState("moves", (moves) => moves + 1);
       },
-      first: () => {
-        var _a2;
-        return (_a2 = findFirstEnabledItem2(composite.getState().renderedItems)) == null ? void 0 : _a2.id;
-      },
-      last: () => {
-        var _a2;
-        return (_a2 = findFirstEnabledItem2(reverseArray(composite.getState().renderedItems))) == null ? void 0 : _a2.id;
-      },
+      first: () => findFirstEnabledItem2(composite.getState().renderedItems)?.id,
+      last: () => findFirstEnabledItem2(reverseArray(composite.getState().renderedItems))?.id,
       next: (options) => {
-        if (options !== void 0 && typeof options === "number") {
-          options = { skip: options };
-        }
+        if (options !== void 0 && typeof options === "number") options = { skip: options };
         return getNextId("next", options);
       },
       previous: (options) => {
-        if (options !== void 0 && typeof options === "number") {
-          options = { skip: options };
-        }
+        if (options !== void 0 && typeof options === "number") options = { skip: options };
         return getNextId("previous", options);
       },
       down: (options) => {
-        if (options !== void 0 && typeof options === "number") {
-          options = { skip: options };
-        }
+        if (options !== void 0 && typeof options === "number") options = { skip: options };
         return getNextId("down", options);
       },
       up: (options) => {
-        if (options !== void 0 && typeof options === "number") {
-          options = { skip: options };
-        }
+        if (options !== void 0 && typeof options === "number") options = { skip: options };
         return getNextId("up", options);
       }
     };
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/IQYAUKXT.js
+  // node_modules/@ariakit/react-components/dist/composite/composite-store.js
   function useCompositeStoreOptions(props) {
-    const id = useId4(props.id);
-    return { id, ...props };
+    return {
+      id: useId4(props.id),
+      ...props
+    };
   }
   function useCompositeStoreProps(store, update2, props) {
     store = useCollectionStoreProps(store, update2, props);
@@ -17465,68 +17677,41 @@ If there's a particular need for this, please submit a feature request at https:
     return store;
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/CVCFNOHX.js
-  var import_react17 = __toESM(require_react(), 1);
-  var ComboboxListRoleContext = (0, import_react17.createContext)(
-    void 0
-  );
-  var ctx6 = createStoreContext(
-    [PopoverContextProvider, CompositeContextProvider],
-    [PopoverScopedContextProvider, CompositeScopedContextProvider]
-  );
-  var useComboboxContext = ctx6.useContext;
-  var useComboboxScopedContext = ctx6.useScopedContext;
-  var useComboboxProviderContext = ctx6.useProviderContext;
-  var ComboboxContextProvider = ctx6.ContextProvider;
-  var ComboboxScopedContextProvider = ctx6.ScopedContextProvider;
-  var ComboboxItemValueContext = (0, import_react17.createContext)(
-    void 0
-  );
-  var ComboboxItemCheckedContext = (0, import_react17.createContext)(false);
-
-  // node_modules/@ariakit/core/esm/__chunks/KMAUV3TY.js
+  // node_modules/@ariakit/components/dist/dialog/dialog-store.js
   function createDialogStore(props = {}) {
     return createDisclosureStore(props);
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/4NYSH4UO.js
+  // node_modules/@ariakit/react-components/dist/dialog/dialog-store.js
   function useDialogStoreProps(store, update2, props) {
     return useDisclosureStoreProps(store, update2, props);
   }
 
-  // node_modules/@ariakit/core/esm/__chunks/BFGNM53A.js
-  function createPopoverStore({
-    popover: otherPopover,
-    ...props
-  } = {}) {
-    const store = mergeStore(
-      props.store,
-      omit2(otherPopover, [
-        "arrowElement",
-        "anchorElement",
-        "contentElement",
-        "popoverElement",
-        "disclosureElement"
-      ])
-    );
+  // node_modules/@ariakit/components/dist/popover/popover-store.js
+  function createPopoverStore({ popover: otherPopover, ...props } = {}) {
+    const store = mergeStore(props.store, omit2(otherPopover, [
+      "arrowElement",
+      "anchorElement",
+      "contentElement",
+      "popoverElement",
+      "disclosureElement"
+    ]));
     throwOnConflictingProps(props, store);
-    const syncState = store == null ? void 0 : store.getState();
-    const dialog = createDialogStore({ ...props, store });
-    const placement = defaultValue(
-      props.placement,
-      syncState == null ? void 0 : syncState.placement,
-      "bottom"
-    );
-    const initialState = {
+    const syncState = store?.getState();
+    const dialog = createDialogStore({
+      ...props,
+      store
+    });
+    const placement = defaultValue(props.placement, syncState?.placement, "bottom");
+    const popover = createStore({
       ...dialog.getState(),
       placement,
       currentPlacement: placement,
-      anchorElement: defaultValue(syncState == null ? void 0 : syncState.anchorElement, null),
-      popoverElement: defaultValue(syncState == null ? void 0 : syncState.popoverElement, null),
-      arrowElement: defaultValue(syncState == null ? void 0 : syncState.arrowElement, null),
+      anchorElement: defaultValue(syncState?.anchorElement, null),
+      popoverElement: defaultValue(syncState?.popoverElement, null),
+      arrowElement: defaultValue(syncState?.arrowElement, null),
       rendered: /* @__PURE__ */ Symbol("rendered")
-    };
-    const popover = createStore(initialState, dialog, store);
+    }, dialog, store);
     return {
       ...dialog,
       ...popover,
@@ -17537,126 +17722,100 @@ If there's a particular need for this, please submit a feature request at https:
     };
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/B6FLPFJM.js
+  // node_modules/@ariakit/react-components/dist/popover/popover-store.js
   function usePopoverStoreProps(store, update2, props) {
     useUpdateEffect(update2, [props.popover]);
     useStoreProps(store, props, "placement");
     return useDialogStoreProps(store, update2, props);
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/4POTBZ2J.js
+  // node_modules/@ariakit/react-components/dist/popover/popover-anchor.js
   var TagName7 = "div";
-  var usePopoverAnchor = createHook(
-    function usePopoverAnchor2({ store, ...props }) {
-      const context = usePopoverProviderContext();
-      store = store || context;
-      props = {
-        ...props,
-        ref: useMergeRefs(store == null ? void 0 : store.setAnchorElement, props.ref)
-      };
-      return props;
-    }
-  );
-  var PopoverAnchor = forwardRef22(function PopoverAnchor2(props) {
-    const htmlProps = usePopoverAnchor(props);
-    return createElement3(TagName7, htmlProps);
+  var usePopoverAnchor = createHook(function usePopoverAnchor2({ store, ...props }) {
+    const context = usePopoverProviderContext();
+    store = store || context;
+    props = {
+      ...props,
+      ref: useMergeRefs(store?.setAnchorElement, props.ref)
+    };
+    return props;
+  });
+  var PopoverAnchor = forwardRef20(function PopoverAnchor2(props) {
+    return createElement3(TagName7, usePopoverAnchor(props));
   });
 
-  // node_modules/@ariakit/react-core/esm/__chunks/X6LNAU2F.js
-  var import_react18 = __toESM(require_react(), 1);
+  // node_modules/@ariakit/react-components/dist/composite/composite-hover.js
+  var import_react17 = __toESM(require_react(), 1);
   var TagName8 = "div";
-  function getMouseDestination(event) {
-    const relatedTarget = event.relatedTarget;
-    if ((relatedTarget == null ? void 0 : relatedTarget.nodeType) === Node.ELEMENT_NODE) {
-      return relatedTarget;
-    }
-    return null;
-  }
   function hoveringInside(event) {
-    const nextElement = getMouseDestination(event);
-    if (!nextElement) return false;
+    const nextElement = event.relatedTarget;
+    if (!isElement2(nextElement)) return false;
     return contains2(event.currentTarget, nextElement);
   }
   var symbol2 = /* @__PURE__ */ Symbol("composite-hover");
   function movingToAnotherItem(event) {
-    let dest = getMouseDestination(event);
-    if (!dest) return false;
+    const { relatedTarget } = event;
+    if (!isElement2(relatedTarget)) return false;
+    let dest = relatedTarget;
     do {
       if (hasOwnProperty(dest, symbol2) && dest[symbol2]) return true;
       dest = dest.parentElement;
     } while (dest);
     return false;
   }
-  var useCompositeHover = createHook(
-    function useCompositeHover2({
-      store,
-      focusOnHover = true,
-      blurOnHoverEnd = !!focusOnHover,
-      ...props
-    }) {
-      const context = useCompositeContext();
-      store = store || context;
-      invariant(
-        store,
-        "CompositeHover must be wrapped in a Composite component."
-      );
-      const isMouseMoving = useIsMouseMoving();
-      const onMouseMoveProp = props.onMouseMove;
-      const focusOnHoverProp = useBooleanEvent(focusOnHover);
-      const onMouseMove = useEvent((event) => {
-        onMouseMoveProp == null ? void 0 : onMouseMoveProp(event);
-        if (event.defaultPrevented) return;
-        if (!isMouseMoving()) return;
-        if (!focusOnHoverProp(event)) return;
-        if (!hasFocusWithin(event.currentTarget)) {
-          const baseElement = store == null ? void 0 : store.getState().baseElement;
-          if (baseElement && !hasFocus(baseElement)) {
-            baseElement.focus();
-          }
-        }
-        store == null ? void 0 : store.setActiveId(event.currentTarget.id);
-      });
-      const onMouseLeaveProp = props.onMouseLeave;
-      const blurOnHoverEndProp = useBooleanEvent(blurOnHoverEnd);
-      const onMouseLeave = useEvent((event) => {
-        var _a;
-        onMouseLeaveProp == null ? void 0 : onMouseLeaveProp(event);
-        if (event.defaultPrevented) return;
-        if (!isMouseMoving()) return;
-        if (hoveringInside(event)) return;
-        if (movingToAnotherItem(event)) return;
-        if (!focusOnHoverProp(event)) return;
-        if (!blurOnHoverEndProp(event)) return;
-        store == null ? void 0 : store.setActiveId(null);
-        (_a = store == null ? void 0 : store.getState().baseElement) == null ? void 0 : _a.focus();
-      });
-      const ref = (0, import_react18.useCallback)((element) => {
-        if (!element) return;
-        element[symbol2] = true;
-      }, []);
-      props = {
-        ...props,
-        ref: useMergeRefs(ref, props.ref),
-        onMouseMove,
-        onMouseLeave
-      };
-      return removeUndefinedValues(props);
-    }
-  );
-  var CompositeHover = memo22(
-    forwardRef22(function CompositeHover2(props) {
-      const htmlProps = useCompositeHover(props);
-      return createElement3(TagName8, htmlProps);
-    })
-  );
+  var useCompositeHover = createHook(function useCompositeHover2({ store, focusOnHover = true, blurOnHoverEnd = !!focusOnHover, ...props }) {
+    const context = useCompositeScopedContext();
+    store = store || context;
+    invariant(store, "CompositeHover must be wrapped in a Composite component.");
+    const isMouseMoving = useIsMouseMoving();
+    const onMouseMoveProp = props.onMouseMove;
+    const focusOnHoverProp = useBooleanEvent(focusOnHover);
+    const onMouseMove = useEvent((event) => {
+      onMouseMoveProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!isMouseMoving()) return;
+      if (!focusOnHoverProp(event)) return;
+      if (!hasFocusWithin(event.currentTarget)) {
+        const baseElement = store?.getState().baseElement;
+        if (baseElement && !hasFocus(baseElement)) baseElement.focus();
+      }
+      store?.setActiveId(event.currentTarget.id);
+    });
+    const onMouseLeaveProp = props.onMouseLeave;
+    const blurOnHoverEndProp = useBooleanEvent(blurOnHoverEnd);
+    const onMouseLeave = useEvent((event) => {
+      onMouseLeaveProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!isMouseMoving()) return;
+      if (hoveringInside(event)) return;
+      if (movingToAnotherItem(event)) return;
+      if (!focusOnHoverProp(event)) return;
+      if (!blurOnHoverEndProp(event)) return;
+      store?.setActiveId(null);
+      store?.getState().baseElement?.focus();
+    });
+    const ref = (0, import_react17.useCallback)((element) => {
+      if (!element) return;
+      element[symbol2] = true;
+    }, []);
+    props = {
+      ...props,
+      ref: useMergeRefs(ref, props.ref),
+      onMouseMove,
+      onMouseLeave
+    };
+    return removeUndefinedValues(props);
+  });
+  var CompositeHover = memo3(forwardRef20(function CompositeHover2(props) {
+    return createElement3(TagName8, useCompositeHover(props));
+  }));
 
-  // node_modules/@ariakit/react-core/esm/combobox/combobox.js
-  var import_react19 = __toESM(require_react(), 1);
+  // node_modules/@ariakit/react-components/dist/combobox/combobox.js
+  var import_react18 = __toESM(require_react(), 1);
   var TagName9 = "input";
   function isFirstItemAutoSelected(items, activeValue, autoSelect) {
     if (!autoSelect) return false;
-    const firstItem = items.find((item) => !item.disabled && item.value);
-    return (firstItem == null ? void 0 : firstItem.value) === activeValue;
+    return items.find((item) => !item.disabled && item.value)?.value === activeValue;
   }
   function hasCompletionString(value, activeValue) {
     if (!activeValue) return false;
@@ -17671,537 +17830,477 @@ If there's a particular need for this, please submit a feature request at https:
     return value === "inline" || value === "list" || value === "both" || value === "none";
   }
   function getDefaultAutoSelectId(items) {
-    const item = items.find((item2) => {
-      var _a;
-      if (item2.disabled) return false;
-      return ((_a = item2.element) == null ? void 0 : _a.getAttribute("role")) !== "tab";
-    });
-    return item == null ? void 0 : item.id;
+    return items.find((item) => {
+      if (item.disabled) return false;
+      return item.element?.getAttribute("role") !== "tab";
+    })?.id;
   }
-  var useCombobox = createHook(
-    function useCombobox2({
-      store,
-      focusable: focusable2 = true,
-      autoSelect: autoSelectProp = false,
-      getAutoSelectId,
-      setValueOnChange,
-      showMinLength = 0,
-      showOnChange,
-      showOnMouseDown,
-      showOnClick = showOnMouseDown,
-      showOnKeyDown,
-      showOnKeyPress = showOnKeyDown,
-      blurActiveItemOnClick,
-      setValueOnClick = true,
-      moveOnKeyPress = true,
-      autoComplete = "list",
-      ...props
-    }) {
-      const context = useComboboxProviderContext();
-      store = store || context;
-      invariant(
-        store,
-        "Combobox must receive a `store` prop or be wrapped in a ComboboxProvider component."
-      );
-      const ref = (0, import_react19.useRef)(null);
-      const [valueUpdated, forceValueUpdate] = useForceUpdate();
-      const canAutoSelectRef = (0, import_react19.useRef)(false);
-      const composingRef = (0, import_react19.useRef)(false);
-      const autoSelect = store.useState(
-        (state) => state.virtualFocus && autoSelectProp
-      );
-      const inline4 = autoComplete === "inline" || autoComplete === "both";
-      const [canInline, setCanInline] = (0, import_react19.useState)(inline4);
-      useUpdateLayoutEffect(() => {
-        if (!inline4) return;
-        setCanInline(true);
-      }, [inline4]);
-      const storeValue = store.useState("value");
-      const prevSelectedValueRef = (0, import_react19.useRef)(void 0);
-      (0, import_react19.useEffect)(() => {
-        return sync(store, ["selectedValue", "activeId"], (_, prev) => {
-          prevSelectedValueRef.current = prev.selectedValue;
-        });
-      }, []);
-      const inlineActiveValue = store.useState((state) => {
-        var _a;
-        if (!inline4) return;
-        if (!canInline) return;
-        if (state.activeValue && Array.isArray(state.selectedValue)) {
-          if (state.selectedValue.includes(state.activeValue)) return;
-          if ((_a = prevSelectedValueRef.current) == null ? void 0 : _a.includes(state.activeValue)) return;
-        }
-        return state.activeValue;
+  var useCombobox = createHook(function useCombobox2({ store, focusable: focusable2 = true, autoSelect: autoSelectProp = false, getAutoSelectId, setValueOnChange, showMinLength = 0, showOnChange, showOnMouseDown, showOnClick = showOnMouseDown, showOnKeyDown, showOnKeyPress = showOnKeyDown, blurActiveItemOnClick, setValueOnClick = true, moveOnKeyPress = true, autoComplete = "list", ...props }) {
+    const context = useComboboxProviderContext();
+    store = store || context;
+    invariant(store, "Combobox must receive a `store` prop or be wrapped in a ComboboxProvider component.");
+    const ref = (0, import_react18.useRef)(null);
+    const [valueUpdated, forceValueUpdate] = useForceUpdate();
+    const canAutoSelectRef = (0, import_react18.useRef)(false);
+    const composingRef = (0, import_react18.useRef)(false);
+    const autoSelect = useStoreState(store, (state) => state.virtualFocus && autoSelectProp);
+    const inline4 = autoComplete === "inline" || autoComplete === "both";
+    const [canInline, setCanInline] = (0, import_react18.useState)(inline4);
+    useUpdateLayoutEffect(() => {
+      if (!inline4) return;
+      setCanInline(true);
+    }, [inline4]);
+    const storeValue = useStoreState(store, "value");
+    const prevSelectedValueRef = (0, import_react18.useRef)(void 0);
+    (0, import_react18.useEffect)(() => {
+      return sync(store, ["selectedValue", "activeId"], (_, prev) => {
+        prevSelectedValueRef.current = prev.selectedValue;
       });
-      const items = store.useState("renderedItems");
-      const open = store.useState("open");
-      const contentElement = store.useState("contentElement");
-      const value = (0, import_react19.useMemo)(() => {
-        if (!inline4) return storeValue;
-        if (!canInline) return storeValue;
-        const firstItemAutoSelected = isFirstItemAutoSelected(
-          items,
-          inlineActiveValue,
-          autoSelect
-        );
-        if (firstItemAutoSelected) {
-          if (hasCompletionString(storeValue, inlineActiveValue)) {
-            const slice = (inlineActiveValue == null ? void 0 : inlineActiveValue.slice(storeValue.length)) || "";
-            return storeValue + slice;
-          }
-          return storeValue;
-        }
-        return inlineActiveValue || storeValue;
-      }, [inline4, canInline, items, inlineActiveValue, autoSelect, storeValue]);
-      (0, import_react19.useEffect)(() => {
+    }, [store]);
+    const inlineActiveValue = useStoreState(store, (state) => {
+      if (!inline4) return;
+      if (!canInline) return;
+      if (state.activeValue && Array.isArray(state.selectedValue)) {
+        if (state.selectedValue.includes(state.activeValue)) return;
+        if (prevSelectedValueRef.current?.includes(state.activeValue)) return;
+      }
+      return state.activeValue;
+    });
+    const items = useStoreState(store, "renderedItems");
+    const open = useStoreState(store, "open");
+    const contentElement = useStoreState(store, "contentElement");
+    const value = (0, import_react18.useMemo)(() => {
+      if (!inline4) return storeValue;
+      if (!canInline) return storeValue;
+      if (isFirstItemAutoSelected(items, inlineActiveValue, autoSelect)) {
+        if (hasCompletionString(storeValue, inlineActiveValue)) return storeValue + (inlineActiveValue?.slice(storeValue.length) || "");
+        return storeValue;
+      }
+      return inlineActiveValue || storeValue;
+    }, [
+      inline4,
+      canInline,
+      items,
+      inlineActiveValue,
+      autoSelect,
+      storeValue
+    ]);
+    (0, import_react18.useEffect)(() => {
+      const element = ref.current;
+      if (!element) return;
+      const onCompositeItemMove = () => setCanInline(true);
+      element.addEventListener("combobox-item-move", onCompositeItemMove);
+      return () => {
+        element.removeEventListener("combobox-item-move", onCompositeItemMove);
+      };
+    }, []);
+    (0, import_react18.useEffect)(() => {
+      if (!inline4) return;
+      if (!canInline) return;
+      if (!inlineActiveValue) return;
+      if (!isFirstItemAutoSelected(items, inlineActiveValue, autoSelect)) return;
+      if (!hasCompletionString(storeValue, inlineActiveValue)) return;
+      let cleanup = noop5;
+      queueMicrotask(() => {
         const element = ref.current;
         if (!element) return;
-        const onCompositeItemMove = () => setCanInline(true);
-        element.addEventListener("combobox-item-move", onCompositeItemMove);
-        return () => {
-          element.removeEventListener("combobox-item-move", onCompositeItemMove);
+        const { start: prevStart, end: prevEnd } = getTextboxSelection(element);
+        const nextStart = storeValue.length;
+        const nextEnd = inlineActiveValue.length;
+        setSelectionRange(element, nextStart, nextEnd);
+        cleanup = () => {
+          if (!hasFocus(element)) return;
+          const { start, end } = getTextboxSelection(element);
+          if (start !== nextStart) return;
+          if (end !== nextEnd) return;
+          setSelectionRange(element, prevStart, prevEnd);
         };
-      }, []);
-      (0, import_react19.useEffect)(() => {
-        if (!inline4) return;
-        if (!canInline) return;
-        if (!inlineActiveValue) return;
-        const firstItemAutoSelected = isFirstItemAutoSelected(
-          items,
-          inlineActiveValue,
-          autoSelect
-        );
-        if (!firstItemAutoSelected) return;
-        if (!hasCompletionString(storeValue, inlineActiveValue)) return;
-        let cleanup = noop5;
-        queueMicrotask(() => {
-          const element = ref.current;
-          if (!element) return;
-          const { start: prevStart, end: prevEnd } = getTextboxSelection(element);
-          const nextStart = storeValue.length;
-          const nextEnd = inlineActiveValue.length;
-          setSelectionRange(element, nextStart, nextEnd);
-          cleanup = () => {
-            if (!hasFocus(element)) return;
-            const { start, end } = getTextboxSelection(element);
-            if (start !== nextStart) return;
-            if (end !== nextEnd) return;
-            setSelectionRange(element, prevStart, prevEnd);
-          };
-        });
-        return () => cleanup();
-      }, [
-        valueUpdated,
-        inline4,
-        canInline,
-        inlineActiveValue,
-        items,
-        autoSelect,
-        storeValue
-      ]);
-      const scrollingElementRef = (0, import_react19.useRef)(null);
-      const getAutoSelectIdProp = useEvent(getAutoSelectId);
-      const autoSelectIdRef = (0, import_react19.useRef)(null);
-      (0, import_react19.useEffect)(() => {
-        if (!open) return;
-        if (!contentElement) return;
-        const scrollingElement = getScrollingElement(contentElement);
-        if (!scrollingElement) return;
-        scrollingElementRef.current = scrollingElement;
-        const onUserScroll = () => {
-          canAutoSelectRef.current = false;
-        };
-        const onScroll = () => {
-          if (!store) return;
-          if (!canAutoSelectRef.current) return;
-          const { activeId } = store.getState();
-          if (activeId === null) return;
-          if (activeId === autoSelectIdRef.current) return;
-          canAutoSelectRef.current = false;
-        };
-        const options = { passive: true, capture: true };
-        scrollingElement.addEventListener("wheel", onUserScroll, options);
-        scrollingElement.addEventListener("touchmove", onUserScroll, options);
-        scrollingElement.addEventListener("scroll", onScroll, options);
-        return () => {
-          scrollingElement.removeEventListener("wheel", onUserScroll, true);
-          scrollingElement.removeEventListener("touchmove", onUserScroll, true);
-          scrollingElement.removeEventListener("scroll", onScroll, true);
-        };
-      }, [open, contentElement, store]);
-      useSafeLayoutEffect(() => {
-        if (!storeValue) return;
-        if (composingRef.current) return;
-        canAutoSelectRef.current = true;
-      }, [storeValue]);
-      useSafeLayoutEffect(() => {
-        if (autoSelect !== "always" && open) return;
-        canAutoSelectRef.current = open;
-      }, [autoSelect, open]);
-      const resetValueOnSelect = store.useState("resetValueOnSelect");
-      useUpdateEffect(() => {
-        var _a, _b;
-        const canAutoSelect = canAutoSelectRef.current;
-        if (!store) return;
-        if (!open) return;
-        if (!canAutoSelect && !resetValueOnSelect) return;
-        const { baseElement, contentElement: contentElement2, activeId } = store.getState();
-        if (baseElement && !hasFocus(baseElement)) return;
-        if (contentElement2 == null ? void 0 : contentElement2.hasAttribute("data-placing")) {
-          const observer = new MutationObserver(forceValueUpdate);
-          observer.observe(contentElement2, { attributeFilter: ["data-placing"] });
-          return () => observer.disconnect();
-        }
-        if (autoSelect && canAutoSelect) {
-          const userAutoSelectId = getAutoSelectIdProp(items);
-          const autoSelectId = userAutoSelectId !== void 0 ? userAutoSelectId : (_a = getDefaultAutoSelectId(items)) != null ? _a : store.first();
-          autoSelectIdRef.current = autoSelectId;
-          store.move(autoSelectId != null ? autoSelectId : null);
-        } else {
-          const element = (_b = store.item(activeId || store.first())) == null ? void 0 : _b.element;
-          if (element && "scrollIntoView" in element) {
-            element.scrollIntoView({ block: "nearest", inline: "nearest" });
-          }
-        }
-        return;
-      }, [
-        store,
-        open,
-        valueUpdated,
-        storeValue,
-        autoSelect,
-        resetValueOnSelect,
-        getAutoSelectIdProp,
-        items
-      ]);
-      (0, import_react19.useEffect)(() => {
-        if (!inline4) return;
-        const combobox = ref.current;
-        if (!combobox) return;
-        const elements = [combobox, contentElement].filter(
-          (value2) => !!value2
-        );
-        const onBlur2 = (event) => {
-          if (elements.every((el) => isFocusEventOutside(event, el))) {
-            store == null ? void 0 : store.setValue(value);
-          }
-        };
-        for (const element of elements) {
-          element.addEventListener("focusout", onBlur2);
-        }
-        return () => {
-          for (const element of elements) {
-            element.removeEventListener("focusout", onBlur2);
-          }
-        };
-      }, [inline4, contentElement, store, value]);
-      const canShow = (event) => {
-        const currentTarget = event.currentTarget;
-        return currentTarget.value.length >= showMinLength;
+      });
+      return () => cleanup();
+    }, [
+      valueUpdated,
+      inline4,
+      canInline,
+      inlineActiveValue,
+      items,
+      autoSelect,
+      storeValue
+    ]);
+    const scrollingElementRef = (0, import_react18.useRef)(null);
+    const getAutoSelectIdProp = useEvent(getAutoSelectId);
+    const autoSelectIdRef = (0, import_react18.useRef)(null);
+    const autoSelectMovedRef = (0, import_react18.useRef)(void 0);
+    const userScrolledRef = (0, import_react18.useRef)(false);
+    const isAutoScrollingRef = (0, import_react18.useRef)(false);
+    (0, import_react18.useEffect)(() => {
+      if (!open) return;
+      if (!contentElement) return;
+      const scrollingElement = getScrollingElement(contentElement);
+      if (!scrollingElement) return;
+      scrollingElementRef.current = scrollingElement;
+      const onUserScroll = () => {
+        canAutoSelectRef.current = false;
+        userScrolledRef.current = true;
       };
-      const onChangeProp = props.onChange;
-      const showOnChangeProp = useBooleanEvent(showOnChange != null ? showOnChange : canShow);
-      const setValueOnChangeProp = useBooleanEvent(
-        // If the combobox is combined with tags, the value will be set by the tag
-        // input component.
-        setValueOnChange != null ? setValueOnChange : !store.tag
-      );
-      const onChange = useEvent((event) => {
-        onChangeProp == null ? void 0 : onChangeProp(event);
-        if (event.defaultPrevented) return;
+      const onScroll = () => {
+        if (!isAutoScrollingRef.current) userScrolledRef.current = true;
         if (!store) return;
-        const currentTarget = event.currentTarget;
-        const { value: value2, selectionStart, selectionEnd } = currentTarget;
-        const nativeEvent = event.nativeEvent;
-        canAutoSelectRef.current = true;
-        if (isInputEvent(nativeEvent)) {
-          if (nativeEvent.isComposing) {
-            canAutoSelectRef.current = false;
-            composingRef.current = true;
-          }
-          if (inline4) {
-            const textInserted = nativeEvent.inputType === "insertText" || nativeEvent.inputType === "insertCompositionText";
-            const caretAtEnd = selectionStart === value2.length;
-            setCanInline(textInserted && caretAtEnd);
-          }
-        }
-        if (setValueOnChangeProp(event)) {
-          const isSameValue = value2 === store.getState().value;
-          store.setValue(value2);
-          queueMicrotask(() => {
-            setSelectionRange(currentTarget, selectionStart, selectionEnd);
+        if (!canAutoSelectRef.current) return;
+        const { activeId } = store.getState();
+        if (activeId === null) return;
+        if (activeId === autoSelectIdRef.current) return;
+        canAutoSelectRef.current = false;
+      };
+      const options = {
+        passive: true,
+        capture: true
+      };
+      scrollingElement.addEventListener("wheel", onUserScroll, options);
+      scrollingElement.addEventListener("touchmove", onUserScroll, options);
+      scrollingElement.addEventListener("scroll", onScroll, options);
+      return () => {
+        scrollingElement.removeEventListener("wheel", onUserScroll, true);
+        scrollingElement.removeEventListener("touchmove", onUserScroll, true);
+        scrollingElement.removeEventListener("scroll", onScroll, true);
+      };
+    }, [
+      open,
+      contentElement,
+      store
+    ]);
+    useSafeLayoutEffect(() => {
+      userScrolledRef.current = false;
+      if (!storeValue) return;
+      if (composingRef.current) return;
+      canAutoSelectRef.current = true;
+    }, [storeValue]);
+    useSafeLayoutEffect(() => {
+      if (autoSelect !== "always" && open) return;
+      canAutoSelectRef.current = open;
+    }, [autoSelect, open]);
+    useSafeLayoutEffect(() => {
+      if (open) return;
+      autoSelectMovedRef.current = void 0;
+    }, [open]);
+    const resetValueOnSelect = useStoreState(store, "resetValueOnSelect");
+    useUpdateEffect(() => {
+      const canAutoSelect = canAutoSelectRef.current;
+      if (!store) return;
+      if (!open) return;
+      if (!canAutoSelect && (!resetValueOnSelect || userScrolledRef.current)) return;
+      const { baseElement, contentElement: contentElement2, activeId } = store.getState();
+      if (baseElement && !hasFocus(baseElement)) return;
+      if (contentElement2?.hasAttribute("data-placing")) {
+        const observer = new MutationObserver(forceValueUpdate);
+        observer.observe(contentElement2, { attributeFilter: ["data-placing"] });
+        return () => observer.disconnect();
+      }
+      if (autoSelect && canAutoSelect) {
+        const userAutoSelectId = getAutoSelectIdProp(items);
+        const autoSelectId = userAutoSelectId !== void 0 ? userAutoSelectId : getDefaultAutoSelectId(items) ?? store.first();
+        autoSelectIdRef.current = autoSelectId;
+        const nextActiveId = autoSelectId ?? null;
+        const nextActiveValue = store.item(nextActiveId)?.value;
+        const moved = autoSelectMovedRef.current;
+        if (nextActiveId !== activeId || moved?.id !== nextActiveId || moved?.value !== nextActiveValue) {
+          autoSelectMovedRef.current = {
+            id: nextActiveId,
+            value: nextActiveValue
+          };
+          store.move(nextActiveId);
+        } else store.setState("activeValue", nextActiveValue);
+      } else {
+        const element = store.item(activeId || store.first())?.element;
+        if (element && "scrollIntoView" in element) {
+          isAutoScrollingRef.current = true;
+          element.scrollIntoView({
+            block: "nearest",
+            inline: "nearest"
           });
-          if (inline4 && autoSelect && isSameValue) {
-            forceValueUpdate();
-          }
+          requestAnimationFrame(() => {
+            isAutoScrollingRef.current = false;
+          });
         }
-        if (showOnChangeProp(event)) {
+      }
+    }, [
+      store,
+      open,
+      valueUpdated,
+      storeValue,
+      autoSelect,
+      resetValueOnSelect,
+      getAutoSelectIdProp,
+      items
+    ]);
+    (0, import_react18.useEffect)(() => {
+      if (!inline4) return;
+      const combobox = ref.current;
+      if (!combobox) return;
+      const elements = [combobox, contentElement].filter((value2) => !!value2);
+      const onBlur2 = (event) => {
+        if (elements.every((el) => isFocusEventOutside(event, el))) store?.setValue(value);
+      };
+      for (const element of elements) element.addEventListener("focusout", onBlur2);
+      return () => {
+        for (const element of elements) element.removeEventListener("focusout", onBlur2);
+      };
+    }, [
+      inline4,
+      contentElement,
+      store,
+      value
+    ]);
+    const canShow = (event) => {
+      return event.currentTarget.value.length >= showMinLength;
+    };
+    const onChangeProp = props.onChange;
+    const showOnChangeProp = useBooleanEvent(showOnChange ?? canShow);
+    const setValueOnChangeProp = useBooleanEvent(setValueOnChange ?? !store.tag);
+    const onChange = useEvent((event) => {
+      onChangeProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!store) return;
+      const currentTarget = event.currentTarget;
+      const { value: value2, selectionStart, selectionEnd } = currentTarget;
+      const nativeEvent = event.nativeEvent;
+      canAutoSelectRef.current = true;
+      if (isInputEvent(nativeEvent)) {
+        if (nativeEvent.isComposing) {
+          canAutoSelectRef.current = false;
+          composingRef.current = true;
+        }
+        if (inline4) {
+          const textInserted = nativeEvent.inputType === "insertText" || nativeEvent.inputType === "insertCompositionText";
+          const caretAtEnd = selectionStart === value2.length;
+          setCanInline(textInserted && caretAtEnd);
+        }
+      }
+      if (setValueOnChangeProp(event)) {
+        const isSameValue = value2 === store.getState().value;
+        store.setValue(value2);
+        queueMicrotask(() => {
+          setSelectionRange(currentTarget, selectionStart, selectionEnd);
+        });
+        if (inline4 && autoSelect && isSameValue) forceValueUpdate();
+      }
+      if (showOnChangeProp(event)) store.show();
+      if (!autoSelect || !canAutoSelectRef.current) store.setActiveId(null);
+    });
+    const onCompositionEndProp = props.onCompositionEnd;
+    const onCompositionEnd = useEvent((event) => {
+      canAutoSelectRef.current = true;
+      composingRef.current = false;
+      onCompositionEndProp?.(event);
+      if (event.defaultPrevented) return;
+      if (!autoSelect) return;
+      forceValueUpdate();
+    });
+    const onMouseDownProp = props.onMouseDown;
+    const blurActiveItemOnClickProp = useBooleanEvent(blurActiveItemOnClick ?? (() => store.getState().includesBaseElement));
+    const setValueOnClickProp = useBooleanEvent(setValueOnClick);
+    const showOnClickProp = useBooleanEvent(showOnClick ?? canShow);
+    const onMouseDown = useEvent((event) => {
+      onMouseDownProp?.(event);
+      if (event.defaultPrevented) return;
+      if (event.button) return;
+      if (event.ctrlKey) return;
+      if (!store) return;
+      if (blurActiveItemOnClickProp(event)) store.setActiveId(null);
+      if (setValueOnClickProp(event)) store.setValue(value);
+      if (showOnClickProp(event)) queueBeforeEvent(event.currentTarget, "mouseup", store.show);
+    });
+    const onKeyDownProp = props.onKeyDown;
+    const showOnKeyPressProp = useBooleanEvent(showOnKeyPress ?? canShow);
+    const onKeyDown = useEvent((event) => {
+      onKeyDownProp?.(event);
+      if (!event.repeat) canAutoSelectRef.current = false;
+      if (event.defaultPrevented) return;
+      if (!store) return;
+      const { open: open2 } = store.getState();
+      if (open2 && event.key === "Enter") {
+        event.preventDefault();
+        return;
+      }
+      if (event.ctrlKey) return;
+      if (event.altKey) return;
+      if (event.shiftKey) return;
+      if (event.metaKey) return;
+      if (open2) return;
+      if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        if (showOnKeyPressProp(event)) {
+          event.preventDefault();
           store.show();
         }
-        if (!autoSelect || !canAutoSelectRef.current) {
-          store.setActiveId(null);
-        }
-      });
-      const onCompositionEndProp = props.onCompositionEnd;
-      const onCompositionEnd = useEvent((event) => {
-        canAutoSelectRef.current = true;
-        composingRef.current = false;
-        onCompositionEndProp == null ? void 0 : onCompositionEndProp(event);
-        if (event.defaultPrevented) return;
-        if (!autoSelect) return;
-        forceValueUpdate();
-      });
-      const onMouseDownProp = props.onMouseDown;
-      const blurActiveItemOnClickProp = useBooleanEvent(
-        blurActiveItemOnClick != null ? blurActiveItemOnClick : (() => !!(store == null ? void 0 : store.getState().includesBaseElement))
-      );
-      const setValueOnClickProp = useBooleanEvent(setValueOnClick);
-      const showOnClickProp = useBooleanEvent(showOnClick != null ? showOnClick : canShow);
-      const onMouseDown = useEvent((event) => {
-        onMouseDownProp == null ? void 0 : onMouseDownProp(event);
-        if (event.defaultPrevented) return;
-        if (event.button) return;
-        if (event.ctrlKey) return;
-        if (!store) return;
-        if (blurActiveItemOnClickProp(event)) {
-          store.setActiveId(null);
-        }
-        if (setValueOnClickProp(event)) {
-          store.setValue(value);
-        }
-        if (showOnClickProp(event)) {
-          queueBeforeEvent(event.currentTarget, "mouseup", store.show);
-        }
-      });
-      const onKeyDownProp = props.onKeyDown;
-      const showOnKeyPressProp = useBooleanEvent(showOnKeyPress != null ? showOnKeyPress : canShow);
-      const onKeyDown = useEvent((event) => {
-        onKeyDownProp == null ? void 0 : onKeyDownProp(event);
-        if (!event.repeat) {
-          canAutoSelectRef.current = false;
-        }
-        if (event.defaultPrevented) return;
-        if (event.ctrlKey) return;
-        if (event.altKey) return;
-        if (event.shiftKey) return;
-        if (event.metaKey) return;
-        if (!store) return;
-        const { open: open2 } = store.getState();
-        if (open2) return;
-        if (event.key === "ArrowUp" || event.key === "ArrowDown") {
-          if (showOnKeyPressProp(event)) {
-            event.preventDefault();
-            store.show();
-          }
-        }
-      });
-      const onBlurProp = props.onBlur;
-      const onBlur = useEvent((event) => {
-        canAutoSelectRef.current = false;
-        onBlurProp == null ? void 0 : onBlurProp(event);
-        if (event.defaultPrevented) return;
-      });
-      const id = useId4(props.id);
-      const ariaAutoComplete = isAriaAutoCompleteValue(autoComplete) ? autoComplete : void 0;
-      const isActiveItem = store.useState((state) => state.activeId === null);
-      props = {
-        id,
-        role: "combobox",
-        "aria-autocomplete": ariaAutoComplete,
-        "aria-haspopup": getPopupRole(contentElement, "listbox"),
-        "aria-expanded": open,
-        "aria-controls": contentElement == null ? void 0 : contentElement.id,
-        "data-active-item": isActiveItem || void 0,
-        value,
-        ...props,
-        ref: useMergeRefs(ref, props.ref),
-        onChange,
-        onCompositionEnd,
-        onMouseDown,
-        onKeyDown,
-        onBlur
-      };
-      props = useComposite({
-        store,
-        focusable: focusable2,
-        ...props,
-        // Enable inline autocomplete when the user moves from the combobox input
-        // to an item.
-        moveOnKeyPress: (event) => {
-          if (isFalsyBooleanCallback(moveOnKeyPress, event)) return false;
-          if (inline4) setCanInline(true);
-          return true;
-        }
-      });
-      props = usePopoverAnchor({ store, ...props });
-      return { autoComplete: "off", ...props };
-    }
-  );
-  var Combobox = forwardRef22(function Combobox2(props) {
-    const htmlProps = useCombobox(props);
-    return createElement3(TagName9, htmlProps);
+      }
+    });
+    const onBlurProp = props.onBlur;
+    const onBlur = useEvent((event) => {
+      canAutoSelectRef.current = false;
+      onBlurProp?.(event);
+      if (event.defaultPrevented) return;
+    });
+    const id = useId4(props.id);
+    const ariaAutoComplete = isAriaAutoCompleteValue(autoComplete) ? autoComplete : void 0;
+    const isActiveItem = useStoreState(store, (state) => state.activeId === null);
+    props = {
+      role: "combobox",
+      "aria-autocomplete": ariaAutoComplete,
+      "aria-haspopup": getPopupRole(contentElement, "listbox"),
+      "aria-expanded": open,
+      "aria-controls": contentElement?.id,
+      "data-active-item": isActiveItem || void 0,
+      value,
+      ...props,
+      id,
+      ref: useMergeRefs(ref, props.ref),
+      onChange,
+      onCompositionEnd,
+      onMouseDown,
+      onKeyDown,
+      onBlur
+    };
+    props = useComposite({
+      store,
+      focusable: focusable2,
+      ...props,
+      moveOnKeyPress: (event) => {
+        if (isFalsyBooleanCallback(moveOnKeyPress, event)) return false;
+        if (inline4) setCanInline(true);
+        return true;
+      }
+    });
+    props = usePopoverAnchor({
+      store,
+      ...props
+    });
+    return {
+      autoComplete: "off",
+      ...props
+    };
+  });
+  var Combobox = forwardRef20(function Combobox2(props) {
+    return createElement3(TagName9, useCombobox(props));
   });
 
-  // node_modules/@ariakit/react-core/esm/__chunks/IBXZ2LQC.js
-  var import_react20 = __toESM(require_react(), 1);
-  var import_jsx_runtime74 = __toESM(require_jsx_runtime(), 1);
+  // node_modules/@ariakit/react-components/dist/combobox/combobox-item.js
+  var import_react19 = __toESM(require_react(), 1);
+  var import_jsx_runtime75 = __toESM(require_jsx_runtime(), 1);
   var TagName10 = "div";
   function isSelected(storeValue, itemValue) {
     if (itemValue == null) return;
     if (storeValue == null) return false;
-    if (Array.isArray(storeValue)) {
-      return storeValue.includes(itemValue);
-    }
+    if (Array.isArray(storeValue)) return storeValue.includes(itemValue);
     return storeValue === itemValue;
   }
   function getItemRole(popupRole) {
-    var _a;
-    const itemRoleByPopupRole = {
+    return {
       menu: "menuitem",
       listbox: "option",
       tree: "treeitem"
-    };
-    const key = popupRole;
-    return (_a = itemRoleByPopupRole[key]) != null ? _a : "option";
+    }[popupRole] ?? "option";
   }
-  var useComboboxItem = createHook(
-    function useComboboxItem2({
-      store,
-      value,
-      hideOnClick,
-      setValueOnClick,
-      selectValueOnClick = true,
-      resetValueOnSelect,
-      focusOnHover = false,
-      moveOnKeyPress = true,
-      getItem: getItemProp,
-      ...props
-    }) {
-      var _a;
-      const context = useComboboxScopedContext();
-      store = store || context;
-      invariant(
-        store,
-        "ComboboxItem must be wrapped in a ComboboxList or ComboboxPopover component."
-      );
-      const { resetValueOnSelectState, multiSelectable, selected } = useStoreStateObject(store, {
-        resetValueOnSelectState: "resetValueOnSelect",
-        multiSelectable(state) {
-          return Array.isArray(state.selectedValue);
-        },
-        selected(state) {
-          return isSelected(state.selectedValue, value);
-        }
-      });
-      const getItem = (0, import_react20.useCallback)(
-        (item) => {
-          const nextItem = { ...item, value };
-          if (getItemProp) {
-            return getItemProp(nextItem);
-          }
-          return nextItem;
-        },
-        [value, getItemProp]
-      );
-      setValueOnClick = setValueOnClick != null ? setValueOnClick : !multiSelectable;
-      hideOnClick = hideOnClick != null ? hideOnClick : value != null && !multiSelectable;
-      const onClickProp = props.onClick;
-      const setValueOnClickProp = useBooleanEvent(setValueOnClick);
-      const selectValueOnClickProp = useBooleanEvent(selectValueOnClick);
-      const resetValueOnSelectProp = useBooleanEvent(
-        (_a = resetValueOnSelect != null ? resetValueOnSelect : resetValueOnSelectState) != null ? _a : multiSelectable
-      );
-      const hideOnClickProp = useBooleanEvent(hideOnClick);
-      const onClick = useEvent((event) => {
-        onClickProp == null ? void 0 : onClickProp(event);
-        if (event.defaultPrevented) return;
-        if (isDownloading(event)) return;
-        if (isOpeningInNewTab(event)) return;
-        if (value != null) {
-          if (selectValueOnClickProp(event)) {
-            if (resetValueOnSelectProp(event)) {
-              store == null ? void 0 : store.resetValue();
-            }
-            store == null ? void 0 : store.setSelectedValue((prevValue) => {
-              if (!Array.isArray(prevValue)) return value;
-              if (prevValue.includes(value)) {
-                return prevValue.filter((v2) => v2 !== value);
-              }
-              return [...prevValue, value];
-            });
-          }
-          if (setValueOnClickProp(event)) {
-            store == null ? void 0 : store.setValue(value);
-          }
-        }
-        if (hideOnClickProp(event)) {
-          store == null ? void 0 : store.hide();
-        }
-      });
-      const onKeyDownProp = props.onKeyDown;
-      const onKeyDown = useEvent((event) => {
-        onKeyDownProp == null ? void 0 : onKeyDownProp(event);
-        if (event.defaultPrevented) return;
-        const baseElement = store == null ? void 0 : store.getState().baseElement;
-        if (!baseElement) return;
-        if (hasFocus(baseElement)) return;
-        const printable = event.key.length === 1;
-        if (printable || event.key === "Backspace" || event.key === "Delete") {
-          queueMicrotask(() => baseElement.focus());
-          if (isTextField(baseElement)) {
-            store == null ? void 0 : store.setValue(baseElement.value);
-          }
-        }
-      });
-      if (multiSelectable && selected != null) {
-        props = {
-          "aria-selected": selected,
-          ...props
-        };
+  var useComboboxItem = createHook(function useComboboxItem2({ store, value, hideOnClick, setValueOnClick, selectValueOnClick = true, resetValueOnSelect, focusOnHover = false, moveOnKeyPress = true, getItem: getItemProp, ...props }) {
+    const context = useComboboxScopedContext();
+    store = store || context;
+    invariant(store, "ComboboxItem must be wrapped in a ComboboxList or ComboboxPopover component.");
+    const { resetValueOnSelectState, multiSelectable, selected } = useStoreStateObject(store, {
+      resetValueOnSelectState: "resetValueOnSelect",
+      multiSelectable(state) {
+        return Array.isArray(state.selectedValue);
+      },
+      selected(state) {
+        return isSelected(state.selectedValue, value);
       }
-      props = useWrapElement(
-        props,
-        (element) => /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(ComboboxItemValueContext.Provider, { value, children: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(ComboboxItemCheckedContext.Provider, { value: selected != null ? selected : false, children: element }) }),
-        [value, selected]
-      );
-      const popupRole = (0, import_react20.useContext)(ComboboxListRoleContext);
-      props = {
-        role: getItemRole(popupRole),
-        children: value,
-        ...props,
-        onClick,
-        onKeyDown
+    });
+    const getItem = (0, import_react19.useCallback)((item) => {
+      const nextItem = {
+        ...item,
+        value
       };
-      const moveOnKeyPressProp = useBooleanEvent(moveOnKeyPress);
-      props = useCompositeItem({
-        store,
-        ...props,
-        getItem,
-        // Dispatch a custom event on the combobox input when moving to an item
-        // with the keyboard so the Combobox component can enable inline
-        // autocompletion.
-        moveOnKeyPress: (event) => {
-          if (!moveOnKeyPressProp(event)) return false;
-          const moveEvent = new Event("combobox-item-move");
-          const baseElement = store == null ? void 0 : store.getState().baseElement;
-          baseElement == null ? void 0 : baseElement.dispatchEvent(moveEvent);
-          return true;
+      if (getItemProp) return getItemProp(nextItem);
+      return nextItem;
+    }, [value, getItemProp]);
+    setValueOnClick = setValueOnClick ?? !multiSelectable;
+    hideOnClick = hideOnClick ?? (value != null && !multiSelectable);
+    const onClickProp = props.onClick;
+    const setValueOnClickProp = useBooleanEvent(setValueOnClick);
+    const selectValueOnClickProp = useBooleanEvent(selectValueOnClick);
+    const resetValueOnSelectProp = useBooleanEvent(resetValueOnSelect ?? resetValueOnSelectState ?? multiSelectable);
+    const hideOnClickProp = useBooleanEvent(hideOnClick);
+    const onClick = useEvent((event) => {
+      onClickProp?.(event);
+      if (event.defaultPrevented) return;
+      if (isDownloading(event)) return;
+      if (isOpeningInNewTab(event)) return;
+      if (value != null) {
+        if (selectValueOnClickProp(event)) {
+          if (resetValueOnSelectProp(event)) store?.resetValue();
+          store?.setSelectedValue((prevValue) => {
+            if (!Array.isArray(prevValue)) return value;
+            if (prevValue.includes(value)) return prevValue.filter((v2) => v2 !== value);
+            return [...prevValue, value];
+          });
         }
-      });
-      props = useCompositeHover({ store, focusOnHover, ...props });
-      return props;
-    }
-  );
-  var ComboboxItem = memo22(
-    forwardRef22(function ComboboxItem2(props) {
-      const htmlProps = useComboboxItem(props);
-      return createElement3(TagName10, htmlProps);
-    })
-  );
+        if (setValueOnClickProp(event)) store?.setValue(value);
+      }
+      if (hideOnClickProp(event)) store?.hide();
+    });
+    const onKeyDownProp = props.onKeyDown;
+    const onKeyDown = useEvent((event) => {
+      onKeyDownProp?.(event);
+      if (event.defaultPrevented) return;
+      const baseElement = store?.getState().baseElement;
+      if (!baseElement) return;
+      if (hasFocus(baseElement)) return;
+      if (event.key.length === 1 || event.key === "Backspace" || event.key === "Delete") {
+        queueMicrotask(() => baseElement.focus());
+        if (isTextField(baseElement)) store?.setValue(baseElement.value);
+      }
+    });
+    if (multiSelectable && selected != null) props = {
+      "aria-selected": selected,
+      ...props
+    };
+    props = useWrapElement(props, (element) => /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(ComboboxItemValueContext.Provider, {
+      value,
+      children: /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(ComboboxItemCheckedContext.Provider, {
+        value: selected ?? false,
+        children: element
+      })
+    }), [value, selected]);
+    props = {
+      role: getItemRole((0, import_react19.useContext)(ComboboxListRoleContext)),
+      children: value,
+      ...props,
+      onClick,
+      onKeyDown
+    };
+    const moveOnKeyPressProp = useBooleanEvent(moveOnKeyPress);
+    props = useCompositeItem({
+      store,
+      ...props,
+      getItem,
+      moveOnKeyPress: (event) => {
+        if (!moveOnKeyPressProp(event)) return false;
+        const moveEvent = new Event("combobox-item-move");
+        store?.getState().baseElement?.dispatchEvent(moveEvent);
+        return true;
+      }
+    });
+    props = useCompositeHover({
+      store,
+      focusOnHover,
+      ...props
+    });
+    return props;
+  });
+  var ComboboxItem = memo3(forwardRef20(function ComboboxItem2(props) {
+    return createElement3(TagName10, useComboboxItem(props));
+  }));
 
-  // node_modules/@ariakit/react-core/esm/combobox/combobox-item-value.js
-  var import_react21 = __toESM(require_react(), 1);
-  var import_jsx_runtime75 = __toESM(require_jsx_runtime(), 1);
+  // node_modules/@ariakit/react-components/dist/combobox/combobox-item-value.js
+  var import_react20 = __toESM(require_react(), 1);
+  var import_jsx_runtime76 = __toESM(require_jsx_runtime(), 1);
   var TagName11 = "span";
   function normalizeValue(value) {
     return normalizeString(value).toLowerCase();
@@ -18213,9 +18312,7 @@ If there's a particular need for this, please submit a feature request at https:
       const length = value.length;
       while (string.indexOf(value, pos) !== -1) {
         const index2 = string.indexOf(value, pos);
-        if (index2 !== -1) {
-          offsets.push([index2, length]);
-        }
+        if (index2 !== -1) offsets.push([index2, length]);
         pos = index2 + 1;
       }
     }
@@ -18223,9 +18320,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
   function filterOverlappingOffsets(offsets) {
     return offsets.filter(([offset4, length], i2, arr) => {
-      return !arr.some(
-        ([o2, l2], j2) => j2 !== i2 && o2 <= offset4 && o2 + l2 >= offset4 + length
-      );
+      return !arr.some(([o2, l2], j2) => j2 !== i2 && o2 <= offset4 && o2 + l2 >= offset4 + length);
     });
   }
   function sortOffsets(offsets) {
@@ -18236,37 +18331,23 @@ If there's a particular need for this, please submit a feature request at https:
     if (!userValue) return itemValue;
     const userValues = toArray(userValue).filter(Boolean).map(normalizeValue);
     const parts = [];
-    const span = (value, autocomplete = false) => /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(
-      "span",
-      {
-        "data-autocomplete-value": autocomplete ? "" : void 0,
-        "data-user-value": autocomplete ? void 0 : "",
-        children: value
-      },
-      parts.length
-    );
-    const offsets = sortOffsets(
-      filterOverlappingOffsets(
-        // Convert userValues into a set to avoid duplicates
-        getOffsets(normalizeValue(itemValue), new Set(userValues))
-      )
-    );
-    if (!offsets.length) {
+    const span = (value, autocomplete = false) => /* @__PURE__ */ (0, import_jsx_runtime76.jsx)("span", {
+      "data-autocomplete-value": autocomplete ? "" : void 0,
+      "data-user-value": autocomplete ? void 0 : "",
+      children: value
+    }, parts.length);
+    const offsets = sortOffsets(filterOverlappingOffsets(getOffsets(normalizeValue(itemValue), new Set(userValues))));
+    const firstEntry = offsets[0];
+    if (!firstEntry) {
       parts.push(span(itemValue, true));
       return parts;
     }
-    const [firstOffset] = offsets[0];
-    const values = [
-      itemValue.slice(0, firstOffset),
-      ...offsets.flatMap(([offset4, length], i2) => {
-        var _a;
-        const value = itemValue.slice(offset4, offset4 + length);
-        const nextOffset = (_a = offsets[i2 + 1]) == null ? void 0 : _a[0];
-        const nextValue = itemValue.slice(offset4 + length, nextOffset);
-        return [value, nextValue];
-      })
-    ];
-    values.forEach((value, i2) => {
+    const [firstOffset] = firstEntry;
+    [itemValue.slice(0, firstOffset), ...offsets.flatMap(([offset4, length], i2) => {
+      const value = itemValue.slice(offset4, offset4 + length);
+      const nextOffset = offsets[i2 + 1]?.[0];
+      return [value, itemValue.slice(offset4 + length, nextOffset)];
+    })].forEach((value, i2) => {
       if (!value) return;
       parts.push(span(value, i2 % 2 === 0));
     });
@@ -18275,271 +18356,181 @@ If there's a particular need for this, please submit a feature request at https:
   var useComboboxItemValue = createHook(function useComboboxItemValue2({ store, value, userValue, ...props }) {
     const context = useComboboxScopedContext();
     store = store || context;
-    const itemContext = (0, import_react21.useContext)(ComboboxItemValueContext);
-    const itemValue = value != null ? value : itemContext;
-    const inputValue = useStoreState(store, (state) => userValue != null ? userValue : state == null ? void 0 : state.value);
-    const children = (0, import_react21.useMemo)(() => {
-      if (!itemValue) return;
-      if (!inputValue) return itemValue;
-      return splitValue(itemValue, inputValue);
-    }, [itemValue, inputValue]);
+    const itemContext = (0, import_react20.useContext)(ComboboxItemValueContext);
+    const itemValue = value ?? itemContext;
+    const inputValue = useStoreState(store, (state) => userValue ?? state?.value);
     props = {
-      children,
+      children: (0, import_react20.useMemo)(() => {
+        if (!itemValue) return;
+        if (!inputValue) return itemValue;
+        return splitValue(itemValue, inputValue);
+      }, [itemValue, inputValue]),
       ...props
     };
     return removeUndefinedValues(props);
   });
-  var ComboboxItemValue = forwardRef22(function ComboboxItemValue2(props) {
-    const htmlProps = useComboboxItemValue(props);
-    return createElement3(TagName11, htmlProps);
+  var ComboboxItemValue = forwardRef20(function ComboboxItemValue2(props) {
+    return createElement3(TagName11, useComboboxItemValue(props));
   });
 
-  // node_modules/@ariakit/react-core/esm/combobox/combobox-label.js
+  // node_modules/@ariakit/react-components/dist/combobox/combobox-label.js
   var TagName12 = "label";
-  var useComboboxLabel = createHook(
-    function useComboboxLabel2({ store, ...props }) {
-      const context = useComboboxProviderContext();
-      store = store || context;
-      invariant(
-        store,
-        "ComboboxLabel must receive a `store` prop or be wrapped in a ComboboxProvider component."
-      );
-      const comboboxId = store.useState((state) => {
-        var _a;
-        return (_a = state.baseElement) == null ? void 0 : _a.id;
-      });
-      props = {
-        htmlFor: comboboxId,
-        ...props
-      };
-      return removeUndefinedValues(props);
-    }
-  );
-  var ComboboxLabel = memo22(
-    forwardRef22(function ComboboxLabel2(props) {
-      const htmlProps = useComboboxLabel(props);
-      return createElement3(TagName12, htmlProps);
-    })
-  );
+  var useComboboxLabel = createHook(function useComboboxLabel2({ store, ...props }) {
+    const context = useComboboxProviderContext();
+    store = store || context;
+    invariant(store, "ComboboxLabel must receive a `store` prop or be wrapped in a ComboboxProvider component.");
+    props = {
+      htmlFor: useStoreState(store, (state) => state.baseElement?.id),
+      ...props
+    };
+    return removeUndefinedValues(props);
+  });
+  var ComboboxLabel = memo3(forwardRef20(function ComboboxLabel2(props) {
+    return createElement3(TagName12, useComboboxLabel(props));
+  }));
 
-  // node_modules/@ariakit/react-core/esm/__chunks/2G6YEJT4.js
-  var import_react22 = __toESM(require_react(), 1);
-  var import_jsx_runtime76 = __toESM(require_jsx_runtime(), 1);
+  // node_modules/@ariakit/react-components/dist/combobox/combobox-list.js
+  var import_react21 = __toESM(require_react(), 1);
+  var import_jsx_runtime77 = __toESM(require_jsx_runtime(), 1);
   var TagName13 = "div";
-  var useComboboxList = createHook(
-    function useComboboxList2({ store, alwaysVisible, ...props }) {
-      const scopedContext = useComboboxScopedContext(true);
-      const context = useComboboxContext();
-      store = store || context;
-      const scopedContextSameStore = !!store && store === scopedContext;
-      invariant(
-        store,
-        "ComboboxList must receive a `store` prop or be wrapped in a ComboboxProvider component."
-      );
-      const ref = (0, import_react22.useRef)(null);
-      const id = useId4(props.id);
-      const mounted = store.useState("mounted");
-      const hidden = isHidden(mounted, props.hidden, alwaysVisible);
-      const style = hidden ? { ...props.style, display: "none" } : props.style;
-      const multiSelectable = store.useState(
-        (state) => Array.isArray(state.selectedValue)
-      );
-      const role = useAttribute(ref, "role", props.role);
-      const isCompositeRole = role === "listbox" || role === "tree" || role === "grid";
-      const ariaMultiSelectable = isCompositeRole ? multiSelectable || void 0 : void 0;
-      const [hasListboxInside, setHasListboxInside] = (0, import_react22.useState)(false);
-      const contentElement = store.useState("contentElement");
-      useSafeLayoutEffect(() => {
-        if (!mounted) return;
-        const element = ref.current;
-        if (!element) return;
-        if (contentElement !== element) return;
-        const callback = () => {
-          setHasListboxInside(!!element.querySelector("[role='listbox']"));
-        };
-        const observer = new MutationObserver(callback);
-        observer.observe(element, {
-          subtree: true,
-          childList: true,
-          attributeFilter: ["role"]
-        });
-        callback();
-        return () => observer.disconnect();
-      }, [mounted, contentElement]);
-      if (!hasListboxInside) {
-        props = {
-          role: "listbox",
-          "aria-multiselectable": ariaMultiSelectable,
-          ...props
-        };
-      }
-      props = useWrapElement(
-        props,
-        (element) => /* @__PURE__ */ (0, import_jsx_runtime76.jsx)(ComboboxScopedContextProvider, { value: store, children: /* @__PURE__ */ (0, import_jsx_runtime76.jsx)(ComboboxListRoleContext.Provider, { value: role, children: element }) }),
-        [store, role]
-      );
-      const setContentElement = id && (!scopedContext || !scopedContextSameStore) ? store.setContentElement : null;
-      props = {
-        id,
-        hidden,
-        ...props,
-        ref: useMergeRefs(setContentElement, ref, props.ref),
-        style
+  var useComboboxList = createHook(function useComboboxList2({ store, alwaysVisible, ...props }) {
+    const scopedContext = useComboboxScopedContext(true);
+    const context = useComboboxContext();
+    store = store || context;
+    const scopedContextSameStore = !!store && store === scopedContext;
+    invariant(store, "ComboboxList must receive a `store` prop or be wrapped in a ComboboxProvider component.");
+    const ref = (0, import_react21.useRef)(null);
+    const id = useId4(props.id);
+    const mounted = useStoreState(store, "mounted");
+    const hidden = isHidden(mounted, props.hidden, alwaysVisible);
+    const style = hidden ? {
+      ...props.style,
+      display: "none"
+    } : props.style;
+    const multiSelectable = useStoreState(store, (state) => Array.isArray(state.selectedValue));
+    const role = useAttribute(ref, "role", props.role);
+    const ariaMultiSelectable = role === "listbox" || role === "tree" || role === "grid" ? multiSelectable || void 0 : void 0;
+    const [hasListboxInside, setHasListboxInside] = (0, import_react21.useState)(false);
+    const contentElement = useStoreState(store, "contentElement");
+    useSafeLayoutEffect(() => {
+      if (!mounted) return;
+      const element = ref.current;
+      if (!element) return;
+      if (contentElement !== element) return;
+      const callback = () => {
+        setHasListboxInside(!!element.querySelector("[role='listbox']"));
       };
-      return removeUndefinedValues(props);
-    }
-  );
-  var ComboboxList = forwardRef22(function ComboboxList2(props) {
-    const htmlProps = useComboboxList(props);
-    return createElement3(TagName13, htmlProps);
+      const observer = new MutationObserver(callback);
+      observer.observe(element, {
+        subtree: true,
+        childList: true,
+        attributeFilter: ["role"]
+      });
+      callback();
+      return () => observer.disconnect();
+    }, [mounted, contentElement]);
+    if (!hasListboxInside) props = {
+      role: "listbox",
+      "aria-multiselectable": ariaMultiSelectable,
+      ...props
+    };
+    props = useWrapElement(props, (element) => /* @__PURE__ */ (0, import_jsx_runtime77.jsx)(ComboboxScopedContextProvider, {
+      value: store,
+      children: /* @__PURE__ */ (0, import_jsx_runtime77.jsx)(ComboboxListRoleContext.Provider, {
+        value: role,
+        children: element
+      })
+    }), [store, role]);
+    const setContentElement = id && (!scopedContext || !scopedContextSameStore) ? store.setContentElement : null;
+    props = {
+      hidden,
+      ...props,
+      id,
+      ref: useMergeRefs(setContentElement, ref, props.ref),
+      style
+    };
+    return removeUndefinedValues(props);
+  });
+  var ComboboxList = forwardRef20(function ComboboxList2(props) {
+    return createElement3(TagName13, useComboboxList(props));
   });
 
-  // node_modules/@ariakit/react-core/esm/__chunks/XSIEPKGA.js
-  var import_react23 = __toESM(require_react(), 1);
-  var TagValueContext = (0, import_react23.createContext)(null);
-  var TagRemoveIdContext = (0, import_react23.createContext)(
-    null
-  );
-  var ctx7 = createStoreContext(
-    [CompositeContextProvider],
-    [CompositeScopedContextProvider]
-  );
+  // node_modules/@ariakit/react-components/dist/tag/tag-context.js
+  var import_react22 = __toESM(require_react(), 1);
+  var TagValueContext = (0, import_react22.createContext)(null);
+  var TagRemoveIdContext = (0, import_react22.createContext)(null);
+  var ctx7 = createStoreContext([CompositeContextProvider], [CompositeScopedContextProvider]);
   var useTagContext = ctx7.useContext;
   var useTagScopedContext = ctx7.useScopedContext;
   var useTagProviderContext = ctx7.useProviderContext;
   var TagContextProvider = ctx7.ContextProvider;
   var TagScopedContextProvider = ctx7.ScopedContextProvider;
 
-  // node_modules/@ariakit/core/esm/combobox/combobox-store.js
+  // node_modules/@ariakit/components/dist/combobox/combobox-store.js
   var isTouchSafari = isSafari2() && isTouchDevice();
-  function createComboboxStore({
-    tag,
-    ...props
-  } = {}) {
+  function createComboboxStore({ tag, ...props } = {}) {
     const store = mergeStore(props.store, pick2(tag, ["value", "rtl"]));
     throwOnConflictingProps(props, store);
-    const tagState = tag == null ? void 0 : tag.getState();
-    const syncState = store == null ? void 0 : store.getState();
-    const activeId = defaultValue(
-      props.activeId,
-      syncState == null ? void 0 : syncState.activeId,
-      props.defaultActiveId,
-      null
-    );
+    const tagState = tag?.getState();
+    const syncState = store?.getState();
+    const activeId = defaultValue(props.activeId, syncState?.activeId, props.defaultActiveId, null);
     const composite = createCompositeStore({
       ...props,
       activeId,
-      includesBaseElement: defaultValue(
-        props.includesBaseElement,
-        syncState == null ? void 0 : syncState.includesBaseElement,
-        true
-      ),
-      orientation: defaultValue(
-        props.orientation,
-        syncState == null ? void 0 : syncState.orientation,
-        "vertical"
-      ),
-      focusLoop: defaultValue(props.focusLoop, syncState == null ? void 0 : syncState.focusLoop, true),
-      focusWrap: defaultValue(props.focusWrap, syncState == null ? void 0 : syncState.focusWrap, true),
-      virtualFocus: defaultValue(
-        props.virtualFocus,
-        syncState == null ? void 0 : syncState.virtualFocus,
-        true
-      )
+      includesBaseElement: defaultValue(props.includesBaseElement, syncState?.includesBaseElement, true),
+      orientation: defaultValue(props.orientation, syncState?.orientation, "vertical"),
+      focusLoop: defaultValue(props.focusLoop, syncState?.focusLoop, true),
+      focusWrap: defaultValue(props.focusWrap, syncState?.focusWrap, true),
+      virtualFocus: defaultValue(props.virtualFocus, syncState?.virtualFocus, true)
     });
     const popover = createPopoverStore({
       ...props,
-      placement: defaultValue(
-        props.placement,
-        syncState == null ? void 0 : syncState.placement,
-        "bottom-start"
-      )
+      placement: defaultValue(props.placement, syncState?.placement, "bottom-start")
     });
-    const value = defaultValue(
-      props.value,
-      syncState == null ? void 0 : syncState.value,
-      props.defaultValue,
-      ""
-    );
-    const selectedValue = defaultValue(
-      props.selectedValue,
-      syncState == null ? void 0 : syncState.selectedValue,
-      tagState == null ? void 0 : tagState.values,
-      props.defaultSelectedValue,
-      ""
-    );
+    const value = defaultValue(props.value, syncState?.value, props.defaultValue, "");
+    const selectedValue = defaultValue(props.selectedValue, syncState?.selectedValue, tagState?.values, props.defaultSelectedValue, "");
     const multiSelectable = Array.isArray(selectedValue);
     const initialState = {
       ...composite.getState(),
       ...popover.getState(),
       value,
       selectedValue,
-      resetValueOnSelect: defaultValue(
-        props.resetValueOnSelect,
-        syncState == null ? void 0 : syncState.resetValueOnSelect,
-        multiSelectable
-      ),
-      resetValueOnHide: defaultValue(
-        props.resetValueOnHide,
-        syncState == null ? void 0 : syncState.resetValueOnHide,
-        multiSelectable && !tag
-      ),
-      activeValue: syncState == null ? void 0 : syncState.activeValue
+      resetValueOnSelect: defaultValue(props.resetValueOnSelect, syncState?.resetValueOnSelect, multiSelectable),
+      resetValueOnHide: defaultValue(props.resetValueOnHide, syncState?.resetValueOnHide, multiSelectable && !tag),
+      activeValue: syncState?.activeValue
     };
     const combobox = createStore(initialState, composite, popover, store);
-    if (isTouchSafari) {
-      setup(
-        combobox,
-        () => sync(combobox, ["virtualFocus"], () => {
-          combobox.setState("virtualFocus", false);
-        })
-      );
-    }
+    if (isTouchSafari) setup(combobox, () => sync(combobox, ["virtualFocus"], () => {
+      combobox.setState("virtualFocus", false);
+    }));
     setup(combobox, () => {
       if (!tag) return;
-      return chain(
-        sync(combobox, ["selectedValue"], (state) => {
-          if (!Array.isArray(state.selectedValue)) return;
-          tag.setValues(state.selectedValue);
-        }),
-        sync(tag, ["values"], (state) => {
-          combobox.setState("selectedValue", state.values);
-        })
-      );
+      return chain(sync(combobox, ["selectedValue"], (state) => {
+        if (!Array.isArray(state.selectedValue)) return;
+        tag.setValues(state.selectedValue);
+      }), sync(tag, ["values"], (state) => {
+        combobox.setState("selectedValue", state.values);
+      }));
     });
-    setup(
-      combobox,
-      () => sync(combobox, ["resetValueOnHide", "mounted"], (state) => {
-        if (!state.resetValueOnHide) return;
-        if (state.mounted) return;
-        combobox.setState("value", value);
-      })
-    );
-    setup(
-      combobox,
-      () => sync(combobox, ["open"], (state) => {
-        if (state.open) return;
-        combobox.setState("activeId", activeId);
-        combobox.setState("moves", 0);
-      })
-    );
-    setup(
-      combobox,
-      () => sync(combobox, ["moves", "activeId"], (state, prevState) => {
-        if (state.moves === prevState.moves) {
-          combobox.setState("activeValue", void 0);
-        }
-      })
-    );
-    setup(
-      combobox,
-      () => batch(combobox, ["moves", "renderedItems"], (state, prev) => {
-        if (state.moves === prev.moves) return;
-        const { activeId: activeId2 } = combobox.getState();
-        const activeItem = composite.item(activeId2);
-        combobox.setState("activeValue", activeItem == null ? void 0 : activeItem.value);
-      })
-    );
+    setup(combobox, () => sync(combobox, ["resetValueOnHide", "mounted"], (state) => {
+      if (!state.resetValueOnHide) return;
+      if (state.mounted) return;
+      combobox.setState("value", value);
+    }));
+    setup(combobox, () => sync(combobox, ["open"], (state) => {
+      if (state.open) return;
+      combobox.setState("activeId", activeId);
+      combobox.setState("moves", 0);
+    }));
+    setup(combobox, () => sync(combobox, ["moves", "activeId"], (state, prevState) => {
+      if (state.moves === prevState.moves) combobox.setState("activeValue", void 0);
+    }));
+    setup(combobox, () => batch(combobox, ["moves", "renderedItems"], (state, prev) => {
+      if (state.moves === prev.moves) return;
+      const { activeId: activeId2 } = combobox.getState();
+      const activeItem = composite.item(activeId2);
+      combobox.setState("activeValue", activeItem?.value);
+    }));
     return {
       ...popover,
       ...composite,
@@ -18551,7 +18542,7 @@ If there's a particular need for this, please submit a feature request at https:
     };
   }
 
-  // node_modules/@ariakit/react-core/esm/__chunks/SVN33SY6.js
+  // node_modules/@ariakit/react-components/dist/combobox/combobox-store.js
   function useComboboxStoreOptions(props) {
     const tag = useTagContext();
     props = {
@@ -18566,14 +18557,7 @@ If there's a particular need for this, please submit a feature request at https:
     useStoreProps(store, props, "selectedValue", "setSelectedValue");
     useStoreProps(store, props, "resetValueOnHide");
     useStoreProps(store, props, "resetValueOnSelect");
-    return Object.assign(
-      useCompositeStoreProps(
-        usePopoverStoreProps(store, update2, props),
-        update2,
-        props
-      ),
-      { tag: props.tag }
-    );
+    return Object.assign(useCompositeStoreProps(usePopoverStoreProps(store, update2, props), update2, props), { tag: props.tag });
   }
   function useComboboxStore(props = {}) {
     props = useComboboxStoreOptions(props);
@@ -18581,19 +18565,21 @@ If there's a particular need for this, please submit a feature request at https:
     return useComboboxStoreProps(store, update2, props);
   }
 
-  // node_modules/@ariakit/react-core/esm/combobox/combobox-provider.js
-  var import_jsx_runtime77 = __toESM(require_jsx_runtime(), 1);
+  // node_modules/@ariakit/react-components/dist/combobox/combobox-provider.js
+  var import_jsx_runtime78 = __toESM(require_jsx_runtime(), 1);
   function ComboboxProvider(props = {}) {
-    const store = useComboboxStore(props);
-    return /* @__PURE__ */ (0, import_jsx_runtime77.jsx)(ComboboxContextProvider, { value: store, children: props.children });
+    return /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(ComboboxContextProvider, {
+      value: useComboboxStore(props),
+      children: props.children
+    });
   }
 
   // packages/dataviews/build-module/components/dataviews-filters/search-widget.mjs
   var import_remove_accents = __toESM(require_remove_accents(), 1);
-  var import_compose7 = __toESM(require_compose(), 1);
-  var import_i18n28 = __toESM(require_i18n(), 1);
-  var import_element39 = __toESM(require_element(), 1);
-  var import_components18 = __toESM(require_components(), 1);
+  var import_compose8 = __toESM(require_compose(), 1);
+  var import_i18n29 = __toESM(require_i18n(), 1);
+  var import_element42 = __toESM(require_element(), 1);
+  var import_components19 = __toESM(require_components(), 1);
 
   // packages/dataviews/build-module/components/dataviews-filters/utils.mjs
   var EMPTY_ARRAY3 = [];
@@ -18611,16 +18597,16 @@ If there's a particular need for this, please submit a feature request at https:
   };
 
   // packages/dataviews/build-module/hooks/use-elements.mjs
-  var import_element38 = __toESM(require_element(), 1);
+  var import_element41 = __toESM(require_element(), 1);
   var EMPTY_ARRAY4 = [];
   function useElements({
     elements,
     getElements
   }) {
     const staticElements = Array.isArray(elements) && elements.length > 0 ? elements : EMPTY_ARRAY4;
-    const [records, setRecords] = (0, import_element38.useState)(staticElements);
-    const [isLoading, setIsLoading] = (0, import_element38.useState)(false);
-    (0, import_element38.useEffect)(() => {
+    const [records, setRecords] = (0, import_element41.useState)(staticElements);
+    const [isLoading, setIsLoading] = (0, import_element41.useState)(false);
+    (0, import_element41.useEffect)(() => {
       if (!getElements) {
         setRecords(staticElements);
         return;
@@ -18652,7 +18638,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataviews-filters/search-widget.mjs
-  var import_jsx_runtime78 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime79 = __toESM(require_jsx_runtime(), 1);
   function normalizeSearchInput(input = "") {
     return (0, import_remove_accents.default)(input.trim().toLowerCase());
   }
@@ -18669,19 +18655,19 @@ If there's a particular need for this, please submit a feature request at https:
     return `${prefix}-${filterElementValue}`;
   }
   var MultiSelectionOption = ({ selected }) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
       "span",
       {
         className: clsx_default(
           "dataviews-filters__search-widget-listitem-multi-selection",
           { "is-selected": selected }
         ),
-        children: selected && /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(import_components18.Icon, { icon: check_default })
+        children: selected && /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(import_components19.Icon, { icon: check_default })
       }
     );
   };
   var SingleSelectionOption = ({ selected }) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
       "span",
       {
         className: clsx_default(
@@ -18692,8 +18678,8 @@ If there's a particular need for this, please submit a feature request at https:
     );
   };
   function ListBox({ view, filter, onChangeView }) {
-    const baseId = (0, import_compose7.useInstanceId)(ListBox, "dataviews-filter-list-box");
-    const [activeCompositeId, setActiveCompositeId] = (0, import_element39.useState)(
+    const baseId = (0, import_compose8.useInstanceId)(ListBox, "dataviews-filter-list-box");
+    const [activeCompositeId, setActiveCompositeId] = (0, import_element42.useState)(
       // When there are one or less operators, the first item is set as active
       // (by setting the initial `activeId` to `undefined`).
       // With 2 or more operators, the focus is moved on the operators control
@@ -18706,8 +18692,8 @@ If there's a particular need for this, please submit a feature request at https:
       (f2) => f2.field === filter.field
     );
     const currentValue = getCurrentValue(filter, currentFilter);
-    return /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
-      import_components18.Composite,
+    return /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
+      import_components19.Composite,
       {
         virtualFocus: true,
         focusLoop: true,
@@ -18715,9 +18701,9 @@ If there's a particular need for this, please submit a feature request at https:
         setActiveId: setActiveCompositeId,
         role: "listbox",
         className: "dataviews-filters__search-widget-listbox",
-        "aria-label": (0, import_i18n28.sprintf)(
+        "aria-label": (0, import_i18n29.sprintf)(
           /* translators: List of items for a filter. 1: Filter name. e.g.: "List of: Author". */
-          (0, import_i18n28.__)("List of: %1$s"),
+          (0, import_i18n29.__)("List of: %1$s"),
           filter.name
         ),
         onFocusVisible: () => {
@@ -18730,18 +18716,18 @@ If there's a particular need for this, please submit a feature request at https:
             );
           }
         },
-        render: /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(import_components18.Composite.Typeahead, {}),
-        children: filter.elements.map((element) => /* @__PURE__ */ (0, import_jsx_runtime78.jsxs)(
-          import_components18.Composite.Hover,
+        render: /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(import_components19.Composite.Typeahead, {}),
+        children: filter.elements.map((element) => /* @__PURE__ */ (0, import_jsx_runtime79.jsxs)(
+          import_components19.Composite.Hover,
           {
-            render: /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
-              import_components18.Composite.Item,
+            render: /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
+              import_components19.Composite.Item,
               {
                 id: generateFilterElementCompositeItemId(
                   baseId,
                   element.value
                 ),
-                render: /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+                render: /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
                   "div",
                   {
                     "aria-label": element.label,
@@ -18788,19 +18774,19 @@ If there's a particular need for this, please submit a feature request at https:
               }
             ),
             children: [
-              filter.singleSelection && /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+              filter.singleSelection && /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
                 SingleSelectionOption,
                 {
                   selected: currentValue === element.value
                 }
               ),
-              !filter.singleSelection && /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+              !filter.singleSelection && /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
                 MultiSelectionOption,
                 {
                   selected: currentValue.includes(element.value)
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
                 "span",
                 {
                   className: "dataviews-filters__search-widget-listitem-value",
@@ -18816,19 +18802,19 @@ If there's a particular need for this, please submit a feature request at https:
     );
   }
   function ComboboxList22({ view, filter, onChangeView }) {
-    const [searchValue, setSearchValue] = (0, import_element39.useState)("");
-    const deferredSearchValue = (0, import_element39.useDeferredValue)(searchValue);
+    const [searchValue, setSearchValue] = (0, import_element42.useState)("");
+    const deferredSearchValue = (0, import_element42.useDeferredValue)(searchValue);
     const currentFilter = view.filters?.find(
       (_filter) => _filter.field === filter.field
     );
     const currentValue = getCurrentValue(filter, currentFilter);
-    const matches = (0, import_element39.useMemo)(() => {
+    const matches = (0, import_element42.useMemo)(() => {
       const normalizedSearch = normalizeSearchInput(deferredSearchValue);
       return filter.elements.filter(
         (item) => normalizeSearchInput(item.label).includes(normalizedSearch)
       );
     }, [filter.elements, deferredSearchValue]);
-    return /* @__PURE__ */ (0, import_jsx_runtime78.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime79.jsxs)(
       ComboboxProvider,
       {
         selectedValue: currentValue,
@@ -18860,26 +18846,26 @@ If there's a particular need for this, please submit a feature request at https:
         },
         setValue: setSearchValue,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime78.jsxs)("div", { className: "dataviews-filters__search-widget-filter-combobox__wrapper", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(VisuallyHidden, { render: /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(ComboboxLabel, {}), children: (0, import_i18n28.__)("Search items") }),
-            /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime79.jsxs)("div", { className: "dataviews-filters__search-widget-filter-combobox__wrapper", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(VisuallyHidden, { render: /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(ComboboxLabel, {}), children: (0, import_i18n29.__)("Search items") }),
+            /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
               Combobox,
               {
                 autoSelect: "always",
-                placeholder: (0, import_i18n28.__)("Search"),
+                placeholder: (0, import_i18n29.__)("Search"),
                 className: "dataviews-filters__search-widget-filter-combobox__input"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime78.jsx)("div", { className: "dataviews-filters__search-widget-filter-combobox__icon", children: /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(import_components18.Icon, { icon: search_default }) })
+            /* @__PURE__ */ (0, import_jsx_runtime79.jsx)("div", { className: "dataviews-filters__search-widget-filter-combobox__icon", children: /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(import_components19.Icon, { icon: search_default }) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime78.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime79.jsxs)(
             ComboboxList,
             {
               className: "dataviews-filters__search-widget-filter-combobox-list",
               alwaysVisible: true,
               children: [
                 matches.map((element) => {
-                  return /* @__PURE__ */ (0, import_jsx_runtime78.jsxs)(
+                  return /* @__PURE__ */ (0, import_jsx_runtime79.jsxs)(
                     ComboboxItem,
                     {
                       resetValueOnSelect: false,
@@ -18889,13 +18875,13 @@ If there's a particular need for this, please submit a feature request at https:
                       setValueOnClick: false,
                       focusOnHover: true,
                       children: [
-                        filter.singleSelection && /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+                        filter.singleSelection && /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
                           SingleSelectionOption,
                           {
                             selected: currentValue === element.value
                           }
                         ),
-                        !filter.singleSelection && /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+                        !filter.singleSelection && /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
                           MultiSelectionOption,
                           {
                             selected: currentValue.includes(
@@ -18903,20 +18889,20 @@ If there's a particular need for this, please submit a feature request at https:
                             )
                           }
                         ),
-                        /* @__PURE__ */ (0, import_jsx_runtime78.jsxs)(
+                        /* @__PURE__ */ (0, import_jsx_runtime79.jsxs)(
                           "span",
                           {
                             className: "dataviews-filters__search-widget-listitem-value",
                             title: element.label,
                             children: [
-                              /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(
+                              /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
                                 ComboboxItemValue,
                                 {
                                   className: "dataviews-filters__search-widget-filter-combobox-item-value",
                                   value: element.label
                                 }
                               ),
-                              !!element.description && /* @__PURE__ */ (0, import_jsx_runtime78.jsx)("span", { className: "dataviews-filters__search-widget-listitem-description", children: element.description })
+                              !!element.description && /* @__PURE__ */ (0, import_jsx_runtime79.jsx)("span", { className: "dataviews-filters__search-widget-listitem-description", children: element.description })
                             ]
                           }
                         )
@@ -18925,7 +18911,7 @@ If there's a particular need for this, please submit a feature request at https:
                     element.value
                   );
                 }),
-                !matches.length && /* @__PURE__ */ (0, import_jsx_runtime78.jsx)("p", { children: (0, import_i18n28.__)("No results found") })
+                !matches.length && /* @__PURE__ */ (0, import_jsx_runtime79.jsx)("p", { children: (0, import_i18n29.__)("No results found") })
               ]
             }
           )
@@ -18939,21 +18925,21 @@ If there's a particular need for this, please submit a feature request at https:
       getElements: props.filter.getElements
     });
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime78.jsx)("div", { className: "dataviews-filters__search-widget-no-elements", children: /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(import_components18.Spinner, {}) });
+      return /* @__PURE__ */ (0, import_jsx_runtime79.jsx)("div", { className: "dataviews-filters__search-widget-no-elements", children: /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(import_components19.Spinner, {}) });
     }
     if (elements.length === 0) {
-      return /* @__PURE__ */ (0, import_jsx_runtime78.jsx)("div", { className: "dataviews-filters__search-widget-no-elements", children: (0, import_i18n28.__)("No elements found") });
+      return /* @__PURE__ */ (0, import_jsx_runtime79.jsx)("div", { className: "dataviews-filters__search-widget-no-elements", children: (0, import_i18n29.__)("No elements found") });
     }
     const Widget = elements.length > 10 ? ComboboxList22 : ListBox;
-    return /* @__PURE__ */ (0, import_jsx_runtime78.jsx)(Widget, { ...props, filter: { ...props.filter, elements } });
+    return /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(Widget, { ...props, filter: { ...props.filter, elements } });
   }
 
   // packages/dataviews/build-module/components/dataviews-filters/input-widget.mjs
   var import_es6 = __toESM(require_es6(), 1);
-  var import_compose8 = __toESM(require_compose(), 1);
-  var import_element40 = __toESM(require_element(), 1);
-  var import_components19 = __toESM(require_components(), 1);
-  var import_jsx_runtime79 = __toESM(require_jsx_runtime(), 1);
+  var import_compose9 = __toESM(require_compose(), 1);
+  var import_element43 = __toESM(require_element(), 1);
+  var import_components20 = __toESM(require_components(), 1);
+  var import_jsx_runtime80 = __toESM(require_jsx_runtime(), 1);
   function InputWidget({
     filter,
     view,
@@ -18964,7 +18950,7 @@ If there's a particular need for this, please submit a feature request at https:
       (f2) => f2.field === filter.field
     );
     const currentValue = getCurrentValue(filter, currentFilter);
-    const field = (0, import_element40.useMemo)(() => {
+    const field = (0, import_element43.useMemo)(() => {
       const currentField = fields.find((f2) => f2.id === filter.field);
       if (currentField) {
         return {
@@ -18984,7 +18970,7 @@ If there's a particular need for this, please submit a feature request at https:
       }
       return currentField;
     }, [fields, filter.field]);
-    const data = (0, import_element40.useMemo)(() => {
+    const data = (0, import_element43.useMemo)(() => {
       return (view.filters ?? []).reduce(
         (acc, activeFilter) => {
           acc[activeFilter.field] = activeFilter.value;
@@ -18993,7 +18979,7 @@ If there's a particular need for this, please submit a feature request at https:
         {}
       );
     }, [view.filters]);
-    const handleChange = (0, import_compose8.useEvent)((updatedData) => {
+    const handleChange = (0, import_compose9.useEvent)((updatedData) => {
       if (!field || !currentFilter) {
         return;
       }
@@ -19021,13 +19007,13 @@ If there's a particular need for this, please submit a feature request at https:
     if (!field || !field.Edit || !currentFilter) {
       return null;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
-      import_components19.Flex,
+    return /* @__PURE__ */ (0, import_jsx_runtime80.jsx)(
+      import_components20.Flex,
       {
         className: "dataviews-filters__user-input-widget",
         gap: 2.5,
         direction: "column",
-        children: /* @__PURE__ */ (0, import_jsx_runtime79.jsx)(
+        children: /* @__PURE__ */ (0, import_jsx_runtime80.jsx)(
           field.Edit,
           {
             hideLabelFromVision: true,
@@ -20681,13 +20667,13 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/utils/operators.mjs
-  var import_i18n29 = __toESM(require_i18n(), 1);
-  var import_element41 = __toESM(require_element(), 1);
+  var import_i18n30 = __toESM(require_i18n(), 1);
+  var import_element44 = __toESM(require_element(), 1);
   var import_date = __toESM(require_date(), 1);
-  var import_jsx_runtime80 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime81 = __toESM(require_jsx_runtime(), 1);
   var filterTextWrappers = {
-    Name: /* @__PURE__ */ (0, import_jsx_runtime80.jsx)("span", { className: "dataviews-filters__summary-filter-text-name" }),
-    Value: /* @__PURE__ */ (0, import_jsx_runtime80.jsx)("span", { className: "dataviews-filters__summary-filter-text-value" })
+    Name: /* @__PURE__ */ (0, import_jsx_runtime81.jsx)("span", { className: "dataviews-filters__summary-filter-text-name" }),
+    Value: /* @__PURE__ */ (0, import_jsx_runtime81.jsx)("span", { className: "dataviews-filters__summary-filter-text-value" })
   };
   function getRelativeDate(value, unit) {
     switch (unit) {
@@ -20705,11 +20691,11 @@ If there's a particular need for this, please submit a feature request at https:
   }
   var isNoneOperatorDefinition = {
     /* translators: DataViews operator name */
-    label: (0, import_i18n29.__)("Is none of"),
-    filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-      (0, import_i18n29.sprintf)(
+    label: (0, import_i18n30.__)("Is none of"),
+    filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+      (0, import_i18n30.sprintf)(
         /* translators: 1: Filter name (e.g. "Author"). 2: Filter value (e.g. "Admin"): "Author is none of: Admin, Editor". */
-        (0, import_i18n29.__)("<Name>%1$s is none of: </Name><Value>%2$s</Value>"),
+        (0, import_i18n30.__)("<Name>%1$s is none of: </Name><Value>%2$s</Value>"),
         filter.name,
         activeElements.map((element) => element.label).join(", ")
       ),
@@ -20735,11 +20721,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_IS_ANY,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Includes"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Includes"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Author"). 2: Filter value (e.g. "Admin"): "Author is any: Admin, Editor". */
-          (0, import_i18n29.__)("<Name>%1$s includes: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s includes: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements.map((element) => element.label).join(", ")
         ),
@@ -20768,11 +20754,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_IS_ALL,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Includes all"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Includes all"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Author"). 2: Filter value (e.g. "Admin"): "Author includes all: Admin, Editor". */
-          (0, import_i18n29.__)("<Name>%1$s includes all: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s includes all: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements.map((element) => element.label).join(", ")
         ),
@@ -20795,11 +20781,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_BETWEEN,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Between (inc)"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Between (inc)"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Item count"). 2: Filter value min. 3: Filter value max. e.g.: "Item count between (inc): 10 and 180". */
-          (0, import_i18n29.__)(
+          (0, import_i18n30.__)(
             "<Name>%1$s between (inc): </Name><Value>%2$s and %3$s</Value>"
           ),
           filter.name,
@@ -20823,11 +20809,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_IN_THE_PAST,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("In the past"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("In the past"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Date"). 2: Filter value (e.g. "7 days"): "Date is in the past: 7 days". */
-          (0, import_i18n29.__)(
+          (0, import_i18n30.__)(
             "<Name>%1$s is in the past: </Name><Value>%2$s</Value>"
           ),
           filter.name,
@@ -20851,11 +20837,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_OVER,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Over"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Over"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Date"). 2: Filter value (e.g. "7 days"): "Date is over: 7 days". */
-          (0, import_i18n29.__)("<Name>%1$s is over: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s is over: </Name><Value>%2$s</Value>"),
           filter.name,
           `${activeElements[0].value.value} ${activeElements[0].value.unit}`
         ),
@@ -20877,11 +20863,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_IS,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Is"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Is"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Author"). 2: Filter value (e.g. "Admin"): "Author is: Admin". */
-          (0, import_i18n29.__)("<Name>%1$s is: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s is: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -20895,11 +20881,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_IS_NOT,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Is not"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Is not"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Author"). 2: Filter value (e.g. "Admin"): "Author is not: Admin". */
-          (0, import_i18n29.__)("<Name>%1$s is not: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s is not: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -20913,11 +20899,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_LESS_THAN,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Less than"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Less than"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Count"). 2: Filter value (e.g. "10"): "Count is less than: 10". */
-          (0, import_i18n29.__)("<Name>%1$s is less than: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s is less than: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -20935,11 +20921,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_GREATER_THAN,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Greater than"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Greater than"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Count"). 2: Filter value (e.g. "10"): "Count is greater than: 10". */
-          (0, import_i18n29.__)(
+          (0, import_i18n30.__)(
             "<Name>%1$s is greater than: </Name><Value>%2$s</Value>"
           ),
           filter.name,
@@ -20959,11 +20945,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_LESS_THAN_OR_EQUAL,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Less than or equal"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Less than or equal"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Count"). 2: Filter value (e.g. "10"): "Count is less than or equal to: 10". */
-          (0, import_i18n29.__)(
+          (0, import_i18n30.__)(
             "<Name>%1$s is less than or equal to: </Name><Value>%2$s</Value>"
           ),
           filter.name,
@@ -20983,11 +20969,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_GREATER_THAN_OR_EQUAL,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Greater than or equal"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Greater than or equal"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Count"). 2: Filter value (e.g. "10"): "Count is greater than or equal to: 10". */
-          (0, import_i18n29.__)(
+          (0, import_i18n30.__)(
             "<Name>%1$s is greater than or equal to: </Name><Value>%2$s</Value>"
           ),
           filter.name,
@@ -21007,11 +20993,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_BEFORE,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Before"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Before"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Date"). 2: Filter value (e.g. "2024-01-01"): "Date is before: 2024-01-01". */
-          (0, import_i18n29.__)("<Name>%1$s is before: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s is before: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -21030,11 +21016,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_AFTER,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("After"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("After"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Date"). 2: Filter value (e.g. "2024-01-01"): "Date is after: 2024-01-01". */
-          (0, import_i18n29.__)("<Name>%1$s is after: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s is after: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -21053,11 +21039,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_BEFORE_INC,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Before (inc)"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Before (inc)"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Date"). 2: Filter value (e.g. "2024-01-01"): "Date is on or before: 2024-01-01". */
-          (0, import_i18n29.__)(
+          (0, import_i18n30.__)(
             "<Name>%1$s is on or before: </Name><Value>%2$s</Value>"
           ),
           filter.name,
@@ -21078,11 +21064,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_AFTER_INC,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("After (inc)"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("After (inc)"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Date"). 2: Filter value (e.g. "2024-01-01"): "Date is on or after: 2024-01-01". */
-          (0, import_i18n29.__)(
+          (0, import_i18n30.__)(
             "<Name>%1$s is on or after: </Name><Value>%2$s</Value>"
           ),
           filter.name,
@@ -21103,11 +21089,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_CONTAINS,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Contains"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Contains"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Title"). 2: Filter value (e.g. "Hello"): "Title contains: Hello". */
-          (0, import_i18n29.__)("<Name>%1$s contains: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s contains: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -21125,11 +21111,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_NOT_CONTAINS,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Doesn't contain"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Doesn't contain"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Title"). 2: Filter value (e.g. "Hello"): "Title doesn't contain: Hello". */
-          (0, import_i18n29.__)(
+          (0, import_i18n30.__)(
             "<Name>%1$s doesn't contain: </Name><Value>%2$s</Value>"
           ),
           filter.name,
@@ -21149,11 +21135,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_STARTS_WITH,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Starts with"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Starts with"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Title"). 2: Filter value (e.g. "Hello"): "Title starts with: Hello". */
-          (0, import_i18n29.__)("<Name>%1$s starts with: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s starts with: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -21171,11 +21157,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_ON,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("On"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("On"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Date"). 2: Filter value (e.g. "2024-01-01"): "Date is: 2024-01-01". */
-          (0, import_i18n29.__)("<Name>%1$s is: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s is: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -21194,11 +21180,11 @@ If there's a particular need for this, please submit a feature request at https:
     {
       name: OPERATOR_NOT_ON,
       /* translators: DataViews operator name */
-      label: (0, import_i18n29.__)("Not on"),
-      filterText: (filter, activeElements) => (0, import_element41.createInterpolateElement)(
-        (0, import_i18n29.sprintf)(
+      label: (0, import_i18n30.__)("Not on"),
+      filterText: (filter, activeElements) => (0, import_element44.createInterpolateElement)(
+        (0, import_i18n30.sprintf)(
           /* translators: 1: Filter name (e.g. "Date"). 2: Filter value (e.g. "2024-01-01"): "Date is not: 2024-01-01". */
-          (0, import_i18n29.__)("<Name>%1$s is not: </Name><Value>%2$s</Value>"),
+          (0, import_i18n30.__)("<Name>%1$s is not: </Name><Value>%2$s</Value>"),
           filter.name,
           activeElements[0].label
         ),
@@ -21223,7 +21209,7 @@ If there's a particular need for this, please submit a feature request at https:
   var isRegisteredOperator = (name) => OPERATORS.some((op) => op.name === name);
 
   // packages/dataviews/build-module/components/dataviews-filters/filter.mjs
-  var import_jsx_runtime81 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime82 = __toESM(require_jsx_runtime(), 1);
   var ENTER = "Enter";
   var SPACE = " ";
   var FilterText = ({
@@ -21238,9 +21224,9 @@ If there's a particular need for this, please submit a feature request at https:
     if (operator !== void 0) {
       return operator.filterText(filter, activeElements);
     }
-    return (0, import_i18n30.sprintf)(
+    return (0, import_i18n31.sprintf)(
       /* translators: 1: Filter name e.g.: "Unknown status for Author". */
-      (0, import_i18n30.__)("Unknown status for %1$s"),
+      (0, import_i18n31.__)("Unknown status for %1$s"),
       filter.name
     );
   };
@@ -21257,7 +21243,7 @@ If there's a particular need for this, please submit a feature request at https:
       (_filter) => _filter.field === filter.field
     );
     const value = currentFilter?.operator || filter.operators[0];
-    return operatorOptions.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime81.jsxs)(
+    return operatorOptions.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime82.jsxs)(
       Stack,
       {
         direction: "row",
@@ -21266,12 +21252,12 @@ If there's a particular need for this, please submit a feature request at https:
         className: "dataviews-filters__summary-operators-container",
         align: "center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(import_components20.FlexItem, { className: "dataviews-filters__summary-operators-filter-name", children: filter.name }),
-          /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(
-            import_components20.SelectControl,
+          /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(import_components21.FlexItem, { className: "dataviews-filters__summary-operators-filter-name", children: filter.name }),
+          /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
+            import_components21.SelectControl,
             {
               className: "dataviews-filters__summary-operators-filter-select",
-              label: (0, import_i18n30.__)("Conditions"),
+              label: (0, import_i18n31.__)("Conditions"),
               value,
               options: operatorOptions,
               onChange: (newValue) => {
@@ -21329,13 +21315,13 @@ If there's a particular need for this, please submit a feature request at https:
     fields,
     ...commonProps
   }) {
-    const toggleRef = (0, import_element42.useRef)(null);
+    const toggleRef = (0, import_element45.useRef)(null);
     const { filter, view, onChangeView } = commonProps;
     const filterInView = view.filters?.find(
       (f2) => f2.field === filter.field
     );
     let activeElements = [];
-    const field = (0, import_element42.useMemo)(() => {
+    const field = (0, import_element45.useMemo)(() => {
       const currentField = fields.find((f2) => f2.id === filter.field);
       if (currentField) {
         return {
@@ -21393,9 +21379,9 @@ If there's a particular need for this, please submit a feature request at https:
     const isLocked = filterInView?.isLocked;
     const hasValues = !isLocked && filterInView?.value !== void 0;
     const canResetOrRemove = !isLocked && (!isPrimary || hasValues);
-    const resetOrRemoveLabel = isPrimary ? (0, import_i18n30.__)("Reset") : (0, import_i18n30.__)("Remove");
-    return /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(
-      import_components20.Dropdown,
+    const resetOrRemoveLabel = isPrimary ? (0, import_i18n31.__)("Reset") : (0, import_i18n31.__)("Remove");
+    return /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
+      import_components21.Dropdown,
       {
         defaultOpen: openedFilter === filter.field,
         contentClassName: "dataviews-filters__summary-popover",
@@ -21403,12 +21389,12 @@ If there's a particular need for this, please submit a feature request at https:
         onClose: () => {
           toggleRef.current?.focus();
         },
-        renderToggle: ({ isOpen, onToggle }) => /* @__PURE__ */ (0, import_jsx_runtime81.jsxs)("div", { className: "dataviews-filters__summary-chip-container", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime81.jsxs)(tooltip_exports.Root, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(
+        renderToggle: ({ isOpen, onToggle }) => /* @__PURE__ */ (0, import_jsx_runtime82.jsxs)("div", { className: "dataviews-filters__summary-chip-container", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime82.jsxs)(tooltip_exports.Root, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
               tooltip_exports.Trigger,
               {
-                render: /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(
+                render: /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
                   "div",
                   {
                     className: clsx_default(
@@ -21438,7 +21424,7 @@ If there's a particular need for this, please submit a feature request at https:
                     "aria-pressed": isOpen,
                     "aria-expanded": isOpen,
                     ref: toggleRef,
-                    children: /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(
+                    children: /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
                       FilterText,
                       {
                         activeElements,
@@ -21450,17 +21436,17 @@ If there's a particular need for this, please submit a feature request at https:
                 )
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(tooltip_exports.Popup, { children: (0, import_i18n30.sprintf)(
+            /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(tooltip_exports.Popup, { children: (0, import_i18n31.sprintf)(
               /* translators: 1: Filter name. */
-              (0, import_i18n30.__)("Filter by: %1$s"),
+              (0, import_i18n31.__)("Filter by: %1$s"),
               filter.name.toLowerCase()
             ) })
           ] }),
-          canResetOrRemove && /* @__PURE__ */ (0, import_jsx_runtime81.jsxs)(tooltip_exports.Root, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(
+          canResetOrRemove && /* @__PURE__ */ (0, import_jsx_runtime82.jsxs)(tooltip_exports.Root, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
               tooltip_exports.Trigger,
               {
-                render: /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(
+                render: /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
                   "button",
                   {
                     className: clsx_default(
@@ -21482,18 +21468,18 @@ If there's a particular need for this, please submit a feature request at https:
                         toggleRef.current?.focus();
                       }
                     },
-                    children: /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(import_components20.Icon, { icon: close_small_default })
+                    children: /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(import_components21.Icon, { icon: close_small_default })
                   }
                 )
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(tooltip_exports.Popup, { children: resetOrRemoveLabel })
+            /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(tooltip_exports.Popup, { children: resetOrRemoveLabel })
           ] })
         ] }),
         renderContent: () => {
-          return /* @__PURE__ */ (0, import_jsx_runtime81.jsxs)(Stack, { direction: "column", justify: "flex-start", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(OperatorSelector, { ...commonProps }),
-            commonProps.filter.hasElements ? /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(
+          return /* @__PURE__ */ (0, import_jsx_runtime82.jsxs)(Stack, { direction: "column", justify: "flex-start", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(OperatorSelector, { ...commonProps }),
+            commonProps.filter.hasElements ? /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
               SearchWidget,
               {
                 ...commonProps,
@@ -21502,7 +21488,7 @@ If there's a particular need for this, please submit a feature request at https:
                   elements
                 }
               }
-            ) : /* @__PURE__ */ (0, import_jsx_runtime81.jsx)(InputWidget, { ...commonProps, fields })
+            ) : /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(InputWidget, { ...commonProps, fields })
           ] });
         }
       }
@@ -21510,11 +21496,11 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataviews-filters/add-filter.mjs
-  var import_components21 = __toESM(require_components(), 1);
-  var import_i18n31 = __toESM(require_i18n(), 1);
-  var import_element43 = __toESM(require_element(), 1);
-  var import_jsx_runtime82 = __toESM(require_jsx_runtime(), 1);
-  var { Menu: Menu4 } = unlock2(import_components21.privateApis);
+  var import_components22 = __toESM(require_components(), 1);
+  var import_i18n32 = __toESM(require_i18n(), 1);
+  var import_element46 = __toESM(require_element(), 1);
+  var import_jsx_runtime83 = __toESM(require_jsx_runtime(), 1);
+  var { Menu: Menu4 } = unlock2(import_components22.privateApis);
   function AddFilterMenu({
     filters,
     view,
@@ -21523,10 +21509,10 @@ If there's a particular need for this, please submit a feature request at https:
     triggerProps
   }) {
     const inactiveFilters = filters.filter((filter) => !filter.isVisible);
-    return /* @__PURE__ */ (0, import_jsx_runtime82.jsxs)(Menu4, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(Menu4.TriggerButton, { ...triggerProps }),
-      /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(Menu4.Popover, { children: inactiveFilters.map((filter) => {
-        return /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime83.jsxs)(Menu4, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime83.jsx)(Menu4.TriggerButton, { ...triggerProps }),
+      /* @__PURE__ */ (0, import_jsx_runtime83.jsx)(Menu4.Popover, { children: inactiveFilters.map((filter) => {
+        return /* @__PURE__ */ (0, import_jsx_runtime83.jsx)(
           Menu4.Item,
           {
             onClick: () => {
@@ -21544,7 +21530,7 @@ If there's a particular need for this, please submit a feature request at https:
                 ]
               });
             },
-            children: /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(Menu4.ItemLabel, { children: filter.name })
+            children: /* @__PURE__ */ (0, import_jsx_runtime83.jsx)(Menu4.ItemLabel, { children: filter.name })
           },
           filter.field
         );
@@ -21556,12 +21542,12 @@ If there's a particular need for this, please submit a feature request at https:
       return null;
     }
     const inactiveFilters = filters.filter((filter) => !filter.isVisible);
-    return /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime83.jsx)(
       AddFilterMenu,
       {
         triggerProps: {
-          render: /* @__PURE__ */ (0, import_jsx_runtime82.jsx)(
-            import_components21.Button,
+          render: /* @__PURE__ */ (0, import_jsx_runtime83.jsx)(
+            import_components22.Button,
             {
               accessibleWhenDisabled: true,
               size: "compact",
@@ -21571,18 +21557,18 @@ If there's a particular need for this, please submit a feature request at https:
               ref
             }
           ),
-          children: (0, import_i18n31.__)("Add filter")
+          children: (0, import_i18n32.__)("Add filter")
         },
         ...{ filters, view, onChangeView, setOpenedFilter }
       }
     );
   }
-  var add_filter_default = (0, import_element43.forwardRef)(AddFilter);
+  var add_filter_default = (0, import_element46.forwardRef)(AddFilter);
 
   // packages/dataviews/build-module/components/dataviews-filters/reset-filters.mjs
-  var import_components22 = __toESM(require_components(), 1);
-  var import_i18n32 = __toESM(require_i18n(), 1);
-  var import_jsx_runtime83 = __toESM(require_jsx_runtime(), 1);
+  var import_components23 = __toESM(require_components(), 1);
+  var import_i18n33 = __toESM(require_i18n(), 1);
+  var import_jsx_runtime84 = __toESM(require_jsx_runtime(), 1);
   function ResetFilter({
     filters,
     view,
@@ -21594,8 +21580,8 @@ If there's a particular need for this, please submit a feature request at https:
     const isDisabled = !view.search && !view.filters?.some(
       (_filter) => !_filter.isLocked && (_filter.value !== void 0 || !isPrimary(_filter.field))
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime83.jsx)(
-      import_components22.Button,
+    return /* @__PURE__ */ (0, import_jsx_runtime84.jsx)(
+      import_components23.Button,
       {
         disabled: isDisabled,
         accessibleWhenDisabled: true,
@@ -21610,15 +21596,15 @@ If there's a particular need for this, please submit a feature request at https:
             filters: view.filters?.filter((f2) => !!f2.isLocked) || []
           });
         },
-        children: (0, import_i18n32.__)("Reset")
+        children: (0, import_i18n33.__)("Reset")
       }
     );
   }
 
   // packages/dataviews/build-module/components/dataviews-filters/use-filters.mjs
-  var import_element44 = __toESM(require_element(), 1);
+  var import_element47 = __toESM(require_element(), 1);
   function useFilters(fields, view) {
-    return (0, import_element44.useMemo)(() => {
+    return (0, import_element47.useMemo)(() => {
       const filters = [];
       fields.forEach((field) => {
         if (field.filterBy === false || !field.hasElements && !field.Edit) {
@@ -21667,12 +21653,12 @@ If there's a particular need for this, please submit a feature request at https:
   var use_filters_default = useFilters;
 
   // packages/dataviews/build-module/components/dataviews-filters/filters.mjs
-  var import_jsx_runtime84 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime85 = __toESM(require_jsx_runtime(), 1);
   function Filters({ className }) {
-    const { fields, view, onChangeView, openedFilter, setOpenedFilter } = (0, import_element45.useContext)(dataviews_context_default);
-    const addFilterRef = (0, import_element45.useRef)(null);
+    const { fields, view, onChangeView, openedFilter, setOpenedFilter } = (0, import_element48.useContext)(dataviews_context_default);
+    const addFilterRef = (0, import_element48.useRef)(null);
     const filters = use_filters_default(fields, view);
-    const addFilter = /* @__PURE__ */ (0, import_jsx_runtime84.jsx)(
+    const addFilter = /* @__PURE__ */ (0, import_jsx_runtime85.jsx)(
       add_filter_default,
       {
         filters,
@@ -21689,7 +21675,7 @@ If there's a particular need for this, please submit a feature request at https:
     }
     const filterComponents = [
       ...visibleFilters.map((filter) => {
-        return /* @__PURE__ */ (0, import_jsx_runtime84.jsx)(
+        return /* @__PURE__ */ (0, import_jsx_runtime85.jsx)(
           Filter,
           {
             filter,
@@ -21705,7 +21691,7 @@ If there's a particular need for this, please submit a feature request at https:
       addFilter
     ];
     filterComponents.push(
-      /* @__PURE__ */ (0, import_jsx_runtime84.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime85.jsx)(
         ResetFilter,
         {
           filters,
@@ -21715,7 +21701,7 @@ If there's a particular need for this, please submit a feature request at https:
         "reset-filters"
       )
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime84.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime85.jsx)(
       Stack,
       {
         direction: "row",
@@ -21728,13 +21714,13 @@ If there's a particular need for this, please submit a feature request at https:
       }
     );
   }
-  var filters_default = (0, import_element45.memo)(Filters);
+  var filters_default = (0, import_element48.memo)(Filters);
 
   // packages/dataviews/build-module/components/dataviews-filters/toggle.mjs
-  var import_element46 = __toESM(require_element(), 1);
-  var import_components23 = __toESM(require_components(), 1);
-  var import_i18n33 = __toESM(require_i18n(), 1);
-  var import_jsx_runtime85 = __toESM(require_jsx_runtime(), 1);
+  var import_element49 = __toESM(require_element(), 1);
+  var import_components24 = __toESM(require_components(), 1);
+  var import_i18n34 = __toESM(require_i18n(), 1);
+  var import_jsx_runtime86 = __toESM(require_jsx_runtime(), 1);
   function FiltersToggle() {
     const {
       filters,
@@ -21743,9 +21729,9 @@ If there's a particular need for this, please submit a feature request at https:
       setOpenedFilter,
       isShowingFilter,
       setIsShowingFilter
-    } = (0, import_element46.useContext)(dataviews_context_default);
-    const buttonRef = (0, import_element46.useRef)(null);
-    const onChangeViewWithFilterVisibility = (0, import_element46.useCallback)(
+    } = (0, import_element49.useContext)(dataviews_context_default);
+    const buttonRef = (0, import_element49.useRef)(null);
+    const onChangeViewWithFilterVisibility = (0, import_element49.useCallback)(
       (_view) => {
         onChangeView(_view);
         setIsShowingFilter(true);
@@ -21757,12 +21743,12 @@ If there's a particular need for this, please submit a feature request at https:
     }
     const hasVisibleFilters = filters.some((filter) => filter.isVisible);
     const addFilterButtonProps = {
-      label: (0, import_i18n33.__)("Add filter"),
+      label: (0, import_i18n34.__)("Add filter"),
       "aria-expanded": false,
       isPressed: false
     };
     const toggleFiltersButtonProps = {
-      label: (0, import_i18n33._x)("Filter", "verb"),
+      label: (0, import_i18n34._x)("Filter", "verb"),
       "aria-expanded": isShowingFilter,
       isPressed: isShowingFilter,
       onClick: () => {
@@ -21775,8 +21761,8 @@ If there's a particular need for this, please submit a feature request at https:
     const hasPrimaryOrLockedFilters = filters.some(
       (filter) => filter.isPrimary || filter.isLocked
     );
-    const buttonComponent = /* @__PURE__ */ (0, import_jsx_runtime85.jsx)(
-      import_components23.Button,
+    const buttonComponent = /* @__PURE__ */ (0, import_jsx_runtime86.jsx)(
+      import_components24.Button,
       {
         ref: buttonRef,
         className: "dataviews-filters__visibility-toggle",
@@ -21787,7 +21773,7 @@ If there's a particular need for this, please submit a feature request at https:
         ...hasVisibleFilters ? toggleFiltersButtonProps : addFilterButtonProps
       }
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime85.jsx)("div", { className: "dataviews-filters__container-visibility-toggle", children: !hasVisibleFilters ? /* @__PURE__ */ (0, import_jsx_runtime85.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime86.jsx)("div", { className: "dataviews-filters__container-visibility-toggle", children: !hasVisibleFilters ? /* @__PURE__ */ (0, import_jsx_runtime86.jsx)(
       AddFilterMenu,
       {
         filters,
@@ -21796,7 +21782,7 @@ If there's a particular need for this, please submit a feature request at https:
         setOpenedFilter,
         triggerProps: { render: buttonComponent }
       }
-    ) : /* @__PURE__ */ (0, import_jsx_runtime85.jsx)(
+    ) : /* @__PURE__ */ (0, import_jsx_runtime86.jsx)(
       FilterVisibilityToggle,
       {
         buttonRef,
@@ -21810,36 +21796,36 @@ If there's a particular need for this, please submit a feature request at https:
     filtersCount,
     children
   }) {
-    (0, import_element46.useEffect)(
+    (0, import_element49.useEffect)(
       () => () => {
         buttonRef.current?.focus();
       },
       [buttonRef]
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime85.jsxs)(import_jsx_runtime85.Fragment, { children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime86.jsxs)(import_jsx_runtime86.Fragment, { children: [
       children,
-      !!filtersCount && /* @__PURE__ */ (0, import_jsx_runtime85.jsx)("span", { className: "dataviews-filters-toggle__count", children: filtersCount })
+      !!filtersCount && /* @__PURE__ */ (0, import_jsx_runtime86.jsx)("span", { className: "dataviews-filters-toggle__count", children: filtersCount })
     ] });
   }
   var toggle_default = FiltersToggle;
 
   // packages/dataviews/build-module/components/dataviews-filters/filters-toggled.mjs
-  var import_element47 = __toESM(require_element(), 1);
-  var import_jsx_runtime86 = __toESM(require_jsx_runtime(), 1);
+  var import_element50 = __toESM(require_element(), 1);
+  var import_jsx_runtime87 = __toESM(require_jsx_runtime(), 1);
   function FiltersToggled(props) {
-    const { isShowingFilter } = (0, import_element47.useContext)(dataviews_context_default);
+    const { isShowingFilter } = (0, import_element50.useContext)(dataviews_context_default);
     if (!isShowingFilter) {
       return null;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime86.jsx)(filters_default, { ...props });
+    return /* @__PURE__ */ (0, import_jsx_runtime87.jsx)(filters_default, { ...props });
   }
   var filters_toggled_default = FiltersToggled;
 
   // packages/dataviews/build-module/components/dataviews-layout/index.mjs
-  var import_element48 = __toESM(require_element(), 1);
-  var import_components24 = __toESM(require_components(), 1);
-  var import_i18n34 = __toESM(require_i18n(), 1);
-  var import_jsx_runtime87 = __toESM(require_jsx_runtime(), 1);
+  var import_element51 = __toESM(require_element(), 1);
+  var import_components25 = __toESM(require_components(), 1);
+  var import_i18n35 = __toESM(require_i18n(), 1);
+  var import_jsx_runtime88 = __toESM(require_jsx_runtime(), 1);
   function DataViewsLayout({ className }) {
     const {
       actions = [],
@@ -21859,8 +21845,8 @@ If there's a particular need for this, please submit a feature request at https:
       renderItemLink,
       defaultLayouts: defaultLayouts2,
       containerRef,
-      empty = /* @__PURE__ */ (0, import_jsx_runtime87.jsx)("p", { children: (0, import_i18n34.__)("No results") })
-    } = (0, import_element48.useContext)(dataviews_context_default);
+      empty = /* @__PURE__ */ (0, import_jsx_runtime88.jsx)("p", { children: (0, import_i18n35.__)("No results") })
+    } = (0, import_element51.useContext)(dataviews_context_default);
     const isDelayedInitialLoading = useDelayedLoading(!hasInitiallyLoaded, {
       delay: 200
     });
@@ -21868,12 +21854,12 @@ If there's a particular need for this, please submit a feature request at https:
       if (!isDelayedInitialLoading) {
         return null;
       }
-      return /* @__PURE__ */ (0, import_jsx_runtime87.jsx)("div", { className: "dataviews-loading", children: /* @__PURE__ */ (0, import_jsx_runtime87.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime87.jsx)(import_components24.Spinner, {}) }) });
+      return /* @__PURE__ */ (0, import_jsx_runtime88.jsx)("div", { className: "dataviews-loading", children: /* @__PURE__ */ (0, import_jsx_runtime88.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime88.jsx)(import_components25.Spinner, {}) }) });
     }
     const ViewComponent = VIEW_LAYOUTS.find(
       (v2) => v2.type === view.type && defaultLayouts2[v2.type]
     )?.component;
-    return /* @__PURE__ */ (0, import_jsx_runtime87.jsx)("div", { className: "dataviews-layout__container", ref: containerRef, children: /* @__PURE__ */ (0, import_jsx_runtime87.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime88.jsx)("div", { className: "dataviews-layout__container", ref: containerRef, children: /* @__PURE__ */ (0, import_jsx_runtime88.jsx)(
       ViewComponent,
       {
         className,
@@ -21897,28 +21883,28 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataviews-search/index.mjs
-  var import_i18n35 = __toESM(require_i18n(), 1);
-  var import_element49 = __toESM(require_element(), 1);
-  var import_components25 = __toESM(require_components(), 1);
-  var import_compose9 = __toESM(require_compose(), 1);
-  var import_jsx_runtime88 = __toESM(require_jsx_runtime(), 1);
-  var DataViewsSearch = (0, import_element49.memo)(function Search({ label }) {
-    const { view, onChangeView } = (0, import_element49.useContext)(dataviews_context_default);
-    const [search, setSearch, debouncedSearch] = (0, import_compose9.useDebouncedInput)(
+  var import_i18n36 = __toESM(require_i18n(), 1);
+  var import_element52 = __toESM(require_element(), 1);
+  var import_components26 = __toESM(require_components(), 1);
+  var import_compose10 = __toESM(require_compose(), 1);
+  var import_jsx_runtime89 = __toESM(require_jsx_runtime(), 1);
+  var DataViewsSearch = (0, import_element52.memo)(function Search({ label }) {
+    const { view, onChangeView } = (0, import_element52.useContext)(dataviews_context_default);
+    const [search, setSearch, debouncedSearch] = (0, import_compose10.useDebouncedInput)(
       view.search
     );
-    (0, import_element49.useEffect)(() => {
+    (0, import_element52.useEffect)(() => {
       if (view.search !== debouncedSearch) {
         setSearch(view.search ?? "");
       }
     }, [view.search, setSearch]);
-    const onChangeViewRef = (0, import_element49.useRef)(onChangeView);
-    const viewRef = (0, import_element49.useRef)(view);
-    (0, import_element49.useEffect)(() => {
+    const onChangeViewRef = (0, import_element52.useRef)(onChangeView);
+    const viewRef = (0, import_element52.useRef)(view);
+    (0, import_element52.useEffect)(() => {
       onChangeViewRef.current = onChangeView;
       viewRef.current = view;
     }, [onChangeView, view]);
-    (0, import_element49.useEffect)(() => {
+    (0, import_element52.useEffect)(() => {
       if (debouncedSearch !== viewRef.current?.search) {
         onChangeViewRef.current({
           ...viewRef.current,
@@ -21928,9 +21914,9 @@ If there's a particular need for this, please submit a feature request at https:
         });
       }
     }, [debouncedSearch]);
-    const searchLabel = label || (0, import_i18n35.__)("Search");
-    return /* @__PURE__ */ (0, import_jsx_runtime88.jsx)(
-      import_components25.SearchControl,
+    const searchLabel = label || (0, import_i18n36.__)("Search");
+    return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
+      import_components26.SearchControl,
       {
         className: "dataviews-search",
         onChange: setSearch,
@@ -21944,47 +21930,47 @@ If there's a particular need for this, please submit a feature request at https:
   var dataviews_search_default = DataViewsSearch;
 
   // packages/dataviews/build-module/components/dataviews-view-config/index.mjs
-  var import_components26 = __toESM(require_components(), 1);
-  var import_i18n36 = __toESM(require_i18n(), 1);
-  var import_element50 = __toESM(require_element(), 1);
+  var import_components27 = __toESM(require_components(), 1);
+  var import_i18n37 = __toESM(require_i18n(), 1);
+  var import_element53 = __toESM(require_element(), 1);
   var import_warning = __toESM(require_warning(), 1);
-  var import_compose10 = __toESM(require_compose(), 1);
-  var import_jsx_runtime89 = __toESM(require_jsx_runtime(), 1);
-  var { Menu: Menu5 } = unlock2(import_components26.privateApis);
+  var import_compose11 = __toESM(require_compose(), 1);
+  var import_jsx_runtime90 = __toESM(require_jsx_runtime(), 1);
+  var { Menu: Menu5 } = unlock2(import_components27.privateApis);
   var DATAVIEWS_CONFIG_POPOVER_PROPS = {
     className: "dataviews-config__popover",
     placement: "bottom-end",
     offset: 9
   };
   function ViewTypeMenu() {
-    const { view, onChangeView, defaultLayouts: defaultLayouts2 } = (0, import_element50.useContext)(dataviews_context_default);
+    const { view, onChangeView, defaultLayouts: defaultLayouts2 } = (0, import_element53.useContext)(dataviews_context_default);
     const availableLayouts = Object.keys(defaultLayouts2);
     if (availableLayouts.length <= 1) {
       return null;
     }
     const activeView = VIEW_LAYOUTS.find((v2) => view.type === v2.type);
-    return /* @__PURE__ */ (0, import_jsx_runtime89.jsxs)(Menu5, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime90.jsxs)(Menu5, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
         Menu5.TriggerButton,
         {
-          render: /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-            import_components26.Button,
+          render: /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+            import_components27.Button,
             {
               size: "compact",
               icon: activeView?.icon,
-              label: (0, import_i18n36.__)("Layout")
+              label: (0, import_i18n37.__)("Layout")
             }
           )
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(Menu5.Popover, { children: availableLayouts.map((layout) => {
+      /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(Menu5.Popover, { children: availableLayouts.map((layout) => {
         const config = VIEW_LAYOUTS.find(
           (v2) => v2.type === layout
         );
         if (!config) {
           return null;
         }
-        return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
+        return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
           Menu5.RadioItem,
           {
             value: layout,
@@ -21998,6 +21984,7 @@ If there's a particular need for this, please submit a feature request at https:
                 case "table":
                 case "pickerGrid":
                 case "pickerTable":
+                case "pickerActivity":
                 case "activity":
                   const viewWithoutLayout = { ...view };
                   if ("layout" in viewWithoutLayout) {
@@ -22011,7 +21998,7 @@ If there's a particular need for this, please submit a feature request at https:
               }
               (0, import_warning.default)("Invalid dataview");
             },
-            children: /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(Menu5.ItemLabel, { children: config.label })
+            children: /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(Menu5.ItemLabel, { children: config.label })
           },
           layout
         );
@@ -22019,8 +22006,8 @@ If there's a particular need for this, please submit a feature request at https:
     ] });
   }
   function SortFieldControl() {
-    const { view, fields, onChangeView } = (0, import_element50.useContext)(dataviews_context_default);
-    const orderOptions = (0, import_element50.useMemo)(() => {
+    const { view, fields, onChangeView } = (0, import_element53.useContext)(dataviews_context_default);
+    const orderOptions = (0, import_element53.useMemo)(() => {
       const sortableFields = fields.filter(
         (field) => field.enableSorting !== false
       );
@@ -22031,11 +22018,11 @@ If there's a particular need for this, please submit a feature request at https:
         };
       });
     }, [fields]);
-    return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-      import_components26.SelectControl,
+    return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+      import_components27.SelectControl,
       {
         __next40pxDefaultSize: true,
-        label: (0, import_i18n36.__)("Sort by"),
+        label: (0, import_i18n37.__)("Sort by"),
         value: view.sort?.field,
         options: orderOptions,
         onChange: (value) => {
@@ -22052,7 +22039,7 @@ If there's a particular need for this, please submit a feature request at https:
     );
   }
   function SortDirectionControl() {
-    const { view, fields, onChangeView } = (0, import_element50.useContext)(dataviews_context_default);
+    const { view, fields, onChangeView } = (0, import_element53.useContext)(dataviews_context_default);
     const sortableFields = fields.filter(
       (field) => field.enableSorting !== false
     );
@@ -22063,13 +22050,13 @@ If there's a particular need for this, please submit a feature request at https:
     if (!value && view.sort?.field) {
       value = "desc";
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-      import_components26.__experimentalToggleGroupControl,
+    return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+      import_components27.__experimentalToggleGroupControl,
       {
         className: "dataviews-view-config__sort-direction",
         __next40pxDefaultSize: true,
         isBlock: true,
-        label: (0, import_i18n36.__)("Order"),
+        label: (0, import_i18n37.__)("Order"),
         value,
         onChange: (newDirection) => {
           if (newDirection === "asc" || newDirection === "desc") {
@@ -22089,8 +22076,8 @@ If there's a particular need for this, please submit a feature request at https:
           (0, import_warning.default)("Invalid direction");
         },
         children: SORTING_DIRECTIONS.map((direction) => {
-          return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-            import_components26.__experimentalToggleGroupControlOptionIcon,
+          return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+            import_components27.__experimentalToggleGroupControlOptionIcon,
             {
               value: direction,
               icon: sortIcons[direction],
@@ -22103,17 +22090,17 @@ If there's a particular need for this, please submit a feature request at https:
     );
   }
   function ItemsPerPageControl() {
-    const { view, config, onChangeView } = (0, import_element50.useContext)(dataviews_context_default);
+    const { view, config, onChangeView } = (0, import_element53.useContext)(dataviews_context_default);
     const { infiniteScrollEnabled } = view;
     if (!config || !config.perPageSizes || config.perPageSizes.length < 2 || config.perPageSizes.length > 6 || infiniteScrollEnabled) {
       return null;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-      import_components26.__experimentalToggleGroupControl,
+    return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+      import_components27.__experimentalToggleGroupControl,
       {
         __next40pxDefaultSize: true,
         isBlock: true,
-        label: (0, import_i18n36.__)("Items per page"),
+        label: (0, import_i18n37.__)("Items per page"),
         value: view.perPage || 10,
         disabled: !view?.sort?.field,
         onChange: (newItemsPerPage) => {
@@ -22125,8 +22112,8 @@ If there's a particular need for this, please submit a feature request at https:
           });
         },
         children: config.perPageSizes.map((value) => {
-          return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-            import_components26.__experimentalToggleGroupControlOption,
+          return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+            import_components27.__experimentalToggleGroupControlOption,
             {
               value,
               label: value.toString()
@@ -22138,13 +22125,13 @@ If there's a particular need for this, please submit a feature request at https:
     );
   }
   function ResetViewButton() {
-    const { onReset } = (0, import_element50.useContext)(dataviews_context_default);
+    const { onReset } = (0, import_element53.useContext)(dataviews_context_default);
     if (onReset === void 0) {
       return null;
     }
     const isDisabled = onReset === false;
-    return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-      import_components26.Button,
+    return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+      import_components27.Button,
       {
         variant: "tertiary",
         size: "compact",
@@ -22156,13 +22143,13 @@ If there's a particular need for this, please submit a feature request at https:
             onReset();
           }
         },
-        children: (0, import_i18n36.__)("Reset view")
+        children: (0, import_i18n37.__)("Reset view")
       }
     );
   }
   function DataviewsViewConfigDropdown() {
-    const { view, onReset } = (0, import_element50.useContext)(dataviews_context_default);
-    const popoverId = (0, import_compose10.useInstanceId)(
+    const { view, onReset } = (0, import_element53.useContext)(dataviews_context_default);
+    const popoverId = (0, import_compose11.useInstanceId)(
       _DataViewsViewConfig,
       "dataviews-view-config-dropdown"
     );
@@ -22170,8 +22157,8 @@ If there's a particular need for this, please submit a feature request at https:
       (layout) => layout.type === view.type
     );
     const isModified = typeof onReset === "function";
-    return /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-      import_components26.Dropdown,
+    return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+      import_components27.Dropdown,
       {
         expandOnMobile: true,
         popoverProps: {
@@ -22179,13 +22166,13 @@ If there's a particular need for this, please submit a feature request at https:
           id: popoverId
         },
         renderToggle: ({ onToggle, isOpen }) => {
-          return /* @__PURE__ */ (0, import_jsx_runtime89.jsxs)("div", { className: "dataviews-view-config__toggle-wrapper", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-              import_components26.Button,
+          return /* @__PURE__ */ (0, import_jsx_runtime90.jsxs)("div", { className: "dataviews-view-config__toggle-wrapper", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+              import_components27.Button,
               {
                 size: "compact",
                 icon: cog_default,
-                label: (0, import_i18n36._x)(
+                label: (0, import_i18n37._x)(
                   "View options",
                   "View is used as a noun"
                 ),
@@ -22194,22 +22181,22 @@ If there's a particular need for this, please submit a feature request at https:
                 "aria-controls": popoverId
               }
             ),
-            isModified && /* @__PURE__ */ (0, import_jsx_runtime89.jsx)("span", { className: "dataviews-view-config__modified-indicator" })
+            isModified && /* @__PURE__ */ (0, import_jsx_runtime90.jsx)("span", { className: "dataviews-view-config__modified-indicator" })
           ] });
         },
-        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-          import_components26.__experimentalDropdownContentWrapper,
+        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+          import_components27.__experimentalDropdownContentWrapper,
           {
             paddingSize: "medium",
             className: "dataviews-config__popover-content-wrapper",
-            children: /* @__PURE__ */ (0, import_jsx_runtime89.jsxs)(
+            children: /* @__PURE__ */ (0, import_jsx_runtime90.jsxs)(
               Stack,
               {
                 direction: "column",
                 className: "dataviews-view-config",
                 gap: "xl",
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime89.jsxs)(
+                  /* @__PURE__ */ (0, import_jsx_runtime90.jsxs)(
                     Stack,
                     {
                       direction: "row",
@@ -22217,34 +22204,34 @@ If there's a particular need for this, please submit a feature request at https:
                       align: "center",
                       className: "dataviews-view-config__header",
                       children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(
-                          import_components26.__experimentalHeading,
+                        /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+                          import_components27.__experimentalHeading,
                           {
                             level: 2,
                             className: "dataviews-settings-section__title",
-                            children: (0, import_i18n36.__)("Appearance")
+                            children: (0, import_i18n37.__)("Appearance")
                           }
                         ),
-                        /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(ResetViewButton, {})
+                        /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(ResetViewButton, {})
                       ]
                     }
                   ),
-                  /* @__PURE__ */ (0, import_jsx_runtime89.jsxs)(Stack, { direction: "column", gap: "lg", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime89.jsxs)(
+                  /* @__PURE__ */ (0, import_jsx_runtime90.jsxs)(Stack, { direction: "column", gap: "lg", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime90.jsxs)(
                       Stack,
                       {
                         direction: "row",
                         gap: "sm",
                         className: "dataviews-view-config__sort-controls",
                         children: [
-                          /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(SortFieldControl, {}),
-                          /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(SortDirectionControl, {})
+                          /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(SortFieldControl, {}),
+                          /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(SortDirectionControl, {})
                         ]
                       }
                     ),
-                    !!activeLayout?.viewConfigOptions && /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(activeLayout.viewConfigOptions, {}),
-                    /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(ItemsPerPageControl, {}),
-                    /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(PropertiesSection, {})
+                    !!activeLayout?.viewConfigOptions && /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(activeLayout.viewConfigOptions, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(ItemsPerPageControl, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(PropertiesSection, {})
                   ] })
                 ]
               }
@@ -22255,17 +22242,17 @@ If there's a particular need for this, please submit a feature request at https:
     );
   }
   function _DataViewsViewConfig() {
-    return /* @__PURE__ */ (0, import_jsx_runtime89.jsxs)(import_jsx_runtime89.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(ViewTypeMenu, {}),
-      /* @__PURE__ */ (0, import_jsx_runtime89.jsx)(DataviewsViewConfigDropdown, {})
+    return /* @__PURE__ */ (0, import_jsx_runtime90.jsxs)(import_jsx_runtime90.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(ViewTypeMenu, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(DataviewsViewConfigDropdown, {})
     ] });
   }
-  var DataViewsViewConfig = (0, import_element50.memo)(_DataViewsViewConfig);
+  var DataViewsViewConfig = (0, import_element53.memo)(_DataViewsViewConfig);
   var dataviews_view_config_default = DataViewsViewConfig;
 
   // packages/dataviews/build-module/components/dataform-controls/checkbox.mjs
-  var import_components27 = __toESM(require_components(), 1);
-  var import_element51 = __toESM(require_element(), 1);
+  var import_components28 = __toESM(require_components(), 1);
+  var import_element54 = __toESM(require_element(), 1);
 
   // packages/dataviews/build-module/components/dataform-controls/utils/get-custom-validity.mjs
   function getCustomValidity(isValid2, validity) {
@@ -22291,8 +22278,8 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/checkbox.mjs
-  var import_jsx_runtime90 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedCheckboxControl } = unlock2(import_components27.privateApis);
+  var import_jsx_runtime91 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedCheckboxControl } = unlock2(import_components28.privateApis);
   function Checkbox({
     field,
     onChange,
@@ -22303,12 +22290,12 @@ If there's a particular need for this, please submit a feature request at https:
   }) {
     const { getValue, setValue, label, description, isValid: isValid2 } = field;
     const disabled2 = field.isDisabled({ item: data, field });
-    const onChangeControl = (0, import_element51.useCallback)(() => {
+    const onChangeControl = (0, import_element54.useCallback)(() => {
       onChange(
         setValue({ item: data, value: !getValue({ item: data }) })
       );
     }, [data, getValue, onChange, setValue]);
-    return /* @__PURE__ */ (0, import_jsx_runtime90.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime91.jsx)(
       ValidatedCheckboxControl,
       {
         required: !!field.isValid?.required,
@@ -22325,10 +22312,10 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/combobox.mjs
-  var import_components28 = __toESM(require_components(), 1);
-  var import_element52 = __toESM(require_element(), 1);
-  var import_jsx_runtime91 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedComboboxControl } = unlock2(import_components28.privateApis);
+  var import_components29 = __toESM(require_components(), 1);
+  var import_element55 = __toESM(require_element(), 1);
+  var import_jsx_runtime92 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedComboboxControl } = unlock2(import_components29.privateApis);
   function Combobox3({
     data,
     field,
@@ -22338,7 +22325,7 @@ If there's a particular need for this, please submit a feature request at https:
   }) {
     const { label, description, placeholder, getValue, setValue, isValid: isValid2 } = field;
     const value = getValue({ item: data }) ?? "";
-    const onChangeControl = (0, import_element52.useCallback)(
+    const onChangeControl = (0, import_element55.useCallback)(
       (newValue) => onChange(setValue({ item: data, value: newValue ?? "" })),
       [data, onChange, setValue]
     );
@@ -22347,9 +22334,9 @@ If there's a particular need for this, please submit a feature request at https:
       getElements: field.getElements
     });
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime91.jsx)(import_components28.Spinner, {});
+      return /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(import_components29.Spinner, {});
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime91.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(
       ValidatedComboboxControl,
       {
         required: !!field.isValid?.required,
@@ -22368,28 +22355,28 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/datetime.mjs
-  var import_components30 = __toESM(require_components(), 1);
-  var import_element55 = __toESM(require_element(), 1);
-  var import_i18n38 = __toESM(require_i18n(), 1);
+  var import_components31 = __toESM(require_components(), 1);
+  var import_element58 = __toESM(require_element(), 1);
+  var import_i18n39 = __toESM(require_i18n(), 1);
   var import_date3 = __toESM(require_date(), 1);
 
   // packages/dataviews/build-module/components/dataform-controls/utils/relative-date-control.mjs
-  var import_components29 = __toESM(require_components(), 1);
-  var import_element53 = __toESM(require_element(), 1);
-  var import_i18n37 = __toESM(require_i18n(), 1);
-  var import_jsx_runtime92 = __toESM(require_jsx_runtime(), 1);
+  var import_components30 = __toESM(require_components(), 1);
+  var import_element56 = __toESM(require_element(), 1);
+  var import_i18n38 = __toESM(require_i18n(), 1);
+  var import_jsx_runtime93 = __toESM(require_jsx_runtime(), 1);
   var TIME_UNITS_OPTIONS = {
     [OPERATOR_IN_THE_PAST]: [
-      { value: "days", label: (0, import_i18n37.__)("Days") },
-      { value: "weeks", label: (0, import_i18n37.__)("Weeks") },
-      { value: "months", label: (0, import_i18n37.__)("Months") },
-      { value: "years", label: (0, import_i18n37.__)("Years") }
+      { value: "days", label: (0, import_i18n38.__)("Days") },
+      { value: "weeks", label: (0, import_i18n38.__)("Weeks") },
+      { value: "months", label: (0, import_i18n38.__)("Months") },
+      { value: "years", label: (0, import_i18n38.__)("Years") }
     ],
     [OPERATOR_OVER]: [
-      { value: "days", label: (0, import_i18n37.__)("Days ago") },
-      { value: "weeks", label: (0, import_i18n37.__)("Weeks ago") },
-      { value: "months", label: (0, import_i18n37.__)("Months ago") },
-      { value: "years", label: (0, import_i18n37.__)("Years ago") }
+      { value: "days", label: (0, import_i18n38.__)("Days ago") },
+      { value: "weeks", label: (0, import_i18n38.__)("Weeks ago") },
+      { value: "months", label: (0, import_i18n38.__)("Months ago") },
+      { value: "years", label: (0, import_i18n38.__)("Years ago") }
     ]
   };
   function RelativeDateControl({
@@ -22405,7 +22392,7 @@ If there's a particular need for this, please submit a feature request at https:
     const disabled2 = field.isDisabled({ item: data, field });
     const fieldValue = getValue({ item: data });
     const { value: relValue = "", unit = options[0].value } = fieldValue && typeof fieldValue === "object" ? fieldValue : {};
-    const onChangeValue = (0, import_element53.useCallback)(
+    const onChangeValue = (0, import_element56.useCallback)(
       (newValue) => onChange(
         setValue({
           item: data,
@@ -22414,7 +22401,7 @@ If there's a particular need for this, please submit a feature request at https:
       ),
       [onChange, setValue, data, unit]
     );
-    const onChangeUnit = (0, import_element53.useCallback)(
+    const onChangeUnit = (0, import_element56.useCallback)(
       (newUnit) => onChange(
         setValue({
           item: data,
@@ -22423,17 +22410,17 @@ If there's a particular need for this, please submit a feature request at https:
       ),
       [onChange, setValue, data, relValue]
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(
-      import_components29.BaseControl,
+    return /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
+      import_components30.BaseControl,
       {
         id,
         className: clsx_default(className, "dataviews-controls__relative-date"),
         label,
         hideLabelFromVision,
         help: description,
-        children: /* @__PURE__ */ (0, import_jsx_runtime92.jsxs)(Stack, { direction: "row", gap: "sm", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(
-            import_components29.__experimentalNumberControl,
+        children: /* @__PURE__ */ (0, import_jsx_runtime93.jsxs)(Stack, { direction: "row", gap: "sm", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
+            import_components30.__experimentalNumberControl,
             {
               __next40pxDefaultSize: true,
               className: "dataviews-controls__relative-date-number",
@@ -22445,12 +22432,12 @@ If there's a particular need for this, please submit a feature request at https:
               disabled: disabled2
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(
-            import_components29.SelectControl,
+          /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
+            import_components30.SelectControl,
             {
               className: "dataviews-controls__relative-date-unit",
               __next40pxDefaultSize: true,
-              label: (0, import_i18n37.__)("Unit"),
+              label: (0, import_i18n38.__)("Unit"),
               value: unit,
               options,
               onChange: onChangeUnit,
@@ -22464,11 +22451,11 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/utils/use-disabled-date-matchers.mjs
-  var import_element54 = __toESM(require_element(), 1);
+  var import_element57 = __toESM(require_element(), 1);
   function useDisabledDateMatchers(isValid2, parseDateFn) {
     const minConstraint = typeof isValid2.min?.constraint === "string" ? isValid2.min.constraint : void 0;
     const maxConstraint = typeof isValid2.max?.constraint === "string" ? isValid2.max.constraint : void 0;
-    const disabledMatchers = (0, import_element54.useMemo)(() => {
+    const disabledMatchers = (0, import_element57.useMemo)(() => {
       const matchers = [];
       if (minConstraint) {
         const minDate = parseDateFn(minConstraint);
@@ -22498,8 +22485,8 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/datetime.mjs
-  var import_jsx_runtime93 = __toESM(require_jsx_runtime(), 1);
-  var { DateCalendar, ValidatedInputControl } = unlock2(import_components30.privateApis);
+  var import_jsx_runtime94 = __toESM(require_jsx_runtime(), 1);
+  var { DateCalendar, ValidatedInputControl } = unlock2(import_components31.privateApis);
   var formatDateTime = (value) => {
     if (!value) {
       return "";
@@ -22520,26 +22507,26 @@ If there's a particular need for this, please submit a feature request at https:
     const disabled2 = field.isDisabled({ item: data, field });
     const fieldValue = getValue({ item: data });
     const value = typeof fieldValue === "string" ? fieldValue : void 0;
-    const [calendarMonth, setCalendarMonth] = (0, import_element55.useState)(() => {
+    const [calendarMonth, setCalendarMonth] = (0, import_element58.useState)(() => {
       const parsedDate = parseDateTime(value);
       return parsedDate || /* @__PURE__ */ new Date();
     });
-    const inputControlRef = (0, import_element55.useRef)(null);
-    const validationTimeoutRef = (0, import_element55.useRef)(void 0);
-    const previousFocusRef = (0, import_element55.useRef)(null);
+    const inputControlRef = (0, import_element58.useRef)(null);
+    const validationTimeoutRef = (0, import_element58.useRef)(void 0);
+    const previousFocusRef = (0, import_element58.useRef)(null);
     const { minConstraint, maxConstraint, disabledMatchers } = useDisabledDateMatchers(isValid2, parseDateTime);
-    const onChangeCallback = (0, import_element55.useCallback)(
+    const onChangeCallback = (0, import_element58.useCallback)(
       (newValue) => onChange(setValue({ item: data, value: newValue })),
       [data, onChange, setValue]
     );
-    (0, import_element55.useEffect)(() => {
+    (0, import_element58.useEffect)(() => {
       return () => {
         if (validationTimeoutRef.current) {
           clearTimeout(validationTimeoutRef.current);
         }
       };
     }, []);
-    const onSelectDate = (0, import_element55.useCallback)(
+    const onSelectDate = (0, import_element58.useCallback)(
       (newDate) => {
         let dateTimeValue;
         if (newDate) {
@@ -22573,7 +22560,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [onChangeCallback, value]
     );
-    const handleManualDateTimeChange = (0, import_element55.useCallback)(
+    const handleManualDateTimeChange = (0, import_element58.useCallback)(
       (newValue) => {
         if (newValue) {
           const dateTime = (0, import_date3.getDate)(newValue);
@@ -22595,19 +22582,19 @@ If there's a particular need for this, please submit a feature request at https:
     } = (0, import_date3.getSettings)();
     let displayLabel = label;
     if (isValid2?.required && !markWhenOptional && !hideLabelFromVision) {
-      displayLabel = `${label} (${(0, import_i18n38.__)("Required")})`;
+      displayLabel = `${label} (${(0, import_i18n39.__)("Required")})`;
     } else if (!isValid2?.required && markWhenOptional && !hideLabelFromVision) {
-      displayLabel = `${label} (${(0, import_i18n38.__)("Optional")})`;
+      displayLabel = `${label} (${(0, import_i18n39.__)("Optional")})`;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
-      import_components30.BaseControl,
+    return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+      import_components31.BaseControl,
       {
         id,
         label: displayLabel,
         help: description,
         hideLabelFromVision,
-        children: /* @__PURE__ */ (0, import_jsx_runtime93.jsxs)(Stack, { direction: "column", gap: "lg", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
+        children: /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)(Stack, { direction: "column", gap: "lg", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
             ValidatedInputControl,
             {
               ref: inputControlRef,
@@ -22615,7 +22602,7 @@ If there's a particular need for this, please submit a feature request at https:
               required: !!isValid2?.required,
               customValidity: getCustomValidity(isValid2, validity),
               type: "datetime-local",
-              label: (0, import_i18n38.__)("Date time"),
+              label: (0, import_i18n39.__)("Date time"),
               hideLabelFromVision: true,
               value: formatDateTime(value),
               onChange: handleManualDateTimeChange,
@@ -22624,7 +22611,7 @@ If there's a particular need for this, please submit a feature request at https:
               max: maxConstraint ? formatDateTime(maxConstraint) : void 0
             }
           ),
-          !compact && /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
+          !compact && /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
             DateCalendar,
             {
               style: { width: "100%" },
@@ -22652,7 +22639,7 @@ If there's a particular need for this, please submit a feature request at https:
     config
   }) {
     if (operator === OPERATOR_IN_THE_PAST || operator === OPERATOR_OVER) {
-      return /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
         RelativeDateControl,
         {
           className: "dataviews-controls__datetime",
@@ -22664,7 +22651,7 @@ If there's a particular need for this, please submit a feature request at https:
         }
       );
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
       CalendarDateTimeControl,
       {
         data,
@@ -22679,21 +22666,21 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/date.mjs
-  var import_components31 = __toESM(require_components(), 1);
-  var import_element56 = __toESM(require_element(), 1);
-  var import_i18n39 = __toESM(require_i18n(), 1);
+  var import_components32 = __toESM(require_components(), 1);
+  var import_element59 = __toESM(require_element(), 1);
+  var import_i18n40 = __toESM(require_i18n(), 1);
   var import_date4 = __toESM(require_date(), 1);
-  var import_jsx_runtime94 = __toESM(require_jsx_runtime(), 1);
-  var { DateCalendar: DateCalendar2, DateRangeCalendar } = unlock2(import_components31.privateApis);
+  var import_jsx_runtime95 = __toESM(require_jsx_runtime(), 1);
+  var { DateCalendar: DateCalendar2, DateRangeCalendar } = unlock2(import_components32.privateApis);
   var DATE_PRESETS = [
     {
       id: "today",
-      label: (0, import_i18n39.__)("Today"),
+      label: (0, import_i18n40.__)("Today"),
       getValue: () => (0, import_date4.getDate)(null)
     },
     {
       id: "yesterday",
-      label: (0, import_i18n39.__)("Yesterday"),
+      label: (0, import_i18n40.__)("Yesterday"),
       getValue: () => {
         const today = (0, import_date4.getDate)(null);
         return subDays(today, 1);
@@ -22701,7 +22688,7 @@ If there's a particular need for this, please submit a feature request at https:
     },
     {
       id: "past-week",
-      label: (0, import_i18n39.__)("Past week"),
+      label: (0, import_i18n40.__)("Past week"),
       getValue: () => {
         const today = (0, import_date4.getDate)(null);
         return subDays(today, 7);
@@ -22709,7 +22696,7 @@ If there's a particular need for this, please submit a feature request at https:
     },
     {
       id: "past-month",
-      label: (0, import_i18n39.__)("Past month"),
+      label: (0, import_i18n40.__)("Past month"),
       getValue: () => {
         const today = (0, import_date4.getDate)(null);
         return subMonths(today, 1);
@@ -22719,7 +22706,7 @@ If there's a particular need for this, please submit a feature request at https:
   var DATE_RANGE_PRESETS = [
     {
       id: "last-7-days",
-      label: (0, import_i18n39.__)("Last 7 days"),
+      label: (0, import_i18n40.__)("Last 7 days"),
       getValue: () => {
         const today = (0, import_date4.getDate)(null);
         return [subDays(today, 7), today];
@@ -22727,7 +22714,7 @@ If there's a particular need for this, please submit a feature request at https:
     },
     {
       id: "last-30-days",
-      label: (0, import_i18n39.__)("Last 30 days"),
+      label: (0, import_i18n40.__)("Last 30 days"),
       getValue: () => {
         const today = (0, import_date4.getDate)(null);
         return [subDays(today, 30), today];
@@ -22735,7 +22722,7 @@ If there's a particular need for this, please submit a feature request at https:
     },
     {
       id: "month-to-date",
-      label: (0, import_i18n39.__)("Month to date"),
+      label: (0, import_i18n40.__)("Month to date"),
       getValue: () => {
         const today = (0, import_date4.getDate)(null);
         return [startOfMonth(today), today];
@@ -22743,7 +22730,7 @@ If there's a particular need for this, please submit a feature request at https:
     },
     {
       id: "last-year",
-      label: (0, import_i18n39.__)("Last year"),
+      label: (0, import_i18n40.__)("Last year"),
       getValue: () => {
         const today = (0, import_date4.getDate)(null);
         return [subYears(today, 1), today];
@@ -22751,7 +22738,7 @@ If there's a particular need for this, please submit a feature request at https:
     },
     {
       id: "year-to-date",
-      label: (0, import_i18n39.__)("Year to date"),
+      label: (0, import_i18n40.__)("Year to date"),
       getValue: () => {
         const today = (0, import_date4.getDate)(null);
         return [startOfYear(today), today];
@@ -22780,8 +22767,8 @@ If there's a particular need for this, please submit a feature request at https:
     children
   }) {
     const { isValid: isValid2 } = field;
-    const [customValidity, setCustomValidity] = (0, import_element56.useState)(void 0);
-    const validateRefs = (0, import_element56.useCallback)(() => {
+    const [customValidity, setCustomValidity] = (0, import_element59.useState)(void 0);
+    const validateRefs = (0, import_element59.useCallback)(() => {
       const refs = Array.isArray(inputRefs) ? inputRefs : [inputRefs];
       for (const ref of refs) {
         const input = ref.current;
@@ -22795,7 +22782,7 @@ If there's a particular need for this, please submit a feature request at https:
       }
       setCustomValidity(void 0);
     }, [inputRefs]);
-    (0, import_element56.useEffect)(() => {
+    (0, import_element59.useEffect)(() => {
       const refs = Array.isArray(inputRefs) ? inputRefs : [inputRefs];
       const result = validity ? getCustomValidity(isValid2, validity) : void 0;
       for (const ref of refs) {
@@ -22807,7 +22794,7 @@ If there's a particular need for this, please submit a feature request at https:
         }
       }
     }, [inputRefs, isValid2, validity]);
-    (0, import_element56.useEffect)(() => {
+    (0, import_element59.useEffect)(() => {
       const refs = Array.isArray(inputRefs) ? inputRefs : [inputRefs];
       const handleInvalid = (event) => {
         event.preventDefault();
@@ -22822,7 +22809,7 @@ If there's a particular need for this, please submit a feature request at https:
         }
       };
     }, [inputRefs, setIsTouched]);
-    (0, import_element56.useEffect)(() => {
+    (0, import_element59.useEffect)(() => {
       if (!isTouched) {
         return;
       }
@@ -22841,9 +22828,9 @@ If there's a particular need for this, please submit a feature request at https:
         setIsTouched(true);
       }
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)("div", { onBlur, children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime95.jsxs)("div", { onBlur, children: [
       children,
-      /* @__PURE__ */ (0, import_jsx_runtime94.jsx)("div", { "aria-live": "polite", children: customValidity && /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime95.jsx)("div", { "aria-live": "polite", children: customValidity && /* @__PURE__ */ (0, import_jsx_runtime95.jsxs)(
         "p",
         {
           className: clsx_default(
@@ -22851,8 +22838,8 @@ If there's a particular need for this, please submit a feature request at https:
             customValidity.type === "invalid" ? "is-invalid" : void 0
           ),
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-              import_components31.Icon,
+            /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+              import_components32.Icon,
               {
                 className: "components-validated-control__indicator-icon",
                 icon: error_default,
@@ -22884,24 +22871,24 @@ If there's a particular need for this, please submit a feature request at https:
       format: fieldFormat
     } = field;
     const disabled2 = field.isDisabled({ item: data, field });
-    const [selectedPresetId, setSelectedPresetId] = (0, import_element56.useState)(
+    const [selectedPresetId, setSelectedPresetId] = (0, import_element59.useState)(
       null
     );
     const weekStartsOn = fieldFormat.weekStartsOn ?? (0, import_date4.getSettings)().l10n.startOfWeek;
     const fieldValue = getValue({ item: data });
     const value = typeof fieldValue === "string" ? fieldValue : void 0;
-    const [calendarMonth, setCalendarMonth] = (0, import_element56.useState)(() => {
+    const [calendarMonth, setCalendarMonth] = (0, import_element59.useState)(() => {
       const parsedDate = parseDate(value);
       return parsedDate || /* @__PURE__ */ new Date();
     });
-    const [isTouched, setIsTouched] = (0, import_element56.useState)(false);
-    const validityTargetRef = (0, import_element56.useRef)(null);
+    const [isTouched, setIsTouched] = (0, import_element59.useState)(false);
+    const validityTargetRef = (0, import_element59.useRef)(null);
     const { minConstraint, maxConstraint, disabledMatchers } = useDisabledDateMatchers(isValid2, parseDate);
-    const onChangeCallback = (0, import_element56.useCallback)(
+    const onChangeCallback = (0, import_element59.useCallback)(
       (newValue) => onChange(setValue({ item: data, value: newValue })),
       [data, onChange, setValue]
     );
-    const onSelectDate = (0, import_element56.useCallback)(
+    const onSelectDate = (0, import_element59.useCallback)(
       (newDate) => {
         const dateValue = newDate ? format(newDate, "yyyy-MM-dd") : void 0;
         onChangeCallback(dateValue);
@@ -22910,7 +22897,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [onChangeCallback]
     );
-    const handlePresetClick = (0, import_element56.useCallback)(
+    const handlePresetClick = (0, import_element59.useCallback)(
       (preset) => {
         const presetDate = preset.getValue();
         const dateValue = formatDate(presetDate);
@@ -22921,7 +22908,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [onChangeCallback]
     );
-    const handleManualDateChange = (0, import_element56.useCallback)(
+    const handleManualDateChange = (0, import_element59.useCallback)(
       (newValue) => {
         onChangeCallback(newValue);
         if (newValue) {
@@ -22940,11 +22927,11 @@ If there's a particular need for this, please submit a feature request at https:
     } = (0, import_date4.getSettings)();
     let displayLabel = label;
     if (isValid2?.required && !markWhenOptional) {
-      displayLabel = `${label} (${(0, import_i18n39.__)("Required")})`;
+      displayLabel = `${label} (${(0, import_i18n40.__)("Required")})`;
     } else if (!isValid2?.required && markWhenOptional) {
-      displayLabel = `${label} (${(0, import_i18n39.__)("Optional")})`;
+      displayLabel = `${label} (${(0, import_i18n40.__)("Optional")})`;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
       ValidatedDateControl,
       {
         field,
@@ -22952,16 +22939,16 @@ If there's a particular need for this, please submit a feature request at https:
         inputRefs: validityTargetRef,
         isTouched,
         setIsTouched,
-        children: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-          import_components31.BaseControl,
+        children: /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+          import_components32.BaseControl,
           {
             id,
             className: "dataviews-controls__date",
             label: displayLabel,
             help: description,
             hideLabelFromVision,
-            children: /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)(Stack, { direction: "column", gap: "lg", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)(
+            children: /* @__PURE__ */ (0, import_jsx_runtime95.jsxs)(Stack, { direction: "column", gap: "lg", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime95.jsxs)(
                 Stack,
                 {
                   direction: "row",
@@ -22971,8 +22958,8 @@ If there's a particular need for this, please submit a feature request at https:
                   children: [
                     DATE_PRESETS.map((preset) => {
                       const isSelected2 = selectedPresetId === preset.id;
-                      return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-                        import_components31.Button,
+                      return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+                        import_components32.Button,
                         {
                           className: "dataviews-controls__date-preset",
                           variant: "tertiary",
@@ -22986,8 +22973,8 @@ If there's a particular need for this, please submit a feature request at https:
                         preset.id
                       );
                     }),
-                    /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-                      import_components31.Button,
+                    /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+                      import_components32.Button,
                       {
                         className: "dataviews-controls__date-preset",
                         variant: "tertiary",
@@ -22995,19 +22982,19 @@ If there's a particular need for this, please submit a feature request at https:
                         size: "small",
                         disabled: !!selectedPresetId || disabled2,
                         accessibleWhenDisabled: true,
-                        children: (0, import_i18n39.__)("Custom")
+                        children: (0, import_i18n40.__)("Custom")
                       }
                     )
                   ]
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-                import_components31.__experimentalInputControl,
+              /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+                import_components32.__experimentalInputControl,
                 {
                   __next40pxDefaultSize: true,
                   ref: validityTargetRef,
                   type: "date",
-                  label: (0, import_i18n39.__)("Date"),
+                  label: (0, import_i18n40.__)("Date"),
                   hideLabelFromVision: true,
                   value,
                   onChange: handleManualDateChange,
@@ -23017,7 +23004,7 @@ If there's a particular need for this, please submit a feature request at https:
                   max: maxConstraint
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
                 DateCalendar2,
                 {
                   style: { width: "100%" },
@@ -23062,7 +23049,7 @@ If there's a particular need for this, please submit a feature request at https:
     }
     const weekStartsOn = fieldFormat.weekStartsOn ?? (0, import_date4.getSettings)().l10n.startOfWeek;
     const { minConstraint, maxConstraint, disabledMatchers } = useDisabledDateMatchers(isValid2, parseDate);
-    const onChangeCallback = (0, import_element56.useCallback)(
+    const onChangeCallback = (0, import_element59.useCallback)(
       (newValue) => {
         onChange(
           setValue({
@@ -23073,10 +23060,10 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [data, onChange, setValue]
     );
-    const [selectedPresetId, setSelectedPresetId] = (0, import_element56.useState)(
+    const [selectedPresetId, setSelectedPresetId] = (0, import_element59.useState)(
       null
     );
-    const selectedRange = (0, import_element56.useMemo)(() => {
+    const selectedRange = (0, import_element59.useMemo)(() => {
       if (!value) {
         return { from: void 0, to: void 0 };
       }
@@ -23086,13 +23073,13 @@ If there's a particular need for this, please submit a feature request at https:
         to: parseDate(to) || void 0
       };
     }, [value]);
-    const [calendarMonth, setCalendarMonth] = (0, import_element56.useState)(() => {
+    const [calendarMonth, setCalendarMonth] = (0, import_element59.useState)(() => {
       return selectedRange.from || /* @__PURE__ */ new Date();
     });
-    const [isTouched, setIsTouched] = (0, import_element56.useState)(false);
-    const fromInputRef = (0, import_element56.useRef)(null);
-    const toInputRef = (0, import_element56.useRef)(null);
-    const updateDateRange = (0, import_element56.useCallback)(
+    const [isTouched, setIsTouched] = (0, import_element59.useState)(false);
+    const fromInputRef = (0, import_element59.useRef)(null);
+    const toInputRef = (0, import_element59.useRef)(null);
+    const updateDateRange = (0, import_element59.useCallback)(
       (fromDate, toDate2) => {
         if (fromDate && toDate2) {
           onChangeCallback([
@@ -23105,7 +23092,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [onChangeCallback]
     );
-    const onSelectCalendarRange = (0, import_element56.useCallback)(
+    const onSelectCalendarRange = (0, import_element59.useCallback)(
       (newRange) => {
         updateDateRange(newRange?.from, newRange?.to);
         setSelectedPresetId(null);
@@ -23113,7 +23100,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [updateDateRange]
     );
-    const handlePresetClick = (0, import_element56.useCallback)(
+    const handlePresetClick = (0, import_element59.useCallback)(
       (preset) => {
         const [startDate, endDate] = preset.getValue();
         setCalendarMonth(startDate);
@@ -23123,7 +23110,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [updateDateRange]
     );
-    const handleManualDateChange = (0, import_element56.useCallback)(
+    const handleManualDateChange = (0, import_element59.useCallback)(
       (fromOrTo, newValue) => {
         const [currentFrom, currentTo] = value || [
           void 0,
@@ -23146,11 +23133,11 @@ If there's a particular need for this, please submit a feature request at https:
     const { timezone } = (0, import_date4.getSettings)();
     let displayLabel = label;
     if (field.isValid?.required && !markWhenOptional) {
-      displayLabel = `${label} (${(0, import_i18n39.__)("Required")})`;
+      displayLabel = `${label} (${(0, import_i18n40.__)("Required")})`;
     } else if (!field.isValid?.required && markWhenOptional) {
-      displayLabel = `${label} (${(0, import_i18n39.__)("Optional")})`;
+      displayLabel = `${label} (${(0, import_i18n40.__)("Optional")})`;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
       ValidatedDateControl,
       {
         field,
@@ -23158,16 +23145,16 @@ If there's a particular need for this, please submit a feature request at https:
         inputRefs: [fromInputRef, toInputRef],
         isTouched,
         setIsTouched,
-        children: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-          import_components31.BaseControl,
+        children: /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+          import_components32.BaseControl,
           {
             id,
             className: "dataviews-controls__date",
             label: displayLabel,
             help: description,
             hideLabelFromVision,
-            children: /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)(Stack, { direction: "column", gap: "lg", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)(
+            children: /* @__PURE__ */ (0, import_jsx_runtime95.jsxs)(Stack, { direction: "column", gap: "lg", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime95.jsxs)(
                 Stack,
                 {
                   direction: "row",
@@ -23177,8 +23164,8 @@ If there's a particular need for this, please submit a feature request at https:
                   children: [
                     DATE_RANGE_PRESETS.map((preset) => {
                       const isSelected2 = selectedPresetId === preset.id;
-                      return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-                        import_components31.Button,
+                      return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+                        import_components32.Button,
                         {
                           className: "dataviews-controls__date-preset",
                           variant: "tertiary",
@@ -23192,8 +23179,8 @@ If there's a particular need for this, please submit a feature request at https:
                         preset.id
                       );
                     }),
-                    /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-                      import_components31.Button,
+                    /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+                      import_components32.Button,
                       {
                         className: "dataviews-controls__date-preset",
                         variant: "tertiary",
@@ -23201,13 +23188,13 @@ If there's a particular need for this, please submit a feature request at https:
                         size: "small",
                         accessibleWhenDisabled: true,
                         disabled: !!selectedPresetId || disabled2,
-                        children: (0, import_i18n39.__)("Custom")
+                        children: (0, import_i18n40.__)("Custom")
                       }
                     )
                   ]
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)(
+              /* @__PURE__ */ (0, import_jsx_runtime95.jsxs)(
                 Stack,
                 {
                   direction: "row",
@@ -23215,13 +23202,13 @@ If there's a particular need for this, please submit a feature request at https:
                   justify: "space-between",
                   className: "dataviews-controls__date-range-inputs",
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-                      import_components31.__experimentalInputControl,
+                    /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+                      import_components32.__experimentalInputControl,
                       {
                         __next40pxDefaultSize: true,
                         ref: fromInputRef,
                         type: "date",
-                        label: (0, import_i18n39.__)("From"),
+                        label: (0, import_i18n40.__)("From"),
                         hideLabelFromVision: true,
                         value: value?.[0],
                         onChange: (newValue) => handleManualDateChange("from", newValue),
@@ -23231,13 +23218,13 @@ If there's a particular need for this, please submit a feature request at https:
                         max: maxConstraint
                       }
                     ),
-                    /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
-                      import_components31.__experimentalInputControl,
+                    /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+                      import_components32.__experimentalInputControl,
                       {
                         __next40pxDefaultSize: true,
                         ref: toInputRef,
                         type: "date",
-                        label: (0, import_i18n39.__)("To"),
+                        label: (0, import_i18n40.__)("To"),
                         hideLabelFromVision: true,
                         value: value?.[1],
                         onChange: (newValue) => handleManualDateChange("to", newValue),
@@ -23250,7 +23237,7 @@ If there's a particular need for this, please submit a feature request at https:
                   ]
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
                 DateRangeCalendar,
                 {
                   style: { width: "100%" },
@@ -23279,7 +23266,7 @@ If there's a particular need for this, please submit a feature request at https:
     validity
   }) {
     if (operator === OPERATOR_IN_THE_PAST || operator === OPERATOR_OVER) {
-      return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
         RelativeDateControl,
         {
           className: "dataviews-controls__date",
@@ -23292,7 +23279,7 @@ If there's a particular need for this, please submit a feature request at https:
       );
     }
     if (operator === OPERATOR_BETWEEN) {
-      return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
         CalendarDateRangeControl,
         {
           data,
@@ -23304,7 +23291,7 @@ If there's a particular need for this, please submit a feature request at https:
         }
       );
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
       CalendarDateControl,
       {
         data,
@@ -23318,10 +23305,10 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/select.mjs
-  var import_components32 = __toESM(require_components(), 1);
-  var import_element57 = __toESM(require_element(), 1);
-  var import_jsx_runtime95 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedSelectControl } = unlock2(import_components32.privateApis);
+  var import_components33 = __toESM(require_components(), 1);
+  var import_element60 = __toESM(require_element(), 1);
+  var import_jsx_runtime96 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedSelectControl } = unlock2(import_components33.privateApis);
   function Select({
     data,
     field,
@@ -23334,7 +23321,7 @@ If there's a particular need for this, please submit a feature request at https:
     const disabled2 = field.isDisabled({ item: data, field });
     const isMultiple = type === "array";
     const value = getValue({ item: data }) ?? (isMultiple ? [] : "");
-    const onChangeControl = (0, import_element57.useCallback)(
+    const onChangeControl = (0, import_element60.useCallback)(
       (newValue) => onChange(setValue({ item: data, value: newValue })),
       [data, onChange, setValue]
     );
@@ -23343,9 +23330,9 @@ If there's a particular need for this, please submit a feature request at https:
       getElements: field.getElements
     });
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(import_components32.Spinner, {});
+      return /* @__PURE__ */ (0, import_jsx_runtime96.jsx)(import_components33.Spinner, {});
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime96.jsx)(
       ValidatedSelectControl,
       {
         required: !!field.isValid?.required,
@@ -23365,7 +23352,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/adaptive-select.mjs
-  var import_jsx_runtime96 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime97 = __toESM(require_jsx_runtime(), 1);
   var ELEMENTS_THRESHOLD = 10;
   function AdaptiveSelect(props) {
     const { field } = props;
@@ -23374,19 +23361,19 @@ If there's a particular need for this, please submit a feature request at https:
       getElements: field.getElements
     });
     if (elements.length >= ELEMENTS_THRESHOLD) {
-      return /* @__PURE__ */ (0, import_jsx_runtime96.jsx)(Combobox3, { ...props });
+      return /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(Combobox3, { ...props });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime96.jsx)(Select, { ...props });
+    return /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(Select, { ...props });
   }
 
   // packages/dataviews/build-module/components/dataform-controls/email.mjs
-  var import_components34 = __toESM(require_components(), 1);
+  var import_components35 = __toESM(require_components(), 1);
 
   // packages/dataviews/build-module/components/dataform-controls/utils/validated-input.mjs
-  var import_components33 = __toESM(require_components(), 1);
-  var import_element58 = __toESM(require_element(), 1);
-  var import_jsx_runtime97 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedInputControl: ValidatedInputControl2 } = unlock2(import_components33.privateApis);
+  var import_components34 = __toESM(require_components(), 1);
+  var import_element61 = __toESM(require_element(), 1);
+  var import_jsx_runtime98 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedInputControl: ValidatedInputControl2 } = unlock2(import_components34.privateApis);
   function ValidatedText({
     data,
     field,
@@ -23401,7 +23388,7 @@ If there's a particular need for this, please submit a feature request at https:
     const { label, placeholder, description, getValue, setValue, isValid: isValid2 } = field;
     const value = getValue({ item: data });
     const disabled2 = field.isDisabled({ item: data, field });
-    const onChangeControl = (0, import_element58.useCallback)(
+    const onChangeControl = (0, import_element61.useCallback)(
       (newValue) => onChange(
         setValue({
           item: data,
@@ -23410,7 +23397,7 @@ If there's a particular need for this, please submit a feature request at https:
       ),
       [data, setValue, onChange]
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(
       ValidatedInputControl2,
       {
         required: !!isValid2.required,
@@ -23435,36 +23422,8 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/email.mjs
-  var import_jsx_runtime98 = __toESM(require_jsx_runtime(), 1);
-  function Email({
-    data,
-    field,
-    onChange,
-    hideLabelFromVision,
-    markWhenOptional,
-    validity
-  }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(
-      ValidatedText,
-      {
-        ...{
-          data,
-          field,
-          onChange,
-          hideLabelFromVision,
-          markWhenOptional,
-          validity,
-          type: "email",
-          prefix: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(import_components34.__experimentalInputControlPrefixWrapper, { variant: "icon", children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(import_components34.Icon, { icon: envelope_default }) })
-        }
-      }
-    );
-  }
-
-  // packages/dataviews/build-module/components/dataform-controls/telephone.mjs
-  var import_components35 = __toESM(require_components(), 1);
   var import_jsx_runtime99 = __toESM(require_jsx_runtime(), 1);
-  function Telephone({
+  function Email({
     data,
     field,
     onChange,
@@ -23482,17 +23441,17 @@ If there's a particular need for this, please submit a feature request at https:
           hideLabelFromVision,
           markWhenOptional,
           validity,
-          type: "tel",
-          prefix: /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(import_components35.__experimentalInputControlPrefixWrapper, { variant: "icon", children: /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(import_components35.Icon, { icon: mobile_default }) })
+          type: "email",
+          prefix: /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(import_components35.__experimentalInputControlPrefixWrapper, { variant: "icon", children: /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(import_components35.Icon, { icon: envelope_default }) })
         }
       }
     );
   }
 
-  // packages/dataviews/build-module/components/dataform-controls/url.mjs
+  // packages/dataviews/build-module/components/dataform-controls/telephone.mjs
   var import_components36 = __toESM(require_components(), 1);
   var import_jsx_runtime100 = __toESM(require_jsx_runtime(), 1);
-  function Url({
+  function Telephone({
     data,
     field,
     onChange,
@@ -23510,19 +23469,47 @@ If there's a particular need for this, please submit a feature request at https:
           hideLabelFromVision,
           markWhenOptional,
           validity,
+          type: "tel",
+          prefix: /* @__PURE__ */ (0, import_jsx_runtime100.jsx)(import_components36.__experimentalInputControlPrefixWrapper, { variant: "icon", children: /* @__PURE__ */ (0, import_jsx_runtime100.jsx)(import_components36.Icon, { icon: mobile_default }) })
+        }
+      }
+    );
+  }
+
+  // packages/dataviews/build-module/components/dataform-controls/url.mjs
+  var import_components37 = __toESM(require_components(), 1);
+  var import_jsx_runtime101 = __toESM(require_jsx_runtime(), 1);
+  function Url({
+    data,
+    field,
+    onChange,
+    hideLabelFromVision,
+    markWhenOptional,
+    validity
+  }) {
+    return /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(
+      ValidatedText,
+      {
+        ...{
+          data,
+          field,
+          onChange,
+          hideLabelFromVision,
+          markWhenOptional,
+          validity,
           type: "url",
-          prefix: /* @__PURE__ */ (0, import_jsx_runtime100.jsx)(import_components36.__experimentalInputControlPrefixWrapper, { variant: "icon", children: /* @__PURE__ */ (0, import_jsx_runtime100.jsx)(import_components36.Icon, { icon: link_default }) })
+          prefix: /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(import_components37.__experimentalInputControlPrefixWrapper, { variant: "icon", children: /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(import_components37.Icon, { icon: link_default }) })
         }
       }
     );
   }
 
   // packages/dataviews/build-module/components/dataform-controls/utils/validated-number.mjs
-  var import_components37 = __toESM(require_components(), 1);
-  var import_element59 = __toESM(require_element(), 1);
-  var import_i18n40 = __toESM(require_i18n(), 1);
-  var import_jsx_runtime101 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedNumberControl } = unlock2(import_components37.privateApis);
+  var import_components38 = __toESM(require_components(), 1);
+  var import_element62 = __toESM(require_element(), 1);
+  var import_i18n41 = __toESM(require_i18n(), 1);
+  var import_jsx_runtime102 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedNumberControl } = unlock2(import_components38.privateApis);
   function toNumberOrEmpty(value) {
     if (value === "" || value === void 0) {
       return "";
@@ -23537,23 +23524,23 @@ If there's a particular need for this, please submit a feature request at https:
     step
   }) {
     const [min2 = "", max2 = ""] = value;
-    const onChangeMin = (0, import_element59.useCallback)(
+    const onChangeMin = (0, import_element62.useCallback)(
       (newValue) => onChange([toNumberOrEmpty(newValue), max2]),
       [onChange, max2]
     );
-    const onChangeMax = (0, import_element59.useCallback)(
+    const onChangeMax = (0, import_element62.useCallback)(
       (newValue) => onChange([min2, toNumberOrEmpty(newValue)]),
       [onChange, min2]
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(
-      import_components37.BaseControl,
+    return /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(
+      import_components38.BaseControl,
       {
-        help: (0, import_i18n40.__)("The max. value must be greater than the min. value."),
-        children: /* @__PURE__ */ (0, import_jsx_runtime101.jsxs)(import_components37.Flex, { direction: "row", gap: 4, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(
-            import_components37.__experimentalNumberControl,
+        help: (0, import_i18n41.__)("The max. value must be greater than the min. value."),
+        children: /* @__PURE__ */ (0, import_jsx_runtime102.jsxs)(import_components38.Flex, { direction: "row", gap: 4, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(
+            import_components38.__experimentalNumberControl,
             {
-              label: (0, import_i18n40.__)("Min."),
+              label: (0, import_i18n41.__)("Min."),
               value: min2,
               max: max2 ? Number(max2) - step : void 0,
               onChange: onChangeMin,
@@ -23562,10 +23549,10 @@ If there's a particular need for this, please submit a feature request at https:
               step
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(
-            import_components37.__experimentalNumberControl,
+          /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(
+            import_components38.__experimentalNumberControl,
             {
-              label: (0, import_i18n40.__)("Max."),
+              label: (0, import_i18n41.__)("Max."),
               value: max2,
               min: min2 ? Number(min2) + step : void 0,
               onChange: onChangeMax,
@@ -23592,7 +23579,7 @@ If there's a particular need for this, please submit a feature request at https:
     const { label, description, getValue, setValue, isValid: isValid2 } = field;
     const value = getValue({ item: data }) ?? "";
     const disabled2 = field.isDisabled({ item: data, field });
-    const onChangeControl = (0, import_element59.useCallback)(
+    const onChangeControl = (0, import_element62.useCallback)(
       (newValue) => {
         onChange(
           setValue({
@@ -23606,7 +23593,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [data, onChange, setValue]
     );
-    const onChangeBetweenControls = (0, import_element59.useCallback)(
+    const onChangeBetweenControls = (0, import_element62.useCallback)(
       (newValue) => {
         onChange(
           setValue({
@@ -23624,7 +23611,7 @@ If there's a particular need for this, please submit a feature request at https:
       )) {
         valueBetween = value;
       }
-      return /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(
         BetweenControls,
         {
           value: valueBetween,
@@ -23634,7 +23621,7 @@ If there's a particular need for this, please submit a feature request at https:
         }
       );
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(
       ValidatedNumberControl,
       {
         required: !!isValid2.required,
@@ -23655,22 +23642,22 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/integer.mjs
-  var import_jsx_runtime102 = __toESM(require_jsx_runtime(), 1);
-  function Integer(props) {
-    return /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(ValidatedNumber, { ...props });
-  }
-
-  // packages/dataviews/build-module/components/dataform-controls/number.mjs
   var import_jsx_runtime103 = __toESM(require_jsx_runtime(), 1);
-  function Number2(props) {
+  function Integer(props) {
     return /* @__PURE__ */ (0, import_jsx_runtime103.jsx)(ValidatedNumber, { ...props });
   }
 
-  // packages/dataviews/build-module/components/dataform-controls/radio.mjs
-  var import_components38 = __toESM(require_components(), 1);
-  var import_element60 = __toESM(require_element(), 1);
+  // packages/dataviews/build-module/components/dataform-controls/number.mjs
   var import_jsx_runtime104 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedRadioControl } = unlock2(import_components38.privateApis);
+  function Number2(props) {
+    return /* @__PURE__ */ (0, import_jsx_runtime104.jsx)(ValidatedNumber, { ...props });
+  }
+
+  // packages/dataviews/build-module/components/dataform-controls/radio.mjs
+  var import_components39 = __toESM(require_components(), 1);
+  var import_element63 = __toESM(require_element(), 1);
+  var import_jsx_runtime105 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedRadioControl } = unlock2(import_components39.privateApis);
   function Radio({
     data,
     field,
@@ -23686,14 +23673,14 @@ If there's a particular need for this, please submit a feature request at https:
       getElements: field.getElements
     });
     const value = getValue({ item: data });
-    const onChangeControl = (0, import_element60.useCallback)(
+    const onChangeControl = (0, import_element63.useCallback)(
       (newValue) => onChange(setValue({ item: data, value: newValue })),
       [data, onChange, setValue]
     );
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime104.jsx)(import_components38.Spinner, {});
+      return /* @__PURE__ */ (0, import_jsx_runtime105.jsx)(import_components39.Spinner, {});
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime104.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime105.jsx)(
       ValidatedRadioControl,
       {
         required: !!field.isValid?.required,
@@ -23711,8 +23698,8 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/text.mjs
-  var import_element61 = __toESM(require_element(), 1);
-  var import_jsx_runtime105 = __toESM(require_jsx_runtime(), 1);
+  var import_element64 = __toESM(require_element(), 1);
+  var import_jsx_runtime106 = __toESM(require_jsx_runtime(), 1);
   function Text({
     data,
     field,
@@ -23723,7 +23710,7 @@ If there's a particular need for this, please submit a feature request at https:
     validity
   }) {
     const { prefix, suffix } = config || {};
-    return /* @__PURE__ */ (0, import_jsx_runtime105.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(
       ValidatedText,
       {
         ...{
@@ -23733,18 +23720,18 @@ If there's a particular need for this, please submit a feature request at https:
           hideLabelFromVision,
           markWhenOptional,
           validity,
-          prefix: prefix ? (0, import_element61.createElement)(prefix) : void 0,
-          suffix: suffix ? (0, import_element61.createElement)(suffix) : void 0
+          prefix: prefix ? (0, import_element64.createElement)(prefix) : void 0,
+          suffix: suffix ? (0, import_element64.createElement)(suffix) : void 0
         }
       }
     );
   }
 
   // packages/dataviews/build-module/components/dataform-controls/toggle.mjs
-  var import_components39 = __toESM(require_components(), 1);
-  var import_element62 = __toESM(require_element(), 1);
-  var import_jsx_runtime106 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedToggleControl } = unlock2(import_components39.privateApis);
+  var import_components40 = __toESM(require_components(), 1);
+  var import_element65 = __toESM(require_element(), 1);
+  var import_jsx_runtime107 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedToggleControl } = unlock2(import_components40.privateApis);
   function Toggle({
     field,
     onChange,
@@ -23755,12 +23742,12 @@ If there's a particular need for this, please submit a feature request at https:
   }) {
     const { label, description, getValue, setValue, isValid: isValid2 } = field;
     const disabled2 = field.isDisabled({ item: data, field });
-    const onChangeControl = (0, import_element62.useCallback)(() => {
+    const onChangeControl = (0, import_element65.useCallback)(() => {
       onChange(
         setValue({ item: data, value: !getValue({ item: data }) })
       );
     }, [onChange, setValue, data, getValue]);
-    return /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(
       ValidatedToggleControl,
       {
         required: !!isValid2.required,
@@ -23777,10 +23764,10 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/textarea.mjs
-  var import_components40 = __toESM(require_components(), 1);
-  var import_element63 = __toESM(require_element(), 1);
-  var import_jsx_runtime107 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedTextareaControl } = unlock2(import_components40.privateApis);
+  var import_components41 = __toESM(require_components(), 1);
+  var import_element66 = __toESM(require_element(), 1);
+  var import_jsx_runtime108 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedTextareaControl } = unlock2(import_components41.privateApis);
   function Textarea({
     data,
     field,
@@ -23794,11 +23781,11 @@ If there's a particular need for this, please submit a feature request at https:
     const disabled2 = field.isDisabled({ item: data, field });
     const { label, placeholder, description, setValue, isValid: isValid2 } = field;
     const value = field.getValue({ item: data });
-    const onChangeControl = (0, import_element63.useCallback)(
+    const onChangeControl = (0, import_element66.useCallback)(
       (newValue) => onChange(setValue({ item: data, value: newValue })),
       [data, onChange, setValue]
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
       ValidatedTextareaControl,
       {
         required: !!isValid2.required,
@@ -23820,10 +23807,10 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/toggle-group.mjs
-  var import_components41 = __toESM(require_components(), 1);
-  var import_element64 = __toESM(require_element(), 1);
-  var import_jsx_runtime108 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedToggleGroupControl } = unlock2(import_components41.privateApis);
+  var import_components42 = __toESM(require_components(), 1);
+  var import_element67 = __toESM(require_element(), 1);
+  var import_jsx_runtime109 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedToggleGroupControl } = unlock2(import_components42.privateApis);
   function ToggleGroup({
     data,
     field,
@@ -23835,7 +23822,7 @@ If there's a particular need for this, please submit a feature request at https:
     const { getValue, setValue, isValid: isValid2 } = field;
     const disabled2 = field.isDisabled({ item: data, field });
     const value = getValue({ item: data });
-    const onChangeControl = (0, import_element64.useCallback)(
+    const onChangeControl = (0, import_element67.useCallback)(
       (newValue) => onChange(setValue({ item: data, value: newValue })),
       [data, onChange, setValue]
     );
@@ -23844,13 +23831,13 @@ If there's a particular need for this, please submit a feature request at https:
       getElements: field.getElements
     });
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(import_components41.Spinner, {});
+      return /* @__PURE__ */ (0, import_jsx_runtime109.jsx)(import_components42.Spinner, {});
     }
     if (elements.length === 0) {
       return null;
     }
     const selectedOption = elements.find((el) => el.value === value);
-    return /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime109.jsx)(
       ValidatedToggleGroupControl,
       {
         required: !!field.isValid?.required,
@@ -23863,8 +23850,8 @@ If there's a particular need for this, please submit a feature request at https:
         onChange: onChangeControl,
         value,
         hideLabelFromVision,
-        children: elements.map((el) => /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
-          import_components41.__experimentalToggleGroupControlOption,
+        children: elements.map((el) => /* @__PURE__ */ (0, import_jsx_runtime109.jsx)(
+          import_components42.__experimentalToggleGroupControlOption,
           {
             label: el.label,
             value: el.value,
@@ -23877,10 +23864,10 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/array.mjs
-  var import_components42 = __toESM(require_components(), 1);
-  var import_element65 = __toESM(require_element(), 1);
-  var import_jsx_runtime109 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedFormTokenField } = unlock2(import_components42.privateApis);
+  var import_components43 = __toESM(require_components(), 1);
+  var import_element68 = __toESM(require_element(), 1);
+  var import_jsx_runtime110 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedFormTokenField } = unlock2(import_components43.privateApis);
   function ArrayControl({
     data,
     field,
@@ -23896,7 +23883,7 @@ If there's a particular need for this, please submit a feature request at https:
       elements: field.elements,
       getElements: field.getElements
     });
-    const arrayValueAsElements = (0, import_element65.useMemo)(
+    const arrayValueAsElements = (0, import_element68.useMemo)(
       () => Array.isArray(value) ? value.map((token) => {
         const element = elements?.find(
           (suggestion) => suggestion.value === token
@@ -23905,7 +23892,7 @@ If there's a particular need for this, please submit a feature request at https:
       }) : [],
       [value, elements]
     );
-    const onChangeControl = (0, import_element65.useCallback)(
+    const onChangeControl = (0, import_element68.useCallback)(
       (tokens) => {
         const valueTokens = tokens.map((token) => {
           if (typeof token === "object" && "value" in token) {
@@ -23918,9 +23905,9 @@ If there's a particular need for this, please submit a feature request at https:
       [onChange, setValue, data]
     );
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime109.jsx)(import_components42.Spinner, {});
+      return /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(import_components43.Spinner, {});
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime109.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(
       ValidatedFormTokenField,
       {
         required: !!isValid2?.required,
@@ -23959,9 +23946,9 @@ If there's a particular need for this, please submit a feature request at https:
             const element = elements.find(
               (el) => el.value === item
             );
-            return /* @__PURE__ */ (0, import_jsx_runtime109.jsx)("span", { children: element?.label || item });
+            return /* @__PURE__ */ (0, import_jsx_runtime110.jsx)("span", { children: element?.label || item });
           }
-          return /* @__PURE__ */ (0, import_jsx_runtime109.jsx)("span", { children: item });
+          return /* @__PURE__ */ (0, import_jsx_runtime110.jsx)("span", { children: item });
         }
       }
     );
@@ -24126,35 +24113,35 @@ If there's a particular need for this, please submit a feature request at https:
   };
 
   // packages/dataviews/build-module/components/dataform-controls/color.mjs
-  var import_components43 = __toESM(require_components(), 1);
-  var import_element66 = __toESM(require_element(), 1);
-  var import_i18n41 = __toESM(require_i18n(), 1);
-  var import_jsx_runtime110 = __toESM(require_jsx_runtime(), 1);
-  var { ValidatedInputControl: ValidatedInputControl3 } = unlock2(import_components43.privateApis);
+  var import_components44 = __toESM(require_components(), 1);
+  var import_element69 = __toESM(require_element(), 1);
+  var import_i18n42 = __toESM(require_i18n(), 1);
+  var import_jsx_runtime111 = __toESM(require_jsx_runtime(), 1);
+  var { ValidatedInputControl: ValidatedInputControl3 } = unlock2(import_components44.privateApis);
   var ColorPickerDropdown = ({
     color,
     onColorChange,
     disabled: disabled2
   }) => {
     const validColor = color && w(color).isValid() ? color : "#ffffff";
-    return /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(
-      import_components43.Dropdown,
+    return /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(
+      import_components44.Dropdown,
       {
         className: "dataviews-controls__color-picker-dropdown",
         popoverProps: { resize: false },
-        renderToggle: ({ onToggle }) => /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(
-          import_components43.Button,
+        renderToggle: ({ onToggle }) => /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(
+          import_components44.Button,
           {
             onClick: onToggle,
-            "aria-label": (0, import_i18n41.__)("Open color picker"),
+            "aria-label": (0, import_i18n42.__)("Open color picker"),
             size: "small",
             disabled: disabled2,
             accessibleWhenDisabled: true,
-            icon: () => /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(import_components43.ColorIndicator, { colorValue: validColor })
+            icon: () => /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(import_components44.ColorIndicator, { colorValue: validColor })
           }
         ),
-        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(import_components43.__experimentalDropdownContentWrapper, { paddingSize: "none", children: /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(
-          import_components43.ColorPicker,
+        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(import_components44.__experimentalDropdownContentWrapper, { paddingSize: "none", children: /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(
+          import_components44.ColorPicker,
           {
             color: validColor,
             onChange: onColorChange,
@@ -24175,19 +24162,19 @@ If there's a particular need for this, please submit a feature request at https:
     const { label, placeholder, description, setValue, isValid: isValid2 } = field;
     const disabled2 = field.isDisabled({ item: data, field });
     const value = field.getValue({ item: data }) || "";
-    const handleColorChange = (0, import_element66.useCallback)(
+    const handleColorChange = (0, import_element69.useCallback)(
       (newColor) => {
         onChange(setValue({ item: data, value: newColor }));
       },
       [data, onChange, setValue]
     );
-    const handleInputChange = (0, import_element66.useCallback)(
+    const handleInputChange = (0, import_element69.useCallback)(
       (newValue) => {
         onChange(setValue({ item: data, value: newValue || "" }));
       },
       [data, onChange, setValue]
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(
       ValidatedInputControl3,
       {
         required: !!field.isValid?.required,
@@ -24201,7 +24188,7 @@ If there's a particular need for this, please submit a feature request at https:
         hideLabelFromVision,
         type: "text",
         disabled: disabled2,
-        prefix: /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(import_components43.__experimentalInputControlPrefixWrapper, { variant: "control", children: /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(
+        prefix: /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(import_components44.__experimentalInputControlPrefixWrapper, { variant: "control", children: /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(
           ColorPickerDropdown,
           {
             color: value,
@@ -24214,10 +24201,10 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/password.mjs
-  var import_components44 = __toESM(require_components(), 1);
-  var import_element67 = __toESM(require_element(), 1);
-  var import_i18n42 = __toESM(require_i18n(), 1);
-  var import_jsx_runtime111 = __toESM(require_jsx_runtime(), 1);
+  var import_components45 = __toESM(require_components(), 1);
+  var import_element70 = __toESM(require_element(), 1);
+  var import_i18n43 = __toESM(require_i18n(), 1);
+  var import_jsx_runtime112 = __toESM(require_jsx_runtime(), 1);
   function Password({
     data,
     field,
@@ -24226,12 +24213,12 @@ If there's a particular need for this, please submit a feature request at https:
     markWhenOptional,
     validity
   }) {
-    const [isVisible2, setIsVisible] = (0, import_element67.useState)(false);
+    const [isVisible2, setIsVisible] = (0, import_element70.useState)(false);
     const disabled2 = field.isDisabled({ item: data, field });
-    const toggleVisibility = (0, import_element67.useCallback)(() => {
+    const toggleVisibility = (0, import_element70.useCallback)(() => {
       setIsVisible((prev) => !prev);
     }, []);
-    return /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime112.jsx)(
       ValidatedText,
       {
         ...{
@@ -24242,13 +24229,13 @@ If there's a particular need for this, please submit a feature request at https:
           markWhenOptional,
           validity,
           type: isVisible2 ? "text" : "password",
-          suffix: /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(import_components44.__experimentalInputControlSuffixWrapper, { variant: "control", children: /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(
-            import_components44.Button,
+          suffix: /* @__PURE__ */ (0, import_jsx_runtime112.jsx)(import_components45.__experimentalInputControlSuffixWrapper, { variant: "control", children: /* @__PURE__ */ (0, import_jsx_runtime112.jsx)(
+            import_components45.Button,
             {
               icon: isVisible2 ? unseen_default : seen_default,
               onClick: toggleVisibility,
               size: "small",
-              label: isVisible2 ? (0, import_i18n42.__)("Hide password") : (0, import_i18n42.__)("Show password"),
+              label: isVisible2 ? (0, import_i18n43.__)("Hide password") : (0, import_i18n43.__)("Show password"),
               disabled: disabled2,
               accessibleWhenDisabled: true
             }
@@ -24264,7 +24251,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/components/dataform-controls/index.mjs
-  var import_jsx_runtime112 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime113 = __toESM(require_jsx_runtime(), 1);
   var FORM_CONTROLS = {
     adaptiveSelect: AdaptiveSelect,
     array: ArrayControl,
@@ -24296,7 +24283,7 @@ If there's a particular need for this, please submit a feature request at https:
       return null;
     }
     return function ConfiguredControl(props) {
-      return /* @__PURE__ */ (0, import_jsx_runtime112.jsx)(BaseControlType, { ...props, config: controlConfig });
+      return /* @__PURE__ */ (0, import_jsx_runtime113.jsx)(BaseControlType, { ...props, config: controlConfig });
     };
   }
   function getControl(field, fallback) {
@@ -24372,7 +24359,7 @@ If there's a particular need for this, please submit a feature request at https:
   var set_value_from_id_default = setValueFromId;
 
   // packages/dataviews/build-module/field-types/email.mjs
-  var import_i18n43 = __toESM(require_i18n(), 1);
+  var import_i18n44 = __toESM(require_i18n(), 1);
 
   // packages/dataviews/build-module/field-types/utils/render-from-elements.mjs
   function RenderFromElements({
@@ -24394,13 +24381,13 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/field-types/utils/render-default.mjs
-  var import_jsx_runtime113 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime114 = __toESM(require_jsx_runtime(), 1);
   function render({
     item,
     field
   }) {
     if (field.hasElements) {
-      return /* @__PURE__ */ (0, import_jsx_runtime113.jsx)(RenderFromElements, { item, field });
+      return /* @__PURE__ */ (0, import_jsx_runtime114.jsx)(RenderFromElements, { item, field });
     }
     return field.getValueFormatted({ item, field });
   }
@@ -24482,7 +24469,7 @@ If there's a particular need for this, please submit a feature request at https:
   function isValidCustom(item, field) {
     const value = field.getValue({ item });
     if (![void 0, "", null].includes(value) && !emailRegex.test(value)) {
-      return (0, import_i18n43.__)("Value must be a valid email address.");
+      return (0, import_i18n44.__)("Value must be a valid email address.");
     }
     return null;
   }
@@ -24519,7 +24506,7 @@ If there's a particular need for this, please submit a feature request at https:
   };
 
   // packages/dataviews/build-module/field-types/integer.mjs
-  var import_i18n44 = __toESM(require_i18n(), 1);
+  var import_i18n45 = __toESM(require_i18n(), 1);
 
   // packages/dataviews/build-module/field-types/utils/sort-number.mjs
   var sort_number_default = (a2, b2, direction) => {
@@ -24585,7 +24572,7 @@ If there's a particular need for this, please submit a feature request at https:
   function isValidCustom2(item, field) {
     const value = field.getValue({ item });
     if (![void 0, "", null].includes(value) && !Number.isInteger(value)) {
-      return (0, import_i18n44.__)("Value must be an integer.");
+      return (0, import_i18n45.__)("Value must be an integer.");
     }
     return null;
   }
@@ -24632,7 +24619,7 @@ If there's a particular need for this, please submit a feature request at https:
   };
 
   // packages/dataviews/build-module/field-types/number.mjs
-  var import_i18n45 = __toESM(require_i18n(), 1);
+  var import_i18n46 = __toESM(require_i18n(), 1);
   var format3 = {
     separatorThousand: ",",
     separatorDecimal: ".",
@@ -24662,13 +24649,13 @@ If there's a particular need for this, please submit a feature request at https:
     const formattedInteger = separatorThousand ? integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, separatorThousand) : integerPart;
     return decimals === 0 ? formattedInteger : formattedInteger + separatorDecimal + decimalPart;
   }
-  function isEmpty2(value) {
+  function isEmpty(value) {
     return value === "" || value === void 0 || value === null;
   }
   function isValidCustom3(item, field) {
     const value = field.getValue({ item });
-    if (!isEmpty2(value) && !Number.isFinite(value)) {
-      return (0, import_i18n45.__)("Value must be a number.");
+    if (!isEmpty(value) && !Number.isFinite(value)) {
+      return (0, import_i18n46.__)("Value must be a number.");
     }
     return null;
   }
@@ -24913,7 +24900,7 @@ If there's a particular need for this, please submit a feature request at https:
   };
 
   // packages/dataviews/build-module/field-types/boolean.mjs
-  var import_i18n46 = __toESM(require_i18n(), 1);
+  var import_i18n47 = __toESM(require_i18n(), 1);
 
   // packages/dataviews/build-module/field-types/utils/is-valid-required-for-bool.mjs
   function isValidRequiredForBool(item, field) {
@@ -24928,17 +24915,17 @@ If there's a particular need for this, please submit a feature request at https:
   }) {
     const value = field.getValue({ item });
     if (value === true) {
-      return (0, import_i18n46.__)("True");
+      return (0, import_i18n47.__)("True");
     }
     if (value === false) {
-      return (0, import_i18n46.__)("False");
+      return (0, import_i18n47.__)("False");
     }
     return "";
   }
   function isValidCustom4(item, field) {
     const value = field.getValue({ item });
     if (![void 0, "", null].includes(value) && ![true, false].includes(value)) {
-      return (0, import_i18n46.__)("Value must be true, false, or undefined");
+      return (0, import_i18n47.__)("Value must be true, false, or undefined");
     }
     return null;
   }
@@ -24990,7 +24977,7 @@ If there's a particular need for this, please submit a feature request at https:
   };
 
   // packages/dataviews/build-module/field-types/array.mjs
-  var import_i18n47 = __toESM(require_i18n(), 1);
+  var import_i18n48 = __toESM(require_i18n(), 1);
 
   // packages/dataviews/build-module/field-types/utils/is-valid-required-for-array.mjs
   function isValidRequiredForArray(item, field) {
@@ -25015,10 +25002,10 @@ If there's a particular need for this, please submit a feature request at https:
   function isValidCustom5(item, field) {
     const value = field.getValue({ item });
     if (![void 0, "", null].includes(value) && !Array.isArray(value)) {
-      return (0, import_i18n47.__)("Value must be an array.");
+      return (0, import_i18n48.__)("Value must be an array.");
     }
     if (!value.every((v2) => typeof v2 === "string")) {
-      return (0, import_i18n47.__)("Every value must be a string.");
+      return (0, import_i18n48.__)("Every value must be a string.");
     }
     return null;
   }
@@ -25116,18 +25103,18 @@ If there's a particular need for this, please submit a feature request at https:
   };
 
   // packages/dataviews/build-module/field-types/color.mjs
-  var import_i18n48 = __toESM(require_i18n(), 1);
-  var import_jsx_runtime114 = __toESM(require_jsx_runtime(), 1);
+  var import_i18n49 = __toESM(require_i18n(), 1);
+  var import_jsx_runtime115 = __toESM(require_jsx_runtime(), 1);
   function render3({ item, field }) {
     if (field.hasElements) {
-      return /* @__PURE__ */ (0, import_jsx_runtime114.jsx)(RenderFromElements, { item, field });
+      return /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(RenderFromElements, { item, field });
     }
     const value = get_value_formatted_default_default({ item, field });
     if (!value || !w(value).isValid()) {
       return value;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime114.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "8px" }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime114.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime115.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "8px" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(
         "div",
         {
           style: {
@@ -25140,13 +25127,13 @@ If there's a particular need for this, please submit a feature request at https:
           }
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime114.jsx)("span", { children: value })
+      /* @__PURE__ */ (0, import_jsx_runtime115.jsx)("span", { children: value })
     ] });
   }
   function isValidCustom6(item, field) {
     const value = field.getValue({ item });
     if (![void 0, "", null].includes(value) && !w(value).isValid()) {
-      return (0, import_i18n48.__)("Value must be a valid color.");
+      return (0, import_i18n49.__)("Value must be a valid color.");
     }
     return null;
   }
@@ -25408,7 +25395,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/hooks/use-data.mjs
-  var import_element68 = __toESM(require_element(), 1);
+  var import_element71 = __toESM(require_element(), 1);
   function useData({
     view,
     data: shownData,
@@ -25418,34 +25405,34 @@ If there's a particular need for this, please submit a feature request at https:
     selection
   }) {
     const isInfiniteScrollEnabled = view.infiniteScrollEnabled;
-    const [hasInitiallyLoaded, setHasInitiallyLoaded] = (0, import_element68.useState)(
+    const [hasInitiallyLoaded, setHasInitiallyLoaded] = (0, import_element71.useState)(
       !isLoading
     );
-    (0, import_element68.useEffect)(() => {
+    (0, import_element71.useEffect)(() => {
       if (!isLoading) {
         setHasInitiallyLoaded(true);
       }
     }, [isLoading]);
-    const previousDataRef = (0, import_element68.useRef)(shownData);
-    const previousPaginationInfoRef = (0, import_element68.useRef)(paginationInfo);
-    (0, import_element68.useEffect)(() => {
+    const previousDataRef = (0, import_element71.useRef)(shownData);
+    const previousPaginationInfoRef = (0, import_element71.useRef)(paginationInfo);
+    (0, import_element71.useEffect)(() => {
       if (!isLoading) {
         previousDataRef.current = shownData;
         previousPaginationInfoRef.current = paginationInfo;
       }
     }, [shownData, isLoading, paginationInfo]);
-    const [visibleEntries, setVisibleEntries] = (0, import_element68.useState)([]);
-    const positionMapRef = (0, import_element68.useRef)(/* @__PURE__ */ new Map());
-    const allLoadedRecordsRef = (0, import_element68.useRef)([]);
-    const prevViewParamsRef = (0, import_element68.useRef)({
+    const [visibleEntries, setVisibleEntries] = (0, import_element71.useState)([]);
+    const positionMapRef = (0, import_element71.useRef)(/* @__PURE__ */ new Map());
+    const allLoadedRecordsRef = (0, import_element71.useRef)([]);
+    const prevViewParamsRef = (0, import_element71.useRef)({
       search: void 0,
       filters: void 0,
       perPage: void 0
     });
-    const scrollDirectionRef = (0, import_element68.useRef)(void 0);
-    const prevStartPositionRef = (0, import_element68.useRef)(void 0);
-    const hasInitializedRef = (0, import_element68.useRef)(false);
-    const allLoadedRecords = (0, import_element68.useMemo)(() => {
+    const scrollDirectionRef = (0, import_element71.useRef)(void 0);
+    const prevStartPositionRef = (0, import_element71.useRef)(void 0);
+    const hasInitializedRef = (0, import_element71.useRef)(false);
+    const allLoadedRecords = (0, import_element71.useMemo)(() => {
       if (view.startPosition !== void 0 && prevStartPositionRef.current !== void 0) {
         if (view.startPosition < prevStartPositionRef.current) {
           scrollDirectionRef.current = "up";
@@ -25567,8 +25554,8 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/hooks/use-infinite-scroll.mjs
-  var import_element69 = __toESM(require_element(), 1);
-  var import_compose11 = __toESM(require_compose(), 1);
+  var import_element72 = __toESM(require_element(), 1);
+  var import_compose12 = __toESM(require_compose(), 1);
   function captureAnchorElement(container, anchorElementRef, direction) {
     const containerRect = container.getBoundingClientRect();
     const centerY = containerRect.top + containerRect.height / 2;
@@ -25602,18 +25589,18 @@ If there's a particular need for this, please submit a feature request at https:
     containerRef,
     setVisibleEntries
   }) {
-    const anchorElementRef = (0, import_element69.useRef)(null);
-    const viewRef = (0, import_element69.useRef)(view);
-    const isLoadingRef = (0, import_element69.useRef)(isLoading);
-    const onChangeViewRef = (0, import_element69.useRef)(onChangeView);
-    const totalItemsRef = (0, import_element69.useRef)(paginationInfo.totalItems);
-    (0, import_element69.useLayoutEffect)(() => {
+    const anchorElementRef = (0, import_element72.useRef)(null);
+    const viewRef = (0, import_element72.useRef)(view);
+    const isLoadingRef = (0, import_element72.useRef)(isLoading);
+    const onChangeViewRef = (0, import_element72.useRef)(onChangeView);
+    const totalItemsRef = (0, import_element72.useRef)(paginationInfo.totalItems);
+    (0, import_element72.useLayoutEffect)(() => {
       viewRef.current = view;
       isLoadingRef.current = isLoading;
       onChangeViewRef.current = onChangeView;
       totalItemsRef.current = paginationInfo.totalItems;
     }, [view, isLoading, onChangeView, paginationInfo.totalItems]);
-    const intersectionObserverCallback = (0, import_element69.useCallback)(
+    const intersectionObserverCallback = (0, import_element72.useCallback)(
       (entries) => {
         if (!setVisibleEntries) {
           return;
@@ -25645,7 +25632,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [setVisibleEntries]
     );
-    (0, import_element69.useLayoutEffect)(() => {
+    (0, import_element72.useLayoutEffect)(() => {
       const container = containerRef.current;
       const anchor = anchorElementRef.current;
       if (!container || !view.infiniteScrollEnabled || !anchor || isLoading) {
@@ -25665,10 +25652,10 @@ If there's a particular need for this, please submit a feature request at https:
       }
       anchorElementRef.current = null;
     }, [containerRef, isLoading, view.infiniteScrollEnabled]);
-    const intersectionObserverRef = (0, import_element69.useRef)(
+    const intersectionObserverRef = (0, import_element72.useRef)(
       null
     );
-    (0, import_element69.useEffect)(() => {
+    (0, import_element72.useEffect)(() => {
       if (!view.infiniteScrollEnabled || !intersectionObserverCallback) {
         if (intersectionObserverRef.current) {
           intersectionObserverRef.current.disconnect();
@@ -25687,14 +25674,14 @@ If there's a particular need for this, please submit a feature request at https:
         }
       };
     }, [view.infiniteScrollEnabled, intersectionObserverCallback]);
-    (0, import_element69.useEffect)(() => {
+    (0, import_element72.useEffect)(() => {
       if (!view.infiniteScrollEnabled || !containerRef.current) {
         return;
       }
       let lastScrollTop = 0;
       const BOTTOM_THRESHOLD = 600;
       const TOP_THRESHOLD = 800;
-      const handleScroll = (0, import_compose11.throttle)((event) => {
+      const handleScroll = (0, import_compose12.throttle)((event) => {
         const currentView = viewRef.current;
         const totalItems = totalItemsRef.current;
         const target = event.target;
@@ -25747,9 +25734,9 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/dataviews/build-module/dataviews-picker/index.mjs
-  var import_element70 = __toESM(require_element(), 1);
-  var import_compose12 = __toESM(require_compose(), 1);
-  var import_jsx_runtime115 = __toESM(require_jsx_runtime(), 1);
+  var import_element73 = __toESM(require_element(), 1);
+  var import_compose13 = __toESM(require_compose(), 1);
+  var import_jsx_runtime116 = __toESM(require_jsx_runtime(), 1);
   var isItemClickable = () => false;
   var dataViewsPickerLayouts = VIEW_LAYOUTS.filter(
     (viewLayout) => viewLayout.isPicker
@@ -25764,10 +25751,10 @@ If there's a particular need for this, please submit a feature request at https:
     search = true,
     searchLabel = void 0
   }) {
-    const { view } = (0, import_element70.useContext)(dataviews_context_default);
+    const { view } = (0, import_element73.useContext)(dataviews_context_default);
     const isInfiniteScroll = view.infiniteScrollEnabled;
-    return /* @__PURE__ */ (0, import_jsx_runtime115.jsxs)(import_jsx_runtime115.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime115.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime116.jsxs)(import_jsx_runtime116.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime116.jsxs)(
         Stack,
         {
           direction: "row",
@@ -25778,7 +25765,7 @@ If there's a particular need for this, please submit a feature request at https:
           }),
           gap: "xs",
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime115.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime116.jsxs)(
               Stack,
               {
                 direction: "row",
@@ -25786,18 +25773,18 @@ If there's a particular need for this, please submit a feature request at https:
                 justify: "start",
                 className: "dataviews__search",
                 children: [
-                  search && /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(dataviews_search_default, { label: searchLabel }),
-                  /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(toggle_default, {})
+                  search && /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(dataviews_search_default, { label: searchLabel }),
+                  /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(toggle_default, {})
                 ]
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(Stack, { direction: "row", gap: "xs", style: { flexShrink: 0 }, children: /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(dataviews_view_config_default, {}) })
+            /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(Stack, { direction: "row", gap: "xs", style: { flexShrink: 0 }, children: /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(dataviews_view_config_default, {}) })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(filters_toggled_default, { className: "dataviews-filters__container" }),
-      /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(DataViewsLayout, {}),
-      /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(DataViewsPickerFooter, {})
+      /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(filters_toggled_default, { className: "dataviews-filters__container" }),
+      /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(DataViewsLayout, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(DataViewsPickerFooter, {})
     ] });
   }
   function DataViewsPicker({
@@ -25827,9 +25814,9 @@ If there's a particular need for this, please submit a feature request at https:
       selection,
       paginationInfo
     });
-    const containerRef = (0, import_element70.useRef)(null);
-    const [containerWidth, setContainerWidth] = (0, import_element70.useState)(0);
-    const resizeObserverRef = (0, import_compose12.useResizeObserver)(
+    const containerRef = (0, import_element73.useRef)(null);
+    const [containerWidth, setContainerWidth] = (0, import_element73.useState)(0);
+    const resizeObserverRef = (0, import_compose13.useResizeObserver)(
       (resizeObserverEntries) => {
         setContainerWidth(
           resizeObserverEntries[0].borderBoxSize[0].inlineSize
@@ -25837,22 +25824,22 @@ If there's a particular need for this, please submit a feature request at https:
       },
       { box: "border-box" }
     );
-    const [openedFilter, setOpenedFilter] = (0, import_element70.useState)(null);
+    const [openedFilter, setOpenedFilter] = (0, import_element73.useState)(null);
     function setSelectionWithChange(value) {
       const newValue = typeof value === "function" ? value(selection) : value;
       if (onChangeSelection) {
         onChangeSelection(newValue);
       }
     }
-    const _fields = (0, import_element70.useMemo)(() => normalizeFields(fields), [fields]);
+    const _fields = (0, import_element73.useMemo)(() => normalizeFields(fields), [fields]);
     const filters = use_filters_default(_fields, view);
-    const hasPrimaryOrLockedFilters = (0, import_element70.useMemo)(
+    const hasPrimaryOrLockedFilters = (0, import_element73.useMemo)(
       () => (filters || []).some(
         (filter) => filter.isPrimary || filter.isLocked
       ),
       [filters]
     );
-    const [isShowingFilter, setIsShowingFilter] = (0, import_element70.useState)(
+    const [isShowingFilter, setIsShowingFilter] = (0, import_element73.useState)(
       hasPrimaryOrLockedFilters
     );
     const { intersectionObserver } = useInfiniteScroll({
@@ -25863,12 +25850,12 @@ If there's a particular need for this, please submit a feature request at https:
       containerRef,
       setVisibleEntries
     });
-    (0, import_element70.useEffect)(() => {
+    (0, import_element73.useEffect)(() => {
       if (hasPrimaryOrLockedFilters && !isShowingFilter) {
         setIsShowingFilter(true);
       }
     }, [hasPrimaryOrLockedFilters, isShowingFilter]);
-    const defaultLayouts2 = (0, import_element70.useMemo)(
+    const defaultLayouts2 = (0, import_element73.useMemo)(
       () => Object.fromEntries(
         Object.entries(defaultLayoutsProperty).filter(([layoutType]) => {
           return dataViewsPickerLayouts.some(
@@ -25884,7 +25871,7 @@ If there's a particular need for this, please submit a feature request at https:
     if (!defaultLayouts2[view.type]) {
       return null;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(
       dataviews_context_default.Provider,
       {
         value: {
@@ -25915,12 +25902,13 @@ If there's a particular need for this, please submit a feature request at https:
           hasInitiallyLoaded: true,
           intersectionObserver
         },
-        children: /* @__PURE__ */ (0, import_jsx_runtime115.jsx)("div", { className: "dataviews-picker-wrapper", children: children ?? /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(DefaultUI, { search, searchLabel }) })
+        children: /* @__PURE__ */ (0, import_jsx_runtime116.jsx)("div", { className: "dataviews-picker-wrapper", children: children ?? /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(DefaultUI, { search, searchLabel }) })
       }
     );
   }
   var DataViewsPickerSubComponents = DataViewsPicker;
-  DataViewsPickerSubComponents.BulkActionToolbar = DataViewsPickerFooter;
+  DataViewsPickerSubComponents.BulkActionToolbar = DataViewsPickerBulkActionToolbar;
+  DataViewsPickerSubComponents.Footer = DataViewsPickerFooter;
   DataViewsPickerSubComponents.Filters = filters_default;
   DataViewsPickerSubComponents.FiltersToggled = filters_toggled_default;
   DataViewsPickerSubComponents.FiltersToggle = toggle_default;
@@ -26008,7 +25996,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/views/build-module/use-view.mjs
-  var import_element71 = __toESM(require_element(), 1);
+  var import_element74 = __toESM(require_element(), 1);
   var import_data6 = __toESM(require_data(), 1);
   var import_preferences = __toESM(require_preferences(), 1);
 
@@ -26150,18 +26138,18 @@ If there's a particular need for this, please submit a feature request at https:
       [preferenceKey]
     );
     const { set: set2 } = (0, import_data6.useDispatch)(import_preferences.store);
-    const baseView = (0, import_element71.useMemo)(
+    const baseView = (0, import_element74.useMemo)(
       () => persistedView ?? defaultView2 ?? {},
       [persistedView, defaultView2]
     );
     const page = Number(queryParams?.page ?? baseView.page ?? 1);
     const search = queryParams?.search ?? baseView.search ?? "";
-    const combinedOverrides = (0, import_element71.useMemo)(() => {
+    const combinedOverrides = (0, import_element74.useMemo)(() => {
       const rawDefaults = config.defaultLayouts?.[baseView.type];
       const layoutTypeDefaults = !rawDefaults || rawDefaults === true ? {} : rawDefaults;
       return { ...layoutTypeDefaults, ...activeViewOverrides };
     }, [config.defaultLayouts, baseView.type, activeViewOverrides]);
-    const view = (0, import_element71.useMemo)(() => {
+    const view = (0, import_element74.useMemo)(() => {
       return mergeActiveViewOverrides(
         {
           ...baseView,
@@ -26173,7 +26161,7 @@ If there's a particular need for this, please submit a feature request at https:
       );
     }, [baseView, page, search, combinedOverrides, defaultView2]);
     const isModified = !!persistedView;
-    const updateView = (0, import_element71.useCallback)(
+    const updateView = (0, import_element74.useCallback)(
       (newView) => {
         const urlParams = {
           page: newView?.page,
@@ -26216,7 +26204,7 @@ If there's a particular need for this, please submit a feature request at https:
         preferenceKey
       ]
     );
-    const resetToDefault = (0, import_element71.useCallback)(() => {
+    const resetToDefault = (0, import_element74.useCallback)(() => {
       set2("core/views", preferenceKey, void 0);
     }, [preferenceKey, set2]);
     return {
@@ -26243,18 +26231,18 @@ If there's a particular need for this, please submit a feature request at https:
   );
 
   // packages/media-fields/build-module/alt_text/index.mjs
-  var import_i18n49 = __toESM(require_i18n(), 1);
-  var import_components45 = __toESM(require_components(), 1);
-  var import_jsx_runtime116 = __toESM(require_jsx_runtime(), 1);
+  var import_i18n50 = __toESM(require_i18n(), 1);
+  var import_components46 = __toESM(require_components(), 1);
+  var import_jsx_runtime117 = __toESM(require_jsx_runtime(), 1);
   var altTextField = {
     id: "alt_text",
     type: "text",
-    label: (0, import_i18n49.__)("Alt text"),
+    label: (0, import_i18n50.__)("Alt text"),
     isVisible: (item) => item?.media_type === "image",
     render: ({ item }) => item?.alt_text || "-",
     Edit: ({ field, onChange, data }) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(
-        import_components45.TextareaControl,
+      return /* @__PURE__ */ (0, import_jsx_runtime117.jsx)(
+        import_components46.TextareaControl,
         {
           label: field.label,
           value: data.alt_text || "",
@@ -26269,11 +26257,11 @@ If there's a particular need for this, please submit a feature request at https:
   var alt_text_default = altTextField;
 
   // packages/media-fields/build-module/attached_to/index.mjs
-  var import_i18n52 = __toESM(require_i18n(), 1);
+  var import_i18n53 = __toESM(require_i18n(), 1);
 
   // packages/media-fields/build-module/attached_to/view.mjs
-  var import_element72 = __toESM(require_element(), 1);
-  var import_i18n50 = __toESM(require_i18n(), 1);
+  var import_element75 = __toESM(require_element(), 1);
+  var import_i18n51 = __toESM(require_i18n(), 1);
 
   // packages/media-fields/build-module/utils/get-rendered-content.mjs
   function getRenderedContent(content) {
@@ -26290,35 +26278,35 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/media-fields/build-module/attached_to/view.mjs
-  var import_jsx_runtime117 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime118 = __toESM(require_jsx_runtime(), 1);
   function MediaAttachedToView({
     item
   }) {
-    const [attachedPostTitle, setAttachedPostTitle] = (0, import_element72.useState)(null);
+    const [attachedPostTitle, setAttachedPostTitle] = (0, import_element75.useState)(null);
     const parentId = item.post;
     const embeddedPostId = item._embedded?.["wp:attached-to"]?.[0]?.id;
     const embeddedPostTitle = item._embedded?.["wp:attached-to"]?.[0]?.title;
-    (0, import_element72.useEffect)(() => {
+    (0, import_element75.useEffect)(() => {
       if (!!parentId && parentId === embeddedPostId) {
         setAttachedPostTitle(
-          getRenderedContent(embeddedPostTitle) || (0, import_i18n50.__)("(no title)")
+          getRenderedContent(embeddedPostTitle) || (0, import_i18n51.__)("(no title)")
         );
       }
       if (!parentId) {
-        setAttachedPostTitle((0, import_i18n50.__)("(Unattached)"));
+        setAttachedPostTitle((0, import_i18n51.__)("(Unattached)"));
       }
     }, [parentId, embeddedPostId, embeddedPostTitle]);
-    return /* @__PURE__ */ (0, import_jsx_runtime117.jsx)(import_jsx_runtime117.Fragment, { children: attachedPostTitle });
+    return /* @__PURE__ */ (0, import_jsx_runtime118.jsx)(import_jsx_runtime118.Fragment, { children: attachedPostTitle });
   }
 
   // packages/media-fields/build-module/attached_to/edit.mjs
   var import_core_data2 = __toESM(require_core_data(), 1);
-  var import_components46 = __toESM(require_components(), 1);
-  var import_i18n51 = __toESM(require_i18n(), 1);
-  var import_element73 = __toESM(require_element(), 1);
-  var import_compose13 = __toESM(require_compose(), 1);
+  var import_components47 = __toESM(require_components(), 1);
+  var import_i18n52 = __toESM(require_i18n(), 1);
+  var import_element76 = __toESM(require_element(), 1);
+  var import_compose14 = __toESM(require_compose(), 1);
   var import_data9 = __toESM(require_data(), 1);
-  var import_jsx_runtime118 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime119 = __toESM(require_jsx_runtime(), 1);
   function MediaAttachedToEdit({
     data,
     onChange
@@ -26331,12 +26319,12 @@ If there's a particular need for this, please submit a feature request at https:
         value: data.post.toString()
       }
     ] : [];
-    const [options, setOptions] = (0, import_element73.useState)(defaultPost);
-    const [searchResults, setSearchResults] = (0, import_element73.useState)(
+    const [options, setOptions] = (0, import_element76.useState)(defaultPost);
+    const [searchResults, setSearchResults] = (0, import_element76.useState)(
       []
     );
-    const [isLoading, setIsLoading] = (0, import_element73.useState)(false);
-    const [value, setValue] = (0, import_element73.useState)(
+    const [isLoading, setIsLoading] = (0, import_element76.useState)(false);
+    const [value, setValue] = (0, import_element76.useState)(
       data?.post?.toString() ?? null
     );
     const postTypes = (0, import_data9.useSelect)(
@@ -26348,6 +26336,7 @@ If there's a particular need for this, please submit a feature request at https:
         post: 0,
         _embedded: { ...data?._embedded, "wp:attached-to": void 0 }
       });
+      setValue(null);
       setOptions([]);
     };
     const onValueChange = async (filterValue) => {
@@ -26362,13 +26351,14 @@ If there's a particular need for this, please submit a feature request at https:
         {}
       );
       setSearchResults(results);
-      const mappedSuggestions = results.map((result) => {
+      const suggestions = results.map((result) => {
         return {
           label: result.title,
           value: result.id.toString()
         };
       });
-      setOptions(mappedSuggestions);
+      const includeCurrent = !filterValue && suggestions.findIndex((s2) => s2.value === value) === -1;
+      setOptions(suggestions.concat(includeCurrent ? defaultPost : []));
       setIsLoading(false);
     };
     const handleSelectOption = (selectedPostId) => {
@@ -26403,33 +26393,34 @@ If there's a particular need for this, please submit a feature request at https:
         }
       }
     };
-    const help = !!data.post ? (0, import_element73.createInterpolateElement)(
-      (0, import_i18n51.__)(
+    const help = (0, import_element76.createInterpolateElement)(
+      (0, import_i18n52.__)(
         "Search for a post or page to attach this media to or <button>detach current</button>."
       ),
       {
-        button: /* @__PURE__ */ (0, import_jsx_runtime118.jsx)(
-          import_components46.Button,
+        button: /* @__PURE__ */ (0, import_jsx_runtime119.jsx)(
+          import_components47.Button,
           {
             __next40pxDefaultSize: true,
             onClick: handleDetach,
             variant: "link",
-            accessibleWhenDisabled: true
+            accessibleWhenDisabled: true,
+            disabled: !value
           }
         )
       }
-    ) : (0, import_i18n51.__)("Search for a post or page to attach this media to.");
-    return /* @__PURE__ */ (0, import_jsx_runtime118.jsx)(
-      import_components46.ComboboxControl,
+    );
+    return /* @__PURE__ */ (0, import_jsx_runtime119.jsx)(
+      import_components47.ComboboxControl,
       {
         className: "dataviews-media-field__attached-to",
         __next40pxDefaultSize: true,
         isLoading,
-        label: (0, import_i18n51.__)("Attached to"),
+        label: (0, import_i18n52.__)("Attached to"),
         help,
         value,
         options,
-        onFilterValueChange: (0, import_compose13.debounce)(
+        onFilterValueChange: (0, import_compose14.debounce)(
           (filterValue) => onValueChange(filterValue),
           300
         ),
@@ -26443,7 +26434,7 @@ If there's a particular need for this, please submit a feature request at https:
   var attachedToField = {
     id: "attached_to",
     type: "text",
-    label: (0, import_i18n52.__)("Attached to"),
+    label: (0, import_i18n53.__)("Attached to"),
     Edit: MediaAttachedToEdit,
     render: MediaAttachedToView,
     enableSorting: false,
@@ -26452,26 +26443,26 @@ If there's a particular need for this, please submit a feature request at https:
   var attached_to_default = attachedToField;
 
   // packages/media-fields/build-module/author/index.mjs
-  var import_i18n54 = __toESM(require_i18n(), 1);
+  var import_i18n55 = __toESM(require_i18n(), 1);
   var import_data10 = __toESM(require_data(), 1);
   var import_core_data3 = __toESM(require_core_data(), 1);
 
   // packages/media-fields/build-module/author/view.mjs
-  var import_i18n53 = __toESM(require_i18n(), 1);
-  var import_element74 = __toESM(require_element(), 1);
-  var import_components47 = __toESM(require_components(), 1);
-  var import_jsx_runtime119 = __toESM(require_jsx_runtime(), 1);
+  var import_i18n54 = __toESM(require_i18n(), 1);
+  var import_element77 = __toESM(require_element(), 1);
+  var import_components48 = __toESM(require_components(), 1);
+  var import_jsx_runtime120 = __toESM(require_jsx_runtime(), 1);
   function AuthorView({
     item
   }) {
     const author = item?._embedded?.author?.[0];
     const text = author?.name;
     const imageUrl = author?.avatar_urls?.[48];
-    const [loadingState, setLoadingState] = (0, import_element74.useState)("loading");
-    (0, import_element74.useEffect)(() => {
+    const [loadingState, setLoadingState] = (0, import_element77.useState)("loading");
+    (0, import_element77.useEffect)(() => {
       setLoadingState("loading");
     }, [imageUrl]);
-    const imgRef = (0, import_element74.useCallback)((img) => {
+    const imgRef = (0, import_element77.useCallback)((img) => {
       if (img?.complete) {
         setLoadingState("instant");
       }
@@ -26481,33 +26472,33 @@ If there's a particular need for this, please submit a feature request at https:
         setLoadingState("loaded");
       }
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime119.jsxs)(import_components47.__experimentalHStack, { alignment: "left", spacing: 0, children: [
-      !!imageUrl && /* @__PURE__ */ (0, import_jsx_runtime119.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime120.jsxs)(import_components48.__experimentalHStack, { alignment: "left", spacing: 0, children: [
+      !!imageUrl && /* @__PURE__ */ (0, import_jsx_runtime120.jsx)(
         "div",
         {
           className: clsx_default("media-author-field__avatar", {
             "is-loading": loadingState === "loading",
             "is-loaded": loadingState === "loaded"
           }),
-          children: /* @__PURE__ */ (0, import_jsx_runtime119.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime120.jsx)(
             "img",
             {
               ref: imgRef,
               onLoad: handleLoad,
-              alt: (0, import_i18n53.__)("Author avatar"),
+              alt: (0, import_i18n54.__)("Author avatar"),
               src: imageUrl
             }
           )
         }
       ),
-      !imageUrl && /* @__PURE__ */ (0, import_jsx_runtime119.jsx)("div", { className: "media-author-field__icon", children: /* @__PURE__ */ (0, import_jsx_runtime119.jsx)(import_components47.Icon, { icon: comment_author_avatar_default }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime119.jsx)("span", { className: "media-author-field__name", children: text })
+      !imageUrl && /* @__PURE__ */ (0, import_jsx_runtime120.jsx)("div", { className: "media-author-field__icon", children: /* @__PURE__ */ (0, import_jsx_runtime120.jsx)(import_components48.Icon, { icon: comment_author_avatar_default }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime120.jsx)("span", { className: "media-author-field__name", children: text })
     ] });
   }
 
   // packages/media-fields/build-module/author/index.mjs
   var authorField = {
-    label: (0, import_i18n54.__)("Author"),
+    label: (0, import_i18n55.__)("Author"),
     id: "author",
     type: "integer",
     getElements: async () => {
@@ -26540,8 +26531,8 @@ If there's a particular need for this, please submit a feature request at https:
   var author_default = authorField;
 
   // packages/media-fields/build-module/caption/index.mjs
-  var import_i18n55 = __toESM(require_i18n(), 1);
-  var import_components48 = __toESM(require_components(), 1);
+  var import_i18n56 = __toESM(require_i18n(), 1);
+  var import_components49 = __toESM(require_components(), 1);
 
   // packages/media-fields/build-module/utils/get-raw-content.mjs
   function getRawContent(content) {
@@ -26558,16 +26549,16 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/media-fields/build-module/caption/index.mjs
-  var import_jsx_runtime120 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime121 = __toESM(require_jsx_runtime(), 1);
   var captionField = {
     id: "caption",
     type: "text",
-    label: (0, import_i18n55.__)("Caption"),
+    label: (0, import_i18n56.__)("Caption"),
     getValue: ({ item }) => getRawContent(item?.caption),
     render: ({ item }) => getRawContent(item?.caption) || "-",
     Edit: ({ field, onChange, data }) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime120.jsx)(
-        import_components48.TextareaControl,
+      return /* @__PURE__ */ (0, import_jsx_runtime121.jsx)(
+        import_components49.TextareaControl,
         {
           label: field.label,
           value: getRawContent(data.caption) || "",
@@ -26582,52 +26573,44 @@ If there's a particular need for this, please submit a feature request at https:
   var caption_default = captionField;
 
   // packages/media-fields/build-module/date_added/index.mjs
-  var import_i18n56 = __toESM(require_i18n(), 1);
-  var import_date10 = __toESM(require_date(), 1);
+  var import_i18n57 = __toESM(require_i18n(), 1);
   var dateAddedField = {
     id: "date",
     type: "datetime",
-    label: (0, import_i18n56.__)("Date added"),
+    label: (0, import_i18n57.__)("Date added"),
     filterBy: {
       operators: ["before", "after"]
-    },
-    format: {
-      datetime: (0, import_date10.getSettings)().formats.datetimeAbbreviated
     },
     readOnly: true
   };
   var date_added_default = dateAddedField;
 
   // packages/media-fields/build-module/date_modified/index.mjs
-  var import_i18n57 = __toESM(require_i18n(), 1);
-  var import_date11 = __toESM(require_date(), 1);
+  var import_i18n58 = __toESM(require_i18n(), 1);
   var dateModifiedField = {
     id: "modified",
     type: "datetime",
-    label: (0, import_i18n57.__)("Date modified"),
+    label: (0, import_i18n58.__)("Date modified"),
     filterBy: {
       operators: ["before", "after"]
-    },
-    format: {
-      datetime: (0, import_date11.getSettings)().formats.datetimeAbbreviated
     },
     readOnly: true
   };
   var date_modified_default = dateModifiedField;
 
   // packages/media-fields/build-module/description/index.mjs
-  var import_i18n58 = __toESM(require_i18n(), 1);
-  var import_components49 = __toESM(require_components(), 1);
-  var import_jsx_runtime121 = __toESM(require_jsx_runtime(), 1);
+  var import_i18n59 = __toESM(require_i18n(), 1);
+  var import_components50 = __toESM(require_components(), 1);
+  var import_jsx_runtime122 = __toESM(require_jsx_runtime(), 1);
   var descriptionField = {
     id: "description",
     type: "text",
-    label: (0, import_i18n58.__)("Description"),
+    label: (0, import_i18n59.__)("Description"),
     getValue: ({ item }) => getRawContent(item?.description),
-    render: ({ item }) => /* @__PURE__ */ (0, import_jsx_runtime121.jsx)("div", { children: getRawContent(item?.description) || "-" }),
+    render: ({ item }) => /* @__PURE__ */ (0, import_jsx_runtime122.jsx)("div", { children: getRawContent(item?.description) || "-" }),
     Edit: ({ field, onChange, data }) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime121.jsx)(
-        import_components49.TextareaControl,
+      return /* @__PURE__ */ (0, import_jsx_runtime122.jsx)(
+        import_components50.TextareaControl,
         {
           label: field.label,
           value: getRawContent(data.description) || "",
@@ -26642,19 +26625,18 @@ If there's a particular need for this, please submit a feature request at https:
   var description_default = descriptionField;
 
   // packages/media-fields/build-module/filename/index.mjs
-  var import_i18n59 = __toESM(require_i18n(), 1);
+  var import_i18n60 = __toESM(require_i18n(), 1);
   var import_url4 = __toESM(require_url(), 1);
 
   // packages/media-fields/build-module/filename/view.mjs
-  var import_components50 = __toESM(require_components(), 1);
-  var import_element75 = __toESM(require_element(), 1);
+  var import_element78 = __toESM(require_element(), 1);
   var import_url3 = __toESM(require_url(), 1);
-  var import_jsx_runtime122 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime123 = __toESM(require_jsx_runtime(), 1);
   var TRUNCATE_LENGTH = 15;
   function FileNameView({
     item
   }) {
-    const fileName = (0, import_element75.useMemo)(
+    const fileName = (0, import_element78.useMemo)(
       () => item?.source_url ? (0, import_url3.getFilename)(item.source_url) : null,
       [item?.source_url]
     );
@@ -26662,16 +26644,24 @@ If there's a particular need for this, please submit a feature request at https:
       return "";
     }
     if (fileName.length <= TRUNCATE_LENGTH) {
-      return /* @__PURE__ */ (0, import_jsx_runtime122.jsx)("span", { className: "dataviews-media-field__filename", children: fileName });
+      return /* @__PURE__ */ (0, import_jsx_runtime123.jsx)("span", { className: "dataviews-media-field__filename", children: fileName });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime122.jsx)(import_components50.Tooltip, { text: fileName, children: /* @__PURE__ */ (0, import_jsx_runtime122.jsx)("span", { className: "dataviews-media-field__filename", tabIndex: -1, children: fileName }) });
+    return /* @__PURE__ */ (0, import_jsx_runtime123.jsxs)(tooltip_exports.Root, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(
+        tooltip_exports.Trigger,
+        {
+          render: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)("span", { className: "dataviews-media-field__filename", children: fileName })
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(tooltip_exports.Popup, { children: fileName })
+    ] });
   }
 
   // packages/media-fields/build-module/filename/index.mjs
   var filenameField = {
     id: "filename",
     type: "text",
-    label: (0, import_i18n59.__)("File name"),
+    label: (0, import_i18n60.__)("File name"),
     getValue: ({ item }) => (0, import_url4.getFilename)(item?.source_url || ""),
     render: FileNameView,
     enableSorting: false,
@@ -26681,7 +26671,7 @@ If there's a particular need for this, please submit a feature request at https:
   var filename_default = filenameField;
 
   // packages/media-fields/build-module/filesize/index.mjs
-  var import_i18n60 = __toESM(require_i18n(), 1);
+  var import_i18n61 = __toESM(require_i18n(), 1);
   var KB_IN_BYTES = 1024;
   var MB_IN_BYTES = 1024 * KB_IN_BYTES;
   var GB_IN_BYTES = 1024 * MB_IN_BYTES;
@@ -26691,9 +26681,9 @@ If there's a particular need for this, please submit a feature request at https:
   var ZB_IN_BYTES = 1024 * EB_IN_BYTES;
   var YB_IN_BYTES = 1024 * ZB_IN_BYTES;
   function getBytesString(bytes, unitSymbol, decimals = 2) {
-    return (0, import_i18n60.sprintf)(
+    return (0, import_i18n61.sprintf)(
       // translators: 1: Actual bytes of a file. 2: The unit symbol (e.g. MB).
-      (0, import_i18n60._x)("%1$s %2$s", "file size"),
+      (0, import_i18n61._x)("%1$s %2$s", "file size"),
       bytes.toLocaleString(void 0, {
         minimumFractionDigits: 0,
         maximumFractionDigits: decimals
@@ -26703,27 +26693,27 @@ If there's a particular need for this, please submit a feature request at https:
   }
   function formatFileSize(bytes, decimals = 2) {
     if (bytes === 0) {
-      return getBytesString(0, (0, import_i18n60._x)("B", "unit symbol"), decimals);
+      return getBytesString(0, (0, import_i18n61._x)("B", "unit symbol"), decimals);
     }
     const quant = {
       /* translators: Unit symbol for yottabyte. */
-      [(0, import_i18n60._x)("YB", "unit symbol")]: YB_IN_BYTES,
+      [(0, import_i18n61._x)("YB", "unit symbol")]: YB_IN_BYTES,
       /* translators: Unit symbol for zettabyte. */
-      [(0, import_i18n60._x)("ZB", "unit symbol")]: ZB_IN_BYTES,
+      [(0, import_i18n61._x)("ZB", "unit symbol")]: ZB_IN_BYTES,
       /* translators: Unit symbol for exabyte. */
-      [(0, import_i18n60._x)("EB", "unit symbol")]: EB_IN_BYTES,
+      [(0, import_i18n61._x)("EB", "unit symbol")]: EB_IN_BYTES,
       /* translators: Unit symbol for petabyte. */
-      [(0, import_i18n60._x)("PB", "unit symbol")]: PB_IN_BYTES,
+      [(0, import_i18n61._x)("PB", "unit symbol")]: PB_IN_BYTES,
       /* translators: Unit symbol for terabyte. */
-      [(0, import_i18n60._x)("TB", "unit symbol")]: TB_IN_BYTES,
+      [(0, import_i18n61._x)("TB", "unit symbol")]: TB_IN_BYTES,
       /* translators: Unit symbol for gigabyte. */
-      [(0, import_i18n60._x)("GB", "unit symbol")]: GB_IN_BYTES,
+      [(0, import_i18n61._x)("GB", "unit symbol")]: GB_IN_BYTES,
       /* translators: Unit symbol for megabyte. */
-      [(0, import_i18n60._x)("MB", "unit symbol")]: MB_IN_BYTES,
+      [(0, import_i18n61._x)("MB", "unit symbol")]: MB_IN_BYTES,
       /* translators: Unit symbol for kilobyte. */
-      [(0, import_i18n60._x)("KB", "unit symbol")]: KB_IN_BYTES,
+      [(0, import_i18n61._x)("KB", "unit symbol")]: KB_IN_BYTES,
       /* translators: Unit symbol for byte. */
-      [(0, import_i18n60._x)("B", "unit symbol")]: 1
+      [(0, import_i18n61._x)("B", "unit symbol")]: 1
     };
     for (const [unit, mag] of Object.entries(quant)) {
       if (bytes >= mag) {
@@ -26735,7 +26725,7 @@ If there's a particular need for this, please submit a feature request at https:
   var filesizeField = {
     id: "filesize",
     type: "text",
-    label: (0, import_i18n60.__)("File size"),
+    label: (0, import_i18n61.__)("File size"),
     getValue: ({ item }) => item?.media_details?.filesize ? formatFileSize(item?.media_details?.filesize) : "",
     isVisible: (item) => {
       return !!item?.media_details?.filesize;
@@ -26747,14 +26737,14 @@ If there's a particular need for this, please submit a feature request at https:
   var filesize_default = filesizeField;
 
   // packages/media-fields/build-module/media_dimensions/index.mjs
-  var import_i18n61 = __toESM(require_i18n(), 1);
+  var import_i18n62 = __toESM(require_i18n(), 1);
   var mediaDimensionsField = {
     id: "media_dimensions",
     type: "text",
-    label: (0, import_i18n61.__)("Dimensions"),
-    getValue: ({ item }) => item?.media_details?.width && item?.media_details?.height ? (0, import_i18n61.sprintf)(
+    label: (0, import_i18n62.__)("Dimensions"),
+    getValue: ({ item }) => item?.media_details?.width && item?.media_details?.height ? (0, import_i18n62.sprintf)(
       // translators: 1: Width. 2: Height.
-      (0, import_i18n61._x)("%1$s \xD7 %2$s", "image dimensions"),
+      (0, import_i18n62._x)("%1$s \xD7 %2$s", "image dimensions"),
       item?.media_details?.width?.toString(),
       item?.media_details?.height?.toString()
     ) : "",
@@ -26768,48 +26758,48 @@ If there's a particular need for this, please submit a feature request at https:
   var media_dimensions_default = mediaDimensionsField;
 
   // packages/media-fields/build-module/media_thumbnail/index.mjs
-  var import_i18n63 = __toESM(require_i18n(), 1);
+  var import_i18n64 = __toESM(require_i18n(), 1);
 
   // packages/media-fields/build-module/media_thumbnail/view.mjs
   var import_data11 = __toESM(require_data(), 1);
   var import_core_data4 = __toESM(require_core_data(), 1);
   var import_components51 = __toESM(require_components(), 1);
-  var import_element76 = __toESM(require_element(), 1);
+  var import_element79 = __toESM(require_element(), 1);
   var import_url5 = __toESM(require_url(), 1);
 
   // packages/media-fields/build-module/utils/get-media-type-from-mime-type.mjs
-  var import_i18n62 = __toESM(require_i18n(), 1);
+  var import_i18n63 = __toESM(require_i18n(), 1);
   function getMediaTypeFromMimeType(mimeType) {
     if (mimeType.startsWith("image/")) {
       return {
         type: "image",
-        label: (0, import_i18n62.__)("Image"),
+        label: (0, import_i18n63.__)("Image"),
         icon: image_default
       };
     }
     if (mimeType.startsWith("video/")) {
       return {
         type: "video",
-        label: (0, import_i18n62.__)("Video"),
+        label: (0, import_i18n63.__)("Video"),
         icon: video_default
       };
     }
     if (mimeType.startsWith("audio/")) {
       return {
         type: "audio",
-        label: (0, import_i18n62.__)("Audio"),
+        label: (0, import_i18n63.__)("Audio"),
         icon: audio_default
       };
     }
     return {
       type: "application",
-      label: (0, import_i18n62.__)("Application"),
+      label: (0, import_i18n63.__)("Application"),
       icon: file_default
     };
   }
 
   // packages/media-fields/build-module/media_thumbnail/view.mjs
-  var import_jsx_runtime123 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime124 = __toESM(require_jsx_runtime(), 1);
   function getBestImageUrl(featuredMedia, configSizes) {
     const sizes = featuredMedia?.media_details?.sizes;
     if (!sizes) {
@@ -26842,7 +26832,7 @@ If there's a particular need for this, please submit a feature request at https:
     item,
     filename
   }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime123.jsx)("div", { className: "dataviews-media-field__media-thumbnail", children: /* @__PURE__ */ (0, import_jsx_runtime123.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime124.jsx)("div", { className: "dataviews-media-field__media-thumbnail", children: /* @__PURE__ */ (0, import_jsx_runtime124.jsxs)(
       import_components51.__experimentalVStack,
       {
         justify: "center",
@@ -26850,7 +26840,7 @@ If there's a particular need for this, please submit a feature request at https:
         className: "dataviews-media-field__media-thumbnail__stack",
         spacing: 0,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(
             import_components51.Icon,
             {
               className: "dataviews-media-field__media-thumbnail--icon",
@@ -26858,7 +26848,7 @@ If there's a particular need for this, please submit a feature request at https:
               size: 24
             }
           ),
-          !!filename && /* @__PURE__ */ (0, import_jsx_runtime123.jsx)("div", { className: "dataviews-media-field__media-thumbnail__filename", children: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(import_components51.__experimentalTruncate, { className: "dataviews-media-field__media-thumbnail__filename__truncate", children: filename }) })
+          !!filename && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)("div", { className: "dataviews-media-field__media-thumbnail__filename", children: /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(import_components51.__experimentalTruncate, { className: "dataviews-media-field__media-thumbnail__filename__truncate", children: filename }) })
         ]
       }
     ) });
@@ -26869,9 +26859,9 @@ If there's a particular need for this, please submit a feature request at https:
     onError
   }) {
     const imageUrl = getBestImageUrl(item, configSizes);
-    const imgRef = (0, import_element76.useRef)(null);
-    const [loadingState, setLoadingState] = (0, import_element76.useState)("loading");
-    (0, import_element76.useLayoutEffect)(() => {
+    const imgRef = (0, import_element79.useRef)(null);
+    const [loadingState, setLoadingState] = (0, import_element79.useState)("loading");
+    (0, import_element79.useLayoutEffect)(() => {
       if (imgRef.current?.complete) {
         setLoadingState("instant");
       } else {
@@ -26883,14 +26873,14 @@ If there's a particular need for this, please submit a feature request at https:
         setLoadingState("loaded");
       }
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(
       "div",
       {
         className: clsx_default("dataviews-media-field__media-thumbnail", {
           "is-loading": loadingState === "loading",
           "is-loaded": loadingState === "loaded"
         }),
-        children: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(
+        children: /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(
           "img",
           {
             ref: imgRef,
@@ -26909,7 +26899,7 @@ If there's a particular need for this, please submit a feature request at https:
     item,
     config
   }) {
-    const [imageError, setImageError] = (0, import_element76.useState)(false);
+    const [imageError, setImageError] = (0, import_element79.useState)(false);
     const _featuredMedia = (0, import_data11.useSelect)(
       (select2) => {
         if (!item.featured_media) {
@@ -26929,9 +26919,9 @@ If there's a particular need for this, please submit a feature request at https:
     }
     const filename = (0, import_url5.getFilename)(featuredMedia.source_url || "");
     if (imageError || getMediaTypeFromMimeType(featuredMedia.mime_type).type !== "image") {
-      return /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(FallbackView, { item: featuredMedia, filename: filename || "" });
+      return /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(FallbackView, { item: featuredMedia, filename: filename || "" });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(
       ImageView,
       {
         item: featuredMedia,
@@ -26945,7 +26935,7 @@ If there's a particular need for this, please submit a feature request at https:
   var mediaThumbnailField = {
     id: "media_thumbnail",
     type: "media",
-    label: (0, import_i18n63.__)("Thumbnail"),
+    label: (0, import_i18n64.__)("Thumbnail"),
     render: MediaThumbnailView,
     enableSorting: false,
     filterBy: false
@@ -26953,11 +26943,11 @@ If there's a particular need for this, please submit a feature request at https:
   var media_thumbnail_default = mediaThumbnailField;
 
   // packages/media-fields/build-module/mime_type/index.mjs
-  var import_i18n64 = __toESM(require_i18n(), 1);
+  var import_i18n65 = __toESM(require_i18n(), 1);
   var mimeTypeField = {
     id: "mime_type",
     type: "text",
-    label: (0, import_i18n64.__)("File type"),
+    label: (0, import_i18n65.__)("File type"),
     getValue: ({ item }) => item?.mime_type || "",
     render: ({ item }) => item?.mime_type || "-",
     // Disable sorting until REST API support for ordering my `mime_type` is added.
@@ -26979,19 +26969,19 @@ If there's a particular need for this, please submit a feature request at https:
   );
 
   // packages/media-utils/build-module/components/media-upload-modal/upload-status-popover.mjs
-  var import_element77 = __toESM(require_element(), 1);
-  var import_i18n65 = __toESM(require_i18n(), 1);
+  var import_element80 = __toESM(require_element(), 1);
+  var import_i18n66 = __toESM(require_i18n(), 1);
   var import_components52 = __toESM(require_components(), 1);
-  var import_jsx_runtime124 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime125 = __toESM(require_jsx_runtime(), 1);
   function UploadStatusPopover({
     uploadingFiles,
     onDismissError,
     onOpenChange
   }) {
-    const [isOpen, setIsOpen] = (0, import_element77.useState)(false);
-    const [prevHadErrors, setPrevHadErrors] = (0, import_element77.useState)(false);
-    const triggerRef = (0, import_element77.useRef)(null);
-    const updateIsOpen = (0, import_element77.useCallback)(
+    const [isOpen, setIsOpen] = (0, import_element80.useState)(false);
+    const [prevHadErrors, setPrevHadErrors] = (0, import_element80.useState)(false);
+    const triggerRef = (0, import_element80.useRef)(null);
+    const updateIsOpen = (0, import_element80.useCallback)(
       (open) => {
         setIsOpen(open);
         onOpenChange?.(open);
@@ -27006,7 +26996,7 @@ If there's a particular need for this, please submit a feature request at https:
     );
     const hasErrors = errorFiles.length > 0;
     const isUploading = activeFiles.length > 0;
-    (0, import_element77.useEffect)(() => {
+    (0, import_element80.useEffect)(() => {
       if (hasErrors && !prevHadErrors) {
         updateIsOpen(true);
       }
@@ -27017,26 +27007,26 @@ If there's a particular need for this, please submit a feature request at https:
     }
     let buttonLabel, popoverHeading;
     if (isUploading) {
-      buttonLabel = (0, import_i18n65.sprintf)(
+      buttonLabel = (0, import_i18n66.sprintf)(
         // translators: %s: number of files being uploaded
-        (0, import_i18n65._n)("Uploading %s file", "Uploading %s files", activeFiles.length),
+        (0, import_i18n66._n)("Uploading %s file", "Uploading %s files", activeFiles.length),
         activeFiles.length.toLocaleString()
       );
-      popoverHeading = (0, import_i18n65.__)("Uploading");
+      popoverHeading = (0, import_i18n66.__)("Uploading");
     } else if (hasErrors) {
-      buttonLabel = (0, import_i18n65.sprintf)(
+      buttonLabel = (0, import_i18n66.sprintf)(
         // translators: %s: number of upload errors
-        (0, import_i18n65._n)("%s upload error", "%s upload errors", errorFiles.length),
+        (0, import_i18n66._n)("%s upload error", "%s upload errors", errorFiles.length),
         errorFiles.length.toLocaleString()
       );
-      popoverHeading = (0, import_i18n65.__)("Upload errors");
+      popoverHeading = (0, import_i18n66.__)("Upload errors");
     } else {
-      buttonLabel = (0, import_i18n65.__)("Upload complete");
-      popoverHeading = (0, import_i18n65.__)("Upload complete");
+      buttonLabel = (0, import_i18n66.__)("Upload complete");
+      popoverHeading = (0, import_i18n66.__)("Upload complete");
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime124.jsxs)("div", { className: "media-upload-modal__upload-status", children: [
-      isUploading && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(import_components52.Spinner, {}),
-      /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)("div", { className: "media-upload-modal__upload-status", children: [
+      isUploading && /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(import_components52.Spinner, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(
         import_components52.Button,
         {
           className: "media-upload-modal__upload-status__trigger",
@@ -27049,7 +27039,7 @@ If there's a particular need for this, please submit a feature request at https:
           children: buttonLabel
         }
       ),
-      isOpen && /* @__PURE__ */ (0, import_jsx_runtime124.jsxs)(
+      isOpen && /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(
         import_components52.Popover,
         {
           className: "media-upload-modal__upload-status__popover",
@@ -27066,15 +27056,15 @@ If there's a particular need for this, please submit a feature request at https:
             updateIsOpen(false);
           },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime124.jsx)("div", { className: "media-upload-modal__upload-status__header", children: /* @__PURE__ */ (0, import_jsx_runtime124.jsx)("h3", { children: popoverHeading }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime124.jsx)("ul", { className: "media-upload-modal__upload-status__list", children: uploadingFiles.map((file) => /* @__PURE__ */ (0, import_jsx_runtime124.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime125.jsx)("div", { className: "media-upload-modal__upload-status__header", children: /* @__PURE__ */ (0, import_jsx_runtime125.jsx)("h3", { children: popoverHeading }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime125.jsx)("ul", { className: "media-upload-modal__upload-status__list", children: uploadingFiles.map((file) => /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(
               "li",
               {
                 className: "media-upload-modal__upload-status__item",
                 children: [
-                  file.status === "uploading" && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(import_components52.Spinner, {}),
-                  file.status === "uploaded" && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(import_components52.Icon, { icon: check_default, size: 16 }),
-                  (file.status === "uploading" || file.status === "uploaded") && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(
+                  file.status === "uploading" && /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(import_components52.Spinner, {}),
+                  file.status === "uploaded" && /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(import_components52.Icon, { icon: check_default, size: 16 }),
+                  (file.status === "uploading" || file.status === "uploaded") && /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(
                     "span",
                     {
                       className: "media-upload-modal__upload-status__filename",
@@ -27082,7 +27072,7 @@ If there's a particular need for this, please submit a feature request at https:
                       children: file.name
                     }
                   ),
-                  file.status === "error" && /* @__PURE__ */ (0, import_jsx_runtime124.jsxs)(
+                  file.status === "error" && /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(
                     import_components52.Notice,
                     {
                       status: "error",
@@ -27106,12 +27096,12 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/media-utils/build-module/components/media-upload-modal/use-invalidate-attachment-resolutions.mjs
-  var import_element78 = __toESM(require_element(), 1);
+  var import_element81 = __toESM(require_element(), 1);
   var import_core_data5 = __toESM(require_core_data(), 1);
   var import_data12 = __toESM(require_data(), 1);
   function useInvalidateAttachmentResolutions() {
     const registry = (0, import_data12.useRegistry)();
-    return (0, import_element78.useCallback)(() => {
+    return (0, import_element81.useCallback)(() => {
       const resolvers = registry.select(import_core_data5.store).getCachedResolvers();
       const entityRecordResolutions = resolvers.getEntityRecords;
       entityRecordResolutions?.forEach((_value, args) => {
@@ -27123,27 +27113,27 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/media-utils/build-module/components/media-upload-modal/use-upload-status.mjs
-  var import_element79 = __toESM(require_element(), 1);
+  var import_element82 = __toESM(require_element(), 1);
   var import_blob2 = __toESM(require_blob(), 1);
   var idCounter = 0;
   var batchIdCounter = 0;
   function useUploadStatus({
     onBatchComplete
   } = {}) {
-    const [uploadingFiles, setUploadingFiles] = (0, import_element79.useState)(
+    const [uploadingFiles, setUploadingFiles] = (0, import_element82.useState)(
       []
     );
-    const clearCompleted = (0, import_element79.useCallback)(() => {
+    const clearCompleted = (0, import_element82.useCallback)(() => {
       setUploadingFiles(
         (prev) => prev.filter((item) => item.status !== "uploaded")
       );
     }, []);
-    const dismissError = (0, import_element79.useCallback)((fileId) => {
+    const dismissError = (0, import_element82.useCallback)((fileId) => {
       setUploadingFiles(
         (prev) => prev.filter((item) => item.id !== fileId)
       );
     }, []);
-    const registerBatch = (0, import_element79.useCallback)(
+    const registerBatch = (0, import_element82.useCallback)(
       (files) => {
         const batchId = String(++batchIdCounter);
         const batchSize = files.length;
@@ -27221,7 +27211,7 @@ If there's a particular need for this, please submit a feature request at https:
   }
 
   // packages/media-utils/build-module/components/media-upload-modal/index.mjs
-  var import_jsx_runtime125 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime126 = __toESM(require_jsx_runtime(), 1);
   var { useEntityRecordsWithPermissions } = unlock4(import_core_data6.privateApis);
   var LAYOUT_PICKER_GRID2 = "pickerGrid";
   var LAYOUT_PICKER_TABLE2 = "pickerTable";
@@ -27271,14 +27261,14 @@ If there's a particular need for this, please submit a feature request at https:
     onSelect,
     onClose,
     onUpload,
-    title = (0, import_i18n66.__)("Select Media"),
+    title = (0, import_i18n67.__)("Select Media"),
     isOpen,
     isDismissible = true,
     modalClass,
     search = true,
-    searchLabel = (0, import_i18n66.__)("Search media")
+    searchLabel = (0, import_i18n67.__)("Search media")
   }) {
-    const [selection, setSelection] = (0, import_element80.useState)(() => {
+    const [selection, setSelection] = (0, import_element83.useState)(() => {
       if (!value) {
         return [];
       }
@@ -27286,7 +27276,7 @@ If there's a particular need for this, please submit a feature request at https:
     });
     const { createSuccessNotice, removeAllNotices } = (0, import_data13.useDispatch)(import_notices.store);
     const invalidateAttachmentResolutions = useInvalidateAttachmentResolutions();
-    const [queryParams, setQueryParams] = (0, import_element80.useState)(
+    const [queryParams, setQueryParams] = (0, import_element83.useState)(
       () => defaultQueryParams
     );
     const { view, updateView, isModified, resetToDefault } = useView({
@@ -27297,7 +27287,7 @@ If there's a particular need for this, please submit a feature request at https:
       queryParams,
       onChangeQueryParams: setQueryParams
     });
-    const handleChangeView = (0, import_element80.useCallback)(
+    const handleChangeView = (0, import_element83.useCallback)(
       (nextView) => {
         const normalizedView = { ...nextView };
         if (normalizedView.startPosition === void 0) {
@@ -27307,7 +27297,7 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [updateView]
     );
-    const queryArgs = (0, import_element80.useMemo)(() => {
+    const queryArgs = (0, import_element83.useMemo)(() => {
       const filters = {};
       view.filters?.forEach((filter) => {
         if (filter.field === "media_type") {
@@ -27363,7 +27353,7 @@ If there's a particular need for this, please submit a feature request at https:
         ...filters
       };
     }, [view, allowedTypes]);
-    const handleBatchComplete = (0, import_element80.useCallback)(
+    const handleBatchComplete = (0, import_element83.useCallback)(
       (attachments) => {
         const uploadedIds = attachments.map((attachment) => String(attachment.id)).filter(Boolean);
         if (multiple) {
@@ -27388,8 +27378,8 @@ If there's a particular need for this, please submit a feature request at https:
       clearCompleted,
       allComplete
     } = useUploadStatus({ onBatchComplete: handleBatchComplete });
-    const isPopoverOpenRef = (0, import_element80.useRef)(false);
-    const handlePopoverOpenChange = (0, import_element80.useCallback)(
+    const isPopoverOpenRef = (0, import_element83.useRef)(false);
+    const handlePopoverOpenChange = (0, import_element83.useCallback)(
       (open) => {
         isPopoverOpenRef.current = open;
         if (!open) {
@@ -27404,7 +27394,7 @@ If there's a particular need for this, please submit a feature request at https:
       totalItems,
       totalPages
     } = useEntityRecordsWithPermissions("postType", "attachment", queryArgs);
-    const fields = (0, import_element80.useMemo)(
+    const fields = (0, import_element83.useMemo)(
       () => [
         // Media field definitions from @wordpress/media-fields
         // Cast is safe because RestAttachment has the same properties as Attachment
@@ -27416,10 +27406,10 @@ If there's a particular need for this, please submit a feature request at https:
         {
           id: "title",
           type: "text",
-          label: (0, import_i18n66.__)("Title"),
+          label: (0, import_i18n67.__)("Title"),
           getValue: ({ item }) => {
             const titleValue = item.title.raw || item.title.rendered;
-            return titleValue || (0, import_i18n66.__)("(no title)");
+            return titleValue || (0, import_i18n67.__)("(no title)");
           }
         },
         alt_text_default,
@@ -27436,11 +27426,11 @@ If there's a particular need for this, please submit a feature request at https:
       ],
       []
     );
-    const actions = (0, import_element80.useMemo)(
+    const actions = (0, import_element83.useMemo)(
       () => [
         {
           id: "select",
-          label: (0, import_i18n66.__)("Select"),
+          label: (0, import_i18n67.__)("Select"),
           isPrimary: true,
           supportsBulk: multiple,
           async callback() {
@@ -27467,27 +27457,27 @@ If there's a particular need for this, please submit a feature request at https:
       ],
       [multiple, onSelect, selection, removeAllNotices]
     );
-    const handleModalClose = (0, import_element80.useCallback)(() => {
+    const handleModalClose = (0, import_element83.useCallback)(() => {
       removeAllNotices("snackbar", NOTICES_CONTEXT);
       onClose?.();
     }, [removeAllNotices, onClose]);
-    (0, import_element80.useEffect)(() => {
+    (0, import_element83.useEffect)(() => {
       if (!isOpen) {
         setQueryParams(defaultQueryParams);
       }
     }, [isOpen]);
     const handleUpload = onUpload || uploadMedia;
-    const prevAllCompleteRef = (0, import_element80.useRef)(false);
-    (0, import_element80.useEffect)(() => {
+    const prevAllCompleteRef = (0, import_element83.useRef)(false);
+    (0, import_element83.useEffect)(() => {
       if (allComplete && !prevAllCompleteRef.current) {
         const completeCount = uploadingFiles.filter(
           (file) => file.status === "uploaded"
         ).length;
         if (completeCount > 0) {
           createSuccessNotice(
-            (0, import_i18n66.sprintf)(
+            (0, import_i18n67.sprintf)(
               // translators: %s: number of files
-              (0, import_i18n66._n)(
+              (0, import_i18n67._n)(
                 "Uploaded %s file",
                 "Uploaded %s files",
                 completeCount
@@ -27507,7 +27497,7 @@ If there's a particular need for this, please submit a feature request at https:
       }
       prevAllCompleteRef.current = allComplete;
     }, [allComplete, uploadingFiles, createSuccessNotice, clearCompleted]);
-    const handleFileSelect = (0, import_element80.useCallback)(
+    const handleFileSelect = (0, import_element83.useCallback)(
       (event) => {
         const files = event.target.files;
         if (files && files.length > 0) {
@@ -27523,14 +27513,14 @@ If there's a particular need for this, please submit a feature request at https:
       },
       [allowedTypes, handleUpload, registerBatch]
     );
-    const paginationInfo = (0, import_element80.useMemo)(
+    const paginationInfo = (0, import_element83.useMemo)(
       () => ({
         totalItems,
         totalPages
       }),
       [totalItems, totalPages]
     );
-    const acceptTypes = (0, import_element80.useMemo)(() => {
+    const acceptTypes = (0, import_element83.useMemo)(() => {
       if (allowedTypes?.includes("*")) {
         return void 0;
       }
@@ -27539,7 +27529,7 @@ If there's a particular need for this, please submit a feature request at https:
     if (!isOpen) {
       return null;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime126.jsxs)(
       import_components53.Modal,
       {
         title,
@@ -27548,26 +27538,26 @@ If there's a particular need for this, please submit a feature request at https:
         className: modalClass,
         overlayClassName: "media-upload-modal",
         size: "fill",
-        headerActions: /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(
+        headerActions: /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(
           import_components53.FormFileUpload,
           {
             accept: acceptTypes,
             multiple: true,
             onChange: handleFileSelect,
             __next40pxDefaultSize: true,
-            render: ({ openFileDialog }) => /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(
+            render: ({ openFileDialog }) => /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(
               import_components53.Button,
               {
                 onClick: openFileDialog,
                 icon: upload_default,
                 __next40pxDefaultSize: true,
-                children: (0, import_i18n66.__)("Upload media")
+                children: (0, import_i18n67.__)("Upload media")
               }
             )
           }
         ),
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(
             import_components53.DropZone,
             {
               onFilesDrop: (files) => {
@@ -27591,10 +27581,10 @@ If there's a particular need for this, please submit a feature request at https:
                   });
                 }
               },
-              label: (0, import_i18n66.__)("Drop files to upload")
+              label: (0, import_i18n67.__)("Drop files to upload")
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime126.jsxs)(
             dataviews_picker_default,
             {
               data: mediaRecords || [],
@@ -27608,10 +27598,10 @@ If there's a particular need for this, please submit a feature request at https:
               paginationInfo,
               defaultLayouts,
               getItemId: (item) => String(item.id),
-              itemListLabel: (0, import_i18n66.__)("Media items"),
+              itemListLabel: (0, import_i18n67.__)("Media items"),
               onReset: isModified ? resetToDefault : false,
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(
+                /* @__PURE__ */ (0, import_jsx_runtime126.jsxs)(
                   Stack,
                   {
                     direction: "row",
@@ -27620,7 +27610,7 @@ If there's a particular need for this, please submit a feature request at https:
                     className: "dataviews__view-actions",
                     gap: "xs",
                     children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(
+                      /* @__PURE__ */ (0, import_jsx_runtime126.jsxs)(
                         Stack,
                         {
                           direction: "row",
@@ -27628,28 +27618,28 @@ If there's a particular need for this, please submit a feature request at https:
                           justify: "start",
                           className: "dataviews__search",
                           children: [
-                            search && /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(dataviews_picker_default.Search, { label: searchLabel }),
-                            /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(dataviews_picker_default.FiltersToggle, {})
+                            search && /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(dataviews_picker_default.Search, { label: searchLabel }),
+                            /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(dataviews_picker_default.FiltersToggle, {})
                           ]
                         }
                       ),
-                      /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(Stack, { direction: "row", gap: "xs", style: { flexShrink: 0 }, children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(dataviews_picker_default.LayoutSwitcher, {}),
-                        /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(dataviews_picker_default.ViewConfig, {})
+                      /* @__PURE__ */ (0, import_jsx_runtime126.jsxs)(Stack, { direction: "row", gap: "xs", style: { flexShrink: 0 }, children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(dataviews_picker_default.LayoutSwitcher, {}),
+                        /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(dataviews_picker_default.ViewConfig, {})
                       ] })
                     ]
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(dataviews_picker_default.FiltersToggled, { className: "dataviews-filters__container" }),
-                /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(dataviews_picker_default.Layout, {}),
-                /* @__PURE__ */ (0, import_jsx_runtime125.jsxs)(
+                /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(dataviews_picker_default.FiltersToggled, { className: "dataviews-filters__container" }),
+                /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(dataviews_picker_default.Layout, {}),
+                /* @__PURE__ */ (0, import_jsx_runtime126.jsxs)(
                   "div",
                   {
                     className: clsx_default("media-upload-modal__footer", {
                       "is-uploading": uploadingFiles.length > 0
                     }),
                     children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(
+                      /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(
                         UploadStatusPopover,
                         {
                           uploadingFiles,
@@ -27657,15 +27647,15 @@ If there's a particular need for this, please submit a feature request at https:
                           onOpenChange: handlePopoverOpenChange
                         }
                       ),
-                      /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(dataviews_picker_default.BulkActionToolbar, {})
+                      /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(dataviews_picker_default.Footer, {})
                     ]
                   }
                 )
               ]
             }
           ),
-          (0, import_element80.createPortal)(
-            /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(
+          (0, import_element83.createPortal)(
+            /* @__PURE__ */ (0, import_jsx_runtime126.jsx)(
               import_notices.SnackbarNotices,
               {
                 className: "media-upload-modal__snackbar",

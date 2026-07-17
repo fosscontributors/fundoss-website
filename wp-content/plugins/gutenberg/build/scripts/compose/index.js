@@ -973,8 +973,13 @@ var wp;
   // packages/compose/build-module/higher-order/pure/index.mjs
   var import_is_shallow_equal = __toESM(require_is_shallow_equal(), 1);
   var import_element = __toESM(require_element(), 1);
+  var import_deprecated = __toESM(require_deprecated(), 1);
   var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var pure = createHigherOrderComponent(function(WrappedComponent) {
+    (0, import_deprecated.default)("wp.compose.pure", {
+      since: "7.1",
+      alternative: "Use `memo` or `PureComponent` instead"
+    });
     if (WrappedComponent.prototype instanceof import_element.Component) {
       return class extends WrappedComponent {
         shouldComponentUpdate(nextProps, nextState) {
@@ -995,7 +1000,7 @@ var wp;
 
   // packages/compose/build-module/higher-order/with-global-events/index.mjs
   var import_element2 = __toESM(require_element(), 1);
-  var import_deprecated = __toESM(require_deprecated(), 1);
+  var import_deprecated2 = __toESM(require_deprecated(), 1);
 
   // packages/compose/build-module/higher-order/with-global-events/listener.mjs
   var Listener = class {
@@ -1036,7 +1041,7 @@ var wp;
   var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
   var listener = new listener_default();
   function withGlobalEvents(eventTypesToHandlers) {
-    (0, import_deprecated.default)("wp.compose.withGlobalEvents", {
+    (0, import_deprecated2.default)("wp.compose.withGlobalEvents", {
       since: "5.7",
       alternative: "useEffect"
     });
@@ -1171,10 +1176,10 @@ var wp;
 
   // packages/compose/build-module/higher-order/with-state/index.mjs
   var import_element5 = __toESM(require_element(), 1);
-  var import_deprecated2 = __toESM(require_deprecated(), 1);
+  var import_deprecated3 = __toESM(require_deprecated(), 1);
   var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
   function withState(initialState = {}) {
-    (0, import_deprecated2.default)("wp.compose.withState", {
+    (0, import_deprecated3.default)("wp.compose.withState", {
       since: "5.8",
       alternative: "wp.element.useState"
     });
@@ -1224,14 +1229,8 @@ var wp;
           return;
         }
         const action = shiftKey ? "findPrevious" : "findNext";
-        const nextElement = import_dom.focus.tabbable[action](
-          /** @type {HTMLElement} */
-          target
-        ) || null;
-        if (
-          /** @type {HTMLElement} */
-          target.contains(nextElement)
-        ) {
+        const nextElement = import_dom.focus.tabbable[action](target) || null;
+        if (target.contains(nextElement)) {
           event.preventDefault();
           nextElement?.focus();
           return;
@@ -1257,7 +1256,7 @@ var wp;
 
   // packages/compose/build-module/hooks/use-copy-on-click/index.mjs
   var import_element8 = __toESM(require_element(), 1);
-  var import_deprecated3 = __toESM(require_deprecated(), 1);
+  var import_deprecated4 = __toESM(require_deprecated(), 1);
 
   // packages/compose/build-module/hooks/use-copy-to-clipboard/index.mjs
   var import_element7 = __toESM(require_element(), 1);
@@ -1329,7 +1328,7 @@ var wp;
 
   // packages/compose/build-module/hooks/use-copy-on-click/index.mjs
   function useCopyOnClick(ref, text, timeout = 4e3) {
-    (0, import_deprecated3.default)("wp.compose.useCopyOnClick", {
+    (0, import_deprecated4.default)("wp.compose.useCopyOnClick", {
       since: "5.8",
       alternative: "wp.compose.useCopyToClipboard"
     });
@@ -1445,31 +1444,34 @@ var wp;
   var origin = null;
   function useFocusReturn(onFocusReturn) {
     const ref = (0, import_element10.useRef)(null);
-    const focusedBeforeMount = (0, import_element10.useRef)(null);
-    const onFocusReturnRef = (0, import_element10.useRef)(onFocusReturn);
+    const focusedBeforeMountRef = (0, import_element10.useRef)(null);
+    const onFocusReturnRef = (0, import_element10.useRef)(
+      onFocusReturn
+    );
     (0, import_element10.useEffect)(() => {
       onFocusReturnRef.current = onFocusReturn;
     }, [onFocusReturn]);
     return (0, import_element10.useCallback)((node) => {
       if (node) {
         ref.current = node;
-        if (focusedBeforeMount.current) {
+        if (focusedBeforeMountRef.current) {
           return;
         }
         const activeDocument = node.ownerDocument.activeElement instanceof window.HTMLIFrameElement ? node.ownerDocument.activeElement.contentDocument : node.ownerDocument;
-        focusedBeforeMount.current = activeDocument?.activeElement ?? null;
-      } else if (focusedBeforeMount.current) {
+        focusedBeforeMountRef.current = activeDocument?.activeElement ?? null;
+      } else if (focusedBeforeMountRef.current) {
         const isFocused = ref.current?.contains(
-          ref.current?.ownerDocument.activeElement
+          ref.current?.ownerDocument.activeElement ?? null
         );
         if (ref.current?.isConnected && !isFocused) {
-          origin ??= focusedBeforeMount.current;
+          origin ??= focusedBeforeMountRef.current;
           return;
         }
         if (onFocusReturnRef.current) {
           onFocusReturnRef.current();
         } else {
-          (!focusedBeforeMount.current.isConnected ? origin : focusedBeforeMount.current)?.focus();
+          const elementToFocus = !focusedBeforeMountRef.current.isConnected ? origin : focusedBeforeMountRef.current;
+          elementToFocus?.focus();
         }
         origin = null;
       }
@@ -1554,25 +1556,40 @@ var wp;
   var import_element12 = __toESM(require_element(), 1);
   function assignRef(ref, value) {
     if (typeof ref === "function") {
-      ref(value);
+      const returned = ref(value);
+      return typeof returned === "function" ? returned : void 0;
     } else if (ref && ref.hasOwnProperty("current")) {
       ref.current = value;
     }
+    return void 0;
+  }
+  function detachRef(ref, index, cleanups) {
+    const cleanup = cleanups[index];
+    if (cleanup) {
+      cleanups[index] = void 0;
+      cleanup();
+    } else {
+      assignRef(ref, null);
+    }
   }
   function useMergeRefs(refs) {
-    const element = (0, import_element12.useRef)(null);
+    const elementRef = (0, import_element12.useRef)(null);
     const isAttachedRef = (0, import_element12.useRef)(false);
     const didElementChangeRef = (0, import_element12.useRef)(false);
     const previousRefsRef = (0, import_element12.useRef)([]);
     const currentRefsRef = (0, import_element12.useRef)(refs);
+    const cleanupsRef = (0, import_element12.useRef)([]);
     currentRefsRef.current = refs;
     (0, import_element12.useLayoutEffect)(() => {
       if (didElementChangeRef.current === false && isAttachedRef.current === true) {
         refs.forEach((ref, index) => {
           const previousRef = previousRefsRef.current[index];
           if (ref !== previousRef) {
-            assignRef(previousRef, null);
-            assignRef(ref, element.current);
+            detachRef(previousRef, index, cleanupsRef.current);
+            cleanupsRef.current[index] = assignRef(
+              ref,
+              elementRef.current
+            );
           }
         });
       }
@@ -1582,12 +1599,17 @@ var wp;
       didElementChangeRef.current = false;
     });
     return (0, import_element12.useCallback)((value) => {
-      assignRef(element, value);
+      elementRef.current = value;
       didElementChangeRef.current = true;
       isAttachedRef.current = value !== null;
-      const refsToAssign = value ? currentRefsRef.current : previousRefsRef.current;
-      for (const ref of refsToAssign) {
-        assignRef(ref, value);
+      if (value === null) {
+        previousRefsRef.current.forEach((ref, index) => {
+          detachRef(ref, index, cleanupsRef.current);
+        });
+      } else {
+        currentRefsRef.current.forEach((ref, index) => {
+          cleanupsRef.current[index] = assignRef(ref, value);
+        });
       }
     }, []);
   }
@@ -1705,7 +1727,11 @@ var wp;
   var use_isomorphic_layout_effect_default = useIsomorphicLayoutEffect;
 
   // packages/compose/build-module/hooks/use-dragging/index.mjs
-  function useDragging({ onDragStart, onDragMove, onDragEnd }) {
+  function useDragging({
+    onDragStart,
+    onDragMove,
+    onDragEnd
+  }) {
     const [isDragging, setIsDragging] = (0, import_element16.useState)(false);
     const eventsRef = (0, import_element16.useRef)({
       onDragStart,
@@ -1717,26 +1743,27 @@ var wp;
       eventsRef.current.onDragMove = onDragMove;
       eventsRef.current.onDragEnd = onDragEnd;
     }, [onDragStart, onDragMove, onDragEnd]);
-    const onMouseMove = (0, import_element16.useCallback)(
-      (event) => eventsRef.current.onDragMove && eventsRef.current.onDragMove(event),
-      []
+    const onMouseMove = (0, import_element16.useCallback)((event) => {
+      eventsRef.current.onDragMove?.(event);
+    }, []);
+    const endDrag = (0, import_element16.useCallback)(
+      function endDrag2(event) {
+        eventsRef.current.onDragEnd?.(event);
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseup", endDrag2);
+        setIsDragging(false);
+      },
+      [onMouseMove]
     );
-    const endDrag = (0, import_element16.useCallback)((event) => {
-      if (eventsRef.current.onDragEnd) {
-        eventsRef.current.onDragEnd(event);
-      }
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseup", endDrag);
-      setIsDragging(false);
-    }, []);
-    const startDrag = (0, import_element16.useCallback)((event) => {
-      if (eventsRef.current.onDragStart) {
-        eventsRef.current.onDragStart(event);
-      }
-      document.addEventListener("mousemove", onMouseMove);
-      document.addEventListener("mouseup", endDrag);
-      setIsDragging(true);
-    }, []);
+    const startDrag = (0, import_element16.useCallback)(
+      (event) => {
+        eventsRef.current.onDragStart?.(event);
+        document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", endDrag);
+        setIsDragging(true);
+      },
+      [onMouseMove, endDrag]
+    );
     (0, import_element16.useEffect)(() => {
       return () => {
         if (isDragging) {
@@ -1744,7 +1771,7 @@ var wp;
           document.removeEventListener("mouseup", endDrag);
         }
       };
-    }, [isDragging]);
+    }, [isDragging, onMouseMove, endDrag]);
     return {
       startDrag,
       endDrag,
@@ -1793,7 +1820,6 @@ var wp;
     bindGlobal = false,
     eventName = "keydown",
     isDisabled = false,
-    // This is important for performance considerations.
     target
   } = {}) {
     const currentCallbackRef = (0, import_element17.useRef)(callback);
@@ -1809,8 +1835,6 @@ var wp;
           // We were passing `document` here previously, so to successfully cast it to Element we must cast it first to `unknown`.
           // Not sure if this is a mistake but it was the behavior previous to the addition of types so we're just doing what's
           // necessary to maintain the existing behavior.
-          /** @type {Element} */
-          /** @type {unknown} */
           document
         )
       );
@@ -1850,7 +1874,7 @@ var wp;
     getValue: () => false
   };
   function getMQLSubscriber(view, query) {
-    if (!query || typeof view?.matchMedia !== "function") {
+    if (!view || !query || typeof view.matchMedia !== "function") {
       return EMPTY_SUBSCRIBER;
     }
     let queryCache = perWindowCache.get(view);
@@ -1889,7 +1913,7 @@ var wp;
     queryCache.set(query, subscriber);
     return subscriber;
   }
-  function useMediaQuery(query, view = window) {
+  function useMediaQuery(query, view = typeof window !== "undefined" ? window : void 0) {
     const source = getMQLSubscriber(view, query);
     return (0, import_element18.useSyncExternalStore)(
       source.subscribe,
@@ -2009,12 +2033,9 @@ var wp;
     ">=": (breakpointValue, width) => width >= breakpointValue,
     "<": (breakpointValue, width) => width < breakpointValue
   };
-  var ViewportMatchWidthContext = (0, import_element21.createContext)(
-    /** @type {null | number} */
-    null
-  );
+  var ViewportMatchWidthContext = (0, import_element21.createContext)(null);
   ViewportMatchWidthContext.displayName = "ViewportMatchWidthContext";
-  var useViewportMatch = (breakpoint, operator = ">=", view = window) => {
+  var useViewportMatch = (breakpoint, operator = ">=", view = typeof window !== "undefined" ? window : void 0) => {
     const simulatedWidth = (0, import_element21.useContext)(ViewportMatchWidthContext);
     const mediaQuery = !simulatedWidth && `(${CONDITIONS[operator]}: ${BREAKPOINTS[breakpoint]}px)`;
     const mediaQueryResult = useMediaQuery(mediaQuery || void 0, view);
@@ -2161,18 +2182,11 @@ var wp;
   function useWarnOnChange(object, prefix = "Change detection") {
     const previousValues = usePrevious(object);
     Object.entries(previousValues ?? []).forEach(([key, value]) => {
-      if (value !== object[
-        /** @type {keyof typeof object} */
-        key
-      ]) {
+      if (value !== object[key]) {
         console.warn(
           `${prefix}: ${key} key changed:`,
           value,
-          object[
-            /** @type {keyof typeof object} */
-            key
-          ]
-          /* eslint-enable jsdoc/check-types */
+          object[key]
         );
       }
     });
@@ -2296,10 +2310,7 @@ var wp;
         }
         function onDragEnter(event) {
           event.preventDefault();
-          if (element.contains(
-            /** @type {Node} */
-            event.relatedTarget
-          )) {
+          if (element.contains(event.relatedTarget)) {
             return;
           }
           if (_onDragEnter) {
@@ -2398,14 +2409,16 @@ var wp;
   function useFixedWindowList(elementRef, itemHeight, totalItems, options) {
     const initWindowSize = options?.initWindowSize ?? DEFAULT_INIT_WINDOW_SIZE;
     const useWindowing = options?.useWindowing ?? true;
-    const [fixedListWindow, setFixedListWindow] = (0, import_element28.useState)({
-      visibleItems: initWindowSize,
-      start: 0,
-      end: initWindowSize,
-      itemInView: (index) => {
-        return index >= 0 && index <= initWindowSize;
+    const [fixedListWindow, setFixedListWindow] = (0, import_element28.useState)(
+      {
+        visibleItems: initWindowSize,
+        start: 0,
+        end: initWindowSize,
+        itemInView: (index) => {
+          return index >= 0 && index <= initWindowSize;
+        }
       }
-    });
+    );
     (0, import_element28.useLayoutEffect)(() => {
       if (!useWindowing) {
         return;

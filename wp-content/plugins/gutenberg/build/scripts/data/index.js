@@ -376,17 +376,17 @@ var wp;
     }
   });
 
-  // package-external:@wordpress/priority-queue
-  var require_priority_queue = __commonJS({
-    "package-external:@wordpress/priority-queue"(exports, module) {
-      module.exports = window.wp.priorityQueue;
-    }
-  });
-
   // package-external:@wordpress/element
   var require_element = __commonJS({
     "package-external:@wordpress/element"(exports, module) {
       module.exports = window.wp.element;
+    }
+  });
+
+  // package-external:@wordpress/priority-queue
+  var require_priority_queue = __commonJS({
+    "package-external:@wordpress/priority-queue"(exports, module) {
+      module.exports = window.wp.priorityQueue;
     }
   });
 
@@ -416,7 +416,7 @@ var wp;
     createRegistry: () => createRegistry,
     createRegistryControl: () => createRegistryControl,
     createRegistrySelector: () => createRegistrySelector,
-    createSelector: () => rememo_default,
+    createSelector: () => createSelector,
     dispatch: () => dispatch2,
     keyedReducer: () => keyedReducer,
     plugins: () => plugins_exports,
@@ -1090,6 +1090,9 @@ var wp;
     );
   }
 
+  // packages/data/build-module/create-selector.mjs
+  var createSelector = rememo_default;
+
   // packages/data/build-module/redux-store/metadata/selectors.mjs
   function getResolutionState(state, selectorName, args) {
     const map = state[selectorName];
@@ -1143,7 +1146,7 @@ var wp;
       )
     );
   }
-  var countSelectorsByStatus = rememo_default(
+  var countSelectorsByStatus = createSelector(
     (state) => {
       const selectorsByStatus = {};
       Object.values(state).forEach(
@@ -2187,6 +2190,7 @@ var wp;
 
   // packages/data/build-module/components/with-select/index.mjs
   var import_compose2 = __toESM(require_compose(), 1);
+  var import_element6 = __toESM(require_element(), 1);
 
   // packages/data/build-module/components/use-select/index.mjs
   var import_priority_queue = __toESM(require_priority_queue(), 1);
@@ -2382,11 +2386,20 @@ var wp;
   // packages/data/build-module/components/with-select/index.mjs
   var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
   var withSelect = (mapSelectToProps) => (0, import_compose2.createHigherOrderComponent)(
-    (WrappedComponent) => (0, import_compose2.pure)((ownProps) => {
-      const mapSelect = (select3, registry) => mapSelectToProps(select3, ownProps, registry);
-      const mergeProps = useSelect(mapSelect);
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WrappedComponent, { ...ownProps, ...mergeProps });
-    }),
+    (WrappedComponent) => (0, import_element6.memo)(
+      (0, import_element6.forwardRef)(function WithSelect(ownProps, ref) {
+        const mapSelect = (select3, registry) => mapSelectToProps(select3, ownProps, registry);
+        const mergeProps = useSelect(mapSelect);
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          WrappedComponent,
+          {
+            ref,
+            ...ownProps,
+            ...mergeProps
+          }
+        );
+      })
+    ),
     "withSelect"
   );
   var with_select_default = withSelect;
@@ -2402,15 +2415,15 @@ var wp;
   var use_dispatch_default = useDispatch;
 
   // packages/data/build-module/components/use-dispatch/use-dispatch-with-map.mjs
-  var import_element6 = __toESM(require_element(), 1);
+  var import_element7 = __toESM(require_element(), 1);
   var import_compose3 = __toESM(require_compose(), 1);
   var useDispatchWithMap = (dispatchMap, deps) => {
     const registry = useRegistry();
-    const currentDispatchMapRef = (0, import_element6.useRef)(dispatchMap);
+    const currentDispatchMapRef = (0, import_element7.useRef)(dispatchMap);
     (0, import_compose3.useIsomorphicLayoutEffect)(() => {
       currentDispatchMapRef.current = dispatchMap;
     });
-    return (0, import_element6.useMemo)(() => {
+    return (0, import_element7.useMemo)(() => {
       const currentDispatchProps = currentDispatchMapRef.current(
         registry.dispatch,
         registry
