@@ -1,3 +1,4 @@
+(function() {
 "use strict";
 var wp;
 (wp ||= {}).coreData = (() => {
@@ -385,6 +386,13 @@ var wp;
     }
   });
 
+  // package-external:@wordpress/notices
+  var require_notices = __commonJS({
+    "package-external:@wordpress/notices"(exports, module) {
+      module.exports = window.wp.notices;
+    }
+  });
+
   // package-external:@wordpress/html-entities
   var require_html_entities = __commonJS({
     "package-external:@wordpress/html-entities"(exports, module) {
@@ -413,6 +421,20 @@ var wp;
     }
   });
 
+  // package-external:@wordpress/primitives
+  var require_primitives = __commonJS({
+    "package-external:@wordpress/primitives"(exports, module) {
+      module.exports = window.wp.primitives;
+    }
+  });
+
+  // package-external:@wordpress/components
+  var require_components = __commonJS({
+    "package-external:@wordpress/components"(exports, module) {
+      module.exports = window.wp.components;
+    }
+  });
+
   // packages/core-data/build-module/index.mjs
   var index_exports = {};
   __export(index_exports, {
@@ -432,7 +454,7 @@ var wp;
     useEntityRecords: () => useEntityRecords,
     useResourcePermissions: () => use_resource_permissions_default
   });
-  var import_data15 = __toESM(require_data(), 1);
+  var import_data19 = __toESM(require_data(), 1);
 
   // packages/core-data/build-module/reducer.mjs
   var import_es65 = __toESM(require_es6(), 1);
@@ -639,16 +661,39 @@ var wp;
     LOCAL_UNDO_IGNORED_ORIGIN,
     retrySyncConnection
   } = unlock(import_sync.privateApis);
+  var CRDT_AUTOSAVE_SNAPSHOT_KEY = "crdt_snapshot";
   var syncManager;
   function getSyncManager() {
     if (syncManager) {
       return syncManager;
+    }
+    if (!globalThis.window?.__experimentalEnableRealTimeCollaboration) {
+      return void 0;
     }
     syncManager = createSyncManager();
     return syncManager;
   }
   function hasSyncManager() {
     return Boolean(syncManager);
+  }
+  function getEntitySnapshot(kind, name, recordId) {
+    if (!hasSyncManager()) {
+      return void 0;
+    }
+    return getSyncManager()?.getEntitySnapshot(
+      `${kind}/${name}`,
+      `${recordId}`
+    );
+  }
+  function entityContainsSnapshot(kind, name, recordId, encodedSnapshot) {
+    if (!hasSyncManager()) {
+      return false;
+    }
+    return getSyncManager()?.entityContainsSnapshot(
+      `${kind}/${name}`,
+      `${recordId}`,
+      encodedSnapshot
+    ) ?? false;
   }
 
   // packages/core-data/build-module/utils/save-crdt-doc.mjs
@@ -1550,30 +1595,30 @@ var wp;
         cursorPosition
       };
     } else if (isSelectionInOneBlock) {
-      const cursorStartPosition2 = getCursorPosition(
+      const cursorStartPosition = getCursorPosition(
         selectionStart,
         yBlocks
       );
-      const cursorEndPosition2 = getCursorPosition(selectionEnd, yBlocks);
-      if (!cursorStartPosition2 || !cursorEndPosition2) {
+      const cursorEndPosition = getCursorPosition(selectionEnd, yBlocks);
+      if (!cursorStartPosition || !cursorEndPosition) {
         return noSelection;
       }
       return {
         type: "selection-in-one-block",
-        cursorStartPosition: cursorStartPosition2,
-        cursorEndPosition: cursorEndPosition2,
+        cursorStartPosition,
+        cursorEndPosition,
         selectionDirection
       };
     }
-    const cursorStartPosition = getCursorPosition(selectionStart, yBlocks);
-    const cursorEndPosition = getCursorPosition(selectionEnd, yBlocks);
-    if (!cursorStartPosition || !cursorEndPosition) {
+    const startEndpoint = getSelectionEndpoint(selectionStart, yBlocks);
+    const endEndpoint = getSelectionEndpoint(selectionEnd, yBlocks);
+    if (!startEndpoint || !endEndpoint) {
       return noSelection;
     }
     return {
       type: "selection-in-multiple-blocks",
-      cursorStartPosition,
-      cursorEndPosition,
+      startEndpoint,
+      endEndpoint,
       selectionDirection
     };
   }
@@ -1600,6 +1645,18 @@ var wp;
       absoluteOffset: selection.offset,
       attributeKey: selection.attributeKey
     };
+  }
+  function getSelectionEndpoint(selection, blocks) {
+    const cursorPosition = getCursorPosition(selection, blocks);
+    if (cursorPosition) {
+      return { type: "cursor", cursorPosition };
+    }
+    const path = getBlockPathForLocalClientId(selection.clientId);
+    const blockPosition = path ? createRelativePositionForBlockPath(path, blocks) : null;
+    if (blockPosition) {
+      return { type: "whole-block", blockPosition };
+    }
+    return null;
   }
   function getBlockPathForLocalClientId(clientId) {
     const { getBlockIndex, getBlockRootClientId, getBlockName } = (0, import_data3.select)(import_block_editor2.store);
@@ -1678,12 +1735,12 @@ var wp;
           selection2.cursorEndPosition
         ) && selection1.selectionDirection === selection2.selectionDirection;
       case "selection-in-multiple-blocks":
-        return areCursorPositionsEqual(
-          selection1.cursorStartPosition,
-          selection2.cursorStartPosition
-        ) && areCursorPositionsEqual(
-          selection1.cursorEndPosition,
-          selection2.cursorEndPosition
+        return areEndpointsEqual(
+          selection1.startEndpoint,
+          selection2.startEndpoint
+        ) && areEndpointsEqual(
+          selection1.endEndpoint,
+          selection2.endEndpoint
         ) && selection1.selectionDirection === selection2.selectionDirection;
       case "whole-block":
         return import_sync7.Y.compareRelativePositions(
@@ -1693,6 +1750,21 @@ var wp;
       default:
         return false;
     }
+  }
+  function areEndpointsEqual(ep1, ep2) {
+    if (ep1.type !== ep2.type) {
+      return false;
+    }
+    if (ep1.type === "cursor" && ep2.type === "cursor") {
+      return areCursorPositionsEqual(
+        ep1.cursorPosition,
+        ep2.cursorPosition
+      );
+    }
+    return import_sync7.Y.compareRelativePositions(
+      ep1.blockPosition,
+      ep2.blockPosition
+    );
   }
   function areCursorPositionsEqual(cursorPosition1, cursorPosition2) {
     const isRelativePositionEqual = import_sync7.Y.compareRelativePositions(
@@ -1860,6 +1932,13 @@ var wp;
         return {
           richTextOffset: null,
           localClientId: localClientId2,
+          attributeKey: null
+        };
+      }
+      if (selection.type === SelectionType.SelectionInMultipleBlocks) {
+        return {
+          richTextOffset: null,
+          localClientId: null,
           attributeKey: null
         };
       }
@@ -3083,8 +3162,10 @@ var wp;
           "description",
           "gmt_offset",
           "home",
+          "image_max_bit_depth",
           "image_sizes",
           "image_size_threshold",
+          "image_strip_meta",
           "name",
           "site_icon",
           "site_icon_url",
@@ -3178,7 +3259,7 @@ var wp;
       plural: "comments",
       label: (0, import_i18n.__)("Comment"),
       supportsPagination: true,
-      syncConfig: defaultCollectionSyncConfig
+      ...globalThis.window?.__experimentalEnableRealTimeCollaboration ? { syncConfig: defaultCollectionSyncConfig } : {}
     },
     {
       name: "menu",
@@ -3278,6 +3359,16 @@ var wp;
       plural: "icons",
       key: "name",
       supportsPagination: false
+    },
+    {
+      label: (0, import_i18n.__)("Icon Collections"),
+      name: "iconCollection",
+      kind: "root",
+      baseURL: "/wp/v2/icon-collections",
+      baseURLParams: { context: "view" },
+      plural: "iconCollections",
+      key: "slug",
+      supportsPagination: false
     }
   ];
   var deprecatedEntities = {
@@ -3311,10 +3402,10 @@ var wp;
         newEdits.title = "";
       }
     }
-    if (persistedRecord) {
+    if (window.__experimentalEnableRealTimeCollaboration && persistedRecord) {
       const objectType = `postType/${name}`;
       const objectId = persistedRecord.id;
-      const serializedDoc = getSyncManager()?.createPersistedCRDTDoc(
+      const serializedDoc = await getSyncManager()?.createPersistedCRDTDoc(
         objectType,
         objectId
       );
@@ -3329,7 +3420,7 @@ var wp;
   };
   async function loadPostTypeEntities() {
     const postTypesPromise = (0, import_api_fetch2.default)({ path: "/wp/v2/types?context=view" });
-    const taxonomiesPromise = window._wpCollaborationEnabled ? (0, import_api_fetch2.default)({ path: "/wp/v2/taxonomies?context=view" }) : Promise.resolve({});
+    const taxonomiesPromise = window.__experimentalEnableRealTimeCollaboration ? (0, import_api_fetch2.default)({ path: "/wp/v2/taxonomies?context=view" }) : Promise.resolve({});
     const [postTypes, taxonomies] = await Promise.all([
       postTypesPromise,
       taxonomiesPromise
@@ -3376,6 +3467,9 @@ var wp;
         getRevisionsUrl: (parentId, revisionId) => `/${namespace}/${postType.rest_base}/${parentId}/revisions${revisionId ? "/" + revisionId : ""}`,
         revisionKey: isTemplate && !window?.__experimentalTemplateActivate ? "wp_id" : DEFAULT_ENTITY_KEY
       };
+      if (!window.__experimentalEnableRealTimeCollaboration) {
+        return entity2;
+      }
       entity2.syncConfig = {
         // Save a CRDT document with this entity
         supportsPersistence: true,
@@ -3443,7 +3537,9 @@ var wp;
         getTitle: (record) => record?.name,
         supportsPagination: true
       };
-      entity2.syncConfig = defaultSyncConfig;
+      if (window.__experimentalEnableRealTimeCollaboration) {
+        entity2.syncConfig = defaultSyncConfig;
+      }
       return entity2;
     });
   }
@@ -4206,6 +4302,7 @@ var wp;
     getEditorSettings: () => getEditorSettings,
     getEntityRecordPermissions: () => getEntityRecordPermissions,
     getEntityRecordsPermissions: () => getEntityRecordsPermissions,
+    getEntitySyncConnectionStatus: () => getEntitySyncConnectionStatus,
     getHomePage: () => getHomePage,
     getNavigationFallbackId: () => getNavigationFallbackId,
     getPostsPageId: () => getPostsPageId,
@@ -4432,6 +4529,9 @@ var wp;
       }
     }
     return coalesced;
+  }
+  function getEntitySyncConnectionStatus(state, kind, name, recordId) {
+    return state.syncConnectionStatuses?.[`${kind}/${name}:${recordId}`];
   }
 
   // packages/core-data/build-module/selectors.mjs
@@ -5025,6 +5125,7 @@ var wp;
     saveEntityRecord: () => saveEntityRecord,
     undo: () => undo
   });
+  var import_es66 = __toESM(require_es6(), 1);
   var import_api_fetch4 = __toESM(require_api_fetch(), 1);
   var import_url3 = __toESM(require_url(), 1);
   var import_deprecated3 = __toESM(require_deprecated(), 1);
@@ -5213,6 +5314,37 @@ var wp;
   // packages/core-data/build-module/actions.mjs
   function addTitleToAutoDraft(record) {
     return record.status === "auto-draft" ? { ...record, title: "" } : record;
+  }
+  function getServerMutatedMetaFields(updatedMeta, persistedMeta, syncedMeta) {
+    const baseline = { ...persistedMeta, ...syncedMeta };
+    return Object.fromEntries(
+      Object.entries(updatedMeta ?? {}).filter(([key, value]) => {
+        if (key === POST_META_KEY_FOR_CRDT_DOC_PERSISTENCE) {
+          return false;
+        }
+        return !(0, import_es66.default)(value, baseline[key]);
+      })
+    );
+  }
+  function getServerMutatedFields(updatedRecord, persistedRecord, syncedChanges) {
+    return Object.fromEntries(
+      Object.entries(updatedRecord).flatMap(([key, value]) => {
+        if (key === "meta") {
+          const serverMutatedMeta = getServerMutatedMetaFields(
+            value,
+            persistedRecord.meta,
+            syncedChanges.meta
+          );
+          return Object.keys(serverMutatedMeta).length ? [[key, serverMutatedMeta]] : [];
+        }
+        const baseline = key in syncedChanges ? syncedChanges[key] : persistedRecord[key];
+        const wasServerMutated = !(0, import_es66.default)(
+          getRawValue(value) ?? value,
+          getRawValue(baseline) ?? baseline
+        );
+        return wasServerMutated ? [[key, value]] : [];
+      })
+    );
   }
   function receiveUserQuery(queryID, users2) {
     return {
@@ -5541,6 +5673,14 @@ var wp;
       try {
         const path = `${baseURL}${recordId ? "/" + recordId : ""}`;
         const persistedRecord = !isNewRecord ? select4.getRawEntityRecord(kind, name, recordId) : {};
+        if (entityConfig.syncConfig && !__unstableSkipSyncUpdate && !isNewRecord && persistedRecord) {
+          getSyncManager()?.update(
+            `${kind}/${name}`,
+            recordId,
+            record,
+            LOCAL_UNDO_IGNORED_ORIGIN
+          );
+        }
         if (isAutosave) {
           const merged = { ...persistedRecord, ...record };
           const data = [
@@ -5563,6 +5703,15 @@ var wp;
               status: merged.status === "auto-draft" ? "draft" : void 0
             }
           );
+          if (entityConfig.syncConfig) {
+            const crdtSnapshot = getSyncManager()?.getEntitySnapshot(
+              `${kind}/${name}`,
+              recordId
+            );
+            if (crdtSnapshot) {
+              data[CRDT_AUTOSAVE_SNAPSHOT_KEY] = crdtSnapshot;
+            }
+          }
           updatedRecord = await __unstableFetch({
             path: `${path}/autosaves`,
             method: "POST",
@@ -5627,13 +5776,25 @@ var wp;
             updatedRecord,
             void 0,
             true,
-            edits
+            record
           );
           if (entityConfig.syncConfig) {
+            let syncChanges;
+            if (__unstableSkipSyncUpdate) {
+              syncChanges = {};
+            } else if (isNewRecord || !persistedRecord) {
+              syncChanges = updatedRecord;
+            } else {
+              syncChanges = getServerMutatedFields(
+                updatedRecord,
+                persistedRecord,
+                record
+              );
+            }
             getSyncManager()?.update(
               `${kind}/${name}`,
               recordId,
-              __unstableSkipSyncUpdate ? {} : updatedRecord,
+              syncChanges,
               LOCAL_UNDO_IGNORED_ORIGIN,
               { isSave: true }
             );
@@ -5817,10 +5978,15 @@ var wp;
     receiveEditorSettings: () => receiveEditorSettings,
     receiveRegisteredPostMeta: () => receiveRegisteredPostMeta,
     receiveViewConfig: () => receiveViewConfig,
+    saveDirtyEntities: () => saveDirtyEntities,
     setCollaborationSupported: () => setCollaborationSupported,
     setSyncConnectionStatus: () => setSyncConnectionStatus
   });
   var import_api_fetch5 = __toESM(require_api_fetch(), 1);
+  var import_notices = __toESM(require_notices(), 1);
+  var import_block_editor5 = __toESM(require_block_editor(), 1);
+  var import_html_entities = __toESM(require_html_entities(), 1);
+  var import_i18n2 = __toESM(require_i18n(), 1);
   function receiveRegisteredPostMeta(postType, registeredPostMeta2) {
     return {
       type: "RECEIVE_REGISTERED_POST_META",
@@ -5912,6 +6078,10 @@ var wp;
     dispatch3({ type: "SET_COLLABORATION_SUPPORTED", supported });
     if (!supported && hasSyncManager()) {
       getSyncManager().unloadAll();
+      dispatch3.__unstableNotifySyncUndoManagerChange({
+        hasUndo: false,
+        hasRedo: false
+      });
     }
   };
   function receiveViewConfig(kind, name, config) {
@@ -5945,6 +6115,132 @@ var wp;
       status
     };
   }
+  var saveDirtyEntities = ({
+    onSave,
+    dirtyEntityRecords = [],
+    entitiesToSkip = [],
+    close,
+    successNoticeContent
+  } = {}) => ({ registry }) => {
+    const PUBLISH_ON_SAVE_ENTITIES = [
+      { kind: "postType", name: "wp_navigation" }
+    ];
+    const saveNoticeId = "site-editor-save-success";
+    const homeUrl = registry.select(STORE_NAME).getEntityRecord("root", "__unstableBase")?.home;
+    registry.dispatch(import_notices.store).removeNotice(saveNoticeId);
+    const entitiesToSave = dirtyEntityRecords.filter(
+      ({ kind, name, key, property }) => {
+        return !entitiesToSkip.some(
+          (elt) => elt.kind === kind && elt.name === name && elt.key === key && elt.property === property
+        );
+      }
+    );
+    close?.(entitiesToSave);
+    const siteItemsToSave = [];
+    const pendingSavedRecords = [];
+    entitiesToSave.forEach(({ kind, name, key, property }) => {
+      if ("root" === kind && "site" === name) {
+        siteItemsToSave.push(property);
+      } else {
+        if (PUBLISH_ON_SAVE_ENTITIES.some(
+          (typeToPublish) => typeToPublish.kind === kind && typeToPublish.name === name
+        )) {
+          registry.dispatch(STORE_NAME).editEntityRecord(kind, name, key, {
+            status: "publish"
+          });
+        }
+        pendingSavedRecords.push(
+          registry.dispatch(STORE_NAME).saveEditedEntityRecord(kind, name, key, {
+            throwOnError: true
+          }).catch(ensureError)
+        );
+      }
+    });
+    if (siteItemsToSave.length) {
+      pendingSavedRecords.push(
+        registry.dispatch(STORE_NAME).__experimentalSaveSpecifiedEntityEdits(
+          "root",
+          "site",
+          void 0,
+          siteItemsToSave,
+          {
+            throwOnError: true
+          }
+        ).catch(ensureError)
+      );
+    }
+    registry.dispatch(import_block_editor5.store).__unstableMarkLastChangeAsPersistent();
+    return Promise.all(pendingSavedRecords).then(async (values) => {
+      if (onSave) {
+        await onSave();
+      }
+      return values;
+    }).then((values) => {
+      const errors = values.filter((v) => v instanceof Error);
+      if (errors.length) {
+        const firstMessage = errors.find(
+          (e) => e.message
+        )?.message;
+        registry.dispatch(import_notices.store).createErrorNotice(
+          (0, import_html_entities.decodeEntities)(
+            firstMessage || (0, import_i18n2.__)("Saving failed.")
+          ),
+          {
+            type: "snackbar",
+            id: saveNoticeId
+          }
+        );
+      } else {
+        registry.dispatch(import_notices.store).createSuccessNotice(
+          successNoticeContent || (0, import_i18n2.__)("Site updated."),
+          {
+            type: "snackbar",
+            id: saveNoticeId,
+            actions: [
+              {
+                label: (0, import_i18n2.__)("View site"),
+                url: homeUrl,
+                openInNewTab: true
+              }
+            ]
+          }
+        );
+      }
+    }).catch(
+      (error) => registry.dispatch(import_notices.store).createErrorNotice(
+        (0, import_html_entities.decodeEntities)(
+          error?.message || (0, import_i18n2.__)("Saving failed.")
+        ),
+        {
+          type: "snackbar",
+          id: saveNoticeId
+        }
+      )
+    );
+    function ensureError(error) {
+      if (error instanceof Error) {
+        return error;
+      }
+      let message;
+      if (!error) {
+      } else if (typeof error.message === "string") {
+        message = error.message;
+      } else if (typeof error === "string") {
+        message = error;
+      } else if (
+        // Only consider own method, lest we erroneously end up calling
+        // `Object#toString` at the end of the prototype chain, thereby
+        // returning `"[object Object]"`.
+        Object.hasOwn(error, "toString") && typeof error.toString === "function"
+      ) {
+        const result = error.toString();
+        if (typeof result === "string") {
+          message = result;
+        }
+      }
+      return new Error(message, { cause: error });
+    }
+  };
 
   // packages/core-data/build-module/resolvers.mjs
   var resolvers_exports = {};
@@ -5982,7 +6278,7 @@ var wp;
     getViewConfig: () => getViewConfig2
   });
   var import_url6 = __toESM(require_url(), 1);
-  var import_html_entities2 = __toESM(require_html_entities(), 1);
+  var import_html_entities3 = __toESM(require_html_entities(), 1);
   var import_api_fetch9 = __toESM(require_api_fetch(), 1);
 
   // packages/core-data/build-module/fetch/index.mjs
@@ -5991,8 +6287,8 @@ var wp;
   // packages/core-data/build-module/fetch/__experimental-fetch-link-suggestions.mjs
   var import_api_fetch6 = __toESM(require_api_fetch(), 1);
   var import_url4 = __toESM(require_url(), 1);
-  var import_html_entities = __toESM(require_html_entities(), 1);
-  var import_i18n2 = __toESM(require_i18n(), 1);
+  var import_html_entities2 = __toESM(require_html_entities(), 1);
+  var import_i18n3 = __toESM(require_i18n(), 1);
   async function fetchLinkSuggestions(search, searchOptions = {}, editorSettings2 = {}) {
     const searchOptionsToUse = searchOptions.isInitialSuggestions && searchOptions.initialSuggestionsSearchOptions ? {
       ...searchOptions,
@@ -6021,7 +6317,7 @@ var wp;
             return {
               id: result.id,
               url: result.url,
-              title: (0, import_html_entities.decodeEntities)(result.title || "") || (0, import_i18n2.__)("(no title)"),
+              title: (0, import_html_entities2.decodeEntities)(result.title || "") || (0, import_i18n3.__)("(no title)"),
               type: result.subtype || result.type,
               kind: "post-type"
             };
@@ -6045,7 +6341,7 @@ var wp;
             return {
               id: result.id,
               url: result.url,
-              title: (0, import_html_entities.decodeEntities)(result.title || "") || (0, import_i18n2.__)("(no title)"),
+              title: (0, import_html_entities2.decodeEntities)(result.title || "") || (0, import_i18n3.__)("(no title)"),
               type: result.subtype || result.type,
               kind: "taxonomy"
             };
@@ -6069,7 +6365,7 @@ var wp;
             return {
               id: result.id,
               url: result.url,
-              title: (0, import_html_entities.decodeEntities)(result.title || "") || (0, import_i18n2.__)("(no title)"),
+              title: (0, import_html_entities2.decodeEntities)(result.title || "") || (0, import_i18n3.__)("(no title)"),
               type: result.subtype || result.type,
               kind: "taxonomy"
             };
@@ -6091,7 +6387,7 @@ var wp;
             return {
               id: result.id,
               url: result.source_url,
-              title: (0, import_html_entities.decodeEntities)(result.title.rendered || "") || (0, import_i18n2.__)("(no title)"),
+              title: (0, import_html_entities2.decodeEntities)(result.title.rendered || "") || (0, import_i18n3.__)("(no title)"),
               type: result.type,
               kind: "media"
             };
@@ -6281,7 +6577,8 @@ var wp;
             blocks: recordWithTransients.blocks
           });
         }
-        void getSyncManager()?.load(
+        const syncManager2 = select4?.isCollaborationSupported?.() === false ? void 0 : getSyncManager();
+        void syncManager2?.load(
           entityConfig.syncConfig,
           objectType,
           objectId,
@@ -6777,7 +7074,7 @@ var wp;
     );
     const mappedPatternCategories = patternCategories?.map((userCategory) => ({
       ...userCategory,
-      label: (0, import_html_entities2.decodeEntities)(userCategory.name),
+      label: (0, import_html_entities3.decodeEntities)(userCategory.name),
       name: userCategory.slug
     })) || [];
     dispatch3({
@@ -6843,7 +7140,7 @@ var wp;
   getDefaultTemplateId2.shouldInvalidate = (action) => {
     return action.type === "RECEIVE_ITEMS" && action.kind === "root" && action.name === "site" && !!action.persistedEdits;
   };
-  var getRevisions2 = (kind, name, recordKey, query = {}) => async ({ dispatch: dispatch3, registry, resolveSelect: resolveSelect2 }) => {
+  var getRevisions2 = (kind, name, recordKey, query = {}) => async ({ dispatch: dispatch3, resolveSelect: resolveSelect2 }) => {
     const configs = await resolveSelect2.getEntitiesConfig(kind);
     const entityConfig = configs.find(
       (config) => config.name === name && config.kind === kind
@@ -6900,30 +7197,25 @@ var wp;
             return record;
           });
         }
-        registry.batch(() => {
-          dispatch3.receiveRevisions(
-            kind,
-            name,
-            recordKey,
-            records,
-            query,
-            false,
-            meta
-          );
-          const key = entityConfig.revisionKey || DEFAULT_ENTITY_KEY;
-          const normalizedQuery = normalizeQueryForResolution(rawQuery);
-          const resolutionsArgs = records.filter((record) => record[key]).map((record) => [
-            kind,
-            name,
-            recordKey,
-            record[key],
-            normalizedQuery
-          ]);
-          dispatch3.finishResolutions(
-            "getRevision",
-            resolutionsArgs
-          );
-        });
+        await dispatch3.receiveRevisions(
+          kind,
+          name,
+          recordKey,
+          records,
+          query,
+          false,
+          meta
+        );
+        const key = entityConfig.revisionKey || DEFAULT_ENTITY_KEY;
+        const normalizedQuery = normalizeQueryForResolution(rawQuery);
+        const resolutionsArgs = records.filter((record) => record[key]).map((record) => [
+          kind,
+          name,
+          recordKey,
+          record[key],
+          normalizedQuery
+        ]);
+        dispatch3.finishResolutions("getRevision", resolutionsArgs);
       }
     } finally {
       dispatch3.__unstableReleaseStoreLock(lock2);
@@ -6977,7 +7269,7 @@ var wp;
         return;
       }
       if (record) {
-        dispatch3.receiveRevisions(
+        await dispatch3.receiveRevisions(
           kind,
           name,
           recordKey,
@@ -7134,7 +7426,7 @@ var wp;
         node.locks = [...node.locks, lock2];
         return {
           ...state,
-          requests: state.requests.filter((r) => r !== request),
+          requests: state.requests.filter((r2) => r2 !== request),
           tree: newTree
         };
       }
@@ -7459,7 +7751,7 @@ var wp;
     );
     const ids = (0, import_element4.useMemo)(
       () => data?.map(
-        // @ts-ignore
+        // @ts-expect-error `data` is `unknown[]`, so the callback signature does not line up.
         (record) => record[entityConfig?.key ?? "id"]
       ) ?? [],
       [data, entityConfig?.key]
@@ -7475,7 +7767,7 @@ var wp;
     );
     const dataWithPermissions = (0, import_element4.useMemo)(
       () => data?.map((record, index) => ({
-        // @ts-ignore
+        // @ts-expect-error `record` is `unknown`, which cannot be spread.
         ...record,
         permissions: permissions[index]
       })) ?? [],
@@ -7676,14 +7968,15 @@ var wp;
 
   // packages/core-data/build-module/footnotes/index.mjs
   var import_rich_text4 = __toESM(require_rich_text(), 1);
+  var import_warning2 = __toESM(require_warning(), 1);
 
   // packages/core-data/build-module/footnotes/get-rich-text-values-cached.mjs
-  var import_block_editor5 = __toESM(require_block_editor(), 1);
+  var import_block_editor6 = __toESM(require_block_editor(), 1);
   var unlockedApis;
   var cache = /* @__PURE__ */ new WeakMap();
   function getRichTextValuesCached(block) {
     if (!unlockedApis) {
-      unlockedApis = unlock(import_block_editor5.privateApis);
+      unlockedApis = unlock(import_block_editor6.privateApis);
     }
     if (!cache.has(block)) {
       const values = unlockedApis.getRichTextValues([block]);
@@ -7726,7 +8019,17 @@ var wp;
       return output;
     }
     const newOrder = getFootnotesOrder(blocks);
-    const footnotes = meta.footnotes ? JSON.parse(meta.footnotes) : [];
+    let parsed;
+    try {
+      parsed = JSON.parse(meta.footnotes || "[]");
+    } catch {
+    }
+    let footnotes = [];
+    if (Array.isArray(parsed)) {
+      footnotes = parsed;
+    } else {
+      (0, import_warning2.default)("Footnotes post meta is not a JSON array; ignoring it.");
+    }
     const currentOrder = footnotes.map((fn) => fn.id);
     if (currentOrder.join("") === newOrder.join("")) {
       return output;
@@ -7922,7 +8225,7 @@ var wp;
           );
           const revKey = entityConfig?.revisionKey || DEFAULT_ENTITY_KEY;
           const revision = revisions?.find(
-            (r) => r[revKey] === revisionId
+            (r2) => r2[revKey] === revisionId
           );
           return revision ? {
             value: revision[prop]?.raw ?? revision[prop],
@@ -8133,10 +8436,683 @@ var wp;
     }, [lastPostSave, prevPostSave, activeCollaborators, callback]);
   }
 
+  // packages/icons/build-module/library/footer.mjs
+  var import_primitives = __toESM(require_primitives(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var footer_default = /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives.Path, { fillRule: "evenodd", d: "M18 5.5h-8v8h8.5V6a.5.5 0 00-.5-.5zm-9.5 8h-3V6a.5.5 0 01.5-.5h2.5v8zM6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z" }) });
+
+  // packages/icons/build-module/library/header.mjs
+  var import_primitives2 = __toESM(require_primitives(), 1);
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
+  var header_default = /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives2.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives2.Path, { d: "M18.5 10.5H10v8h8a.5.5 0 00.5-.5v-7.5zm-10 0h-3V18a.5.5 0 00.5.5h2.5v-8zM6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z" }) });
+
+  // packages/icons/build-module/library/layout.mjs
+  var import_primitives3 = __toESM(require_primitives(), 1);
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
+  var layout_default = /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives3.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives3.Path, { d: "M18 5.5H6a.5.5 0 00-.5.5v3h13V6a.5.5 0 00-.5-.5zm.5 5H10v8h8a.5.5 0 00.5-.5v-7.5zm-10 0h-3V18a.5.5 0 00.5.5h2.5v-8zM6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z" }) });
+
+  // packages/icons/build-module/library/navigation-overlay.mjs
+  var import_primitives4 = __toESM(require_primitives(), 1);
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
+  var navigation_overlay_default = /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives4.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives4.Path, { d: "M18.5 10a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5h-7a1.5 1.5 0 0 1-1.5-1.5v-7a1.5 1.5 0 0 1 1.5-1.5zM16 4a2 2 0 0 1 2 2v2h-1.5V6a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0-.5.5v3H8v1.5H5.5V16a.5.5 0 0 0 .5.5h2V18H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" }) });
+
+  // packages/icons/build-module/library/sidebar.mjs
+  var import_primitives5 = __toESM(require_primitives(), 1);
+  var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
+  var sidebar_default = /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives5.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives5.Path, { d: "M18 5.5H6a.5.5 0 00-.5.5v3h13V6a.5.5 0 00-.5-.5zm.5 5H10v8h8a.5.5 0 00.5-.5v-7.5zM6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z" }) });
+
+  // packages/icons/build-module/library/symbol-filled.mjs
+  var import_primitives6 = __toESM(require_primitives(), 1);
+  var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1);
+  var symbol_filled_default = /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives6.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives6.Path, { d: "M21.3 10.8l-5.6-5.6c-.7-.7-1.8-.7-2.5 0l-5.6 5.6c-.7.7-.7 1.8 0 2.5l5.6 5.6c.3.3.8.5 1.2.5s.9-.2 1.2-.5l5.6-5.6c.8-.7.8-1.9.1-2.5zm-17.6 1L10 5.5l-1-1-6.3 6.3c-.7.7-.7 1.8 0 2.5L9 19.5l1.1-1.1-6.3-6.3c-.2 0-.2-.2-.1-.3z" }) });
+
+  // packages/core-data/build-module/utils/get-template-part-icon.mjs
+  function getTemplatePartIcon(areaOrIconName) {
+    if ("header" === areaOrIconName) {
+      return header_default;
+    } else if ("footer" === areaOrIconName) {
+      return footer_default;
+    } else if ("sidebar" === areaOrIconName) {
+      return sidebar_default;
+    } else if ("navigation-overlay" === areaOrIconName) {
+      return navigation_overlay_default;
+    }
+    return symbol_filled_default;
+  }
+
+  // packages/core-data/build-module/utils/get-template-info.mjs
+  var EMPTY_OBJECT4 = {};
+  var getTemplateInfo = (params) => {
+    if (!params) {
+      return EMPTY_OBJECT4;
+    }
+    const { templateTypes, templateAreas, template } = params;
+    const { description, slug, title, area } = template;
+    const { title: defaultTitle, description: defaultDescription } = Object.values(templateTypes).find((type) => type.slug === slug) ?? EMPTY_OBJECT4;
+    const templateTitle = typeof title === "string" ? title : title?.rendered;
+    const templateDescription = typeof description === "string" ? description : description?.raw;
+    const templateAreasWithIcon = templateAreas?.map((item) => ({
+      ...item,
+      icon: getTemplatePartIcon(item.icon)
+    }));
+    const templateIcon = templateAreasWithIcon?.find((item) => area === item.area)?.icon || layout_default;
+    return {
+      title: templateTitle && templateTitle !== slug ? templateTitle : defaultTitle || slug,
+      description: templateDescription || defaultDescription,
+      icon: templateIcon
+    };
+  };
+
+  // node_modules/clsx/dist/clsx.mjs
+  function r(e) {
+    var t, f, n = "";
+    if ("string" == typeof e || "number" == typeof e) n += e;
+    else if ("object" == typeof e) if (Array.isArray(e)) {
+      var o = e.length;
+      for (t = 0; t < o; t++) e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+    } else for (f in e) e[f] && (n && (n += " "), n += f);
+    return n;
+  }
+  function clsx() {
+    for (var e, t, f = 0, n = "", o = arguments.length; f < o; f++) (e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
+    return n;
+  }
+  var clsx_default = clsx;
+
+  // packages/core-data/build-module/components/entities-saved-states/index.mjs
+  var import_components3 = __toESM(require_components(), 1);
+  var import_i18n7 = __toESM(require_i18n(), 1);
+  var import_element10 = __toESM(require_element(), 1);
+  var import_compose4 = __toESM(require_compose(), 1);
+  var import_data18 = __toESM(require_data(), 1);
+
+  // packages/core-data/build-module/components/entities-saved-states/entity-type-list.mjs
+  var import_i18n6 = __toESM(require_i18n(), 1);
+  var import_data16 = __toESM(require_data(), 1);
+  var import_components2 = __toESM(require_components(), 1);
+
+  // packages/global-styles-engine/build-module/utils/get-global-styles-changes.mjs
+  var import_i18n4 = __toESM(require_i18n(), 1);
+  var import_blocks6 = __toESM(require_blocks(), 1);
+  var globalStylesChangesCache = /* @__PURE__ */ new Map();
+  var EMPTY_ARRAY3 = [];
+  var translationMap = {
+    caption: (0, import_i18n4.__)("Caption"),
+    link: (0, import_i18n4.__)("Link"),
+    button: (0, import_i18n4.__)("Button"),
+    heading: (0, import_i18n4.__)("Heading"),
+    h1: (0, import_i18n4.__)("H1"),
+    h2: (0, import_i18n4.__)("H2"),
+    h3: (0, import_i18n4.__)("H3"),
+    h4: (0, import_i18n4.__)("H4"),
+    h5: (0, import_i18n4.__)("H5"),
+    h6: (0, import_i18n4.__)("H6"),
+    "settings.color": (0, import_i18n4.__)("Color"),
+    "settings.typography": (0, import_i18n4.__)("Typography"),
+    "settings.shadow": (0, import_i18n4.__)("Shadow"),
+    "settings.layout": (0, import_i18n4.__)("Layout"),
+    "styles.color": (0, import_i18n4.__)("Colors"),
+    "styles.spacing": (0, import_i18n4.__)("Spacing"),
+    "styles.background": (0, import_i18n4.__)("Background"),
+    "styles.typography": (0, import_i18n4.__)("Typography"),
+    "styles.border": (0, import_i18n4.__)("Border"),
+    "styles.shadow": (0, import_i18n4.__)("Shadow"),
+    "styles.outline": (0, import_i18n4.__)("Outline"),
+    "styles.filter": (0, import_i18n4.__)("Filter"),
+    "styles.dimensions": (0, import_i18n4.__)("Dimensions")
+  };
+  var getBlockNames = memize(
+    () => (0, import_blocks6.getBlockTypes)().reduce(
+      (accumulator, {
+        name,
+        title
+      }) => {
+        accumulator[name] = title;
+        return accumulator;
+      },
+      {}
+    )
+  );
+  var isObject = (obj) => obj !== null && typeof obj === "object";
+  function getTranslation(key) {
+    if (translationMap[key]) {
+      return translationMap[key];
+    }
+    const keyArray = key.split(".");
+    if (keyArray?.[0] === "blocks") {
+      const blockName = getBlockNames()?.[keyArray[1]];
+      return blockName || keyArray[1];
+    }
+    if (keyArray?.[0] === "elements") {
+      return translationMap[keyArray[1]] || keyArray[1];
+    }
+    return void 0;
+  }
+  function deepCompare(changedObject, originalObject, parentPath = "") {
+    if (!isObject(changedObject) && !isObject(originalObject)) {
+      return changedObject !== originalObject ? parentPath.split(".").slice(0, 2).join(".") : void 0;
+    }
+    changedObject = isObject(changedObject) ? changedObject : {};
+    originalObject = isObject(originalObject) ? originalObject : {};
+    const allKeys = /* @__PURE__ */ new Set([
+      ...Object.keys(changedObject),
+      ...Object.keys(originalObject)
+    ]);
+    let diffs = [];
+    for (const key of allKeys) {
+      const path = parentPath ? parentPath + "." + key : key;
+      const changedPath = deepCompare(
+        changedObject[key],
+        originalObject[key],
+        path
+      );
+      if (changedPath) {
+        diffs = diffs.concat(changedPath);
+      }
+    }
+    return diffs;
+  }
+  var COMPARED_STYLE_KEYS = [
+    "background",
+    "color",
+    "typography",
+    "spacing",
+    "border",
+    "shadow",
+    "outline",
+    "filter",
+    "dimensions"
+  ];
+  function pickComparedStyles(config) {
+    return Object.fromEntries(
+      COMPARED_STYLE_KEYS.map((key) => [key, config?.styles?.[key]])
+    );
+  }
+  function getGlobalStylesChangelist(next, previous) {
+    const cacheKey = JSON.stringify({ next, previous });
+    if (globalStylesChangesCache.has(cacheKey)) {
+      return globalStylesChangesCache.get(cacheKey);
+    }
+    const changedValueTree = deepCompare(
+      {
+        styles: pickComparedStyles(next),
+        blocks: next?.styles?.blocks,
+        elements: next?.styles?.elements,
+        settings: next?.settings
+      },
+      {
+        styles: pickComparedStyles(previous),
+        blocks: previous?.styles?.blocks,
+        elements: previous?.styles?.elements,
+        settings: previous?.settings
+      }
+    );
+    if (!changedValueTree || Array.isArray(changedValueTree) && !changedValueTree.length) {
+      globalStylesChangesCache.set(cacheKey, []);
+      return [];
+    }
+    const changedValueArray = Array.isArray(changedValueTree) ? changedValueTree : [changedValueTree];
+    const result = [...new Set(changedValueArray)].reduce((acc, curr) => {
+      const translation = getTranslation(curr);
+      if (translation) {
+        acc.push([curr.split(".")[0], translation]);
+      }
+      return acc;
+    }, []);
+    globalStylesChangesCache.set(cacheKey, result);
+    return result;
+  }
+  function getGlobalStylesChanges(next, previous, options = {}) {
+    let changeList = getGlobalStylesChangelist(next, previous);
+    const changesLength = changeList.length;
+    const { maxResults } = options;
+    if (changesLength) {
+      if (!!maxResults && changesLength > maxResults) {
+        changeList = changeList.slice(0, maxResults);
+      }
+      return Object.entries(
+        changeList.reduce((acc, curr) => {
+          const group = acc[curr[0]] || [];
+          if (!group.includes(curr[1])) {
+            acc[curr[0]] = [...group, curr[1]];
+          }
+          return acc;
+        }, {})
+      ).map(([key, changeValues]) => {
+        const changeValuesLength = changeValues.length;
+        const joinedChangesValue = changeValues.join(
+          /* translators: Used between list items, there is a space after the comma. */
+          (0, import_i18n4.__)(", ")
+          // eslint-disable-line @wordpress/i18n-no-flanking-whitespace
+        );
+        switch (key) {
+          case "blocks": {
+            return (0, import_i18n4.sprintf)(
+              // translators: %s: a list of block names separated by a comma.
+              (0, import_i18n4._n)("%s block.", "%s blocks.", changeValuesLength),
+              joinedChangesValue
+            );
+          }
+          case "elements": {
+            return (0, import_i18n4.sprintf)(
+              // translators: %s: a list of element names separated by a comma.
+              (0, import_i18n4._n)("%s element.", "%s elements.", changeValuesLength),
+              joinedChangesValue
+            );
+          }
+          case "settings": {
+            return (0, import_i18n4.sprintf)(
+              // translators: %s: a list of theme.json setting labels separated by a comma.
+              (0, import_i18n4.__)("%s settings."),
+              joinedChangesValue
+            );
+          }
+          case "styles": {
+            return (0, import_i18n4.sprintf)(
+              // translators: %s: a list of theme.json top-level styles labels separated by a comma.
+              (0, import_i18n4.__)("%s styles."),
+              joinedChangesValue
+            );
+          }
+          default: {
+            return (0, import_i18n4.sprintf)(
+              // translators: %s: a list of global styles changes separated by a comma.
+              (0, import_i18n4.__)("%s."),
+              joinedChangesValue
+            );
+          }
+        }
+      });
+    }
+    return EMPTY_ARRAY3;
+  }
+
+  // packages/core-data/build-module/components/entities-saved-states/entity-record-item.mjs
+  var import_components = __toESM(require_components(), 1);
+  var import_i18n5 = __toESM(require_i18n(), 1);
+  var import_data15 = __toESM(require_data(), 1);
+  var import_html_entities4 = __toESM(require_html_entities(), 1);
+  var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
+  function EntityRecordItem({ record, checked, onChange }) {
+    const { name, kind, title, key } = record;
+    const { entityRecordTitle } = (0, import_data15.useSelect)(
+      (select4) => {
+        if ("postType" !== kind || "wp_template" !== name) {
+          return {
+            entityRecordTitle: title
+          };
+        }
+        const template = select4(STORE_NAME).getEditedEntityRecord(
+          kind,
+          name,
+          key
+        );
+        const { default_template_types: templateTypes = [] } = select4(STORE_NAME).getCurrentTheme() ?? {};
+        return {
+          entityRecordTitle: getTemplateInfo({
+            template,
+            templateTypes
+          }).title
+        };
+      },
+      [name, kind, title, key]
+    );
+    return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_jsx_runtime8.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_components.PanelRow, { children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+      import_components.CheckboxControl,
+      {
+        label: (0, import_html_entities4.decodeEntities)(entityRecordTitle) || (0, import_i18n5.__)("Untitled"),
+        checked,
+        onChange,
+        className: "entities-saved-states__change-control"
+      }
+    ) }) });
+  }
+
+  // packages/core-data/build-module/components/entities-saved-states/entity-type-list.mjs
+  var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
+  function getEntityDescription(entity2, count) {
+    switch (entity2) {
+      case "site":
+        return 1 === count ? (0, import_i18n6.__)("This change will affect your whole site.") : (0, import_i18n6.__)("These changes will affect your whole site.");
+      case "wp_template":
+        return (0, import_i18n6.__)(
+          "This change will affect other parts of your site that use this template."
+        );
+      case "page":
+      case "post":
+        return (0, import_i18n6.__)("The following has been modified.");
+    }
+  }
+  function GlobalStylesDescription({ record }) {
+    const { editedRecord, savedRecord } = (0, import_data16.useSelect)(
+      (select4) => {
+        const { getEditedEntityRecord: getEditedEntityRecord3, getEntityRecord: getEntityRecord3 } = select4(STORE_NAME);
+        return {
+          editedRecord: getEditedEntityRecord3(
+            record.kind,
+            record.name,
+            record.key
+          ),
+          savedRecord: getEntityRecord3(
+            record.kind,
+            record.name,
+            record.key
+          )
+        };
+      },
+      [record.kind, record.name, record.key]
+    );
+    const globalStylesChanges = getGlobalStylesChanges(
+      editedRecord,
+      savedRecord,
+      {
+        maxResults: 10
+      }
+    );
+    return globalStylesChanges.length ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("ul", { className: "entities-saved-states__changes", children: globalStylesChanges.map((change) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("li", { children: change }, change)) }) : null;
+  }
+  function EntityDescription({ record, count }) {
+    if ("globalStyles" === record?.name) {
+      return null;
+    }
+    const description = getEntityDescription(record?.name, count);
+    return description ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_components2.PanelRow, { children: description }) : null;
+  }
+  function EntityTypeList({
+    list,
+    unselectedEntities,
+    setUnselectedEntities
+  }) {
+    const count = list.length;
+    const firstRecord = list[0];
+    const entityConfig = (0, import_data16.useSelect)(
+      (select4) => select4(STORE_NAME).getEntityConfig(
+        firstRecord.kind,
+        firstRecord.name
+      ),
+      [firstRecord.kind, firstRecord.name]
+    );
+    let entityLabel = entityConfig.label;
+    if (firstRecord?.name === "wp_template_part") {
+      entityLabel = 1 === count ? (0, import_i18n6.__)("Template Part") : (0, import_i18n6.__)("Template Parts");
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
+      import_components2.PanelBody,
+      {
+        title: entityLabel,
+        initialOpen: true,
+        className: "entities-saved-states__panel-body",
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(EntityDescription, { record: firstRecord, count }),
+          list.map((record) => {
+            return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+              EntityRecordItem,
+              {
+                record,
+                checked: !unselectedEntities.some(
+                  (elt) => elt.kind === record.kind && elt.name === record.name && elt.key === record.key && elt.property === record.property
+                ),
+                onChange: (value) => setUnselectedEntities(record, value)
+              },
+              record.key || record.property
+            );
+          }),
+          "globalStyles" === firstRecord?.name && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(GlobalStylesDescription, { record: firstRecord })
+        ]
+      }
+    );
+  }
+
+  // packages/core-data/build-module/components/entities-saved-states/hooks/use-is-dirty.mjs
+  var import_data17 = __toESM(require_data(), 1);
+  var import_element9 = __toESM(require_element(), 1);
+  var useIsDirty = () => {
+    const { editedEntities, siteEdits, siteEntityConfig } = (0, import_data17.useSelect)(
+      (select4) => {
+        const {
+          __experimentalGetDirtyEntityRecords: __experimentalGetDirtyEntityRecords2,
+          getEntityRecordEdits: getEntityRecordEdits2,
+          getEntityConfig: getEntityConfig2
+        } = select4(STORE_NAME);
+        return {
+          editedEntities: __experimentalGetDirtyEntityRecords2(),
+          siteEdits: getEntityRecordEdits2("root", "site"),
+          siteEntityConfig: getEntityConfig2("root", "site")
+        };
+      },
+      []
+    );
+    const dirtyEntityRecords = (0, import_element9.useMemo)(() => {
+      const editedEntitiesWithoutSite = editedEntities.filter(
+        (record) => !(record.kind === "root" && record.name === "site")
+      );
+      const siteEntityLabels = siteEntityConfig?.meta?.labels ?? {};
+      const {
+        title: siteTitleEdit,
+        description: siteDescriptionEdit,
+        site_logo: siteLogoEdit,
+        site_icon: siteIconEdit,
+        ...otherSiteEdits
+      } = siteEdits ?? {};
+      const orderedSiteProperties = [
+        siteTitleEdit !== void 0 && "title",
+        siteDescriptionEdit !== void 0 && "description",
+        siteLogoEdit !== void 0 && "site_logo",
+        siteIconEdit !== void 0 && "site_icon",
+        ...Object.keys(otherSiteEdits)
+      ].filter(Boolean);
+      const editedSiteEntities = orderedSiteProperties.map(
+        (property) => ({
+          kind: "root",
+          name: "site",
+          title: siteEntityLabels[property] || property,
+          property
+        })
+      );
+      return [...editedEntitiesWithoutSite, ...editedSiteEntities];
+    }, [editedEntities, siteEdits, siteEntityConfig]);
+    const [unselectedEntities, _setUnselectedEntities] = (0, import_element9.useState)([]);
+    const setUnselectedEntities = ({ kind, name, key, property }, checked) => {
+      if (checked) {
+        _setUnselectedEntities(
+          unselectedEntities.filter(
+            (elt) => elt.kind !== kind || elt.name !== name || elt.key !== key || elt.property !== property
+          )
+        );
+      } else {
+        _setUnselectedEntities([
+          ...unselectedEntities,
+          { kind, name, key, property }
+        ]);
+      }
+    };
+    const isDirty = dirtyEntityRecords.length - unselectedEntities.length > 0;
+    return {
+      dirtyEntityRecords,
+      isDirty,
+      setUnselectedEntities,
+      unselectedEntities
+    };
+  };
+
+  // packages/core-data/build-module/components/entities-saved-states/index.mjs
+  var import_jsx_runtime10 = __toESM(require_jsx_runtime(), 1);
+  function EntitiesSavedStates({
+    close,
+    renderDialog,
+    variant
+  }) {
+    const isDirtyProps = useIsDirty();
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+      EntitiesSavedStatesExtensible,
+      {
+        close,
+        renderDialog,
+        variant,
+        ...isDirtyProps
+      }
+    );
+  }
+  function EntitiesSavedStatesExtensible({
+    additionalPrompt = void 0,
+    close,
+    onSave = void 0,
+    saveEnabled: saveEnabledProp = void 0,
+    saveLabel = (0, import_i18n7.__)("Save"),
+    renderDialog,
+    dirtyEntityRecords,
+    isDirty,
+    setUnselectedEntities,
+    unselectedEntities,
+    variant = "default",
+    successNoticeContent
+  }) {
+    const saveButtonRef = (0, import_element10.useRef)();
+    const { saveDirtyEntities: saveDirtyEntities2 } = unlock((0, import_data18.useDispatch)(STORE_NAME));
+    const partitionedSavables = dirtyEntityRecords.reduce((acc, record) => {
+      const { name } = record;
+      if (!acc[name]) {
+        acc[name] = [];
+      }
+      acc[name].push(record);
+      return acc;
+    }, {});
+    const {
+      site: siteSavables,
+      wp_template: templateSavables,
+      wp_template_part: templatePartSavables,
+      ...contentSavables
+    } = partitionedSavables;
+    const sortedPartitionedSavables = [
+      siteSavables,
+      templateSavables,
+      templatePartSavables,
+      ...Object.values(contentSavables)
+    ].filter(Array.isArray);
+    const saveEnabled = saveEnabledProp ?? isDirty;
+    const dismissPanel = (0, import_element10.useCallback)(() => close(), [close]);
+    const [saveDialogRef, saveDialogProps] = (0, import_compose4.__experimentalUseDialog)({
+      onClose: () => dismissPanel()
+    });
+    const dialogLabelId = (0, import_compose4.useInstanceId)(
+      EntitiesSavedStatesExtensible,
+      "entities-saved-states__panel-label"
+    );
+    const dialogDescriptionId = (0, import_compose4.useInstanceId)(
+      EntitiesSavedStatesExtensible,
+      "entities-saved-states__panel-description"
+    );
+    const selectItemsToSaveDescription = !!dirtyEntityRecords.length ? (0, import_i18n7.__)("Select the items you want to save.") : void 0;
+    const isInline = variant === "inline";
+    const actionButtons = /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(import_jsx_runtime10.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+        import_components3.FlexItem,
+        {
+          isBlock: isInline ? false : true,
+          as: import_components3.Button,
+          variant: isInline ? "tertiary" : "secondary",
+          size: isInline ? void 0 : "compact",
+          onClick: dismissPanel,
+          children: (0, import_i18n7.__)("Cancel")
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+        import_components3.FlexItem,
+        {
+          isBlock: isInline ? false : true,
+          as: import_components3.Button,
+          ref: saveButtonRef,
+          variant: "primary",
+          size: isInline ? void 0 : "compact",
+          disabled: !saveEnabled,
+          accessibleWhenDisabled: true,
+          onClick: () => saveDirtyEntities2({
+            onSave,
+            dirtyEntityRecords,
+            entitiesToSkip: unselectedEntities,
+            close,
+            successNoticeContent
+          }),
+          className: "entities-saved-states__save-button",
+          children: saveLabel
+        }
+      )
+    ] });
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+      "div",
+      {
+        ref: renderDialog ? saveDialogRef : void 0,
+        ...renderDialog && saveDialogProps,
+        className: clsx_default("entities-saved-states__panel", {
+          "is-inline": isInline
+        }),
+        role: renderDialog ? "dialog" : void 0,
+        "aria-labelledby": renderDialog ? dialogLabelId : void 0,
+        "aria-describedby": renderDialog ? dialogDescriptionId : void 0,
+        children: [
+          !isInline && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_components3.Flex, { className: "entities-saved-states__panel-header", gap: 2, children: actionButtons }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "entities-saved-states__text-prompt", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "entities-saved-states__text-prompt--header-wrapper", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+              "strong",
+              {
+                id: renderDialog ? dialogLabelId : void 0,
+                className: "entities-saved-states__text-prompt--header",
+                children: (0, import_i18n7.__)("Are you ready to save?")
+              }
+            ) }),
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { id: renderDialog ? dialogDescriptionId : void 0, children: [
+              additionalPrompt,
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "entities-saved-states__text-prompt--changes-count", children: isDirty ? (0, import_element10.createInterpolateElement)(
+                (0, import_i18n7.sprintf)(
+                  /* translators: %d: number of site changes waiting to be saved. */
+                  (0, import_i18n7._n)(
+                    "There is <strong>%d site change</strong> waiting to be saved.",
+                    "There are <strong>%d site changes</strong> waiting to be saved.",
+                    dirtyEntityRecords.length
+                  ),
+                  dirtyEntityRecords.length
+                ),
+                { strong: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", {}) }
+              ) : selectItemsToSaveDescription })
+            ] })
+          ] }),
+          sortedPartitionedSavables.map((list) => {
+            return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+              EntityTypeList,
+              {
+                list,
+                unselectedEntities,
+                setUnselectedEntities
+              },
+              list[0].name
+            );
+          }),
+          isInline && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+            import_components3.Flex,
+            {
+              direction: "row",
+              justify: "flex-end",
+              className: "entities-saved-states__panel-footer",
+              children: actionButtons
+            }
+          )
+        ]
+      }
+    );
+  }
+
   // packages/core-data/build-module/private-apis.mjs
   var lockedApis = {
+    EntitiesSavedStates,
+    EntitiesSavedStatesExtensible,
+    getTemplateInfo,
+    getTemplatePartIcon,
+    useEntitiesSavedStatesIsDirty: useIsDirty,
     useEntityRecordsWithPermissions,
     RECEIVE_INTERMEDIATE_RESULTS,
+    CRDT_AUTOSAVE_SNAPSHOT_KEY,
+    entityContainsSnapshot,
+    getEntitySnapshot,
     retrySyncConnection,
     useActiveCollaborators,
     useResolvedSelection,
@@ -8234,10 +9210,12 @@ var wp;
     },
     resolvers: { ...resolvers_exports, ...entityResolvers }
   });
-  var store = (0, import_data15.createReduxStore)(STORE_NAME, storeConfig());
+  var store = (0, import_data19.createReduxStore)(STORE_NAME, storeConfig());
   unlock(store).registerPrivateSelectors(private_selectors_exports);
   unlock(store).registerPrivateActions(private_actions_exports);
-  (0, import_data15.register)(store);
+  (0, import_data19.register)(store);
   return __toCommonJS(index_exports);
+})();
+(window.wp ||= {}).coreData = wp.coreData;
 })();
 //# sourceMappingURL=index.js.map

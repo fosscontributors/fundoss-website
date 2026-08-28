@@ -78,11 +78,6 @@ return array(
 		'asset' => 'connectors/index.min.asset.php',
 	),
 	array(
-		'id' => '@wordpress/content-types',
-		'path' => 'content-types/index',
-		'asset' => 'content-types/index.min.asset.php',
-	),
-	array(
 		'id' => '@wordpress/core-abilities',
 		'path' => 'core-abilities/index',
 		'asset' => 'core-abilities/index.min.asset.php',
@@ -133,6 +128,17 @@ return array(
 		'asset' => 'route/index.min.asset.php',
 	),
 	array(
+		'id' => '@wordpress/video-conversion/loader',
+		'path' => 'video-conversion/loader',
+		'asset' => 'video-conversion/loader.min.asset.php',
+	),
+	array(
+		'id' => '@wordpress/video-conversion/worker',
+		'path' => 'video-conversion/worker',
+		'asset' => 'video-conversion/worker.min.asset.php',
+		'min_only' => true,
+	),
+	array(
 		'id' => '@wordpress/vips/loader',
 		'path' => 'vips/loader',
 		'asset' => 'vips/loader.min.asset.php',
@@ -142,6 +148,11 @@ return array(
 		'path' => 'vips/worker',
 		'asset' => 'vips/worker.min.asset.php',
 		'min_only' => true,
+	),
+	array(
+		'id' => '@wordpress/widget-primitives',
+		'path' => 'widget-primitives/index',
+		'asset' => 'widget-primitives/index.min.asset.php',
 	),
 	array(
 		'id' => '@wordpress/workflow',

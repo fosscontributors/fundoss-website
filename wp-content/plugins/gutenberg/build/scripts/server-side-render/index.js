@@ -1,3 +1,4 @@
+(function() {
 "use strict";
 var wp;
 (wp ||= {}).serverSideRender = (() => {
@@ -159,7 +160,7 @@ var wp;
       httpMethod = "GET",
       urlQueryArgs
     } = args;
-    let sanitizedAttributes = attributes && (0, import_blocks.__experimentalSanitizeBlockAttributes)(block, attributes);
+    let sanitizedAttributes = attributes && (0, import_blocks.sanitizeBlockAttributes)(block, attributes);
     if (skipBlockSupportAttributes && sanitizedAttributes) {
       sanitizedAttributes = removeBlockSupportAttributes(sanitizedAttributes);
     }
@@ -313,4 +314,6 @@ var wp;
   return __toCommonJS(index_exports);
 })();
 if (typeof wp.serverSideRender === 'object' && wp.serverSideRender.default) { wp.serverSideRender = wp.serverSideRender.default; }
+(window.wp ||= {}).serverSideRender = wp.serverSideRender;
+})();
 //# sourceMappingURL=index.js.map
